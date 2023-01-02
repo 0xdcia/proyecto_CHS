@@ -1,2 +1,8 @@
-# proyecto_CHS
+# Codiseño Hardware-Software
 Proyecto final de Codiseño Hardware-Software, MUITEL UPV
+
+Francisco Zapata
+Alejandro Jorge
+Arnau Martínez
+Ferran Zafrilla
+David García
