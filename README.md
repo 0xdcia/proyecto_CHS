@@ -9,4 +9,6 @@ Arnau Martínez
 
 Ferran Zafrilla
 
+Juan del Pino
+
 David García
