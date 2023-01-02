@@ -3,8 +3,8 @@ Proyecto final de Codiseño Hardware-Software, MUITEL UPV
 
 Carpeta software: No incluir configuración del Eclipse ya que no es portable ni nada relacionado con el BSP.\
 main.c → Punto de entrada a la ejecución de código.\
-inc/\*.h → Declaración de las funciones (Headers)\
-src/\*.c → Definición de las funciones
+inc/\*.h → Declaración de las funciones (Headers).\
+src/\*.c → Definición de las funciones.
 
 Francisco Zapata\
 Alejandro Jorge\
