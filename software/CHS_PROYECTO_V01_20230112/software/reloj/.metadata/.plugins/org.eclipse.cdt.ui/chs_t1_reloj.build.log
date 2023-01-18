@@ -1,0 +1,9 @@
+17:39:17 **** Incremental Build of configuration Nios II for project chs_t1_reloj ****
+make all 
+Info: Building ../chs_t1_reloj_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../chs_t1_reloj_bsp/
+[BSP build complete]
+[chs_t1_reloj build complete]
+
+17:39:18 Build Finished (took 964ms)
+

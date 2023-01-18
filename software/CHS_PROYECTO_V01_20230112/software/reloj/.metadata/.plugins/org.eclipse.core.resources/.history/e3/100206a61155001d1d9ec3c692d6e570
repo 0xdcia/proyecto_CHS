@@ -1,0 +1,387 @@
+/*
+ * reloj.c
+ *
+ *  Created on: 21 de oct. de 2022
+ *      Author: Juan Del Pino Mena
+ *
+ *      Co-diseño hardware-software
+ *
+ *  TAREA 1: DISEÑO DE UN RELOJ
+ *
+ *  Programa C preparado para correr en el NIOS II del SoPC de las prï¿½cticas.
+ *
+ */
+
+#include <stdio.h>
+#include "system.h"
+
+#include "sys/alt_irq.h"
+#include "sys/alt_stdio.h"
+
+#include "altera_up_avalon_video_pixel_buffer_dma.h"
+#include "altera_up_avalon_video_character_buffer_with_dma.h"
+
+
+// Defines para los pulsadores 
+#define KEY1 1
+#define KEY2 2
+#define KEY3 3
+
+// Defines para el dibujo en la pantalla MTL.
+
+#define CLOCK_SEGMENT_WIDTH 7
+#define CLOCK_SEGMENT_HEIGHT 25
+
+#define CLOCK_DOTS_WIDTH 25 
+#define CLOCK_DIGIT_WIDTH 50
+#define CLOCK_DIGIT_HEIGHT 2 * CLOCK_SEGMENT_HEIGHT + 3 * CLOCK_SEGMENT_WIDTH  // 71 px
+#define CLOCK_DIGIT_X_PADDING 5
+
+#define CLOCK_FIRST_DIGIT_X 25
+#define CLOCK_FIRST_DIGIT_Y 85
+
+
+/* Estructura para almacenar la hora actual de forma sencilla
+ */
+struct time_t{
+	int hours;
+	int minutes;
+	int seconds;
+};
+
+/* Para la conversión de hexadecimal a 7 segmentos. 
+ */
+int hex7seg[] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07,
+				 0x7F, 0x67, 0x77, 0x7C, 0x39, 0x5E, 0x79, 0x71};
+
+volatile int count = 0;  		// Cuenta del reloj, en segundos
+volatile struct time_t time;  	// Estructura de horas, minutos y segundos
+
+volatile int * interval_timer_ptr = (int *) TIMER_BASE;		// addr Temporizador
+volatile int * KEY_ptr = (int *) PUSHBUTTONS_BASE;  		// addr pulsadores KEY
+volatile int * HEX3_HEX0_ptr	= (int *) HEX3_HEX0_BASE;	// addr HEX3_HEX0
+volatile int * HEX7_HEX4_ptr	= (int *) HEX7_HEX4_BASE;	// addr HEX7_HEX4
+volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;	// addr 16x2 display
+
+
+/* Convierte el tiempo en segundos a la estructura time_t
+ */
+void seconds_to_time_t(int seconds, struct time_t* time)
+{
+	int resto;
+
+	time->hours = seconds / 3600;
+	resto = seconds % 3600;
+
+	time->minutes = resto / 60;
+	resto = resto % 60;
+
+	time->seconds = resto;
+}
+
+
+/* Realiza la conversión de la estructura time_t a siete segmentos.
+ * Y lo envía por el registro correspondiente.
+ */
+void send_time_to_7seg(struct time_t* time)
+{
+	int pattern7_4 = 0x0000;  // Patrón en HEX7 a HEX4
+	int pattern3_1 = 0x0000;  // Patrón en HEX3 a HEX0
+
+	pattern7_4 = (hex7seg[time->hours / 10] << 24) | (hex7seg[time->hours % 10] << 16) |
+				 (hex7seg[time->minutes / 10] << 8) | (hex7seg[time->minutes % 10]);
+	pattern3_1 = (hex7seg[time->seconds / 10] << 24) | (hex7seg[time->seconds % 10] << 16);
+
+	*(HEX3_HEX0_ptr) = pattern3_1;  // Copia del patrón en HEX3 a HEX0
+	*(HEX7_HEX4_ptr) = pattern7_4;  // Copia del patrón en HEX7 a HEX4
+}
+
+
+
+
+
+/* Rutina para mover el cursor de la LCD
+ */
+void LCD_cursor(int x, int y)
+{
+  	char instruction = x;
+	if (y != 0) instruction |= 0x40;	// set bit 6 for bottom row
+	instruction |= 0x80;				// need to set bit 7 to set the cursor location
+	*(LCD_display_ptr) = instruction;	// write to the LCD instruction register
+}
+
+
+/* Rutina encargada de enviar un string a la LCD
+ */
+void LCD_text(char * text_ptr)
+{
+	while ( *(text_ptr) )
+	{
+		*(LCD_display_ptr + 1) = *(text_ptr);	// write to the LCD data register
+		++text_ptr;
+	}
+}
+
+
+/* Rutina para apagar el cursor de la LCD
+ */
+void LCD_cursor_off(void)
+{
+  	*(LCD_display_ptr) = 0x0C;	// turn off the LCD cursor
+}
+
+
+/* Dibuja los dos puntos en la coordenada seleccionada
+ */
+void draw_clock_dots(int x, int y) 
+{
+
+}
+
+
+/* Dibuja el dígito de reloj dado en las coordenadas especificadas.
+ * El formato de paso los dígitos es igual al de un display de 7 segmentos real
+ */
+void draw_clock_digit(int code, int x, int y, 
+					  alt_up_pixel_buffer_dma_dev *pixel_buffer_dev) 
+{	
+	// Formato: pixel_buffer, x0, y0, x1, y1, color, backbuffer
+
+	/* &: operación AND lógica. Si el bit correspondiente del 7 segmentos hay que 
+	encenderlo, su correspondiente if será true y dibuja el segmento. */
+
+	if (code & 0x01) {  // Si se debe encender el segmento A
+		alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 
+			x + CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING, 
+			y, 
+			x + CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING + CLOCK_SEGMENT_HEIGHT, 
+			y + CLOCK_SEGMENT_WIDTH,
+			0x187F, 0);
+	}
+	if (code & 0x02) {  // Si se debe encender el segmento B
+		alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 
+			x + CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING + CLOCK_SEGMENT_HEIGHT, 
+			y + CLOCK_SEGMENT_WIDTH, 
+			x + 2 * CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING + CLOCK_SEGMENT_HEIGHT, 
+			y + 2 * CLOCK_SEGMENT_WIDTH + CLOCK_SEGMENT_HEIGHT,
+			0x187F, 0);
+	}
+	if (code & 0x04) {  // Si se debe encender el segmento C
+		alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 
+			x + CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING + CLOCK_SEGMENT_HEIGHT, 
+			y + 2 * CLOCK_SEGMENT_WIDTH + CLOCK_SEGMENT_HEIGHT, 
+			x + 2 * CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING + CLOCK_SEGMENT_HEIGHT, 
+			y + 2 * CLOCK_SEGMENT_WIDTH + 2 * CLOCK_SEGMENT_HEIGHT,
+			0x187F, 0);
+	}
+	if (code & 0x08) {  // Si se debe encender el segmento D
+		alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 
+			x + CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING, 
+			y + 2 * CLOCK_SEGMENT_HEIGHT + 2 * CLOCK_SEGMENT_WIDTH, 
+			x + CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING + CLOCK_SEGMENT_HEIGHT, 
+			y + 3 * CLOCK_SEGMENT_HEIGHT + 2 * CLOCK_SEGMENT_WIDTH,
+			0x187F, 0);
+	}
+	if (code & 0x10) {  // Si se debe encender el segmento E
+		alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 
+			x + CLOCK_DIGIT_X_PADDING, 
+			y + 2 * CLOCK_SEGMENT_WIDTH + CLOCK_SEGMENT_HEIGHT, 
+			x + CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING, 
+			y + 2 * CLOCK_SEGMENT_WIDTH + 2 * CLOCK_SEGMENT_HEIGHT,
+			0x187F, 0);
+	}
+	if (code & 0x20) {  // Si se debe encender el segmento F
+		alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 
+			x + CLOCK_DIGIT_X_PADDING, 
+			y + CLOCK_SEGMENT_WIDTH, 
+			x + CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING, 
+			y + CLOCK_SEGMENT_WIDTH + CLOCK_SEGMENT_HEIGHT,
+			0x187F, 0);
+	}
+	if (code & 0x40) {  // Si se debe encender el segmento G
+		alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 
+			x + CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING, 
+			y + CLOCK_SEGMENT_WIDTH + CLOCK_SEGMENT_HEIGHT, 
+			x + CLOCK_SEGMENT_WIDTH + CLOCK_DIGIT_X_PADDING + CLOCK_SEGMENT_HEIGHT, 
+			y + 2 * CLOCK_SEGMENT_WIDTH + CLOCK_SEGMENT_HEIGHT,
+			0x187F, 0);
+	}
+}
+
+
+/* Rutina de interrupción del timer. Se activa una vez por segundo
+ */
+void interval_timer_isr()
+{
+	volatile int * interval_timer_ptr = (int *) TIMER_BASE;
+
+	*(interval_timer_ptr) = 0;  		// Elimina la interrución
+
+	count++; 							// Incrementa la cuenta del timer.
+	if (count >= 86400) {count = 0;}  	// Reset si es igual o mayor a 24 horas
+
+	seconds_to_time_t(count, &time);  	// Actualiza la estructura
+	send_time_to_7seg(&time);  			// Envía el reloj por los displays de 7 segmentos
+
+	return;
+}
+
+
+/* Rutina de interrupción de los pulsadores.
+ */
+void pushbutton_isr( )
+{
+	volatile int * KEY_ptr = (int *) PUSHBUTTONS_BASE;
+  	volatile int * slider_switch_ptr = (int *) SWITCHES_BASE;
+	int press;
+
+	press = *(KEY_ptr + 3);  			// Lee el registro de los pulsadores
+	*(KEY_ptr + 3) = 0;      			// Elimina la interrupción
+
+	if (press & 0x4) {  // Se ha pulsado el KEY2 (0100)
+		count += 60;
+		if (count >= 86400) {count = count % 60;}  // si >24 horas, no perder segundos
+    }
+	if (press & 0x8) {  // Se ha pulsado el KEY3 (1000)
+    	count += 3600;
+		if (count >= 86400) {count = count % 3600;}  // si >24 horas no perder mins y segs
+ 	}
+
+	seconds_to_time_t(count, &time);  	// Actualiza la estructura
+	send_time_to_7seg(&time);  			// Envía el reloj por los displays de 7 segmentos
+
+	return;
+}
+
+
+/* Función encargada de dibujar el reloj en la pantalla MTL.
+ */
+void draw_clock(struct time_t * time, alt_up_pixel_buffer_dma_dev *pixel_buffer_dev) 
+{
+	int digit_codes[] = {hex7seg[time->hours / 10], hex7seg[time->hours % 10],
+						 hex7seg[time->minutes / 10], hex7seg[time->minutes % 10],
+						 hex7seg[time->seconds / 10], hex7seg[time->seconds % 10]};
+	
+	// posición en la que se va a dibujar el dígito (coordenada superior izquierda)
+	// int x[] = {CLOCK_FIRST_DIGIT_X, 
+	//            CLOCK_FIRST_DIGIT_X + 1 * CLOCK_DIGIT_WIDTH,
+	// 		   CLOCK_FIRST_DIGIT_X + 2 * CLOCK_DIGIT_WIDTH + 1 * CLOCK_DOTS_WIDTH,
+	// 		   CLOCK_FIRST_DIGIT_X + 3 * CLOCK_DIGIT_WIDTH + 1 * CLOCK_DOTS_WIDTH,
+	// 		   CLOCK_FIRST_DIGIT_X + 4 * CLOCK_DIGIT_WIDTH + 2 * CLOCK_DOTS_WIDTH,
+	// 		   CLOCK_FIRST_DIGIT_X + 5 * CLOCK_DIGIT_WIDTH + 2 * CLOCK_DOTS_WIDTH}
+	
+	int x = 0;
+	int y = CLOCK_FIRST_DIGIT_Y;
+
+	// dibuja los seis dígitos
+	for (int i = 0; i < 6; i++) 
+	{
+		x = CLOCK_FIRST_DIGIT_X + i * CLOCK_DIGIT_WIDTH + (i/2) * CLOCK_DOTS_WIDTH;
+		draw_clock_digit(digit_codes[i], x, y, pixel_buffer_dev);
+	}
+
+	// dibuja los dos pares de puntos 
+	// x = CLOCK_FIRST_DIGIT_X + 2 * CLOCK_DIGIT_WIDTH;
+	// draw_clock_dots(x, y);
+	// x = CLOCK_FIRST_DIGIT_X + 4 * CLOCK_DIGIT_WIDTH + CLOCK_DOTS_WIDTH;
+	// draw_clock_dots(x, y);
+}
+
+
+/* Función principal
+ */
+int main(void)
+{
+	int counter_init = 50000000;  // Valor del contador. 1/(50 MHz)ï¿½(50 M)= 1 s
+
+	char text_top_row[40] = "    00:00:00   \0";
+	char text_bottom_row[40] = "J Del Pino Mena\0";
+
+	int delay_MTL = 0;
+
+	alt_up_pixel_buffer_dma_dev *pixel_buffer_dev_MTL;
+	alt_up_char_buffer_dev *char_buffer_dev_MTL;
+
+	// Inicializa los atributos de la estructura a nulos.
+	seconds_to_time_t(0, &time);
+
+
+	/* CONFIGURACIÓN DE INTERRUPCIONES */
+
+	*(interval_timer_ptr + 0x2) = (counter_init & 0xFFFF); 			// copia parte baja
+	*(interval_timer_ptr + 0x3) = (counter_init >> 16) & 0xFFFF;  	// copia parte alta
+
+	// Comienzo del timer y las interrupciones.
+	*(interval_timer_ptr + 1) = 0x7;	// STOP = 0, START = 1, CONT = 1, ITO = 1
+	alt_irq_register(TIMER_IRQ, NULL, interval_timer_isr);  // Habilita int. timer
+
+	// Pulsadores
+	*(KEY_ptr + 2) = 0xE;  	// Máscara de los pulsadores (keys 3210: 1110) (el 0 es reset)
+	*(KEY_ptr + 3) = 0;		// Registro de los pulsadores a cero
+	alt_irq_register(PUSHBUTTONS_IRQ, NULL, pushbutton_isr);  // Habilitar int. pulsadores
+
+
+	/* INICIALIZACIÓN LCD */
+	
+	LCD_cursor(0,0);			// set LCD cursor location to top row
+	LCD_text(text_top_row);
+	LCD_cursor(0,1);			// set LCD cursor location to bottom row
+	LCD_text(text_bottom_row);
+	LCD_cursor_off();			// turn off the LCD cursor
+
+
+	/* INICIALIZACIÓN DE LA PANTALLA MTL */
+
+	// initialize the MTL pixel buffer HAL
+	pixel_buffer_dev_MTL = alt_up_pixel_buffer_dma_open_dev ("/dev/mtl_pixel_buffer_dma");
+	if (pixel_buffer_dev_MTL == NULL) {
+		alt_printf ("Error: could not open MTL pixel buffer device\n");
+	} else {
+		alt_printf ("Opened MTL pixel buffer device\n");
+	}
+
+	// Borra el contenido de la pantalla
+	alt_up_pixel_buffer_dma_clear_screen(pixel_buffer_dev_MTL, 0);
+
+	// output text message in the middle of the MTL monitor
+	char_buffer_dev_MTL = alt_up_char_buffer_open_dev ("/dev/mtl_char_buffer");
+	if (char_buffer_dev_MTL == NULL)
+	{
+		alt_printf("Error: could not open MTL character buffer device\n");
+		return -1;  // error
+	} else {
+		alt_printf("Opened MTL character buffer device\n");
+	}
+
+	// Dibujar el nombre del alumno en la pantalla.
+	// Sólo es necesario llamarlo una vez porque se guarda en foreground.
+	alt_up_char_buffer_string(char_buffer_dev_MTL, text_top_row, 20, 20);
+	alt_up_char_buffer_string(char_buffer_dev_MTL, text_bottom_row, 20, 20);
+
+
+	/* SUPER-LOOP 
+	 * Bucle principal infinito del programa, encargado de la salida por pantalla
+	 */
+	while(1)
+	{
+		// Espera a que la pantalla estï¿½ lista; una vez ha dibujado el frame anterior.
+		if (alt_up_pixel_buffer_dma_check_swap_buffers_status(pixel_buffer_dev_MTL) == 0)
+		{
+			// Delay para reducir la velocidad de actualización de la pantalla a la mitad.
+			delay_MTL = 1 - delay_MTL;
+
+			if (delay_MTL == 0) 
+			{
+				draw_clock(&time, pixel_buffer_dev_MTL);
+			}
+			
+			// Swap buffer, para checkear si la pantalla se ha dibujado. 
+			alt_up_pixel_buffer_dma_swap_buffers(pixel_buffer_dev_MTL);
+		}
+	}
+}
+
+
+
+
+
