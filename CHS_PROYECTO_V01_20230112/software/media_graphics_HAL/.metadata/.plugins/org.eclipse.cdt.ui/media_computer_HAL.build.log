@@ -1,9 +1,0 @@
-10:49:42 **** Incremental Build of configuration Nios II for project media_computer_HAL ****
-make all 
-Info: Building ../media_computer_HAL_bsp/
-C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../media_computer_HAL_bsp/
-[BSP build complete]
-[media_computer_HAL build complete]
-
-10:49:43 Build Finished (took 1s.15ms)
-

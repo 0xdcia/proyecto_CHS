@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="703" />
+   <irq preferredWidth="34" />
+   <inputclock preferredWidth="181" />
+   <name preferredWidth="209" />
+   <export preferredWidth="262" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Library/University Program,Library/Qsys Interconnect/Tri-State Components,Library/DSP,Library/DSP/Video and Image Processing,Library/University Program/Audio &amp; Video/Video,Library/Processors and Peripherals,Project,Library/Processors and Peripherals/Peripherals,Library/Qsys Interconnect,Library/University Program/Clock,Library,Library/University Program/Audio &amp; Video" />
+ <window width="1920" height="1040" x="0" y="0" />
+ <generation block_symbol_file="0" />
+ <hdlexample language="VERILOG" />
+</preferences>

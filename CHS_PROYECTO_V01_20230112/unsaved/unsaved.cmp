@@ -1,9 +1,0 @@
-	component unsaved is
-		port (
-			clk_50_in_clk           : in std_logic := 'X'; -- clk
-			clk_50_2_in_clk         : in std_logic := 'X'; -- clk
-			clk_50_3_in_clk         : in std_logic := 'X'; -- clk
-			reset_bridge_in_reset_n : in std_logic := 'X'  -- reset_n
-		);
-	end component unsaved;
-
