@@ -1,0 +1,24 @@
+# system info video_ip_sim_qsys on 2023.02.03.13:53:35
+system_info:
+name,value
+DEVICE,EP4CE115F29C7
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1675428812
+#
+#
+# Files generated for video_ip_sim_qsys on 2023.02.03.13:53:35
+files:
+filepath,kind,attributes,module,is_top
+simulation/video_ip_sim_qsys.v,VERILOG,,video_ip_sim_qsys,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+video_ip_sim_qsys.mm_master_bfm_0,altera_avalon_mm_master_bfm
+video_ip_sim_qsys.st_sink_bfm_0,altera_avalon_st_sink_bfm
+video_ip_sim_qsys.st_source_bfm_0,altera_avalon_st_source_bfm
+video_ip_sim_qsys.video_effects_0,video_ip
+video_ip_sim_qsys.mm_interconnect_0,video_ip_sim_qsys_mm_interconnect_0
+video_ip_sim_qsys.avalon_st_adapter,video_ip_sim_qsys_avalon_st_adapter
+video_ip_sim_qsys.avalon_st_adapter_001,video_ip_sim_qsys_avalon_st_adapter_001
+video_ip_sim_qsys.rst_controller,altera_reset_controller

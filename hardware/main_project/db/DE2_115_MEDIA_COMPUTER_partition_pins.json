@@ -1168,19 +1168,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "TD_DATA[6]",
-					"strict" : false
-				},
-				{
 					"name" : "TD_DATA[5]",
 					"strict" : false
 				},
 				{
-					"name" : "TD_DATA[1]",
+					"name" : "TD_DATA[4]",
 					"strict" : false
 				},
 				{
-					"name" : "TD_DATA[4]",
+					"name" : "TD_DATA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[1]",
 					"strict" : false
 				},
 				{

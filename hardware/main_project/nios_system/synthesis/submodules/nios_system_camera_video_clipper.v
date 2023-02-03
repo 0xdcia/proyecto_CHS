@@ -59,13 +59,13 @@ module nios_system_camera_video_clipper (
 parameter DW							= 15; // Frame's data width
 parameter EW							= 0; // Frame's empty width
 
-parameter WIDTH_IN					= 720; // Incoming frame's width in pixels
+parameter WIDTH_IN					= 540; // Incoming frame's width in pixels
 parameter HEIGHT_IN					= 288; // Incoming frame's height in lines
 parameter WW_IN						= 9; // Incoming frame's width's address width
 parameter HW_IN						= 8; // Incoming frame's height's address width
 
-parameter DROP_PIXELS_AT_START	= 160;
-parameter DROP_PIXELS_AT_END		= 160;
+parameter DROP_PIXELS_AT_START	= 70;
+parameter DROP_PIXELS_AT_END		= 70;
 parameter DROP_LINES_AT_START		= 24;
 parameter DROP_LINES_AT_END		= 24;
 
