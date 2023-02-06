@@ -1,6 +1,9 @@
-18:23:25 **** Clean-only build of configuration Nios II for project nios_software ****
-make clean 
-makefile:235: *** BSP directory does not exist: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/.  Stop.
+18:35:04 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
 
-18:23:25 Build Finished (took 179ms)
+18:35:05 Build Finished (took 1s.317ms)
 

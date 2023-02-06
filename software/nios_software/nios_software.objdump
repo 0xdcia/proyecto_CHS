@@ -4404,7 +4404,7 @@ int initCreateTasks(){
     3034:	10003226 	beq	r2,zero,3100 <__call_exitprocs+0x178>
     3038:	a009883a 	mov	r4,r20
     303c:	98800015 	stw	r2,0(r19)
-    3040:	00000000 	call	0 <__reset>
+    3040:	00000000 	call	0 <__alt_mem_sdram>
     3044:	9d000017 	ldw	r20,0(r19)
     3048:	a03fe41e 	bne	r20,zero,2fdc <__alt_mem_onchip_memory+0xf7802fdc>
     304c:	dfc00a17 	ldw	ra,40(sp)
@@ -41067,7 +41067,7 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
    1b83c:	d9400015 	stw	r5,0(sp)
    1b840:	d9800115 	stw	r6,4(sp)
    1b844:	d9c00215 	stw	r7,8(sp)
-   1b848:	00000000 	call	0 <__reset>
+   1b848:	00000000 	call	0 <__alt_mem_sdram>
    1b84c:	d9400017 	ldw	r5,0(sp)
    1b850:	d9800117 	ldw	r6,4(sp)
    1b854:	d9c00217 	ldw	r7,8(sp)
