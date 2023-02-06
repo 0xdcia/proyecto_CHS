@@ -1,0 +1,50 @@
+unsigned int getWord(short int *handle){
+	unsigned int aux = 0;
+	aux = alt_up_sd_card_read(*handle);
+	aux |= alt_up_sd_card_read(*handle) << 8;
+	aux |= alt_up_sd_card_read(*handle) << 16;
+	aux |= alt_up_sd_card_read(*handle) << 24;
+	return aux;
+}
+
+unsigned short getShort(short int *handle){
+	unsigned short aux = 0;
+	aux = (alt_up_sd_card_read(*handle));
+	aux = aux | (alt_up_sd_card_read(*handle) << 8);
+	return aux;
+}
+
+// Determina si se trata de un fichero BMP
+bool isBMP(char archivo[13]){
+	//Comprobar el nombre de fichero
+	if(!strstr(archivo, ".bmp") && !strstr(archivo, ".BMP")){
+		return false;
+	}
+	short int handle = -1;
+	handle = alt_up_sd_card_fopen(archivo, false);
+	if(handle == -1){
+		printf("No se ha podido abrir %s", archivo);
+		return false;
+	}
+	//Comprobar la cabecera y formato
+	struct bmpFileHeader header;
+	if(!getFileheader(&handle, &header)){
+		printf("No se ha podido obtener la cabecera\n");
+		return false;
+	}
+
+	//Comprobar si es un BMP
+	if(header.signature != 0x4d42){
+		printf("Header invalido: %s\n", archivo);
+		return false;
+	}
+	alt_up_sd_card_fclose(handle);
+	return true;
+}
+
+#define HEADER 14
+bool getFileheader(short int *handle, struct bmpFileHeader* header_st);
+
+bool getInfoheader(short int *handle, struct bmpInfoHeader* info_st);
+
+void TaskSdcard(void *pdata);

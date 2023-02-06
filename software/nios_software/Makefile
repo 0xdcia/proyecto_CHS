@@ -146,6 +146,8 @@ C_SRCS += main.c
 C_SRCS += src/alt_ucosii_simple_error_check.c
 C_SRCS += src/app_config.c
 C_SRCS += src/task_config.c
+C_SRCS += src/isr.c
+C_SRCS += src/sdcard.c
 CXX_SRCS :=
 ASM_SRCS :=
 

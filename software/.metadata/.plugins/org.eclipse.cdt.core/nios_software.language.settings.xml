@@ -2007,6 +2007,23 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
+					<resource project-relative-path="src/sdcard.c">
+						<entry kind="includePath" name="/nios_software_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nios_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nios_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nios_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
 					<resource project-relative-path="HAL/src/alt_read.c">
 						<entry kind="includePath" name="/nios_software_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -2841,6 +2858,23 @@
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_icache_flush_all.c">
+						<entry kind="includePath" name="/nios_software_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nios_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nios_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nios_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="src/isr.c">
 						<entry kind="includePath" name="/nios_software_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>

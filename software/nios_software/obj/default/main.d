@@ -13,7 +13,8 @@ obj/default/main.o: main.c inc/task_config.h \
  c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\sys\alt_llist.h \
  c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\priv\alt_alarm.h \
  c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\ucosii\inc\ucos_ii.h \
- c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\os_cpu.h
+ c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\os_cpu.h \
+ inc/app_config.h
 
 inc/task_config.h:
 
@@ -46,3 +47,5 @@ c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\i
 c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\ucosii\inc\ucos_ii.h:
 
 c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\os_cpu.h:
+
+inc/app_config.h:

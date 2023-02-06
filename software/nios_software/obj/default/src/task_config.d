@@ -14,7 +14,7 @@ obj/default/src/task_config.o: src/task_config.c src/../inc/task_config.h \
  c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\priv\alt_alarm.h \
  c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\ucosii\inc\ucos_ii.h \
  c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\os_cpu.h \
- src/../inc/alt_ucosii_simple_error_check.h
+ src/../inc/alt_ucosii_simple_error_check.h src/../inc/sdcard.h
 
 src/../inc/task_config.h:
 
@@ -49,3 +49,5 @@ c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\ucosi
 c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\os_cpu.h:
 
 src/../inc/alt_ucosii_simple_error_check.h:
+
+src/../inc/sdcard.h:

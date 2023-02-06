@@ -2,6 +2,8 @@
 #include "../inc/task_config.h"
 #include "../inc/alt_ucosii_simple_error_check.h"
 #include "ucos_ii.h"
+#include "../inc/sdcard.h"
+
 
 void CreateTasks (void){
 	INT8U return_code = OS_NO_ERR;
@@ -39,5 +41,21 @@ void TaskInit(void* pdata)
 }
 
 int initCreateTasks(){
+	/* Comunicacion de tareas */
+		getimg = OSMboxCreate((void*)0);
+
+	/* Crear tareas*/
+		INT8U return_code = OS_NO_ERR;
+		return_code= OSTaskCreateExt(TaskSdcard,
+			                  NULL,
+			                  (void *)&image_task_stk[TASK_STACKSIZE-1],
+							  IMAGE_TASK_PRIORITY,
+							  IMAGE_TASK_PRIORITY,
+							  image_task_stk,
+			                  TASK_STACKSIZE,
+			                  NULL,
+			                  0);
+
+		alt_ucosii_check_return_code(return_code);
   return 0;
 }

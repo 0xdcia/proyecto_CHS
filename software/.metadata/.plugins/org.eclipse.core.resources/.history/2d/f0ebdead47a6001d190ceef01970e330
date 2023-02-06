@@ -1,0 +1,11 @@
+#include "..\inc\app_config.h"
+#include "..\inc\isr.h"
+#include "system.h"
+#include <stdlib.h>
+#include <includes.h>
+
+void Init_App(void){
+
+	//Registrar interrupciones
+	alt_irq_register(PUSHBUTTONS_IRQ, NULL, pushbutton_isr);
+}
