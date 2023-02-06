@@ -1,5 +1,5 @@
 Flow report for DE2_115_MEDIA_COMPUTER
-Fri Feb 03 18:02:05 2023
+Mon Feb 06 20:25:40 2023
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------+
 ; Flow Summary                                                                                  ;
 +------------------------------------+----------------------------------------------------------+
-; Flow Status                        ; Successful - Fri Feb 03 18:02:05 2023                    ;
+; Flow Status                        ; Successful - Mon Feb 06 20:25:40 2023                    ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
 ; Revision Name                      ; DE2_115_MEDIA_COMPUTER                                   ;
 ; Top-level Entity Name              ; DE2_115_Media_Computer                                   ;
 ; Family                             ; Cyclone IV E                                             ;
 ; Device                             ; EP4CE115F29C7                                            ;
 ; Timing Models                      ; Final                                                    ;
-; Total logic elements               ; 13,097 / 114,480 ( 11 % )                                ;
-;     Total combinational functions  ; 11,680 / 114,480 ( 10 % )                                ;
+; Total logic elements               ; 13,219 / 114,480 ( 12 % )                                ;
+;     Total combinational functions  ; 11,830 / 114,480 ( 10 % )                                ;
 ;     Dedicated logic registers      ; 8,161 / 114,480 ( 7 % )                                  ;
 ; Total registers                    ; 8280                                                     ;
 ; Total pins                         ; 359 / 529 ( 68 % )                                       ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 02/03/2023 17:58:35    ;
+; Start date & time ; 02/06/2023 20:22:04    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; DE2_115_MEDIA_COMPUTER ;
 +-------------------+------------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------+---------------+------------------------+----------------+
 ; Assignment Name                     ; Value                                                         ; Default Value ; Entity Name            ; Section Id     ;
 +-------------------------------------+---------------------------------------------------------------+---------------+------------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 242211430917590.167544351510848                               ; --            ; --                     ; --             ;
+; COMPILER_SIGNATURE_ID               ; 242211430917474.167571132403892                               ; --            ; --                     ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                   ; --            ; --                     ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                     ; <None>        ; --                     ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                                          ; --            ; --                     ; eda_simulation ;
@@ -92,7 +92,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                  ; --            ; --                     ; --             ;
 ; SLD_FILE                            ; nios_system/synthesis/nios_system.regmap                      ; --            ; --                     ; --             ;
 ; SLD_FILE                            ; nios_system/synthesis/nios_system.debuginfo                   ; --            ; --                     ; --             ;
-; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1675443415 ; --            ; nios_system            ; --             ;
+; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1675710927 ; --            ; nios_system            ; --             ;
 ; SOPCINFO_FILE                       ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --                     ; --             ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                            ; --            ; --                     ; --             ;
 +-------------------------------------+---------------------------------------------------------------+---------------+------------------------+----------------+
@@ -103,12 +103,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:50     ; 1.0                     ; 5239 MB             ; 00:02:14                           ;
-; Fitter                    ; 00:00:54     ; 1.1                     ; 6035 MB             ; 00:01:20                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 4750 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:09     ; 1.3                     ; 4999 MB             ; 00:00:10                           ;
-; EDA Netlist Writer        ; 00:00:15     ; 1.0                     ; 4837 MB             ; 00:00:15                           ;
-; Total                     ; 00:03:13     ; --                      ; --                  ; 00:04:03                           ;
+; Analysis & Synthesis      ; 00:01:53     ; 1.0                     ; 5241 MB             ; 00:02:21                           ;
+; Fitter                    ; 00:00:56     ; 1.1                     ; 6037 MB             ; 00:01:19                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 4748 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 1.3                     ; 4998 MB             ; 00:00:11                           ;
+; EDA Netlist Writer        ; 00:00:14     ; 1.0                     ; 4839 MB             ; 00:00:14                           ;
+; Total                     ; 00:03:18     ; --                      ; --                  ; 00:04:10                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -117,11 +117,11 @@ refer to the applicable agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; labpro09         ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; labpro09         ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; labpro09         ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; labpro09         ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer        ; labpro09         ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; labpro02         ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; labpro02         ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; labpro02         ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; labpro02         ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; labpro02         ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

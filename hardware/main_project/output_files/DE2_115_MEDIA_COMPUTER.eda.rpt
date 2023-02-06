@@ -1,5 +1,5 @@
 EDA Netlist Writer report for DE2_115_MEDIA_COMPUTER
-Fri Feb 03 18:02:05 2023
+Mon Feb 06 20:25:40 2023
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Feb 03 18:02:05 2023 ;
+; EDA Netlist Writer Status ; Successful - Mon Feb 06 20:25:40 2023 ;
 ; Revision Name             ; DE2_115_MEDIA_COMPUTER                ;
 ; Top-level Entity Name     ; DE2_115_Media_Computer                ;
 ; Family                    ; Cyclone IV E                          ;
@@ -66,20 +66,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                                ;
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                           ;
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_7_1200mv_85c_slow.vo     ;
-; C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_7_1200mv_0c_slow.vo      ;
-; C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_min_1200mv_0c_fast.vo    ;
-; C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER.vo                       ;
-; C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_7_1200mv_85c_v_slow.sdo  ;
-; C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_7_1200mv_0c_v_slow.sdo   ;
-; C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_min_1200mv_0c_v_fast.sdo ;
-; C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_v.sdo                    ;
-+-------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                               ;
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_7_1200mv_85c_slow.vo     ;
+; C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_7_1200mv_0c_slow.vo      ;
+; C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_min_1200mv_0c_fast.vo    ;
+; C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER.vo                       ;
+; C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_7_1200mv_85c_v_slow.sdo  ;
+; C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_7_1200mv_0c_v_slow.sdo   ;
+; C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_min_1200mv_0c_v_fast.sdo ;
+; C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/DE2_115_MEDIA_COMPUTER_v.sdo                    ;
++------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -88,21 +88,21 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
-    Info: Processing started: Fri Feb 03 18:01:50 2023
+    Info: Processing started: Mon Feb 06 20:25:26 2023
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off DE2_115_MEDIA_COMPUTER -c DE2_115_MEDIA_COMPUTER
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file DE2_115_MEDIA_COMPUTER_7_1200mv_85c_slow.vo in folder "C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file DE2_115_MEDIA_COMPUTER_7_1200mv_0c_slow.vo in folder "C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file DE2_115_MEDIA_COMPUTER_min_1200mv_0c_fast.vo in folder "C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file DE2_115_MEDIA_COMPUTER.vo in folder "C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file DE2_115_MEDIA_COMPUTER_7_1200mv_85c_v_slow.sdo in folder "C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file DE2_115_MEDIA_COMPUTER_7_1200mv_0c_v_slow.sdo in folder "C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file DE2_115_MEDIA_COMPUTER_min_1200mv_0c_v_fast.sdo in folder "C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file DE2_115_MEDIA_COMPUTER_v.sdo in folder "C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE2_115_MEDIA_COMPUTER_7_1200mv_85c_slow.vo in folder "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE2_115_MEDIA_COMPUTER_7_1200mv_0c_slow.vo in folder "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE2_115_MEDIA_COMPUTER_min_1200mv_0c_fast.vo in folder "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE2_115_MEDIA_COMPUTER.vo in folder "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE2_115_MEDIA_COMPUTER_7_1200mv_85c_v_slow.sdo in folder "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE2_115_MEDIA_COMPUTER_7_1200mv_0c_v_slow.sdo in folder "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE2_115_MEDIA_COMPUTER_min_1200mv_0c_v_fast.sdo in folder "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE2_115_MEDIA_COMPUTER_v.sdo in folder "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4837 megabytes
-    Info: Processing ended: Fri Feb 03 18:02:06 2023
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Peak virtual memory: 4839 megabytes
+    Info: Processing ended: Mon Feb 06 20:25:40 2023
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:14
 
 

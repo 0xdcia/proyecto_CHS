@@ -1,0 +1,54 @@
+/*
+ * main.c
+ *
+ *  Created on: 6 de feb. de 2023
+ *      Author: jdelpin
+ */
+
+
+#include <stdio.h>
+#include "system.h"
+
+#include "sys/alt_stdio.h"
+#include "sys/alt_irq.h"
+
+
+
+// Defines para los pulsadores
+#define KEY1 1
+#define KEY2 2
+#define KEY3 3
+
+
+
+volatile int * KEY_ptr = (int *) PUSHBUTTONS_BASE;  		// addr pulsadores KEY
+
+
+
+/* Rutina de interrupción de los pulsadores.
+ */
+void pushbutton_isr( )
+{
+	int press;
+
+	return;
+}
+
+
+
+/* Función principal
+ */
+int main(void)
+{
+	// Pulsadores
+	*(KEY_ptr + 2) = 0xE;  	// Máscara de los pulsadores (keys 3210: 1110) (el 0 es reset)
+	*(KEY_ptr + 3) = 0;		// Registro de los pulsadores a cero
+	alt_irq_register(PUSHBUTTONS_IRQ, NULL, pushbutton_isr);  // Habilitar int. pulsadores
+
+	alt_printf("Main finish\n");
+
+	while (1) {}
+}
+
+
+

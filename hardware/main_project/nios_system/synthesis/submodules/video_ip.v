@@ -4,6 +4,7 @@
 */
 
 
+
 module video_ip (
     
     input wire reset,  // reset
@@ -42,6 +43,7 @@ module video_ip (
 );
 
 
+
 // las señales tienen un flujo: 
 
 // "_in" ---> "in_reg" ---> "out_reg" ---> "_out"
@@ -52,7 +54,6 @@ module video_ip (
 // out: datos de salida de esta IP, con latencia con respecto a "in" (enviados por avalon_source)
 
 // Esto se debe a que debemos igualar la latencia de las señales de control con la de datos
-
 
 wire [31:0] reg3, reg2, reg1, reg0;
 wire [15:0] data_in_reg, data_out_reg;
@@ -69,31 +70,8 @@ wire endofpacket_in_reg;
 reg endofpacket_out_reg;
 
 
-// ///////////////////////////////////////////////////////////////////
 
-// INSTANCIACIÓN DEL AVALON_MM_SLAVE INTERFACE
-
-avalon_mm_slave_interface U1_AVALON_MM_SLAVE_1 (
-    .reset(reset),  // reset
-    .clk(clk),  // reloj
-    
-    .chipselect(chipselect),  // chipselect
-    .address(address),  // dirección acceso registros 
-    
-    .write(write),  // indicador escritura
-    .writedata(writedata),  // datos de escritura
-    
-    .read(read),  // indicador lectura 
-    .readdata(readdata),  // datos lectura
-    
-    .reg3(reg3),  // registro 3
-    .reg2(reg2),  // registro 2
-    .reg1(reg1),  // registro 1
-    .reg0(reg0)  // registro 0
-);
-
-
-
+// ///////////////////////////////////////////////////////////////////////////////
 // INSTANCIACIÓN DEL AVALON_STREAMING_SINK INTERFACE
 
 avalon_st_sink_interface U2_AVALON_ST_SINK_1 (
@@ -118,6 +96,7 @@ avalon_st_sink_interface U2_AVALON_ST_SINK_1 (
 
 
 
+// ///////////////////////////////////////////////////////////////////////////////
 // INSTANCIACIÓN DEL AVALON_STREAMING_SINK INTERFACE
 
 avalon_st_source_interface U3_AVALON_ST_SOURCE_1 (
@@ -142,22 +121,93 @@ avalon_st_source_interface U3_AVALON_ST_SOURCE_1 (
 
 
 
+// ///////////////////////////////////////////////////////////////////////////////
+// INSTANCIACIÓN DEL AVALON_MM_SLAVE INTERFACE
+
+avalon_mm_slave_interface U1_AVALON_MM_SLAVE_1 (
+    .reset(reset),  // reset
+    .clk(clk),  // reloj
+    
+    .chipselect(chipselect),  // chipselect
+    .address(address),  // dirección acceso registros 
+    
+    .write(write),  // indicador escritura
+    .writedata(writedata),  // datos de escritura
+    
+    .read(read),  // indicador lectura 
+    .readdata(readdata),  // datos lectura
+    
+    .reg3(reg3),  // registro 3
+    .reg2(reg2),  // registro 2
+    .reg1(reg1),  // registro 1
+    .reg0(reg0)   // registro 0
+);
+
+
+
+// ///////////////////////////////////////////////////////////////////////////////
+// MAPA DE REGISTROS DE AVALON-MM
+
+/*
++------+-------------------------------------------------------+---------------+--------------+
+| reg0 | [31:2]                                                | irq_enable[1] | pause_req[0] |
++------+---------+----------------------+---------+------------+----+-------+--+--------------+
+| reg1 | [31:18] | quantif_level[17:16] | [15:10] | delete_rgb[9:8] | [7:5] | effect_sel[4:0] |
++------+---------+----------------------+---------+-----------------+-------+-----------------+
+| reg2 | color_key[31:16]               | color_mask[15:0]                                    |
++------+--------------------------------+-----------------------------------------------------+
+| reg3 | [31:16]                        | color_substitute[15:0]                              |
++------+--------------------------------+-----------------------------------------------------+
+
+Leyenda:
+- nombre[A:B] = valor, bits útiles leídos desde el X al Y.
+- [A:B] = región vacía (no se lee)
+*/
+
+
+
+// ///////////////////////////////////////////////////////////////////////////////
 // INSTANCIACIÓN DEL MÓDULO DE EFECTOS DE VÍDEO
+// Consultar el mapa de registros para entender las asignaciones
 
 video_effects U4_VIDEO_EFFECTS_1 (
     .clk(clk),  // reloj
     .reset(reset),  // reset
     
-    .effect(5'b00000),  // indica el efecto de vídeo a aplicar. 5 bits -> 5 efectos diferentes, por sencillez.
+    .effect(reg1[4:0]),  // indica el efecto de vídeo a aplicar
     
-    // effect[4] : Eliminación de uno o varios colores RGB
-    // effect[3] : Sustitución de uno o varios colores por un valor constante
-    // effect[2] : Cuantificación
-    // effect[1] : Escala de grises
-    // effect[0] : Negativo
+    // effect[0] : Sustitución de uno o varios colores por un valor constante (Chroma Key)
+    //      Usar la variable effect_color_key para especificarlo
+    //      Usar la variable effect_color_key_mask para especificar el rango (bits considerados y bits ignorados)
+    //      Usar la variable effect_color_substitute para especificar el color de sustitución
     
-    .effect_delete_color(16'd0),  // indica el valor RGB a eliminar para los efectos que lo necesiten.
-    .effect_substitute_color(16'd0),  // indica el valor RGB a aplicar para los efectos que lo necesiten.
+    // effect[1] : Eliminación de uno o varios colores RGB
+    //      Usar la variable effect_delete_rgb para especificar la componente a borrar
+    
+    // effect[2] : Escala de grises. Se usa la técnica de luminosidad
+    
+    // effect[3] : Cuantificación
+    //      Usar la variable effect_quantif_level para especificar la precisión
+    
+    // effect[4] : Negativo
+    
+    .effect_delete_rgb(reg1[9:8]),  // indica el valor RGB a eliminar
+    
+    // effect_delete_rgb = 00 : No se elimina nada
+    // effect_delete_rgb = 01 : Eliminar R
+    // effect_delete_rgb = 10 : Eliminar G
+    // effect_delete_rgb = 11 : Eliminar B
+    
+    .effect_quantif_level(reg1[17:16]),  // indica el número de componentes a borrar (cuantificar) de cada color
+    
+    // effect_quantif_level = 00 : No se elimina nada
+    // effect_quantif_level = 01 : Se elimina el último bit (LSB)
+    // effect_quantif_level = 10 : Se eliminan los dos últimos bits
+    // effect_quantif_level = 11 : Se eliminan los tres últimos bits
+    
+    .effect_color_key(reg2[31:16]),  // indica el valor RGB a eliminar para los efectos que lo necesiten
+    .effect_color_key_mask(reg2[15:0]),  // indica la máscara de colores (rango) de colores a eliminar 
+    .effect_color_substitute(reg3[15:0]),  // indica el valor RGB por el que sustituir el color eliminado
     
     .video_data_in(data_in_reg),  // entrada de datos de vídeo, del avalon sink
     .video_data_out(data_out_reg)  // salida de datos de vídeo, procesados, al avalon source
@@ -165,8 +215,10 @@ video_effects U4_VIDEO_EFFECTS_1 (
 
 
 
+// ///////////////////////////////////////////////////////////////////////////////
+// CONTROL DE LATENCIA
+
 // Ciclo adicional para igualar la latencia de las señales de control con la de datos
-// Un ciclo adicional
 
 always @(posedge clk)
 begin

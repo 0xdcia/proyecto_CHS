@@ -1,13 +1,13 @@
-17:55:29 **** Clean-only build of configuration Nios II for project test_mtl_bsp ****
+20:30:21 **** Clean-only build of configuration Nios II for project ip_test_bsp ****
 make clean 
 [BSP clean complete]
-17:55:33 **** Clean-only build of configuration Nios II for project test_mtl ****
+20:30:25 **** Clean-only build of configuration Nios II for project ip_test ****
 make clean 
-[test_mtl clean complete]
-17:58:30 **** Build of configuration Nios II for project test_mtl ****
+[ip_test clean complete]
+20:43:18 **** Build of configuration Nios II for project ip_test ****
 make all 
-Info: Building ../test_mtl_bsp/
-C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../test_mtl_bsp/
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
 Compiling alt_alarm_start.c...
 nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_alarm_start.o HAL/src/alt_alarm_start.c
 Compiling alt_busy_sleep.c...
@@ -230,25 +230,160 @@ Creating libhal_bsp.a...
 rm -f -f libhal_bsp.a
 nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/Altera_UP_SD_Card_Avalon_Interface.o obj/drivers/src/altera_avalon_cfi_flash.o obj/drivers/src/altera_avalon_cfi_flash_amd.o obj/drivers/src/altera_avalon_cfi_flash_intel.o obj/drivers/src/altera_avalon_cfi_flash_table.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_performance_counter.o obj/drivers/src/altera_avalon_sysid_qsys.o obj/drivers/src/altera_avalon_timer_sc.o obj/drivers/src/altera_avalon_timer_ts.o obj/drivers/src/altera_avalon_timer_vars.o obj/drivers/src/altera_up_avalon_audio.o obj/drivers/src/altera_up_avalon_audio_and_video_config.o obj/drivers/src/altera_up_avalon_character_lcd.o obj/drivers/src/altera_up_avalon_parallel_port.o obj/drivers/src/altera_up_avalon_ps2.o obj/drivers/src/altera_up_avalon_rs232.o obj/drivers/src/altera_up_avalon_video_character_buffer_with_dma.o obj/drivers/src/altera_up_avalon_video_pixel_buffer_dma.o obj/drivers/src/altera_up_ps2_keyboard.o obj/drivers/src/altera_up_ps2_mouse.o obj/drivers/src/perf_print_formatted_report.o
 [BSP build complete]
-Info: Compiling test_mtl.c to obj/default/test_mtl.o
-nios2-elf-gcc -xc -MP -MMD -c -I../test_mtl_bsp//HAL/inc -I../test_mtl_bsp/ -I../test_mtl_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/test_mtl.o test_mtl.c
-Info: Linking test_mtl.elf
-nios2-elf-g++  -T'../test_mtl_bsp//linker.x' -msys-crt0='../test_mtl_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../test_mtl_bsp/   -Wl,-Map=test_mtl.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o test_mtl.elf obj/default/test_mtl.o -lm -msys-lib=m
-nios2-elf-insert test_mtl.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x10001040 --timestamp 1665761409 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_system --quartus_project_dir "C:/Users/jdelpin/Documents/QDesign/CHS_P1_EJ2/DE2_115_MEDIA_COMPUTER" --jdi ../..//output_files/DE2_115_MEDIA_COMPUTER.jdi --sopcinfo C:/Users/jdelpin/Documents/QDesign/CHS_P1_EJ2/DE2_115_MEDIA_COMPUTER/software/test_mtl_bsp/../../nios_system.sopcinfo
-Info: (test_mtl.elf) 46 KBytes program size (code + initialized data).
-Info:                131017 KBytes free for stack + heap.
-Info: Creating test_mtl.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source test_mtl.elf >test_mtl.objdump
-[test_mtl build complete]
-17:59:06 **** Build of configuration Nios II for project test_mtl ****
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ip_test_bsp//HAL/inc -I../ip_test_bsp/ -I../ip_test_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'pushbutton_isr':
+main.c:29:12: error: 'KEY_ptr' undeclared (first use in this function)
+  press = *(KEY_ptr + 3);     // Lee el registro de los pulsadores
+            ^
+main.c:29:12: note: each undeclared identifier is reported only once for each function it appears in
+main.c:33:3: error: 'count' undeclared (first use in this function)
+   count += 60;
+   ^
+main.c:41:2: warning: implicit declaration of function 'seconds_to_time_t' [-Wimplicit-function-declaration]
+  seconds_to_time_t(count, &time);   // Actualiza la estructura
+  ^
+main.c:41:28: error: 'time' undeclared (first use in this function)
+  seconds_to_time_t(count, &time);   // Actualiza la estructura
+                            ^
+main.c:42:2: warning: implicit declaration of function 'send_time_to_7seg' [-Wimplicit-function-declaration]
+  send_time_to_7seg(&time);     // Envía el reloj por los displays de 7 segmentos
+  ^
+main.c:43:2: warning: implicit declaration of function 'send_time_to_lcd_1602' [-Wimplicit-function-declaration]
+  send_time_to_lcd_1602(&time);  // Envía el reloj por el LCD
+  ^
+main.c:44:2: warning: implicit declaration of function 'draw_clock' [-Wimplicit-function-declaration]
+  draw_clock(&time);
+  ^
+main.c: In function 'main':
+main.c:56:4: error: 'KEY_ptr' undeclared (first use in this function)
+  *(KEY_ptr + 2) = 0xE;   // Máscara de los pulsadores (keys 3210: 1110) (el 0 es reset)
+    ^
+make: *** [obj/default/main.o] Error 1
+20:43:30 **** Build of configuration Nios II for project ip_test_bsp ****
 make all 
-Info: Building ../test_mtl_bsp/
-C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../test_mtl_bsp/
 [BSP build complete]
-[test_mtl build complete]
-17:59:09 **** Incremental Build of configuration Nios II for project test_mtl ****
+20:45:06 **** Incremental Build of configuration Nios II for project ip_test ****
 make all 
-Info: Building ../test_mtl_bsp/
-C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../test_mtl_bsp/
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
 [BSP build complete]
-[test_mtl build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ip_test_bsp//HAL/inc -I../ip_test_bsp/ -I../ip_test_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'pushbutton_isr':
+main.c:29:6: warning: unused variable 'press' [-Wunused-variable]
+  int press;
+      ^
+Info: Linking ip_test.elf
+nios2-elf-g++  -T'../ip_test_bsp//linker.x' -msys-crt0='../ip_test_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ip_test_bsp/   -Wl,-Map=ip_test.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o ip_test.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert ip_test.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x10001040 --timestamp 1675710927 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_system --quartus_project_dir "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project" --jdi ../..//output_files/DE2_115_MEDIA_COMPUTER.jdi --sopcinfo C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/software/ip_test_bsp/../../nios_system.sopcinfo
+Info: (ip_test.elf) 43 KBytes program size (code + initialized data).
+Info:               131020 KBytes free for stack + heap.
+Info: Creating ip_test.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ip_test.elf >ip_test.objdump
+[ip_test build complete]
+20:45:08 **** Incremental Build of configuration Nios II for project ip_test_bsp ****
+make all 
+[BSP build complete]
+21:00:48 **** Incremental Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ip_test_bsp//HAL/inc -I../ip_test_bsp/ -I../ip_test_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking ip_test.elf
+nios2-elf-g++  -T'../ip_test_bsp//linker.x' -msys-crt0='../ip_test_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ip_test_bsp/   -Wl,-Map=ip_test.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o ip_test.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert ip_test.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x10001040 --timestamp 1675710927 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_system --quartus_project_dir "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project" --jdi ../..//output_files/DE2_115_MEDIA_COMPUTER.jdi --sopcinfo C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/software/ip_test_bsp/../../nios_system.sopcinfo
+Info: (ip_test.elf) 43 KBytes program size (code + initialized data).
+Info:               131020 KBytes free for stack + heap.
+Info: Creating ip_test.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ip_test.elf >ip_test.objdump
+[ip_test build complete]
+21:00:50 **** Incremental Build of configuration Nios II for project ip_test_bsp ****
+make all 
+[BSP build complete]
+21:01:02 **** Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+[ip_test build complete]
+21:01:30 **** Incremental Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+[ip_test build complete]
+21:02:33 **** Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+[ip_test build complete]
+21:02:34 **** Incremental Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+[ip_test build complete]
+21:03:08 **** Incremental Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ip_test_bsp//HAL/inc -I../ip_test_bsp/ -I../ip_test_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking ip_test.elf
+nios2-elf-g++  -T'../ip_test_bsp//linker.x' -msys-crt0='../ip_test_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ip_test_bsp/   -Wl,-Map=ip_test.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o ip_test.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert ip_test.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x10001040 --timestamp 1675710927 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_system --quartus_project_dir "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project" --jdi ../..//output_files/DE2_115_MEDIA_COMPUTER.jdi --sopcinfo C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/software/ip_test_bsp/../../nios_system.sopcinfo
+Info: (ip_test.elf) 44 KBytes program size (code + initialized data).
+Info:               131020 KBytes free for stack + heap.
+Info: Creating ip_test.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ip_test.elf >ip_test.objdump
+[ip_test build complete]
+21:03:11 **** Incremental Build of configuration Nios II for project ip_test_bsp ****
+make all 
+[BSP build complete]
+21:03:21 **** Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+[ip_test build complete]
+21:03:23 **** Incremental Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+[ip_test build complete]
+21:04:12 **** Incremental Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ip_test_bsp//HAL/inc -I../ip_test_bsp/ -I../ip_test_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking ip_test.elf
+nios2-elf-g++  -T'../ip_test_bsp//linker.x' -msys-crt0='../ip_test_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ip_test_bsp/   -Wl,-Map=ip_test.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o ip_test.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert ip_test.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x10001040 --timestamp 1675710927 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_system --quartus_project_dir "C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project" --jdi ../..//output_files/DE2_115_MEDIA_COMPUTER.jdi --sopcinfo C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/software/ip_test_bsp/../../nios_system.sopcinfo
+Info: (ip_test.elf) 44 KBytes program size (code + initialized data).
+Info:               131020 KBytes free for stack + heap.
+Info: Creating ip_test.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ip_test.elf >ip_test.objdump
+[ip_test build complete]
+21:04:14 **** Incremental Build of configuration Nios II for project ip_test_bsp ****
+make all 
+[BSP build complete]
+21:04:26 **** Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+[ip_test build complete]
+21:04:27 **** Incremental Build of configuration Nios II for project ip_test ****
+make all 
+Info: Building ../ip_test_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
+[BSP build complete]
+[ip_test build complete]
