@@ -1,0 +1,6 @@
+18:23:25 **** Clean-only build of configuration Nios II for project nios_software ****
+make clean 
+makefile:235: *** BSP directory does not exist: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/.  Stop.
+
+18:23:25 Build Finished (took 179ms)
+
