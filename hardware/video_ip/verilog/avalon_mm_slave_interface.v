@@ -32,7 +32,17 @@ module avalon_mm_slave_interface (
 );
 
 
-//reg [31:0] reg3;
+
+// Inicializar registros
+initial
+begin
+    reg0 = 32'd0;
+    reg1 = 32'd0;
+    reg2 = 32'd0;
+    reg3 = 32'd0;
+    readdata = 32'd0;
+end
+
 
 always @(posedge clk)
 begin
