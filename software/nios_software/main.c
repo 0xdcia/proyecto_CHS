@@ -1,4 +1,5 @@
 #include "inc/task_config.h"
+#include "inc/app_config.h"
 
 int main(void)
 {

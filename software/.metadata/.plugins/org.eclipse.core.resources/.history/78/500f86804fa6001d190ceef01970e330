@@ -1,0 +1,13 @@
+unsigned int getWord(short int *handle);
+
+unsigned short getShort(short int *handle);
+
+// Determina si se trata de un fichero BMP
+bool isBMP(char archivo[13]);
+
+#define HEADER 14
+bool getFileheader(short int *handle, struct bmpFileHeader* header_st);
+
+bool getInfoheader(short int *handle, struct bmpInfoHeader* info_st);
+
+void TaskSdcard(void *pdata);

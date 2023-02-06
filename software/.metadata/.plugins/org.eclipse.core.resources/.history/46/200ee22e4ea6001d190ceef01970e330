@@ -1,0 +1,14 @@
+#include <includes.h>
+/* Configuracion global de las tareas */
+
+#define   TASK_STACKSIZE       2048
+OS_STK    initialize_task_stk[TASK_STACKSIZE];
+
+// Prioridades
+#define INITIALIZE_TASK_PRIORITY   6
+
+/* Lanza la tarea que crea el resto.
+ * Esta tarea debe autodestruirse al iniciar a las demás */
+void CreateTasks (void);
+void TaskInit(void* pdata);
+int initCreateTasks();
