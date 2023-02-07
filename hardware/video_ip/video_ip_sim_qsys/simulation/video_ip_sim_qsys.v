@@ -8,8 +8,19 @@ module video_ip_sim_qsys (
 		input  wire  reset_reset_n  // reset.reset_n
 	);
 
+	wire         video_effects_0_avalon_streaming_source_valid;             // video_effects_0:valid_out -> st_sink_bfm_0:sink_valid
+	wire  [15:0] video_effects_0_avalon_streaming_source_data;              // video_effects_0:data_out -> st_sink_bfm_0:sink_data
+	wire         video_effects_0_avalon_streaming_source_ready;             // st_sink_bfm_0:sink_ready -> video_effects_0:ready_in
+	wire         video_effects_0_avalon_streaming_source_startofpacket;     // video_effects_0:startofpacket_out -> st_sink_bfm_0:sink_startofpacket
+	wire         video_effects_0_avalon_streaming_source_endofpacket;       // video_effects_0:endofpacket_out -> st_sink_bfm_0:sink_endofpacket
+	wire   [0:0] st_source_bfm_0_src_valid;                                 // st_source_bfm_0:src_valid -> video_effects_0:valid_in
+	wire  [15:0] st_source_bfm_0_src_data;                                  // st_source_bfm_0:src_data -> video_effects_0:data_in
+	wire         st_source_bfm_0_src_ready;                                 // video_effects_0:ready_out -> st_source_bfm_0:src_ready
+	wire   [0:0] st_source_bfm_0_src_startofpacket;                         // st_source_bfm_0:src_startofpacket -> video_effects_0:startofpacket_in
+	wire   [0:0] st_source_bfm_0_src_endofpacket;                           // st_source_bfm_0:src_endofpacket -> video_effects_0:endofpacket_in
 	wire  [31:0] mm_master_bfm_0_m0_readdata;                               // mm_interconnect_0:mm_master_bfm_0_m0_readdata -> mm_master_bfm_0:avm_readdata
-	wire  [31:0] mm_master_bfm_0_m0_address;                                // mm_master_bfm_0:avm_address -> mm_interconnect_0:mm_master_bfm_0_m0_address
+	wire         mm_master_bfm_0_m0_waitrequest;                            // mm_interconnect_0:mm_master_bfm_0_m0_waitrequest -> mm_master_bfm_0:avm_waitrequest
+	wire   [2:0] mm_master_bfm_0_m0_address;                                // mm_master_bfm_0:avm_address -> mm_interconnect_0:mm_master_bfm_0_m0_address
 	wire         mm_master_bfm_0_m0_read;                                   // mm_master_bfm_0:avm_read -> mm_interconnect_0:mm_master_bfm_0_m0_read
 	wire  [31:0] mm_master_bfm_0_m0_writedata;                              // mm_master_bfm_0:avm_writedata -> mm_interconnect_0:mm_master_bfm_0_m0_writedata
 	wire         mm_master_bfm_0_m0_write;                                  // mm_master_bfm_0:avm_write -> mm_interconnect_0:mm_master_bfm_0_m0_write
@@ -19,33 +30,13 @@ module video_ip_sim_qsys (
 	wire         mm_interconnect_0_video_effects_0_avalon_slave_read;       // mm_interconnect_0:video_effects_0_avalon_slave_read -> video_effects_0:read
 	wire         mm_interconnect_0_video_effects_0_avalon_slave_write;      // mm_interconnect_0:video_effects_0_avalon_slave_write -> video_effects_0:write
 	wire  [31:0] mm_interconnect_0_video_effects_0_avalon_slave_writedata;  // mm_interconnect_0:video_effects_0_avalon_slave_writedata -> video_effects_0:writedata
-	wire         video_effects_0_avalon_streaming_source_valid;             // video_effects_0:valid_out -> avalon_st_adapter:in_0_valid
-	wire  [15:0] video_effects_0_avalon_streaming_source_data;              // video_effects_0:data_out -> avalon_st_adapter:in_0_data
-	wire         video_effects_0_avalon_streaming_source_ready;             // avalon_st_adapter:in_0_ready -> video_effects_0:ready_in
-	wire         video_effects_0_avalon_streaming_source_startofpacket;     // video_effects_0:startofpacket_out -> avalon_st_adapter:in_0_startofpacket
-	wire         video_effects_0_avalon_streaming_source_endofpacket;       // video_effects_0:endofpacket_out -> avalon_st_adapter:in_0_endofpacket
-	wire         avalon_st_adapter_out_0_valid;                             // avalon_st_adapter:out_0_valid -> st_sink_bfm_0:sink_valid
-	wire  [63:0] avalon_st_adapter_out_0_data;                              // avalon_st_adapter:out_0_data -> st_sink_bfm_0:sink_data
-	wire         avalon_st_adapter_out_0_ready;                             // st_sink_bfm_0:sink_ready -> avalon_st_adapter:out_0_ready
-	wire         avalon_st_adapter_out_0_startofpacket;                     // avalon_st_adapter:out_0_startofpacket -> st_sink_bfm_0:sink_startofpacket
-	wire         avalon_st_adapter_out_0_endofpacket;                       // avalon_st_adapter:out_0_endofpacket -> st_sink_bfm_0:sink_endofpacket
-	wire   [0:0] st_source_bfm_0_src_valid;                                 // st_source_bfm_0:src_valid -> avalon_st_adapter_001:in_0_valid
-	wire  [63:0] st_source_bfm_0_src_data;                                  // st_source_bfm_0:src_data -> avalon_st_adapter_001:in_0_data
-	wire         st_source_bfm_0_src_ready;                                 // avalon_st_adapter_001:in_0_ready -> st_source_bfm_0:src_ready
-	wire   [0:0] st_source_bfm_0_src_startofpacket;                         // st_source_bfm_0:src_startofpacket -> avalon_st_adapter_001:in_0_startofpacket
-	wire   [0:0] st_source_bfm_0_src_endofpacket;                           // st_source_bfm_0:src_endofpacket -> avalon_st_adapter_001:in_0_endofpacket
-	wire         avalon_st_adapter_001_out_0_valid;                         // avalon_st_adapter_001:out_0_valid -> video_effects_0:valid_in
-	wire  [15:0] avalon_st_adapter_001_out_0_data;                          // avalon_st_adapter_001:out_0_data -> video_effects_0:data_in
-	wire         avalon_st_adapter_001_out_0_ready;                         // video_effects_0:ready_out -> avalon_st_adapter_001:out_0_ready
-	wire         avalon_st_adapter_001_out_0_startofpacket;                 // avalon_st_adapter_001:out_0_startofpacket -> video_effects_0:startofpacket_in
-	wire         avalon_st_adapter_001_out_0_endofpacket;                   // avalon_st_adapter_001:out_0_endofpacket -> video_effects_0:endofpacket_in
-	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [avalon_st_adapter:in_rst_0_reset, avalon_st_adapter_001:in_rst_0_reset, mm_interconnect_0:mm_master_bfm_0_clk_reset_reset_bridge_in_reset_reset, mm_master_bfm_0:reset, st_sink_bfm_0:reset, st_source_bfm_0:reset, video_effects_0:reset]
+	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [mm_interconnect_0:mm_master_bfm_0_clk_reset_reset_bridge_in_reset_reset, mm_master_bfm_0:reset, st_sink_bfm_0:reset, st_source_bfm_0:reset, video_effects_0:reset]
 
 	altera_avalon_mm_master_bfm #(
-		.AV_ADDRESS_W               (32),
+		.AV_ADDRESS_W               (3),
 		.AV_SYMBOL_W                (8),
 		.AV_NUMSYMBOLS              (4),
-		.AV_BURSTCOUNT_W            (3),
+		.AV_BURSTCOUNT_W            (1),
 		.AV_READRESPONSE_W          (8),
 		.AV_WRITERESPONSE_W         (8),
 		.USE_READ                   (1),
@@ -58,17 +49,17 @@ module video_ip_sim_qsys (
 		.USE_WRITE_DATA             (1),
 		.USE_BEGIN_TRANSFER         (0),
 		.USE_BEGIN_BURST_TRANSFER   (0),
-		.USE_WAIT_REQUEST           (0),
+		.USE_WAIT_REQUEST           (1),
 		.USE_TRANSACTIONID          (0),
 		.USE_WRITERESPONSE          (0),
 		.USE_READRESPONSE           (0),
 		.USE_CLKEN                  (0),
-		.AV_CONSTANT_BURST_BEHAVIOR (1),
-		.AV_BURST_LINEWRAP          (1),
-		.AV_BURST_BNDR_ONLY         (1),
+		.AV_CONSTANT_BURST_BEHAVIOR (0),
+		.AV_BURST_LINEWRAP          (0),
+		.AV_BURST_BNDR_ONLY         (0),
 		.AV_MAX_PENDING_READS       (0),
 		.AV_MAX_PENDING_WRITES      (0),
-		.AV_FIX_READ_LATENCY        (1),
+		.AV_FIX_READ_LATENCY        (0),
 		.AV_READ_WAIT_TIME          (1),
 		.AV_WRITE_WAIT_TIME         (0),
 		.REGISTER_WAITREQUEST       (0),
@@ -80,12 +71,12 @@ module video_ip_sim_qsys (
 		.avm_address            (mm_master_bfm_0_m0_address),     //        m0.address
 		.avm_readdata           (mm_master_bfm_0_m0_readdata),    //          .readdata
 		.avm_writedata          (mm_master_bfm_0_m0_writedata),   //          .writedata
+		.avm_waitrequest        (mm_master_bfm_0_m0_waitrequest), //          .waitrequest
 		.avm_write              (mm_master_bfm_0_m0_write),       //          .write
 		.avm_read               (mm_master_bfm_0_m0_read),        //          .read
 		.avm_burstcount         (),                               // (terminated)
 		.avm_begintransfer      (),                               // (terminated)
 		.avm_beginbursttransfer (),                               // (terminated)
-		.avm_waitrequest        (1'b0),                           // (terminated)
 		.avm_byteenable         (),                               // (terminated)
 		.avm_readdatavalid      (1'b0),                           // (terminated)
 		.avm_arbiterlock        (),                               // (terminated)
@@ -109,25 +100,25 @@ module video_ip_sim_qsys (
 		.USE_VALID        (1),
 		.USE_EMPTY        (0),
 		.ST_SYMBOL_W      (16),
-		.ST_NUMSYMBOLS    (4),
+		.ST_NUMSYMBOLS    (1),
 		.ST_CHANNEL_W     (1),
 		.ST_ERROR_W       (1),
-		.ST_EMPTY_W       (2),
+		.ST_EMPTY_W       (1),
 		.ST_READY_LATENCY (0),
 		.ST_BEATSPERCYCLE (1),
-		.ST_MAX_CHANNELS  (1),
+		.ST_MAX_CHANNELS  (0),
 		.VHDL_ID          (0)
 	) st_sink_bfm_0 (
-		.clk                (clk_clk),                               //       clk.clk
-		.reset              (rst_controller_reset_out_reset),        // clk_reset.reset
-		.sink_data          (avalon_st_adapter_out_0_data),          //      sink.data
-		.sink_valid         (avalon_st_adapter_out_0_valid),         //          .valid
-		.sink_ready         (avalon_st_adapter_out_0_ready),         //          .ready
-		.sink_startofpacket (avalon_st_adapter_out_0_startofpacket), //          .startofpacket
-		.sink_endofpacket   (avalon_st_adapter_out_0_endofpacket),   //          .endofpacket
-		.sink_empty         (2'b00),                                 // (terminated)
-		.sink_channel       (1'b0),                                  // (terminated)
-		.sink_error         (1'b0)                                   // (terminated)
+		.clk                (clk_clk),                                               //       clk.clk
+		.reset              (rst_controller_reset_out_reset),                        // clk_reset.reset
+		.sink_data          (video_effects_0_avalon_streaming_source_data),          //      sink.data
+		.sink_valid         (video_effects_0_avalon_streaming_source_valid),         //          .valid
+		.sink_ready         (video_effects_0_avalon_streaming_source_ready),         //          .ready
+		.sink_startofpacket (video_effects_0_avalon_streaming_source_startofpacket), //          .startofpacket
+		.sink_endofpacket   (video_effects_0_avalon_streaming_source_endofpacket),   //          .endofpacket
+		.sink_empty         (1'b0),                                                  // (terminated)
+		.sink_channel       (1'b0),                                                  // (terminated)
+		.sink_error         (1'b0)                                                   // (terminated)
 	);
 
 	altera_avalon_st_source_bfm #(
@@ -138,13 +129,13 @@ module video_ip_sim_qsys (
 		.USE_VALID        (1),
 		.USE_EMPTY        (0),
 		.ST_SYMBOL_W      (16),
-		.ST_NUMSYMBOLS    (4),
+		.ST_NUMSYMBOLS    (1),
 		.ST_CHANNEL_W     (1),
 		.ST_ERROR_W       (1),
-		.ST_EMPTY_W       (2),
+		.ST_EMPTY_W       (1),
 		.ST_READY_LATENCY (0),
 		.ST_BEATSPERCYCLE (1),
-		.ST_MAX_CHANNELS  (1),
+		.ST_MAX_CHANNELS  (0),
 		.VHDL_ID          (0)
 	) st_source_bfm_0 (
 		.clk               (clk_clk),                           //       clk.clk
@@ -160,11 +151,11 @@ module video_ip_sim_qsys (
 	);
 
 	video_ip video_effects_0 (
-		.startofpacket_in  (avalon_st_adapter_001_out_0_startofpacket),                 //   avalon_streaming_sink.startofpacket
-		.endofpacket_in    (avalon_st_adapter_001_out_0_endofpacket),                   //                        .endofpacket
-		.data_in           (avalon_st_adapter_001_out_0_data),                          //                        .data
-		.ready_out         (avalon_st_adapter_001_out_0_ready),                         //                        .ready
-		.valid_in          (avalon_st_adapter_001_out_0_valid),                         //                        .valid
+		.startofpacket_in  (st_source_bfm_0_src_startofpacket),                         //   avalon_streaming_sink.startofpacket
+		.endofpacket_in    (st_source_bfm_0_src_endofpacket),                           //                        .endofpacket
+		.data_in           (st_source_bfm_0_src_data),                                  //                        .data
+		.ready_out         (st_source_bfm_0_src_ready),                                 //                        .ready
+		.valid_in          (st_source_bfm_0_src_valid),                                 //                        .valid
 		.data_out          (video_effects_0_avalon_streaming_source_data),              // avalon_streaming_source.data
 		.startofpacket_out (video_effects_0_avalon_streaming_source_startofpacket),     //                        .startofpacket
 		.endofpacket_out   (video_effects_0_avalon_streaming_source_endofpacket),       //                        .endofpacket
@@ -184,6 +175,7 @@ module video_ip_sim_qsys (
 		.clk_0_clk_clk                                         (clk_clk),                                                   //                                       clk_0_clk.clk
 		.mm_master_bfm_0_clk_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                            // mm_master_bfm_0_clk_reset_reset_bridge_in_reset.reset
 		.mm_master_bfm_0_m0_address                            (mm_master_bfm_0_m0_address),                                //                              mm_master_bfm_0_m0.address
+		.mm_master_bfm_0_m0_waitrequest                        (mm_master_bfm_0_m0_waitrequest),                            //                                                .waitrequest
 		.mm_master_bfm_0_m0_read                               (mm_master_bfm_0_m0_read),                                   //                                                .read
 		.mm_master_bfm_0_m0_readdata                           (mm_master_bfm_0_m0_readdata),                               //                                                .readdata
 		.mm_master_bfm_0_m0_write                              (mm_master_bfm_0_m0_write),                                  //                                                .write
@@ -194,70 +186,6 @@ module video_ip_sim_qsys (
 		.video_effects_0_avalon_slave_readdata                 (mm_interconnect_0_video_effects_0_avalon_slave_readdata),   //                                                .readdata
 		.video_effects_0_avalon_slave_writedata                (mm_interconnect_0_video_effects_0_avalon_slave_writedata),  //                                                .writedata
 		.video_effects_0_avalon_slave_chipselect               (mm_interconnect_0_video_effects_0_avalon_slave_chipselect)  //                                                .chipselect
-	);
-
-	video_ip_sim_qsys_avalon_st_adapter #(
-		.inBitsPerSymbol (16),
-		.inUsePackets    (1),
-		.inDataWidth     (16),
-		.inChannelWidth  (0),
-		.inErrorWidth    (0),
-		.inUseEmptyPort  (0),
-		.inUseValid      (1),
-		.inUseReady      (1),
-		.inReadyLatency  (0),
-		.outDataWidth    (64),
-		.outChannelWidth (0),
-		.outErrorWidth   (0),
-		.outUseEmptyPort (0),
-		.outUseValid     (1),
-		.outUseReady     (1),
-		.outReadyLatency (0)
-	) avalon_st_adapter (
-		.in_clk_0_clk        (clk_clk),                                               // in_clk_0.clk
-		.in_rst_0_reset      (rst_controller_reset_out_reset),                        // in_rst_0.reset
-		.in_0_data           (video_effects_0_avalon_streaming_source_data),          //     in_0.data
-		.in_0_valid          (video_effects_0_avalon_streaming_source_valid),         //         .valid
-		.in_0_ready          (video_effects_0_avalon_streaming_source_ready),         //         .ready
-		.in_0_startofpacket  (video_effects_0_avalon_streaming_source_startofpacket), //         .startofpacket
-		.in_0_endofpacket    (video_effects_0_avalon_streaming_source_endofpacket),   //         .endofpacket
-		.out_0_data          (avalon_st_adapter_out_0_data),                          //    out_0.data
-		.out_0_valid         (avalon_st_adapter_out_0_valid),                         //         .valid
-		.out_0_ready         (avalon_st_adapter_out_0_ready),                         //         .ready
-		.out_0_startofpacket (avalon_st_adapter_out_0_startofpacket),                 //         .startofpacket
-		.out_0_endofpacket   (avalon_st_adapter_out_0_endofpacket)                    //         .endofpacket
-	);
-
-	video_ip_sim_qsys_avalon_st_adapter_001 #(
-		.inBitsPerSymbol (16),
-		.inUsePackets    (1),
-		.inDataWidth     (64),
-		.inChannelWidth  (0),
-		.inErrorWidth    (0),
-		.inUseEmptyPort  (0),
-		.inUseValid      (1),
-		.inUseReady      (1),
-		.inReadyLatency  (0),
-		.outDataWidth    (16),
-		.outChannelWidth (0),
-		.outErrorWidth   (0),
-		.outUseEmptyPort (0),
-		.outUseValid     (1),
-		.outUseReady     (1),
-		.outReadyLatency (0)
-	) avalon_st_adapter_001 (
-		.in_clk_0_clk        (clk_clk),                                   // in_clk_0.clk
-		.in_rst_0_reset      (rst_controller_reset_out_reset),            // in_rst_0.reset
-		.in_0_data           (st_source_bfm_0_src_data),                  //     in_0.data
-		.in_0_valid          (st_source_bfm_0_src_valid),                 //         .valid
-		.in_0_ready          (st_source_bfm_0_src_ready),                 //         .ready
-		.in_0_startofpacket  (st_source_bfm_0_src_startofpacket),         //         .startofpacket
-		.in_0_endofpacket    (st_source_bfm_0_src_endofpacket),           //         .endofpacket
-		.out_0_data          (avalon_st_adapter_001_out_0_data),          //    out_0.data
-		.out_0_valid         (avalon_st_adapter_001_out_0_valid),         //         .valid
-		.out_0_ready         (avalon_st_adapter_001_out_0_ready),         //         .ready
-		.out_0_startofpacket (avalon_st_adapter_001_out_0_startofpacket), //         .startofpacket
-		.out_0_endofpacket   (avalon_st_adapter_001_out_0_endofpacket)    //         .endofpacket
 	);
 
 	altera_reset_controller #(

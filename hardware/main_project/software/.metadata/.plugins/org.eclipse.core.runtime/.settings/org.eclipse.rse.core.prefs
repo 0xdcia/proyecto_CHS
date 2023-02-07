@@ -1,2 +1,4 @@
+activeuserprofiles=Team;labpro01;labpro02
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=jdelpin
+useridperkey=labpro02.Local\=jdelpin;

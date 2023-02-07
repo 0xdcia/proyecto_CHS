@@ -8,7 +8,7 @@
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library,Project,Library/Basic Functions,Library/Basic Functions/Simulation; Debug and Verification,Project/proj_video_effects_ip,Library/Basic Functions/Simulation; Debug and Verification/Simulation" />
- <window width="1936" height="1056" x="-8" y="-8" />
+   expandedCategories="Library/Basic Functions/Simulation; Debug and Verification,Library,Library/Basic Functions,Library/Basic Functions/Simulation; Debug and Verification/Simulation,Project" />
+ <window width="1556" height="820" x="186" y="112" />
  <generation simulation="VERILOG" path="_PROJECT_NAME_" />
 </preferences>

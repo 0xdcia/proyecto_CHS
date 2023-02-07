@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.1 593 win32 2023.02.03.13:53:36
+# ACDS 17.1 593 win32 2023.02.07.17:41:44
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.1 593 win32 2023.02.03.13:53:36
+# ACDS 17.1 593 win32 2023.02.07.17:41:44
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="video_ip_sim_qsys"
@@ -137,6 +137,22 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf.v \
   $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneive_atoms.v \
+  $QSYS_SIMDIR/submodules/verbosity_pkg.sv \
+  $QSYS_SIMDIR/submodules/avalon_utilities_pkg.sv \
+  $QSYS_SIMDIR/submodules/avalon_mm_pkg.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv \
+  $QSYS_SIMDIR/submodules/altera_reset_controller.v \
+  $QSYS_SIMDIR/submodules/altera_reset_synchronizer.v \
+  $QSYS_SIMDIR/submodules/video_ip_sim_qsys_mm_interconnect_0.v \
+  $QSYS_SIMDIR/submodules/video_ip.v \
+  $QSYS_SIMDIR/submodules/avalon_mm_slave_interface.v \
+  $QSYS_SIMDIR/submodules/avalon_st_sink_interface.v \
+  $QSYS_SIMDIR/submodules/avalon_st_source_interface.v \
+  $QSYS_SIMDIR/submodules/video_effects.v \
+  $QSYS_SIMDIR/submodules/altera_avalon_st_source_bfm.sv \
+  $QSYS_SIMDIR/submodules/altera_avalon_st_sink_bfm.sv \
+  $QSYS_SIMDIR/submodules/altera_avalon_mm_master_bfm.sv \
   $QSYS_SIMDIR/video_ip_sim_qsys.v \
   -top $TOP_LEVEL_NAME
 # ----------------------------------------

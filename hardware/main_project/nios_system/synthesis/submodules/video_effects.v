@@ -115,9 +115,10 @@ begin
         video_data_mid = ~video_data_mid;
     end
     
+    video_data_mid = video_data_mid;
     
     // Si no entra en ningún caso, simplemente se asigna a la salida.
-    video_data_out = video_data_mid;
+    video_data_out <= video_data_mid;
     
 end
 

@@ -1,5 +1,5 @@
 Info: Starting: Create simulation model
-Info: qsys-generate C:\Users\jdelpin\Documents\QDesign\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\Users\jdelpin\Documents\QDesign\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading video_ip/video_ip_sim_qsys.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 17.1]
@@ -22,45 +22,48 @@ Progress: Done reading input file
 Info: video_ip_sim_qsys.st_sink_bfm_0: Use Empty set to zero - omitting sink_empty port
 Info: video_ip_sim_qsys.st_sink_bfm_0: Use Channels set to zero - omitting sink_channel port
 Info: video_ip_sim_qsys.st_sink_bfm_0: Use Error set to zero - omitting sink_error port
-Warning: video_ip_sim_qsys.st_sink_bfm_0.sink: The channel signal isn't wide enough to support the number of channels.
 Info: video_ip_sim_qsys.st_source_bfm_0: Use Empty set to zero - omitting src_empty port
 Info: video_ip_sim_qsys.st_source_bfm_0: Use Channels set to zero - omitting src_channel port
 Info: video_ip_sim_qsys.st_source_bfm_0: Use Error set to zero - omitting src_error port
-Warning: video_ip_sim_qsys.st_source_bfm_0.src: The channel signal isn't wide enough to support the number of channels.
-Info: video_ip_sim_qsys.video_effects_0.avalon_streaming_source/st_sink_bfm_0.sink: Max channel is 0 for source and 1 for sink. Avalon-ST Adapter will be inserted..
-Info: video_ip_sim_qsys.video_effects_0.avalon_streaming_source/st_sink_bfm_0.sink: The source data signal is 16 bits, but the sink is 64 bits. Avalon-ST Adapter will be inserted.
-Info: video_ip_sim_qsys.st_source_bfm_0.src/video_effects_0.avalon_streaming_sink: Max channel is 1 for source and 0 for sink. Avalon-ST Adapter will be inserted..
-Info: video_ip_sim_qsys.st_source_bfm_0.src/video_effects_0.avalon_streaming_sink: The source data signal is 64 bits, but the sink is 16 bits. Avalon-ST Adapter will be inserted.
 Info: video_ip_sim_qsys: Generating video_ip_sim_qsys "video_ip_sim_qsys" for SIM_VERILOG
-Info: Interconnect is inserted between master mm_master_bfm_0.m0 and slave video_effects_0.avalon_slave because the master has address signal 32 bit wide, but the slave is 3 bit wide.
-Info: avalon_st_adapter: Inserting data_format_adapter: data_format_adapter_0
-Error: avalon_st_adapter.data_format_adapter_0: The output interface has no empty signal, but this adapter has been configured to adapt a narrow input interface  symbols per beat(1) to a wide output interface symbols per beat(4).
-Info: avalon_st_adapter_001: Inserting data_format_adapter: data_format_adapter_0
-Error: Generation stopped, 8 or more modules remaining
-Info: video_ip_sim_qsys: Done "video_ip_sim_qsys" with 9 modules, 1 files
-Error: qsys-generate failed with exit code 1: 2 Errors, 2 Warnings
+Info: Interconnect is inserted between master mm_master_bfm_0.m0 and slave video_effects_0.avalon_slave because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: mm_master_bfm_0: "video_ip_sim_qsys" instantiated altera_avalon_mm_master_bfm "mm_master_bfm_0"
+Info: st_sink_bfm_0: "video_ip_sim_qsys" instantiated altera_avalon_st_sink_bfm "st_sink_bfm_0"
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/submodules/avalon_utilities_pkg.sv
+Info: st_source_bfm_0: "video_ip_sim_qsys" instantiated altera_avalon_st_source_bfm "st_source_bfm_0"
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/submodules/avalon_utilities_pkg.sv
+Info: video_effects_0: "video_ip_sim_qsys" instantiated video_effects "video_effects_0"
+Info: mm_interconnect_0: "video_ip_sim_qsys" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "video_ip_sim_qsys" instantiated altera_reset_controller "rst_controller"
+Info: mm_master_bfm_0_m0_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "mm_master_bfm_0_m0_translator"
+Info: video_effects_0_avalon_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "video_effects_0_avalon_slave_translator"
+Info: video_ip_sim_qsys: Done "video_ip_sim_qsys" with 9 modules, 18 files
+Info: qsys-generate succeeded.
 Info: Finished: Create simulation model
 Info: Starting: Create Modelsim Project.
-Info: sim-script-gen --spd=C:\Users\jdelpin\Documents\QDesign\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\video_ip_sim_qsys.spd --output-directory=C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ --use-relative-paths=true
-Info: Doing: ip-make-simscript --spd=C:\Users\jdelpin\Documents\QDesign\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\video_ip_sim_qsys.spd --output-directory=C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ --use-relative-paths=true
-Info: Generating the following file(s) for MODELSIM simulator in C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ directory:
+Info: sim-script-gen --spd=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\video_ip_sim_qsys.spd --output-directory=C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\video_ip_sim_qsys.spd --output-directory=C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ directory:
 Info: 	mentor/msim_setup.tcl
-Info: Generating the following file(s) for VCS simulator in C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ directory:
+Info: Generating the following file(s) for VCS simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ directory:
 Info: 	synopsys/vcs/vcs_setup.sh
-Info: Generating the following file(s) for VCSMX simulator in C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ directory:
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ directory:
 Info: 	synopsys/vcsmx/synopsys_sim.setup
 Info: 	synopsys/vcsmx/vcsmx_setup.sh
-Info: Generating the following file(s) for NCSIM simulator in C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ directory:
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ directory:
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
-Info: Generating the following file(s) for RIVIERA simulator in C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ directory:
+Info: 	9 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/ directory:
 Info: 	aldec/rivierapro_setup.tcl
-Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/jdelpin/Documents/QDesign/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/.
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/simulation/.
 Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
 Info: Finished: Create Modelsim Project.
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate C:\Users\jdelpin\Documents\QDesign\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --block-symbol-file --output-directory=C:\Users\jdelpin\Documents\QDesign\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --block-symbol-file --output-directory=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading video_ip/video_ip_sim_qsys.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 17.1]
@@ -80,20 +83,14 @@ Progress: Done reading input file
 Info: video_ip_sim_qsys.st_sink_bfm_0: Use Empty set to zero - omitting sink_empty port
 Info: video_ip_sim_qsys.st_sink_bfm_0: Use Channels set to zero - omitting sink_channel port
 Info: video_ip_sim_qsys.st_sink_bfm_0: Use Error set to zero - omitting sink_error port
-Warning: video_ip_sim_qsys.st_sink_bfm_0.sink: The channel signal isn't wide enough to support the number of channels.
 Info: video_ip_sim_qsys.st_source_bfm_0: Use Empty set to zero - omitting src_empty port
 Info: video_ip_sim_qsys.st_source_bfm_0: Use Channels set to zero - omitting src_channel port
 Info: video_ip_sim_qsys.st_source_bfm_0: Use Error set to zero - omitting src_error port
-Warning: video_ip_sim_qsys.st_source_bfm_0.src: The channel signal isn't wide enough to support the number of channels.
-Info: video_ip_sim_qsys.video_effects_0.avalon_streaming_source/st_sink_bfm_0.sink: Max channel is 0 for source and 1 for sink. Avalon-ST Adapter will be inserted..
-Info: video_ip_sim_qsys.video_effects_0.avalon_streaming_source/st_sink_bfm_0.sink: The source data signal is 16 bits, but the sink is 64 bits. Avalon-ST Adapter will be inserted.
-Info: video_ip_sim_qsys.st_source_bfm_0.src/video_effects_0.avalon_streaming_sink: Max channel is 1 for source and 0 for sink. Avalon-ST Adapter will be inserted..
-Info: video_ip_sim_qsys.st_source_bfm_0.src/video_effects_0.avalon_streaming_sink: The source data signal is 64 bits, but the sink is 16 bits. Avalon-ST Adapter will be inserted.
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Users\jdelpin\Documents\QDesign\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --synthesis=VERILOG --output-directory=C:\Users\jdelpin\Documents\QDesign\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --synthesis=VERILOG --output-directory=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading video_ip/video_ip_sim_qsys.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 17.1]
@@ -113,21 +110,23 @@ Progress: Done reading input file
 Info: video_ip_sim_qsys.st_sink_bfm_0: Use Empty set to zero - omitting sink_empty port
 Info: video_ip_sim_qsys.st_sink_bfm_0: Use Channels set to zero - omitting sink_channel port
 Info: video_ip_sim_qsys.st_sink_bfm_0: Use Error set to zero - omitting sink_error port
-Warning: video_ip_sim_qsys.st_sink_bfm_0.sink: The channel signal isn't wide enough to support the number of channels.
 Info: video_ip_sim_qsys.st_source_bfm_0: Use Empty set to zero - omitting src_empty port
 Info: video_ip_sim_qsys.st_source_bfm_0: Use Channels set to zero - omitting src_channel port
 Info: video_ip_sim_qsys.st_source_bfm_0: Use Error set to zero - omitting src_error port
-Warning: video_ip_sim_qsys.st_source_bfm_0.src: The channel signal isn't wide enough to support the number of channels.
-Info: video_ip_sim_qsys.video_effects_0.avalon_streaming_source/st_sink_bfm_0.sink: Max channel is 0 for source and 1 for sink. Avalon-ST Adapter will be inserted..
-Info: video_ip_sim_qsys.video_effects_0.avalon_streaming_source/st_sink_bfm_0.sink: The source data signal is 16 bits, but the sink is 64 bits. Avalon-ST Adapter will be inserted.
-Info: video_ip_sim_qsys.st_source_bfm_0.src/video_effects_0.avalon_streaming_sink: Max channel is 1 for source and 0 for sink. Avalon-ST Adapter will be inserted..
-Info: video_ip_sim_qsys.st_source_bfm_0.src/video_effects_0.avalon_streaming_sink: The source data signal is 64 bits, but the sink is 16 bits. Avalon-ST Adapter will be inserted.
 Info: video_ip_sim_qsys: Generating video_ip_sim_qsys "video_ip_sim_qsys" for QUARTUS_SYNTH
-Info: Interconnect is inserted between master mm_master_bfm_0.m0 and slave video_effects_0.avalon_slave because the master has address signal 32 bit wide, but the slave is 3 bit wide.
-Info: avalon_st_adapter: Inserting data_format_adapter: data_format_adapter_0
-Error: avalon_st_adapter.data_format_adapter_0: The output interface has no empty signal, but this adapter has been configured to adapt a narrow input interface  symbols per beat(1) to a wide output interface symbols per beat(4).
-Info: avalon_st_adapter_001: Inserting data_format_adapter: data_format_adapter_0
-Error: Generation stopped, 8 or more modules remaining
-Info: video_ip_sim_qsys: Done "video_ip_sim_qsys" with 9 modules, 1 files
-Error: qsys-generate failed with exit code 1: 2 Errors, 2 Warnings
+Info: Interconnect is inserted between master mm_master_bfm_0.m0 and slave video_effects_0.avalon_slave because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: mm_master_bfm_0: "video_ip_sim_qsys" instantiated altera_avalon_mm_master_bfm "mm_master_bfm_0"
+Info: st_sink_bfm_0: "video_ip_sim_qsys" instantiated altera_avalon_st_sink_bfm "st_sink_bfm_0"
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv
+Info: st_source_bfm_0: "video_ip_sim_qsys" instantiated altera_avalon_st_source_bfm "st_source_bfm_0"
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv
+Info: video_effects_0: "video_ip_sim_qsys" instantiated video_effects "video_effects_0"
+Info: mm_interconnect_0: "video_ip_sim_qsys" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "video_ip_sim_qsys" instantiated altera_reset_controller "rst_controller"
+Info: mm_master_bfm_0_m0_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "mm_master_bfm_0_m0_translator"
+Info: video_effects_0_avalon_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "video_effects_0_avalon_slave_translator"
+Info: video_ip_sim_qsys: Done "video_ip_sim_qsys" with 9 modules, 18 files
+Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

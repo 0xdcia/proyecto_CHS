@@ -8,6 +8,7 @@
 
 
 #include <stdio.h>
+#include "io.h"
 #include "system.h"
 
 #include "sys/alt_stdio.h"
@@ -36,19 +37,59 @@ void pushbutton_isr( )
 	alt_printf("Efectivamente me he interrumpido\n");
 
 	press = *(KEY_ptr + 3);  // Lee el registro de los pulsadores
-	*(KEY_ptr + 3) = 0;  // Elimina la interrupción
+	*(KEY_ptr + 3) = 0x0;  // Elimina la interrupción
 
-	if (press & 0x1) {  // Se ha pulsado el KEY2 (0100)
-		*(EFFECT_ptr + 1) = 0x1;
+	if (press & 0x1) {  // Se ha pulsado el KEY0 (0001)
+		alt_printf("Chroma key\n");
+
+		*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+		*(EFFECT_ptr + 1) = 0x00000001;  // Efecto: Chroma Key
+		*(EFFECT_ptr + 2) = 0x00000000;  // Chroma Key: H: color_key; L: color_mask
+		*(EFFECT_ptr + 3) = 0x00000000;  // Chroma Key: L: color_substitute
+
+		IOWR_32DIRECT(EFFECT_ptr, 0, 0x00000000);
+		IOWR_32DIRECT(EFFECT_ptr, 1, 0x00000001);
+		IOWR_32DIRECT(EFFECT_ptr, 2, 0x00000000);
+		IOWR_32DIRECT(EFFECT_ptr, 3, 0x00000000);
 	}
-	if (press & 0x2) {  // Se ha pulsado el KEY2 (0100)
-		*(EFFECT_ptr + 1) = 0x2;
+	if (press & 0x2) {  // Se ha pulsado el KEY1 (0010)
+		alt_printf("Eliminación RGB\n");
+
+		*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+		*(EFFECT_ptr + 1) = 0x00000102;  // Efecto: Eliminación de colores RGB. delete_rgb=1; elimina R
+		*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+		*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+
+		IOWR_32DIRECT(EFFECT_ptr, 0, 0x00000000);
+		IOWR_32DIRECT(EFFECT_ptr, 1, 0x00000102);
+		IOWR_32DIRECT(EFFECT_ptr, 2, 0x00000000);
+		IOWR_32DIRECT(EFFECT_ptr, 3, 0x00000000);
 	}
 	if (press & 0x4) {  // Se ha pulsado el KEY2 (0100)
-		*(EFFECT_ptr + 1) = 0x4;
+		alt_printf("Blanco y negro\n");
+
+		*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+		*(EFFECT_ptr + 1) = 0x00000004;  // Efecto: Escala de grises
+		*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+		*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+
+		IOWR_32DIRECT(EFFECT_ptr, 0, 0x00000000);
+		IOWR_32DIRECT(EFFECT_ptr, 1, 0x00000004);
+		IOWR_32DIRECT(EFFECT_ptr, 2, 0x00000000);
+		IOWR_32DIRECT(EFFECT_ptr, 3, 0x00000000);
 	}
 	if (press & 0x8) {  // Se ha pulsado el KEY3 (1000)
-		*(EFFECT_ptr + 1) = 0x10;
+		alt_printf("Cuantificación\n");
+
+		*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+		*(EFFECT_ptr + 1) = 0x00030008;  // Efecto: Cuantificación. cuantif_level=3; (max)
+		*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+		*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+
+		IOWR_32DIRECT(EFFECT_ptr, 0, 0x00000000);
+		IOWR_32DIRECT(EFFECT_ptr, 1, 0x00030008);
+		IOWR_32DIRECT(EFFECT_ptr, 2, 0x00000000);
+		IOWR_32DIRECT(EFFECT_ptr, 3, 0x00000000);
 	}
 
 	return;

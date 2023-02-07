@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.1 593 win32 2023.02.03.13:53:36
+# ACDS 17.1 593 win32 2023.02.07.17:41:44
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -106,7 +106,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.1 593 win32 2023.02.03.13:53:36
+# ACDS 17.1 593 win32 2023.02.07.17:41:44
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="video_ip_sim_qsys"
@@ -146,6 +146,15 @@ fi
 # ----------------------------------------
 # create compilation libraries
 mkdir -p ./libraries/work/
+mkdir -p ./libraries/altera_common_sv_packages/
+mkdir -p ./libraries/video_effects_0_avalon_slave_translator/
+mkdir -p ./libraries/mm_master_bfm_0_m0_translator/
+mkdir -p ./libraries/rst_controller/
+mkdir -p ./libraries/mm_interconnect_0/
+mkdir -p ./libraries/video_effects_0/
+mkdir -p ./libraries/st_source_bfm_0/
+mkdir -p ./libraries/st_sink_bfm_0/
+mkdir -p ./libraries/mm_master_bfm_0/
 mkdir -p ./libraries/altera_ver/
 mkdir -p ./libraries/lpm_ver/
 mkdir -p ./libraries/sgate_ver/
@@ -170,7 +179,23 @@ fi
 # ----------------------------------------
 # compile design files in correct order
 if [ $SKIP_COM -eq 0 ]; then
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys.v"
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/verbosity_pkg.sv"                      -work altera_common_sv_packages               -cdslib ./cds_libs/altera_common_sv_packages.cds.lib              
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/avalon_utilities_pkg.sv"               -work altera_common_sv_packages               -cdslib ./cds_libs/altera_common_sv_packages.cds.lib              
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/avalon_mm_pkg.sv"                      -work altera_common_sv_packages               -cdslib ./cds_libs/altera_common_sv_packages.cds.lib              
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv"     -work video_effects_0_avalon_slave_translator -cdslib ./cds_libs/video_effects_0_avalon_slave_translator.cds.lib
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv"    -work mm_master_bfm_0_m0_translator           -cdslib ./cds_libs/mm_master_bfm_0_m0_translator.cds.lib          
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_reset_controller.v"             -work rst_controller                          -cdslib ./cds_libs/rst_controller.cds.lib                         
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"           -work rst_controller                          -cdslib ./cds_libs/rst_controller.cds.lib                         
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/video_ip_sim_qsys_mm_interconnect_0.v" -work mm_interconnect_0                       -cdslib ./cds_libs/mm_interconnect_0.cds.lib                      
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/video_ip.v"                            -work video_effects_0                         -cdslib ./cds_libs/video_effects_0.cds.lib                        
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/avalon_mm_slave_interface.v"           -work video_effects_0                         -cdslib ./cds_libs/video_effects_0.cds.lib                        
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/avalon_st_sink_interface.v"            -work video_effects_0                         -cdslib ./cds_libs/video_effects_0.cds.lib                        
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/avalon_st_source_interface.v"          -work video_effects_0                         -cdslib ./cds_libs/video_effects_0.cds.lib                        
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/video_effects.v"                       -work video_effects_0                         -cdslib ./cds_libs/video_effects_0.cds.lib                        
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_source_bfm.sv"        -work st_source_bfm_0                         -cdslib ./cds_libs/st_source_bfm_0.cds.lib                        
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_sink_bfm.sv"          -work st_sink_bfm_0                           -cdslib ./cds_libs/st_sink_bfm_0.cds.lib                          
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_mm_master_bfm.sv"        -work mm_master_bfm_0                         -cdslib ./cds_libs/mm_master_bfm_0.cds.lib                        
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/video_ip_sim_qsys.v"                                                                                                                                              
 fi
 
 # ----------------------------------------

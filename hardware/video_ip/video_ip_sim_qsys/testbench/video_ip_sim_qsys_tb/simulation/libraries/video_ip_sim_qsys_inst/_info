@@ -1,0 +1,31 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation
+vvideo_ip_sim_qsys
+!s110 1675796595
+!i10b 1
+!s100 IhmTS;kWeJ2mF?gIeQzmd3
+IACXl:KjgYZ^3VYndjTB=g1
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1675788280
+8../../video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys.v
+F../../video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys.v
+L0 6
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1675796595.000000
+!s107 ../../video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys.v|
+!s90 -reportprogress|300|../../video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys.v|-work|video_ip_sim_qsys_inst|
+!i113 1
+o-work video_ip_sim_qsys_inst
+tCvgOpt 0
