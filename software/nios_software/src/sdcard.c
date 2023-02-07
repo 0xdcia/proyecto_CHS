@@ -127,8 +127,6 @@ int image = 0;
 void TaskSdcard(void *pdata){
 	/* Cambiar de donde lee la DMA de la pantalla */
 	int SRAM_BASE_SIN_CACHE = (SRAM_BASE + 0x080000000);
-	IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 0, SRAM_BASE_SIN_CACHE);
-	IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 4, SRAM_BASE_SIN_CACHE);
 
 	num_imgs=loadFiles();
 	printf("SdCard: Voy a dormir, %d archivos\n", num_imgs);
@@ -140,8 +138,6 @@ void TaskSdcard(void *pdata){
 		p_msg = OSMboxPend(getimg, 0, &err);
 		alt_ucosii_check_return_code(err);
 		printf("SdCard: Me despierto %d\n", p_msg);
-
-		//IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 0, SRAM_BASE_SIN_CACHE);
 		int offset;
 
 		short aux[3];
