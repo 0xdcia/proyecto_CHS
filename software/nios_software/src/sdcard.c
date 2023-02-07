@@ -4,6 +4,7 @@
 #include "../inc/task_config.h"
 #include "../inc/sdcard.h"
 #include "../inc/alt_ucosii_simple_error_check.h"
+#include <io.h>
 
 unsigned int getWord(short int *handle){
 	unsigned int aux = 0;
@@ -72,16 +73,111 @@ bool getInfoheader(short int *handle, struct bmpInfoHeader* info_st){
 	info_st->importantColors = getWord(handle);
 	return true;
 }
+char archivos[512][13];
+int num_imgs = 0;
+int loadFiles(){
+	alt_up_sd_card_dev* sd_card = alt_up_sd_card_open_dev(SD_CARD_NAME);
+	if(sd_card == NULL){
+		printf("No hemos podido abrir /dev/sdcard\n");
+		return 0;
+	}
+	if(alt_up_sd_card_is_Present() ==  false){
+		printf("No se ha detectado una tarjeta SD\n");
+		return 0;
+	}
+	if(!alt_up_sd_card_is_FAT16()){
+		printf("La tarjeta no está en FAT16\n");
+		return 0;
+	}
+
+
+
+	//find first
+	char nombre[13];
+	unsigned short i = 0;
+	if(alt_up_sd_card_find_first(".", nombre) == 0){
+		if(isBMP(nombre)){
+			strcpy(archivos[i], nombre);
+			//printf("Archivo bmp %s encontrado!\n", archivos[i]);
+			i++;
+		}
+		//find next
+		while(alt_up_sd_card_find_next(nombre)== 0){
+			if(isBMP(nombre)){
+				strcpy(archivos[i], &nombre[0]);
+				//printf("Archivo bmp %s encontrado!\n", archivos[i]);
+				i++;
+			}
+
+		}
+		return i;
+	}
+	else{
+		printf("Error encontrando archivos en el directorio '.'\n");
+		return 0;
+	}
+}
+
+//Lee todas las imagenes de la tarjeta sd
+//Una vez despertada, dibuja en pantalla la imagen elegida
+//Si la imagen cambia mientras se dibuja, se reinicia el dibujado
+
+int image = 0;
 
 void TaskSdcard(void *pdata){
-	printf("SdCard: Voy a dormir\n");
-	void *p_msg;
-	while(1){
-		p_msg = OSMboxPend(getimg, 0, err);
+	/* Cambiar de donde lee la DMA de la pantalla */
+	int SRAM_BASE_SIN_CACHE = (SRAM_BASE + 0x080000000);
+	IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 0, SRAM_BASE_SIN_CACHE);
+	IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 4, SRAM_BASE_SIN_CACHE);
 
-		//alt_ucosii_check_return_code(err);
-		OSTimeDlyHMSM(0, 0, 2, 0);
+	num_imgs=loadFiles();
+	printf("SdCard: Voy a dormir, %d archivos\n", num_imgs);
+	void *p_msg;
+	INT8U err;
+	volatile short * pixel_buffer = (short *) SRAM_BASE_SIN_CACHE;	// MTL pixel buffer
+
+	while(1){
+		p_msg = OSMboxPend(getimg, 0, &err);
+		alt_ucosii_check_return_code(err);
 		printf("SdCard: Me despierto %d\n", p_msg);
+
+		//IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 0, SRAM_BASE_SIN_CACHE);
+		int offset;
+
+		short aux[3];
+		int old_img = -1;
+		struct bmpFileHeader header;
+		struct bmpInfoHeader info_st;
+		short int handle = -1;
+
+		while((image%num_imgs)!= old_img){
+			old_img = (image%num_imgs);
+			printf("SdCard: Dibujando imagen\n");
+			handle = alt_up_sd_card_fopen(archivos[old_img], false);
+			//getHeader
+			getFileheader(&handle, &header);
+			//getInfo
+			getInfoheader(&handle, &info_st);
+			//Pixeles
+			for(int i = 240-1; i >= 0; i--){
+				if((image%num_imgs)!= old_img){
+					//Cerrar archivo y cargar el siguiente
+					alt_up_sd_card_fclose(handle);
+					printf("SdCard: Imagen cambiada\n");
+					break;
+				}
+				for(int j = 0; j < 400; j++){
+					offset = (i << 9) + j;
+					aux[0] = alt_up_sd_card_read(handle);
+					aux[1] = alt_up_sd_card_read(handle);
+					aux[2] = alt_up_sd_card_read(handle);
+					*(pixel_buffer + offset) = CONVERT_888RGB_TO_565BGR(aux[2], aux[1], aux[0]);
+
+				}
+			}
+			alt_up_sd_card_fclose(handle);
+		}
+		printf("SdCard: Imagen dibujada %d\n", p_msg);
 	}
 
 }

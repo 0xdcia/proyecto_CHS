@@ -1,6 +1,7 @@
 #include "..\inc\app_config.h"
 #include "..\inc\isr.h"
 #include "system.h"
+#include "..\inc\task_config.h"
 #include <stdlib.h>
 #include <includes.h>
 #include <stdio.h>
@@ -22,4 +23,7 @@ void Init_App(void){
 	*(KEY_ptr + 2) = 0xF;
 	*(KEY_ptr + 3) = 0;
 	alt_irq_register(PUSHBUTTONS_IRQ, NULL, pushbutton_isr);
+
+	//Inicializar mailbox
+	getimg = OSMboxCreate((void *)1);
 }

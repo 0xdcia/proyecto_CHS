@@ -1,4 +1,0 @@
-#include <stdio.h>
-#include <string.h>
-#include <Altera_UP_SD_Card_Avalon_Interface.h>
-

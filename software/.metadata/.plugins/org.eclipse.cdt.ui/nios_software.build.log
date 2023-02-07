@@ -1,9 +1,6 @@
-20:52:55 **** Incremental Build of configuration Nios II for project nios_software ****
-make all 
-Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
-C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
-[BSP build complete]
-[nios_software build complete]
+18:40:46 **** Clean-only build of configuration Nios II for project nios_software ****
+make clean 
+[nios_software clean complete]
 
-20:52:57 Build Finished (took 1s.317ms)
+18:40:46 Build Finished (took 356ms)
 

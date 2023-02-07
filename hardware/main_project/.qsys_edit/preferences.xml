@@ -10,7 +10,7 @@
    <export preferredWidth="262" />
   </columns>
  </systemtable>
- <library expandedCategories="Library,Project,Library/proj_video_effects_ip" />
+ <library expandedCategories="Library,Project" />
  <window width="1936" height="1056" x="-8" y="-8" />
  <generation block_symbol_file="0" />
  <hdlexample language="VERILOG" />

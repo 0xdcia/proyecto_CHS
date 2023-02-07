@@ -1,4 +1,7 @@
 #include <stdbool.h>
+#define CONVERT_888RGB_TO_565BGR(r, g, b) (((b&0xFF) >> 3) | (((g&0xFF) >> 2) << 5) | (((r&0xFF) >> 3) << 11))
+
+extern int image;
 
 struct bmpFileHeader{
 	unsigned short signature; /* Identificador mágico 'BM' */
