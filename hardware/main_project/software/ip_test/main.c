@@ -33,6 +33,7 @@ volatile int * EFFECT_ptr = (int * ) VIDEO_EFFECTS_BASE;  // addr EFFECTS
 void pushbutton_isr( )
 {
 	int press;
+	int reg_value;
 
 	alt_printf("Efectivamente me he interrumpido\n");
 
@@ -77,6 +78,10 @@ void pushbutton_isr( )
 		IOWR_32DIRECT(EFFECT_ptr, 1, 0x00000004);
 		IOWR_32DIRECT(EFFECT_ptr, 2, 0x00000000);
 		IOWR_32DIRECT(EFFECT_ptr, 3, 0x00000000);
+
+		reg_value = *(EFFECT_ptr + 1);
+
+		alt_printf("valor_registro1: %d\n", reg_value);
 	}
 	if (press & 0x8) {  // Se ha pulsado el KEY3 (1000)
 		alt_printf("Cuantificación\n");

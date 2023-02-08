@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Tue Feb 07 20:54:12 CET 2023
+ * Generated: Wed Feb 08 13:27:01 CET 2023
  */
 
 /*
@@ -281,7 +281,7 @@
  */
 
 #define ALT_MODULE_CLASS_camera_video_dma_controller altera_up_avalon_video_dma_controller
-#define CAMERA_VIDEO_DMA_CONTROLLER_BASE 0x11000000
+#define CAMERA_VIDEO_DMA_CONTROLLER_BASE 0x10000120
 #define CAMERA_VIDEO_DMA_CONTROLLER_IRQ -1
 #define CAMERA_VIDEO_DMA_CONTROLLER_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define CAMERA_VIDEO_DMA_CONTROLLER_NAME "/dev/camera_video_dma_controller"
@@ -600,7 +600,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1675799280
+#define SYSID_TIMESTAMP 1675858799
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -636,7 +636,7 @@
  */
 
 #define ALT_MODULE_CLASS_video_dma_controller_ip_input altera_up_avalon_video_dma_controller
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_BASE 0x11000010
+#define VIDEO_DMA_CONTROLLER_IP_INPUT_BASE 0x10000130
 #define VIDEO_DMA_CONTROLLER_IP_INPUT_IRQ -1
 #define VIDEO_DMA_CONTROLLER_IP_INPUT_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define VIDEO_DMA_CONTROLLER_IP_INPUT_NAME "/dev/video_dma_controller_ip_input"
@@ -650,7 +650,7 @@
  */
 
 #define ALT_MODULE_CLASS_video_dma_controller_ip_output altera_up_avalon_video_dma_controller
-#define VIDEO_DMA_CONTROLLER_IP_OUTPUT_BASE 0x11000040
+#define VIDEO_DMA_CONTROLLER_IP_OUTPUT_BASE 0x10000160
 #define VIDEO_DMA_CONTROLLER_IP_OUTPUT_IRQ -1
 #define VIDEO_DMA_CONTROLLER_IP_OUTPUT_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define VIDEO_DMA_CONTROLLER_IP_OUTPUT_NAME "/dev/video_dma_controller_ip_output"
@@ -664,7 +664,7 @@
  */
 
 #define ALT_MODULE_CLASS_video_effects video_effects
-#define VIDEO_EFFECTS_BASE 0x11000020
+#define VIDEO_EFFECTS_BASE 0x10000140
 #define VIDEO_EFFECTS_IRQ -1
 #define VIDEO_EFFECTS_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define VIDEO_EFFECTS_NAME "/dev/video_effects"

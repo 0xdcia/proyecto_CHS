@@ -16,7 +16,10 @@
 
 `define CLK tb.video_ip_sim_qsys_inst_clk_bfm_clk_clk
 `define RST tb.video_ip_sim_qsys_inst_reset_bfm_reset_reset
-`define BFM tb.video_ip_sim_qsys_inst.mm_master_bfm_0
+`define AV_MM_BFM tb.video_ip_sim_qsys_inst.mm_master_bfm_0
+
+`define AV_ST_SINK_1_BFM tb.video_ip_sim_qsys_inst.mm_master_bfm_0
+`define AV_ST_SOURCE_1_BFM tb.video_ip_sim_qsys_inst.mm_master_bfm_0
 
 //----------------------------------------------------------------------------------------------
 
@@ -40,7 +43,7 @@ initial
 begin
 
     set_verbosity(`VERBOSITY);
-    `BFM.init();
+    `AV_MM_BFM.init();
 
     // Espera hasta que el reset esté inactivo
     wait(`RST == 1);
@@ -86,21 +89,21 @@ end
     );
     begin
         // Construct the BFM request
-        `BFM.set_command_request(REQ_WRITE);
-        `BFM.set_command_idle(0, 0);
-        `BFM.set_command_init_latency(0);
-        `BFM.set_command_address(addr);
-        `BFM.set_command_byte_enable('1,0);
-        `BFM.set_command_data(data, 0);
-        `BFM.set_command_burst_count(1);
-        `BFM.set_command_burst_size(1);
+        `AV_MM_BFM.set_command_request(REQ_WRITE);
+        `AV_MM_BFM.set_command_idle(0, 0);
+        `AV_MM_BFM.set_command_init_latency(0);
+        `AV_MM_BFM.set_command_address(addr);
+        `AV_MM_BFM.set_command_byte_enable('1,0);
+        `AV_MM_BFM.set_command_data(data, 0);
+        `AV_MM_BFM.set_command_burst_count(1);
+        `AV_MM_BFM.set_command_burst_size(1);
         // Queue the command
-        `BFM.push_command();
+        `AV_MM_BFM.push_command();
         // Wait until the transaction has completed
-        while (`BFM.get_response_queue_size() != 1)
+        while (`AV_MM_BFM.get_response_queue_size() != 1)
         @(posedge `CLK);
         // Dequeue the response and discard
-        `BFM.pop_response();
+        `AV_MM_BFM.pop_response();
     end
 
     endtask
@@ -116,22 +119,22 @@ end
     begin
 
         // Construct the BFM request
-        `BFM.set_command_request(REQ_READ);
-        `BFM.set_command_idle(0, 0);
-        `BFM.set_command_init_latency(0);
-        `BFM.set_command_address(addr);
-        `BFM.set_command_byte_enable('1,0);
-        `BFM.set_command_data(0, 0);
-        `BFM.set_command_burst_count(1);
-        `BFM.set_command_burst_size(1);
+        `AV_MM_BFM.set_command_request(REQ_READ);
+        `AV_MM_BFM.set_command_idle(0, 0);
+        `AV_MM_BFM.set_command_init_latency(0);
+        `AV_MM_BFM.set_command_address(addr);
+        `AV_MM_BFM.set_command_byte_enable('1,0);
+        `AV_MM_BFM.set_command_data(0, 0);
+        `AV_MM_BFM.set_command_burst_count(1);
+        `AV_MM_BFM.set_command_burst_size(1);
         // Queue the command
-        `BFM.push_command();
+        `AV_MM_BFM.push_command();
         // Wait until the transaction has completed
-        while (`BFM.get_response_queue_size() != 1)
+        while (`AV_MM_BFM.get_response_queue_size() != 1)
         @(posedge `CLK);
         // Dequeue the response and return the data
-        `BFM.pop_response();
-        data = `BFM.get_response_data(0);
+        `AV_MM_BFM.pop_response();
+        data = `AV_MM_BFM.get_response_data(0);
     end
 
     endtask

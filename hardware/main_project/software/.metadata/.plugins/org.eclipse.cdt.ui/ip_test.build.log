@@ -1,9 +1,9 @@
-20:54:39 **** Incremental Build of configuration Nios II for project ip_test ****
+13:28:10 **** Incremental Build of configuration Nios II for project ip_test ****
 make all 
 Info: Building ../ip_test_bsp/
 C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ip_test_bsp/
 [BSP build complete]
 [ip_test build complete]
 
-20:54:41 Build Finished (took 1s.116ms)
+13:28:11 Build Finished (took 1s.116ms)
 

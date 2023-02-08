@@ -1,6 +1,6 @@
-20:54:27 **** Incremental Build of configuration Nios II for project ip_test_bsp ****
+13:27:21 **** Incremental Build of configuration Nios II for project ip_test_bsp ****
 make all 
 [BSP build complete]
 
-20:54:28 Build Finished (took 918ms)
+13:27:22 Build Finished (took 917ms)
 

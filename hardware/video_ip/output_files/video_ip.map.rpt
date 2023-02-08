@@ -1,5 +1,5 @@
 Analysis & Synthesis report for video_ip
-Tue Feb 07 20:42:54 2023
+Wed Feb 08 13:24:36 2023
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -45,7 +45,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                  ;
 +------------------------------------+----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Feb 07 20:42:54 2023                    ;
+; Analysis & Synthesis Status        ; Successful - Wed Feb 08 13:24:36 2023                    ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
 ; Revision Name                      ; video_ip                                                 ;
 ; Top-level Entity Name              ; video_ip                                                 ;
@@ -313,7 +313,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
-    Info: Processing started: Tue Feb 07 20:42:43 2023
+    Info: Processing started: Wed Feb 08 13:24:23 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off video_ip -c video_ip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -342,9 +342,9 @@ Info (21057): Implemented 583 device resources after synthesis - the final resou
     Info (21061): Implemented 471 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4769 megabytes
-    Info: Processing ended: Tue Feb 07 20:42:54 2023
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Processing ended: Wed Feb 08 13:24:36 2023
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+
