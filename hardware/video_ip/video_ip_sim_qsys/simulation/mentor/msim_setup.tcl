@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.1 593 win32 2023.02.03.13:53:36
+# ACDS 17.1 593 win32 2023.02.07.17:41:44
 
 # ----------------------------------------
 # Initialize variables
@@ -164,7 +164,24 @@ if ![ string match "*ModelSim ALTERA*" [ vsim -version ] ] {
   ensure_lib                  ./libraries/cycloneive_ver/  
   vmap       cycloneive_ver   ./libraries/cycloneive_ver/  
 }
-
+ensure_lib                                         ./libraries/altera_common_sv_packages/              
+vmap       altera_common_sv_packages               ./libraries/altera_common_sv_packages/              
+ensure_lib                                         ./libraries/video_effects_0_avalon_slave_translator/
+vmap       video_effects_0_avalon_slave_translator ./libraries/video_effects_0_avalon_slave_translator/
+ensure_lib                                         ./libraries/mm_master_bfm_0_m0_translator/          
+vmap       mm_master_bfm_0_m0_translator           ./libraries/mm_master_bfm_0_m0_translator/          
+ensure_lib                                         ./libraries/rst_controller/                         
+vmap       rst_controller                          ./libraries/rst_controller/                         
+ensure_lib                                         ./libraries/mm_interconnect_0/                      
+vmap       mm_interconnect_0                       ./libraries/mm_interconnect_0/                      
+ensure_lib                                         ./libraries/video_effects_0/                        
+vmap       video_effects_0                         ./libraries/video_effects_0/                        
+ensure_lib                                         ./libraries/st_source_bfm_0/                        
+vmap       st_source_bfm_0                         ./libraries/st_source_bfm_0/                        
+ensure_lib                                         ./libraries/st_sink_bfm_0/                          
+vmap       st_sink_bfm_0                           ./libraries/st_sink_bfm_0/                          
+ensure_lib                                         ./libraries/mm_master_bfm_0/                        
+vmap       mm_master_bfm_0                         ./libraries/mm_master_bfm_0/                        
 
 # ----------------------------------------
 # Compile device library files
@@ -184,21 +201,37 @@ alias dev_com {
 # Compile the design files in correct order
 alias com {
   echo "\[exec\] com"
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys.v"
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/verbosity_pkg.sv"                                                   -work altera_common_sv_packages              
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/avalon_utilities_pkg.sv"                                            -work altera_common_sv_packages              
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/avalon_mm_pkg.sv"                                                   -work altera_common_sv_packages              
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv"     -L altera_common_sv_packages -work video_effects_0_avalon_slave_translator
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv"    -L altera_common_sv_packages -work mm_master_bfm_0_m0_translator          
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                                          -work rst_controller                         
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                         
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/video_ip_sim_qsys_mm_interconnect_0.v"                              -work mm_interconnect_0                      
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/video_ip.v"                                                         -work video_effects_0                        
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/avalon_mm_slave_interface.v"                                        -work video_effects_0                        
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/avalon_st_sink_interface.v"                                         -work video_effects_0                        
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/avalon_st_source_interface.v"                                       -work video_effects_0                        
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/video_effects.v"                                                    -work video_effects_0                        
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_source_bfm.sv"        -L altera_common_sv_packages -work st_source_bfm_0                        
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_sink_bfm.sv"          -L altera_common_sv_packages -work st_sink_bfm_0                          
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_mm_master_bfm.sv"        -L altera_common_sv_packages -work mm_master_bfm_0                        
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/video_ip_sim_qsys.v"                                                                                                        
 }
 
 # ----------------------------------------
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L video_effects_0_avalon_slave_translator -L mm_master_bfm_0_m0_translator -L rst_controller -L mm_interconnect_0 -L video_effects_0 -L st_source_bfm_0 -L st_sink_bfm_0 -L mm_master_bfm_0 -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
+  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L video_effects_0_avalon_slave_translator -L mm_master_bfm_0_m0_translator -L rst_controller -L mm_interconnect_0 -L video_effects_0 -L st_source_bfm_0 -L st_sink_bfm_0 -L mm_master_bfm_0 -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

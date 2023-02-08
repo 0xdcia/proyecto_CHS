@@ -1,0 +1,208 @@
+Info: Starting: Create testbench Platform Designer system
+Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys.ipx
+Info: qsys-generate C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --testbench=STANDARD --output-directory=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading video_ip/video_ip_sim_qsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding mm_master_bfm_0 [altera_avalon_mm_master_bfm 17.1]
+Progress: Parameterizing module mm_master_bfm_0
+Progress: Adding st_sink_bfm_0 [altera_avalon_st_sink_bfm 17.1]
+Progress: Parameterizing module st_sink_bfm_0
+Progress: Adding st_source_bfm_0 [altera_avalon_st_source_bfm 17.1]
+Progress: Parameterizing module st_source_bfm_0
+Progress: Adding video_effects_0 [video_effects 0]
+Progress: Parameterizing module video_effects_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: video_ip_sim_qsys.st_sink_bfm_0: Use Empty set to zero - omitting sink_empty port
+Info: video_ip_sim_qsys.st_sink_bfm_0: Use Channels set to zero - omitting sink_channel port
+Info: video_ip_sim_qsys.st_sink_bfm_0: Use Error set to zero - omitting sink_error port
+Info: video_ip_sim_qsys.st_source_bfm_0: Use Empty set to zero - omitting src_empty port
+Info: video_ip_sim_qsys.st_source_bfm_0: Use Channels set to zero - omitting src_channel port
+Info: video_ip_sim_qsys.st_source_bfm_0: Use Error set to zero - omitting src_error port
+Info: qsys-generate succeeded.
+Info: Loading IP catalog for testbench.
+Progress: 
+Progress: 
+Progress: 
+Progress: (2) searching C:/intelfpga/17.1/quartus/sopc_builder/bin/root_components.ipx (ipx file)
+Info: Reading index C:\intelfpga\17.1\quartus\sopc_builder\bin\root_components.ipx
+Info: C:\intelfpga\17.1\quartus\sopc_builder\bin\root_components.ipx: Loading now from components.ipx
+Info: Reading index C:\intelfpga\17.1\quartus\sopc_builder\bin\ip_component_categories.ipx
+Info: C:\intelfpga\17.1\quartus\sopc_builder\bin\ip_component_categories.ipx described 0 plugins, 0 paths, in 0,00 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0,00 seconds
+Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ip/**/* matched 0 files in 0,00 seconds
+Info: Reading index C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\testbench\video_ip_sim_qsys.ipx
+Progress: Loading video_ip/video_effects_hw.tcl
+Progress: Loading video_ip/video_ip_sim_qsys.qsys
+Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/* matched 15 files in 0,03 seconds
+Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/ip/**/* matched 0 files in 0,00 seconds
+Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/*/* matched 115 files in 0,01 seconds
+Info: C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\testbench\video_ip_sim_qsys.ipx described 0 plugins, 3 paths, in 0,04 seconds
+Progress: Loading testbench/video_ip_sim_qsys_tb.qsys
+Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/* matched 12 files in 0,04 seconds
+Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/*/* matched 9 files in 0,00 seconds
+Info: Reading index W:\.altera.quartus\ip\17.1\ip_search_path\user_components.ipx
+Progress: Loading video_ip/video_effects_hw.tcl
+Progress: Loading video_ip/video_ip_sim_qsys.qsys
+Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/**/* matched 15 files in 0,03 seconds
+Info: W:\.altera.quartus\ip\17.1\ip_search_path\user_components.ipx described 0 plugins, 1 paths, in 0,03 seconds
+Info: W:/.altera.quartus/ip/17.1/**/* matched 2 files in 0,04 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0,00 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0,00 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0,00 seconds
+Info: Reading index C:\intelfpga\17.1\ip\altera\altera_components.ipx
+Info: C:\intelfpga\17.1\ip\altera\altera_components.ipx described 2006 plugins, 0 paths, in 0,11 seconds
+Info: C:/intelfpga/17.1/ip/**/* matched 138 files in 0,12 seconds
+Info: C:/intelfpga/ip/**/* matched 0 files in 0,00 seconds
+Info: Reading index C:\intelfpga\17.1\quartus\sopc_builder\builtin.ipx
+Info: C:\intelfpga\17.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0,00 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/**/* matched 8 files in 0,01 seconds
+Info: Reading index C:\intelfpga\17.1\quartus\common\librarian\factories\index.ipx
+Info: C:\intelfpga\17.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0,01 seconds
+Info: C:/intelfpga/17.1/quartus/common/librarian/factories/**/* matched 4 files in 0,01 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0,00 seconds
+Info: C:\intelfpga\17.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,21 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,21 seconds
+Progress: 
+Progress: 
+Progress: 
+Info: Running script C:/intelfpga/17.1/quartus/sopc_builder/bin/tbgen.tcl
+Info: send_message Info TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: get_module_property NAME
+Info: send_message Info TB_Gen: System design is: video_ip_sim_qsys
+Info: TB_Gen: System design is: video_ip_sim_qsys
+Info: get_interfaces 
+Info: get_connections 
+Info: get_interface_property clk EXPORT_OF
+Info: get_instance_property clk_0 CLASS_NAME
+Info: get_instance_assignment clk_0 testbench.partner.map.clk_in
+Info: get_interface_property reset EXPORT_OF
+Info: get_instance_property clk_0 CLASS_NAME
+Info: get_instance_assignment clk_0 testbench.partner.map.clk_in_reset
+Info: send_message Info TB_Gen: Creating testbench system : video_ip_sim_qsys_tb with all standard BFMs
+Info: TB_Gen: Creating testbench system : video_ip_sim_qsys_tb with all standard BFMs
+Info: create_system video_ip_sim_qsys_tb
+Info: add_instance video_ip_sim_qsys_inst video_ip_sim_qsys 
+Info: set_use_testbench_naming_pattern true video_ip_sim_qsys
+Info: get_instance_interfaces video_ip_sim_qsys_inst
+Info: get_instance_interface_property video_ip_sim_qsys_inst clk CLASS_NAME
+Info: get_instance_interface_property video_ip_sim_qsys_inst reset CLASS_NAME
+Info: get_instance_interface_property video_ip_sim_qsys_inst clk CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk
+Info: TB_Gen: clock_sink found: clk
+Info: get_instance_interface_property video_ip_sim_qsys_inst clk CLASS_NAME
+Info: add_instance video_ip_sim_qsys_inst_clk_bfm altera_avalon_clock_source 
+Info: get_instance_property video_ip_sim_qsys_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value video_ip_sim_qsys_inst clk clockRate
+Info: set_instance_parameter_value video_ip_sim_qsys_inst_clk_bfm CLOCK_RATE 50000000.0
+Info: set_instance_parameter_value video_ip_sim_qsys_inst_clk_bfm CLOCK_UNIT 1
+Info: get_instance_property video_ip_sim_qsys_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_property video_ip_sim_qsys_inst clk CLASS_NAME
+Info: get_instance_interfaces video_ip_sim_qsys_inst_clk_bfm
+Info: get_instance_interface_property video_ip_sim_qsys_inst_clk_bfm clk CLASS_NAME
+Info: add_connection video_ip_sim_qsys_inst_clk_bfm.clk video_ip_sim_qsys_inst.clk
+Info: get_instance_interface_property video_ip_sim_qsys_inst reset CLASS_NAME
+Info: send_message Info TB_Gen: reset_sink found: reset
+Info: TB_Gen: reset_sink found: reset
+Info: get_instance_interface_property video_ip_sim_qsys_inst reset CLASS_NAME
+Info: add_instance video_ip_sim_qsys_inst_reset_bfm altera_avalon_reset_source 
+Info: get_instance_property video_ip_sim_qsys_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_ports video_ip_sim_qsys_inst reset
+Info: get_instance_interface_port_property video_ip_sim_qsys_inst reset reset_reset_n ROLE
+Info: get_instance_interface_port_property video_ip_sim_qsys_inst reset reset_reset_n ROLE
+Info: set_instance_parameter_value video_ip_sim_qsys_inst_reset_bfm ASSERT_HIGH_RESET 0
+Info: set_instance_parameter_value video_ip_sim_qsys_inst_reset_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property video_ip_sim_qsys_inst_reset_bfm CLASS_NAME
+Info: get_instance_interfaces video_ip_sim_qsys_inst_reset_bfm
+Info: get_instance_interface_property video_ip_sim_qsys_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_property video_ip_sim_qsys_inst_reset_bfm reset CLASS_NAME
+Info: get_instance_property video_ip_sim_qsys_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value video_ip_sim_qsys_inst reset associatedClock
+Info: get_instance_interfaces video_ip_sim_qsys_inst_clk_bfm
+Info: get_instance_interface_property video_ip_sim_qsys_inst_clk_bfm clk CLASS_NAME
+Info: send_message Warning TB_Gen: video_ip_sim_qsys_inst_reset_bfm is not associated to any clock; connecting video_ip_sim_qsys_inst_reset_bfm to 'video_ip_sim_qsys_inst_clk_bfm.clk'
+Warning: TB_Gen: video_ip_sim_qsys_inst_reset_bfm is not associated to any clock; connecting video_ip_sim_qsys_inst_reset_bfm to 'video_ip_sim_qsys_inst_clk_bfm.clk'
+Info: add_connection video_ip_sim_qsys_inst_clk_bfm.clk video_ip_sim_qsys_inst_reset_bfm.clk
+Info: get_instance_interface_property video_ip_sim_qsys_inst reset CLASS_NAME
+Info: get_instance_interfaces video_ip_sim_qsys_inst_reset_bfm
+Info: get_instance_interface_property video_ip_sim_qsys_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_property video_ip_sim_qsys_inst_reset_bfm reset CLASS_NAME
+Info: add_connection video_ip_sim_qsys_inst_reset_bfm.reset video_ip_sim_qsys_inst.reset
+Info: send_message Info TB_Gen: Saving testbench system: video_ip_sim_qsys_tb.qsys
+Info: TB_Gen: Saving testbench system: video_ip_sim_qsys_tb.qsys
+Info: save_system video_ip_sim_qsys_tb.qsys
+Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
+Info: TB_Gen: TBGEN SUCCESSFUL
+Info: Testbench system: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb.qsys
+Info: Done
+Info: qsys-generate C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\testbench\video_ip_sim_qsys_tb\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading testbench/video_ip_sim_qsys_tb.qsys
+Progress: Reading input file
+Progress: Adding video_ip_sim_qsys_inst [video_ip_sim_qsys 1.0]
+Progress: Parameterizing module video_ip_sim_qsys_inst
+Progress: Adding video_ip_sim_qsys_inst_clk_bfm [altera_avalon_clock_source 17.1]
+Progress: Parameterizing module video_ip_sim_qsys_inst_clk_bfm
+Progress: Adding video_ip_sim_qsys_inst_reset_bfm [altera_avalon_reset_source 17.1]
+Progress: Parameterizing module video_ip_sim_qsys_inst_reset_bfm
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst.st_sink_bfm_0: Use Empty set to zero - omitting sink_empty port
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst.st_sink_bfm_0: Use Channels set to zero - omitting sink_channel port
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst.st_sink_bfm_0: Use Error set to zero - omitting sink_error port
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst.st_source_bfm_0: Use Empty set to zero - omitting src_empty port
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst.st_source_bfm_0: Use Channels set to zero - omitting src_channel port
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst.st_source_bfm_0: Use Error set to zero - omitting src_error port
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst_clk_bfm: Elaborate: altera_clock_source
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst_clk_bfm:            $Revision: #3 $
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst_clk_bfm:            $Date: 2017/09/19 $
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst_reset_bfm: Elaborate: altera_reset_source
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst_reset_bfm:            $Revision: #3 $
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst_reset_bfm:            $Date: 2017/09/19 $
+Info: video_ip_sim_qsys_tb.video_ip_sim_qsys_inst_reset_bfm: Reset is negatively asserted.
+Info: video_ip_sim_qsys_tb: Generating video_ip_sim_qsys_tb "video_ip_sim_qsys_tb" for SIM_VERILOG
+Info: Interconnect is inserted between master mm_master_bfm_0.m0 and slave video_effects_0.avalon_slave because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: video_ip_sim_qsys_inst: "video_ip_sim_qsys_tb" instantiated video_ip_sim_qsys "video_ip_sim_qsys_inst"
+Info: video_ip_sim_qsys_inst_clk_bfm: "video_ip_sim_qsys_tb" instantiated altera_avalon_clock_source "video_ip_sim_qsys_inst_clk_bfm"
+Info: video_ip_sim_qsys_inst_reset_bfm: "video_ip_sim_qsys_tb" instantiated altera_avalon_reset_source "video_ip_sim_qsys_inst_reset_bfm"
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
+Info: mm_master_bfm_0: "video_ip_sim_qsys_inst" instantiated altera_avalon_mm_master_bfm "mm_master_bfm_0"
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
+Info: st_sink_bfm_0: "video_ip_sim_qsys_inst" instantiated altera_avalon_st_sink_bfm "st_sink_bfm_0"
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/avalon_utilities_pkg.sv
+Info: st_source_bfm_0: "video_ip_sim_qsys_inst" instantiated altera_avalon_st_source_bfm "st_source_bfm_0"
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/avalon_utilities_pkg.sv
+Info: video_effects_0: "video_ip_sim_qsys_inst" instantiated video_effects "video_effects_0"
+Info: mm_interconnect_0: "video_ip_sim_qsys_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "video_ip_sim_qsys_inst" instantiated altera_reset_controller "rst_controller"
+Info: mm_master_bfm_0_m0_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "mm_master_bfm_0_m0_translator"
+Info: video_effects_0_avalon_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "video_effects_0_avalon_slave_translator"
+Info: video_ip_sim_qsys_tb: Done "video_ip_sim_qsys_tb" with 12 modules, 21 files
+Info: qsys-generate succeeded.
+Info: sim-script-gen --spd=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys_tb.spd --output-directory=C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys_tb.spd --output-directory=C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	12 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create testbench Platform Designer system

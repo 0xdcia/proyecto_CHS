@@ -6,7 +6,7 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
    element clk_0
@@ -21,7 +21,7 @@
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "2";
          type = "int";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum _sortIndex
       {
-         value = "2";
+         value = "1";
          type = "int";
       }
    }
@@ -63,7 +63,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName" value="video_ip.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -83,7 +83,7 @@
    kind="altera_avalon_mm_master_bfm"
    version="17.1"
    enabled="1">
-  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
+  <parameter name="ADDRESS_UNITS" value="WORDS" />
   <parameter name="ASSERT_HIGH_ARBITERLOCK" value="1" />
   <parameter name="ASSERT_HIGH_BYTEENABLE" value="1" />
   <parameter name="ASSERT_HIGH_LOCK" value="1" />
@@ -92,13 +92,13 @@
   <parameter name="ASSERT_HIGH_RESET" value="1" />
   <parameter name="ASSERT_HIGH_WAITREQUEST" value="1" />
   <parameter name="ASSERT_HIGH_WRITE" value="1" />
-  <parameter name="AV_ADDRESS_W" value="32" />
+  <parameter name="AV_ADDRESS_W" value="3" />
   <parameter name="AV_ALWAYS_BURST_MAX_BURST" value="0" />
-  <parameter name="AV_BURSTCOUNT_W" value="3" />
-  <parameter name="AV_BURST_BNDR_ONLY" value="1" />
-  <parameter name="AV_BURST_LINEWRAP" value="1" />
-  <parameter name="AV_CONSTANT_BURST_BEHAVIOR" value="1" />
-  <parameter name="AV_FIX_READ_LATENCY" value="1" />
+  <parameter name="AV_BURSTCOUNT_W" value="1" />
+  <parameter name="AV_BURST_BNDR_ONLY" value="0" />
+  <parameter name="AV_BURST_LINEWRAP" value="0" />
+  <parameter name="AV_CONSTANT_BURST_BEHAVIOR" value="0" />
+  <parameter name="AV_FIX_READ_LATENCY" value="0" />
   <parameter name="AV_MAX_PENDING_READS" value="0" />
   <parameter name="AV_MAX_PENDING_WRITES" value="0" />
   <parameter name="AV_NUMSYMBOLS" value="4" />
@@ -123,7 +123,7 @@
   <parameter name="USE_READ_DATA" value="1" />
   <parameter name="USE_READ_DATA_VALID" value="0" />
   <parameter name="USE_TRANSACTIONID" value="0" />
-  <parameter name="USE_WAIT_REQUEST" value="0" />
+  <parameter name="USE_WAIT_REQUEST" value="1" />
   <parameter name="USE_WRITE" value="1" />
   <parameter name="USE_WRITERESPONSE" value="0" />
   <parameter name="USE_WRITE_DATA" value="1" />
@@ -138,8 +138,8 @@
   <parameter name="ST_CHANNEL_W" value="1" />
   <parameter name="ST_ERROR_DESCRIPTOR" value="" />
   <parameter name="ST_ERROR_W" value="1" />
-  <parameter name="ST_MAX_CHANNELS" value="1" />
-  <parameter name="ST_NUMSYMBOLS" value="4" />
+  <parameter name="ST_MAX_CHANNELS" value="0" />
+  <parameter name="ST_NUMSYMBOLS" value="1" />
   <parameter name="ST_READY_LATENCY" value="0" />
   <parameter name="ST_SYMBOL_W" value="16" />
   <parameter name="USE_CHANNEL" value="0" />
@@ -159,8 +159,8 @@
   <parameter name="ST_CHANNEL_W" value="1" />
   <parameter name="ST_ERROR_DESCRIPTOR" value="" />
   <parameter name="ST_ERROR_W" value="1" />
-  <parameter name="ST_MAX_CHANNELS" value="1" />
-  <parameter name="ST_NUMSYMBOLS" value="4" />
+  <parameter name="ST_MAX_CHANNELS" value="0" />
+  <parameter name="ST_NUMSYMBOLS" value="1" />
   <parameter name="ST_READY_LATENCY" value="0" />
   <parameter name="ST_SYMBOL_W" value="16" />
   <parameter name="USE_CHANNEL" value="0" />
@@ -196,12 +196,12 @@
    version="17.1"
    start="clk_0.clk"
    end="mm_master_bfm_0.clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="st_sink_bfm_0.clk" />
  <connection
    kind="clock"
    version="17.1"
    start="clk_0.clk"
    end="st_source_bfm_0.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="st_sink_bfm_0.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -216,12 +216,12 @@
    kind="reset"
    version="17.1"
    start="clk_0.clk_reset"
-   end="st_source_bfm_0.clk_reset" />
+   end="st_sink_bfm_0.clk_reset" />
  <connection
    kind="reset"
    version="17.1"
    start="clk_0.clk_reset"
-   end="st_sink_bfm_0.clk_reset" />
+   end="st_source_bfm_0.clk_reset" />
  <connection
    kind="reset"
    version="17.1"

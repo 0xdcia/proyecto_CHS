@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios_system" kind="nios_system" version="1.0" fabric="QSYS">
  <!-- Format version 17.1 593 (Future versions may contain additional information.) -->
- <!-- 2023.02.06.20:15:27 -->
+ <!-- 2023.02.08.13:20:00 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1675710927</value>
+  <value>1675858799</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -11874,7 +11874,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='flash_controller.uas' start='0x8000000' end='0x8800000' type='altera_generic_tristate_controller.uas' /><slave name='onchip_memory.s1' start='0x8800000' end='0x8808000' type='altera_avalon_onchip_memory2.s1' /><slave name='cpu.debug_mem_slave' start='0x8900000' end='0x8900800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sram.avalon_sram_slave' start='0x9000000' end='0x9200000' type='altera_up_avalon_sram.avalon_sram_slave' /><slave name='red_leds.avalon_parallel_port_slave' start='0x10000000' end='0x10000010' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='green_leds.avalon_parallel_port_slave' start='0x10000010' end='0x10000020' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='HEX3_HEX0.avalon_parallel_port_slave' start='0x10000020' end='0x10000030' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='HEX7_HEX4.avalon_parallel_port_slave' start='0x10000030' end='0x10000040' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='switches.avalon_parallel_port_slave' start='0x10000040' end='0x10000050' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='pushbuttons.avalon_parallel_port_slave' start='0x10000050' end='0x10000060' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='ps2_key.avalon_ps2_slave' start='0x10000060' end='0x10000068' type='altera_up_avalon_ps2.avalon_ps2_slave' /><slave name='ps2_mouse.avalon_ps2_slave' start='0x10000070' end='0x10000078' type='altera_up_avalon_ps2.avalon_ps2_slave' /><slave name='serial_port.avalon_rs232_slave' start='0x10000080' end='0x10000088' type='altera_up_avalon_rs232.avalon_rs232_slave' /><slave name='char_lcd.avalon_lcd_slave' start='0x10000090' end='0x10000092' type='altera_up_avalon_character_lcd.avalon_lcd_slave' /><slave name='audio_config.avalon_av_config_slave' start='0x10000100' end='0x10000110' type='altera_up_avalon_audio_and_video_config.avalon_av_config_slave' /><slave name='audio.avalon_audio_slave' start='0x10000110' end='0x10000120' type='altera_up_avalon_audio.avalon_audio_slave' /><slave name='SD_Card.avalon_sdcard_slave' start='0x10000400' end='0x10000800' type='Altera_UP_SD_Card_Avalon_Interface.avalon_sdcard_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x10001000' end='0x10001008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='timer.s1' start='0x10001020' end='0x10001040' type='altera_avalon_timer.s1' /><slave name='sysid.control_slave' start='0x10001040' end='0x10001048' type='altera_avalon_sysid_qsys.control_slave' /><slave name='performance_counter.control_slave' start='0x10001080' end='0x100010C0' type='altera_avalon_performance_counter.control_slave' /><slave name='mtl_pixel_buffer_dma.avalon_control_slave' start='0x10001100' end='0x10001110' type='altera_up_avalon_video_pixel_buffer_dma.avalon_control_slave' /><slave name='mtl_char_buffer.avalon_char_control_slave' start='0x10001200' end='0x10001208' type='altera_up_avalon_video_character_buffer_with_dma.avalon_char_control_slave' /><slave name='mtl_char_buffer.avalon_char_buffer_slave' start='0x10001800' end='0x10002000' type='altera_up_avalon_video_character_buffer_with_dma.avalon_char_buffer_slave' /><slave name='camera_video_dma_controller.avalon_dma_control_slave' start='0x11000000' end='0x11000010' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='video_dma_controller_ip_input.avalon_dma_control_slave' start='0x11000010' end='0x11000020' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='video_effects.avalon_slave' start='0x11000020' end='0x11000040' type='video_effects.avalon_slave' /><slave name='video_dma_controller_ip_output.avalon_dma_control_slave' start='0x11000040' end='0x11000050' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='flash_controller.uas' start='0x8000000' end='0x8800000' type='altera_generic_tristate_controller.uas' /><slave name='onchip_memory.s1' start='0x8800000' end='0x8808000' type='altera_avalon_onchip_memory2.s1' /><slave name='cpu.debug_mem_slave' start='0x8900000' end='0x8900800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sram.avalon_sram_slave' start='0x9000000' end='0x9200000' type='altera_up_avalon_sram.avalon_sram_slave' /><slave name='red_leds.avalon_parallel_port_slave' start='0x10000000' end='0x10000010' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='green_leds.avalon_parallel_port_slave' start='0x10000010' end='0x10000020' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='HEX3_HEX0.avalon_parallel_port_slave' start='0x10000020' end='0x10000030' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='HEX7_HEX4.avalon_parallel_port_slave' start='0x10000030' end='0x10000040' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='switches.avalon_parallel_port_slave' start='0x10000040' end='0x10000050' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='pushbuttons.avalon_parallel_port_slave' start='0x10000050' end='0x10000060' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='ps2_key.avalon_ps2_slave' start='0x10000060' end='0x10000068' type='altera_up_avalon_ps2.avalon_ps2_slave' /><slave name='ps2_mouse.avalon_ps2_slave' start='0x10000070' end='0x10000078' type='altera_up_avalon_ps2.avalon_ps2_slave' /><slave name='serial_port.avalon_rs232_slave' start='0x10000080' end='0x10000088' type='altera_up_avalon_rs232.avalon_rs232_slave' /><slave name='char_lcd.avalon_lcd_slave' start='0x10000090' end='0x10000092' type='altera_up_avalon_character_lcd.avalon_lcd_slave' /><slave name='audio_config.avalon_av_config_slave' start='0x10000100' end='0x10000110' type='altera_up_avalon_audio_and_video_config.avalon_av_config_slave' /><slave name='audio.avalon_audio_slave' start='0x10000110' end='0x10000120' type='altera_up_avalon_audio.avalon_audio_slave' /><slave name='camera_video_dma_controller.avalon_dma_control_slave' start='0x10000120' end='0x10000130' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='video_dma_controller_ip_input.avalon_dma_control_slave' start='0x10000130' end='0x10000140' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='video_effects.avalon_slave' start='0x10000140' end='0x10000160' type='video_effects.avalon_slave' /><slave name='video_dma_controller_ip_output.avalon_dma_control_slave' start='0x10000160' end='0x10000170' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='SD_Card.avalon_sdcard_slave' start='0x10000400' end='0x10000800' type='Altera_UP_SD_Card_Avalon_Interface.avalon_sdcard_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x10001000' end='0x10001008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='timer.s1' start='0x10001020' end='0x10001040' type='altera_avalon_timer.s1' /><slave name='sysid.control_slave' start='0x10001040' end='0x10001048' type='altera_avalon_sysid_qsys.control_slave' /><slave name='performance_counter.control_slave' start='0x10001080' end='0x100010C0' type='altera_avalon_performance_counter.control_slave' /><slave name='mtl_pixel_buffer_dma.avalon_control_slave' start='0x10001100' end='0x10001110' type='altera_up_avalon_video_pixel_buffer_dma.avalon_control_slave' /><slave name='mtl_char_buffer.avalon_char_control_slave' start='0x10001200' end='0x10001208' type='altera_up_avalon_video_character_buffer_with_dma.avalon_char_control_slave' /><slave name='mtl_char_buffer.avalon_char_buffer_slave' start='0x10001800' end='0x10002000' type='altera_up_avalon_video_character_buffer_with_dma.avalon_char_buffer_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -12591,7 +12591,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>camera_video_dma_controller</moduleName>
     <slaveName>avalon_dma_control_slave</slaveName>
     <name>camera_video_dma_controller.avalon_dma_control_slave</name>
-    <baseAddress>285212672</baseAddress>
+    <baseAddress>268435744</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -12599,7 +12599,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>video_dma_controller_ip_input</moduleName>
     <slaveName>avalon_dma_control_slave</slaveName>
     <name>video_dma_controller_ip_input.avalon_dma_control_slave</name>
-    <baseAddress>285212688</baseAddress>
+    <baseAddress>268435760</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -12607,7 +12607,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>video_dma_controller_ip_output</moduleName>
     <slaveName>avalon_dma_control_slave</slaveName>
     <name>video_dma_controller_ip_output.avalon_dma_control_slave</name>
-    <baseAddress>285212736</baseAddress>
+    <baseAddress>268435808</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -12711,7 +12711,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>video_effects</moduleName>
     <slaveName>avalon_slave</slaveName>
     <name>video_effects.avalon_slave</name>
-    <baseAddress>285212704</baseAddress>
+    <baseAddress>268435776</baseAddress>
     <span>32</span>
    </memoryBlock>
    <memoryBlock>
@@ -28960,7 +28960,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1675710927</value>
+   <value>1675858799</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -28980,7 +28980,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1675710927</value>
+   <value>1675858799</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -28996,7 +28996,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1675710927</value>
+   <value>1675858799</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -33139,7 +33139,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="readLatency">
     <type>int</type>
-    <value>1</value>
+    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -34737,7 +34737,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x11000000</value>
+   <value>0x10000120</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -34788,7 +34788,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x11000010</value>
+   <value>0x10000130</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -34839,7 +34839,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x11000040</value>
+   <value>0x10000160</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -35502,7 +35502,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x11000020</value>
+   <value>0x10000140</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>

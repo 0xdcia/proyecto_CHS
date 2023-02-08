@@ -3990,7 +3990,7 @@ module nios_system_mm_interconnect_0 (
 		.UAV_BYTEENABLE_W               (4),
 		.UAV_ADDRESS_W                  (32),
 		.UAV_BURSTCOUNT_W               (3),
-		.AV_READLATENCY                 (1),
+		.AV_READLATENCY                 (0),
 		.USE_READDATAVALID              (0),
 		.USE_WAITREQUEST                (0),
 		.USE_UAV_CLKEN                  (0),

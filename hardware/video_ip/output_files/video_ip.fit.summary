@@ -1,12 +1,12 @@
-Fitter Status : Successful - Fri Feb 03 17:46:39 2023
+Fitter Status : Successful - Tue Feb 07 20:43:17 2023
 Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 Revision Name : video_ip
 Top-level Entity Name : video_ip
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 232 / 114,480 ( < 1 % )
-    Total combinational functions : 169 / 114,480 ( < 1 % )
+Total logic elements : 372 / 114,480 ( < 1 % )
+    Total combinational functions : 334 / 114,480 ( < 1 % )
     Dedicated logic registers : 217 / 114,480 ( < 1 % )
 Total registers : 217
 Total pins : 112 / 529 ( 21 % )

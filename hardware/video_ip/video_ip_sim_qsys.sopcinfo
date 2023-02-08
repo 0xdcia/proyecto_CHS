@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 17.1 593 (Future versions may contain additional information.) -->
- <!-- 2023.02.03.13:53:37 -->
+ <!-- 2023.02.07.17:44:35 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1675428817</value>
+  <value>1675788275</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -342,15 +342,15 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>st_source_bfm_0</moduleName>
-    <slaveName>clk</slaveName>
-    <name>st_source_bfm_0.clk</name>
-   </clockDomainMember>
-   <clockDomainMember>
-    <isBridge>false</isBridge>
     <moduleName>st_sink_bfm_0</moduleName>
     <slaveName>clk</slaveName>
     <name>st_sink_bfm_0.clk</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
+    <moduleName>st_source_bfm_0</moduleName>
+    <slaveName>clk</slaveName>
+    <name>st_source_bfm_0.clk</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -430,7 +430,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="AV_ADDRESS_W">
    <type>int</type>
-   <value>32</value>
+   <value>3</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -454,7 +454,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AV_BURSTCOUNT_W">
    <type>int</type>
-   <value>3</value>
+   <value>1</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>true</visible>
@@ -582,7 +582,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="USE_WAIT_REQUEST">
    <type>int</type>
-   <value>0</value>
+   <value>1</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -686,7 +686,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AV_CONSTANT_BURST_BEHAVIOR">
    <type>int</type>
-   <value>1</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -694,7 +694,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AV_BURST_LINEWRAP">
    <type>int</type>
-   <value>1</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -702,7 +702,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AV_BURST_BNDR_ONLY">
    <type>int</type>
-   <value>1</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -734,7 +734,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AV_FIX_READ_LATENCY">
    <type>int</type>
-   <value>1</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -744,7 +744,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>1</value>
    <derived>false</derived>
-   <enabled>true</enabled>
+   <enabled>false</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -752,7 +752,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>0</value>
    <derived>false</derived>
-   <enabled>true</enabled>
+   <enabled>false</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -774,7 +774,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ADDRESS_UNITS">
    <type>java.lang.String</type>
-   <value>SYMBOLS</value>
+   <value>WORDS</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -916,7 +916,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressUnits">
     <type>com.altera.sopcmodel.avalon.EAddrBurstUnits</type>
-    <value>SYMBOLS</value>
+    <value>WORDS</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -956,7 +956,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="burstOnBurstBoundariesOnly">
     <type>boolean</type>
-    <value>true</value>
+    <value>false</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -1052,7 +1052,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="linewrapBursts">
     <type>boolean</type>
-    <value>true</value>
+    <value>false</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -1084,7 +1084,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="readLatency">
     <type>int</type>
-    <value>1</value>
+    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -1159,7 +1159,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>avm_address</name>
     <direction>Output</direction>
-    <width>32</width>
+    <width>3</width>
     <role>address</role>
    </port>
    <port>
@@ -1173,6 +1173,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>32</width>
     <role>writedata</role>
+   </port>
+   <port>
+    <name>avm_waitrequest</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>waitrequest</role>
    </port>
    <port>
     <name>avm_write</name>
@@ -1261,7 +1267,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ST_NUMSYMBOLS">
    <type>int</type>
-   <value>4</value>
+   <value>1</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1285,7 +1291,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ST_EMPTY_W">
    <type>int</type>
-   <value>2</value>
+   <value>1</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>true</visible>
@@ -1309,7 +1315,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ST_MAX_CHANNELS">
    <type>int</type>
-   <value>1</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1507,7 +1513,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="maxChannel">
     <type>int</type>
-    <value>1</value>
+    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -1531,7 +1537,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="symbolsPerBeat">
     <type>int</type>
-    <value>4</value>
+    <value>1</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -1558,7 +1564,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>sink_data</name>
     <direction>Input</direction>
-    <width>64</width>
+    <width>16</width>
     <role>data</role>
    </port>
    <port>
@@ -1652,7 +1658,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ST_NUMSYMBOLS">
    <type>int</type>
-   <value>4</value>
+   <value>1</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1676,7 +1682,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ST_EMPTY_W">
    <type>int</type>
-   <value>2</value>
+   <value>1</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>true</visible>
@@ -1700,7 +1706,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ST_MAX_CHANNELS">
    <type>int</type>
-   <value>1</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1898,7 +1904,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="maxChannel">
     <type>int</type>
-    <value>1</value>
+    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -1922,7 +1928,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="symbolsPerBeat">
     <type>int</type>
-    <value>4</value>
+    <value>1</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -1949,7 +1955,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>src_data</name>
     <direction>Output</direction>
-    <width>64</width>
+    <width>16</width>
     <role>data</role>
    </port>
    <port>
@@ -2617,7 +2623,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="readLatency">
     <type>int</type>
-    <value>1</value>
+    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -2900,33 +2906,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk/st_source_bfm_0.clk"
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
-   end="st_source_bfm_0.clk">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>clk_0</startModule>
-  <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>st_source_bfm_0</endModule>
-  <endConnectionPoint>clk</endConnectionPoint>
- </connection>
- <connection
    name="clk_0.clk/st_sink_bfm_0.clk"
    kind="clock"
    version="17.1"
@@ -2951,6 +2930,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
   <endModule>st_sink_bfm_0</endModule>
+  <endConnectionPoint>clk</endConnectionPoint>
+ </connection>
+ <connection
+   name="clk_0.clk/st_source_bfm_0.clk"
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="st_source_bfm_0.clk">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_0</startModule>
+  <startConnectionPoint>clk</startConnectionPoint>
+  <endModule>st_source_bfm_0</endModule>
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
@@ -3008,33 +3014,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk_reset</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk_reset/st_source_bfm_0.clk_reset"
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="st_source_bfm_0.clk_reset">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>clk_0</startModule>
-  <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>st_source_bfm_0</endModule>
-  <endConnectionPoint>clk_reset</endConnectionPoint>
- </connection>
- <connection
    name="clk_0.clk_reset/st_sink_bfm_0.clk_reset"
    kind="reset"
    version="17.1"
@@ -3059,6 +3038,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
   <endModule>st_sink_bfm_0</endModule>
+  <endConnectionPoint>clk_reset</endConnectionPoint>
+ </connection>
+ <connection
+   name="clk_0.clk_reset/st_source_bfm_0.clk_reset"
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="st_source_bfm_0.clk_reset">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_0</startModule>
+  <startConnectionPoint>clk_reset</startConnectionPoint>
+  <endModule>st_source_bfm_0</endModule>
   <endConnectionPoint>clk_reset</endConnectionPoint>
  </connection>
  <connection

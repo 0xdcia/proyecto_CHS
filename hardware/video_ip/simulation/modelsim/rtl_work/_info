@@ -1,0 +1,120 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/simulation/modelsim
+vavalon_mm_slave_interface
+Z1 !s110 1675793504
+!i10b 1
+!s100 BPDECQn=cl0VzH_2MG<Al0
+IYfZMfMBz=VmDl3e6bf5_10
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1675783273
+8C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_mm_slave_interface.v
+FC:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_mm_slave_interface.v
+L0 10
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1675793504.000000
+!s107 C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_mm_slave_interface.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog|C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_mm_slave_interface.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog
+Z8 tCvgOpt 0
+vavalon_st_sink_interface
+Z9 !s110 1675793505
+!i10b 1
+!s100 E1gnRHVHJ8^IYBcZ9ez<l0
+I<XOKQ>D`PLHc`c50l21ea2
+R2
+R0
+R3
+8C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_st_sink_interface.v
+FC:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_st_sink_interface.v
+Z10 L0 21
+R4
+r1
+!s85 0
+31
+Z11 !s108 1675793505.000000
+!s107 C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_st_sink_interface.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog|C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_st_sink_interface.v|
+!i113 1
+R6
+R7
+R8
+vavalon_st_source_interface
+R9
+!i10b 1
+!s100 FeckLD@<^4G51@hkOoZYf1
+IFOiSiN80L4mco5TiGMJ`E1
+R2
+R0
+R3
+8C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_st_source_interface.v
+FC:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_st_source_interface.v
+R10
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_st_source_interface.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog|C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/avalon_st_source_interface.v|
+!i113 1
+R6
+R7
+R8
+vvideo_effects
+R9
+!i10b 1
+!s100 43aH`NEDOjXNFaTA2BG6=1
+IglCPR8=PhIBg;H5IIiFHH3
+R2
+R0
+R3
+8C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_effects.v
+FC:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_effects.v
+L0 6
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_effects.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog|C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_effects.v|
+!i113 1
+R6
+R7
+R8
+vvideo_ip
+R1
+!i10b 1
+!s100 S^bUjW69=iGmX2]>klg3f0
+I<3cCD8OPX[R0nR55JMD^?0
+R2
+R0
+w1675786485
+8C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v
+FC:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v
+L0 8
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog|C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v|
+!i113 1
+R6
+R7
+R8
