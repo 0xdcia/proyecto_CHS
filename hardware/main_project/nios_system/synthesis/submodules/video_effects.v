@@ -39,7 +39,7 @@ module video_effects (
     // effect_quantif_level = 11 : Se eliminan los tres últimos bits
     
     input wire [15:0] effect_color_key,  // indica el valor RGB a eliminar para los efectos que lo necesiten
-    input wire [15:0] effect_color_key_mask,  // indica la máscara de colores (rango) de colores a eliminar 
+    input wire [15:0] effect_color_key_threshold,  // indica la tolerancia de colores (+-rango por componente)
     input wire [15:0] effect_color_substitute,  // indica el valor RGB por el que sustituir el color eliminado
     
     input wire [15:0] video_data_in,  // entrada de datos de vídeo, del avalon sink
@@ -50,14 +50,14 @@ module video_effects (
 
 // Señales internas 
 
-reg [15:0] video_data_mid;  // Net de asignación secuencial de filtros
+reg [15:0] video_data_proc;  // Net de asignación secuencial de filtros
 reg [4:0] video_aux_gs;  // Valores intermedios de cálculos para filtro greyscale
 
 
 always @(posedge clk)
 begin
 
-    video_data_mid = video_data_in;
+    video_data_proc = video_data_in;
     
     // Pueden aplicarse varios filtros simultáneamente.
     // Están definidos por prioridad secuencial: los primeros IFs se aplican antes.
@@ -68,10 +68,11 @@ begin
     if (effect[0] == 1'b1)
     begin
         // Si (pixel & mask) menos (key & mask) es cero => está en rango => sustituirlo
-        if ((video_data_mid & effect_color_key_mask) - (effect_color_key & effect_color_key_mask) == 16'b0)
-        begin
-            video_data_mid = effect_color_substitute;
-        end
+        // (video_data_proc[15:11] >> 2) + (video_data_proc[10:6] >> 1) + (video_data_proc[4:0] >> 2);
+        if ((video_data_proc[15:11] < (effect_color_key[15:11] + effect_color_key_threshold[15:11])) | ((video_data_proc[15:11] > (effect_color_key[15:11] - effect_color_key_threshold[15:11]))))
+            if ((video_data_proc[10:5] < (effect_color_key[10:5] + effect_color_key_threshold[10:5])) | ((video_data_proc[10:5] > (effect_color_key[10:5] - effect_color_key_threshold[10:5]))))
+                if ((video_data_proc[4:0] < (effect_color_key[4:0] + effect_color_key_threshold[4:0])) | ((video_data_proc[4:0] > (effect_color_key[4:0] - effect_color_key_threshold[4:0]))))
+                    video_data_proc = effect_color_substitute;
     end
     
     
@@ -79,9 +80,9 @@ begin
     if (effect[1] == 1'b1)
     begin
         case (effect_delete_rgb) 
-            2'b01: video_data_mid = {5'b0, video_data_mid[10:5], video_data_mid[4:0]};
-            2'b10: video_data_mid = {video_data_mid[15:11], 6'b0, video_data_mid[4:0]};
-            2'b11: video_data_mid = {video_data_mid[15:11], video_data_mid[10:5], 5'b0};
+            2'b01: video_data_proc = {5'b0, video_data_proc[10:5], video_data_proc[4:0]};
+            2'b10: video_data_proc = {video_data_proc[15:11], 6'b0, video_data_proc[4:0]};
+            2'b11: video_data_proc = {video_data_proc[15:11], video_data_proc[10:5], 5'b0};
         endcase
     end
     
@@ -91,20 +92,22 @@ begin
     begin
         // Grayscale por luminosidad aproximada: 0.25 * R; 0,5 * G; 0,25* B
         // Para el Green usamos 5 bits, los más significativos (el último es ignorado).
-        video_aux_gs = (video_data_mid[15:11] >> 2) + (video_data_mid[10:6] >> 1) + (video_data_mid[4:0] >> 2);
+        video_aux_gs = (video_data_proc[15:11] >> 2) + (video_data_proc[10:6] >> 1) + (video_data_proc[4:0] >> 2);
         
         // Concatenación de bits, compensando el bit verde que no hemos considerado antes
-        video_data_mid = {video_aux_gs, video_aux_gs, 1'b0, video_aux_gs};
+        video_data_proc = {video_aux_gs, video_aux_gs, 1'b0, video_aux_gs};
     end
+    
+    
     
     
     // 4. Cuantificación: reducción de la precisión del color
     if (effect[3] == 1'b1)
     begin
         case (effect_quantif_level) 
-            2'b01: video_data_mid = {(video_data_mid[15:11] >> 1), (video_data_mid[10:5] >> 1), (video_data_mid[4:0] >> 1)};
-            2'b10: video_data_mid = {(video_data_mid[15:11] >> 2), (video_data_mid[10:5] >> 2), (video_data_mid[4:0] >> 2)};
-            2'b11: video_data_mid = {(video_data_mid[15:11] >> 3), (video_data_mid[10:5] >> 3), (video_data_mid[4:0] >> 3)};
+            2'b01: video_data_proc = {video_data_proc[15:12],    video_data_proc[12],   video_data_proc[10:7], {2{video_data_proc[7]}}, video_data_proc[4:1],    video_data_proc[1]};
+            2'b10: video_data_proc = {video_data_proc[15:13], {2{video_data_proc[13]}}, video_data_proc[10:8], {3{video_data_proc[8]}}, video_data_proc[4:2], {2{video_data_proc[2]}}};
+            2'b11: video_data_proc = {video_data_proc[15:14], {3{video_data_proc[14]}}, video_data_proc[10:9], {4{video_data_proc[9]}}, video_data_proc[4:3], {3{video_data_proc[3]}}};
         endcase
     end
     
@@ -112,13 +115,13 @@ begin
     // 5. Negativo: invertir bits
     if (effect[4] == 1'b1)
     begin
-        video_data_mid = ~video_data_mid;
+        video_data_proc = ~video_data_proc;
     end
     
-    video_data_mid = video_data_mid;
+    video_data_proc = video_data_proc;
     
     // Si no entra en ningún caso, simplemente se asigna a la salida.
-    video_data_out <= video_data_mid;
+    video_data_out <= video_data_proc;
     
 end
 

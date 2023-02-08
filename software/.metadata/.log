@@ -723,3 +723,134 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 
 !ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 15:44:12.763
 !MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+!SESSION 2023-02-08 16:09:09.389 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga/17.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga/17.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2023-02-08 16:09:31.782
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 16:09:38.606
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 16:09:40.670
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 16:46:10.447
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 16:46:12.375
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 16:51:40.206
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 16:51:40.776
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 16:51:42.767
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 17:26:19.642
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 17:26:21.621
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 17:39:12.876
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 17:39:14.884
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 17:52:14.704
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 17:52:16.660
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:11:58.058
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:12:00.002
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:14:12.464
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:14:13.046
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:14:15.006
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:21:44.042
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:21:44.658
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:21:46.543
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:23:44.086
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:23:44.677
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:23:46.645
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:25:12.893
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:25:13.423
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 18:25:15.381
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 19:01:26.657
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 19:01:28.702
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 19:05:59.022
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 19:05:59.600
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 19:06:01.567
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 19:11:31.369
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 19:11:31.939
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10001040]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-02-08 19:11:33.800
+!MESSAGE Executing: [C:/intelfpga/17.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10001040 /cygdrive/c/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software/nios_software.elf]

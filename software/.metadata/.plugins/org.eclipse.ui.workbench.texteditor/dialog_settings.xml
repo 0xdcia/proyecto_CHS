@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="SRAM_BASE" key="selection"/>
+		<item value="RGB" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="RGB"/>
 			<item value="SRAM_BASE"/>
 			<item value="pixel_buffer"/>
 			<item value="dma"/>
@@ -15,7 +16,6 @@
 			<item value="MTL"/>
 			<item value="0x908"/>
 			<item value="alt_ucosii_simple_error_handler"/>
-			<item value="TaskSdcard"/>
 		</list>
 		<list key="replacehistory">
 		</list>

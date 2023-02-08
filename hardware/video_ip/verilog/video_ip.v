@@ -206,7 +206,7 @@ video_effects U4_VIDEO_EFFECTS_1 (
     // effect_quantif_level = 11 : Se eliminan los tres últimos bits
     
     .effect_color_key(reg2[31:16]),  // indica el valor RGB a eliminar para los efectos que lo necesiten
-    .effect_color_key_mask(reg2[15:0]),  // indica la máscara de colores (rango) de colores a eliminar 
+    .effect_color_key_threshold(reg2[15:0]),  // indica la tolerancia de colores (+-rango por componente)
     .effect_color_substitute(reg3[15:0]),  // indica el valor RGB por el que sustituir el color eliminado
     
     .video_data_in(data_in_reg),  // entrada de datos de vídeo, del avalon sink

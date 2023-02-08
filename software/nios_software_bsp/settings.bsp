@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>08-feb-2023 15:12:24</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1675865544348</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>08-feb-2023 19:00:28</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1675879228064</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\software\nios_software_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\hardware\main_project\nios_system.sopcinfo</SopcDesignFile>

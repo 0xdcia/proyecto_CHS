@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Wed Feb 08 13:24:36 2023
+Analysis & Synthesis Status : Successful - Wed Feb 08 18:52:08 2023
 Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 Revision Name : video_ip
 Top-level Entity Name : video_ip
 Family : Cyclone IV E
-Total logic elements : 439
-    Total combinational functions : 334
+Total logic elements : 427
+    Total combinational functions : 322
     Dedicated logic registers : 217
 Total registers : 217
 Total pins : 112
