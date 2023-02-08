@@ -11,5 +11,7 @@ extern volatile char * LCD_display_ptr;
 extern volatile short * pixel_buffer;
 extern volatile char * character_buffer;
 
+extern volatile int * EFFECT_ptr;
+
 /* Antes de lanzar cualquier tarea */
 void Init_App(void);

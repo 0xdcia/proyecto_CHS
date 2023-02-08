@@ -17,6 +17,8 @@ volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;
 volatile short * pixel_buffer= (short *) SRAM_BASE;	// MTL pixel buffer
 volatile char * character_buffer= (char *)  MTL_CHAR_BUFFER_AVALON_CHAR_BUFFER_SLAVE_BASE; // MTL character buffer
 
+volatile int * EFFECT_ptr = (int * ) VIDEO_EFFECTS_BASE;
+
 void Init_App(void){
 	//Registrar interrupciones
 	printf("Registrando interrupcion\n");
