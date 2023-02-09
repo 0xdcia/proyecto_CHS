@@ -17,7 +17,6 @@ void capture_isr(){
 	OSIntEnter();
 	*(EFFECT_ptr + 0) = 0x00000001;
 	printf("Hemos recibido una foto\n");
-	*(EFFECT_ptr + 0) = 0x00000000;
 	OSIntExit();
 }
 
@@ -48,7 +47,7 @@ void pushbutton_isr() {
 	}
 	else//Izquierda
 	{
-		switch (effect%8){
+		switch (effect%9){
 			case 0:
 				printf("Chroma\n");
 				*(EFFECT_ptr + 0) = 0x00000000;  // no usado

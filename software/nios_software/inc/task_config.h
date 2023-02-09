@@ -4,6 +4,7 @@
 INT16U err;
 /* Comunicacion de tareas */
 OS_EVENT *getimg;
+OS_EVENT *saveimg;
 
 #define   TASK_STACKSIZE       2048
 OS_STK    initialize_task_stk[TASK_STACKSIZE];

@@ -534,3 +534,445 @@ Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_sof
 C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
 [BSP build complete]
 [nios_software build complete]
+19:29:26 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
+19:29:28 **** Incremental Build of configuration Nios II for project nios_software_bsp ****
+make all 
+[BSP build complete]
+19:29:39 **** Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
+19:29:42 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
+20:24:18 **** Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Compiling src/app_config.c to obj/default/src/app_config.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/app_config.o src/app_config.c
+Info: Compiling src/isr.c to obj/default/src/isr.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/isr.o src/isr.c
+Info: Compiling src/sdcard.c to obj/default/src/sdcard.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/sdcard.o src/sdcard.c
+src/sdcard.c: In function 'TaskSdcard':
+src/sdcard.c:177:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Me despierto %d\n", p_msg);
+          ^
+src/sdcard.c:177:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c:211:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Imagen dibujada %d\n", p_msg);
+          ^
+src/sdcard.c:211:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c: In function 'TaskSaveImg':
+src/sdcard.c:223:34: warning: passing argument 3 of 'OSMboxPend' from incompatible pointer type [-Wincompatible-pointer-types]
+   p_msg = OSMboxPend(saveimg, 0, &err);
+                                  ^
+In file included from c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\includes.h:23:0,
+                 from src/../inc/task_config.h:1,
+                 from src/sdcard.c:4:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\ucosii\inc\ucos_ii.h:901:15: note: expected 'INT8U * {aka unsigned char *}' but argument is of type 'INT16U * {aka short unsigned int *}'
+ void         *OSMboxPend              (OS_EVENT        *pevent,
+               ^
+src/sdcard.c:230:3: warning: implicit declaration of function 'setFileHeader' [-Wimplicit-function-declaration]
+   setFileHeader(img_handle, header);
+   ^
+src/sdcard.c:231:17: warning: passing argument 1 of 'setInfoheader' makes pointer from integer without a cast [-Wint-conversion]
+   setInfoheader(img_handle, info_st);
+                 ^
+src/sdcard.c:97:6: note: expected 'short int *' but argument is of type 'int'
+ bool setInfoheader(short int *handle, struct bmpInfoHeader* info_st){
+      ^
+src/sdcard.c:231:29: error: incompatible type for argument 2 of 'setInfoheader'
+   setInfoheader(img_handle, info_st);
+                             ^
+src/sdcard.c:97:6: note: expected 'struct bmpInfoHeader *' but argument is of type 'struct bmpInfoHeader'
+ bool setInfoheader(short int *handle, struct bmpInfoHeader* info_st){
+      ^
+src/sdcard.c:238:11: error: invalid type argument of unary '*' (have 'int')
+     aux = *(0x09100000 + offset);
+           ^
+src/sdcard.c:239:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:240:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux>>8);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:241:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux>>16);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:247:5: error: 'EFFECT_ptr' undeclared (first use in this function)
+   *(EFFECT_ptr + 0) = 0x00000000;
+     ^
+src/sdcard.c:247:5: note: each undeclared identifier is reported only once for each function it appears in
+src/sdcard.c:218:8: warning: variable 'p_msg' set but not used [-Wunused-but-set-variable]
+  void *p_msg;
+        ^
+make: *** [obj/default/src/sdcard.o] Error 1
+20:24:19 **** Build of configuration Nios II for project nios_software_bsp ****
+make all 
+[BSP build complete]
+20:25:06 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+Info: Compiling src/sdcard.c to obj/default/src/sdcard.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/sdcard.o src/sdcard.c
+src/sdcard.c: In function 'TaskSdcard':
+src/sdcard.c:178:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Me despierto %d\n", p_msg);
+          ^
+src/sdcard.c:178:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c:212:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Imagen dibujada %d\n", p_msg);
+          ^
+src/sdcard.c:212:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c: In function 'TaskSaveImg':
+src/sdcard.c:224:34: warning: passing argument 3 of 'OSMboxPend' from incompatible pointer type [-Wincompatible-pointer-types]
+   p_msg = OSMboxPend(saveimg, 0, &err);
+                                  ^
+In file included from c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\includes.h:23:0,
+                 from src/../inc/task_config.h:1,
+                 from src/sdcard.c:4:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\ucosii\inc\ucos_ii.h:901:15: note: expected 'INT8U * {aka unsigned char *}' but argument is of type 'INT16U * {aka short unsigned int *}'
+ void         *OSMboxPend              (OS_EVENT        *pevent,
+               ^
+src/sdcard.c:231:3: warning: implicit declaration of function 'setFileHeader' [-Wimplicit-function-declaration]
+   setFileHeader(img_handle, header);
+   ^
+src/sdcard.c:232:17: warning: passing argument 1 of 'setInfoheader' makes pointer from integer without a cast [-Wint-conversion]
+   setInfoheader(img_handle, info_st);
+                 ^
+src/sdcard.c:98:6: note: expected 'short int *' but argument is of type 'int'
+ bool setInfoheader(short int *handle, struct bmpInfoHeader* info_st){
+      ^
+src/sdcard.c:232:29: error: incompatible type for argument 2 of 'setInfoheader'
+   setInfoheader(img_handle, info_st);
+                             ^
+src/sdcard.c:98:6: note: expected 'struct bmpInfoHeader *' but argument is of type 'struct bmpInfoHeader'
+ bool setInfoheader(short int *handle, struct bmpInfoHeader* info_st){
+      ^
+src/sdcard.c:239:11: error: invalid type argument of unary '*' (have 'int')
+     aux = *(0x09100000 + offset);
+           ^
+src/sdcard.c:240:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:241:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux>>8);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:242:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux>>16);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:219:8: warning: variable 'p_msg' set but not used [-Wunused-but-set-variable]
+  void *p_msg;
+        ^
+make: *** [obj/default/src/sdcard.o] Error 1
+20:25:08 **** Incremental Build of configuration Nios II for project nios_software_bsp ****
+make all 
+[BSP build complete]
+20:26:14 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+Info: Compiling src/sdcard.c to obj/default/src/sdcard.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/sdcard.o src/sdcard.c
+src/sdcard.c: In function 'TaskSdcard':
+src/sdcard.c:178:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Me despierto %d\n", p_msg);
+          ^
+src/sdcard.c:178:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c:212:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Imagen dibujada %d\n", p_msg);
+          ^
+src/sdcard.c:212:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c: In function 'TaskSaveImg':
+src/sdcard.c:224:34: warning: passing argument 3 of 'OSMboxPend' from incompatible pointer type [-Wincompatible-pointer-types]
+   p_msg = OSMboxPend(saveimg, 0, &err);
+                                  ^
+In file included from c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\includes.h:23:0,
+                 from src/../inc/task_config.h:1,
+                 from src/sdcard.c:4:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\ucosii\inc\ucos_ii.h:901:15: note: expected 'INT8U * {aka unsigned char *}' but argument is of type 'INT16U * {aka short unsigned int *}'
+ void         *OSMboxPend              (OS_EVENT        *pevent,
+               ^
+src/sdcard.c:231:17: warning: passing argument 1 of 'setFileheader' makes pointer from integer without a cast [-Wint-conversion]
+   setFileheader(img_handle, &header);
+                 ^
+src/sdcard.c:75:6: note: expected 'short int *' but argument is of type 'int'
+ bool setFileheader(short int *handle, struct bmpFileHeader* header_st){
+      ^
+src/sdcard.c:232:17: warning: passing argument 1 of 'setInfoheader' makes pointer from integer without a cast [-Wint-conversion]
+   setInfoheader(img_handle, &info_st);
+                 ^
+src/sdcard.c:98:6: note: expected 'short int *' but argument is of type 'int'
+ bool setInfoheader(short int *handle, struct bmpInfoHeader* info_st){
+      ^
+src/sdcard.c:239:11: error: invalid type argument of unary '*' (have 'int')
+     aux = *(0x09100000 + offset);
+           ^
+src/sdcard.c:240:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:241:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux>>8);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:242:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux>>16);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:219:8: warning: variable 'p_msg' set but not used [-Wunused-but-set-variable]
+  void *p_msg;
+        ^
+make: *** [obj/default/src/sdcard.o] Error 1
+20:26:15 **** Incremental Build of configuration Nios II for project nios_software_bsp ****
+make all 
+[BSP build complete]
+20:26:42 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+Info: Compiling src/sdcard.c to obj/default/src/sdcard.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/sdcard.o src/sdcard.c
+src/sdcard.c: In function 'TaskSdcard':
+src/sdcard.c:178:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Me despierto %d\n", p_msg);
+          ^
+src/sdcard.c:178:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c:212:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Imagen dibujada %d\n", p_msg);
+          ^
+src/sdcard.c:212:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c: In function 'TaskSaveImg':
+src/sdcard.c:224:34: warning: passing argument 3 of 'OSMboxPend' from incompatible pointer type [-Wincompatible-pointer-types]
+   p_msg = OSMboxPend(saveimg, 0, &err);
+                                  ^
+In file included from c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\includes.h:23:0,
+                 from src/../inc/task_config.h:1,
+                 from src/sdcard.c:4:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\ucosii\inc\ucos_ii.h:901:15: note: expected 'INT8U * {aka unsigned char *}' but argument is of type 'INT16U * {aka short unsigned int *}'
+ void         *OSMboxPend              (OS_EVENT        *pevent,
+               ^
+src/sdcard.c:231:17: warning: passing argument 1 of 'setFileheader' from incompatible pointer type [-Wincompatible-pointer-types]
+   setFileheader(&img_handle, &header);
+                 ^
+src/sdcard.c:75:6: note: expected 'short int *' but argument is of type 'int *'
+ bool setFileheader(short int *handle, struct bmpFileHeader* header_st){
+      ^
+src/sdcard.c:232:17: warning: passing argument 1 of 'setInfoheader' from incompatible pointer type [-Wincompatible-pointer-types]
+   setInfoheader(&img_handle, &info_st);
+                 ^
+src/sdcard.c:98:6: note: expected 'short int *' but argument is of type 'int *'
+ bool setInfoheader(short int *handle, struct bmpInfoHeader* info_st){
+      ^
+src/sdcard.c:239:11: error: invalid type argument of unary '*' (have 'int')
+     aux = *(0x09100000 + offset);
+           ^
+src/sdcard.c:240:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:241:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux>>8);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:242:5: error: too few arguments to function 'alt_up_sd_card_write'
+     alt_up_sd_card_write(aux>>16);
+     ^
+In file included from src/sdcard.c:3:0:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\drivers\inc\ricardo_sd_card_avalon_interface.h:111:6: note: declared here
+ bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
+      ^
+src/sdcard.c:219:8: warning: variable 'p_msg' set but not used [-Wunused-but-set-variable]
+  void *p_msg;
+        ^
+make: *** [obj/default/src/sdcard.o] Error 1
+20:26:43 **** Incremental Build of configuration Nios II for project nios_software_bsp ****
+make all 
+[BSP build complete]
+20:26:59 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+Info: Compiling src/sdcard.c to obj/default/src/sdcard.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/sdcard.o src/sdcard.c
+src/sdcard.c: In function 'TaskSdcard':
+src/sdcard.c:178:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Me despierto %d\n", p_msg);
+          ^
+src/sdcard.c:178:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c:212:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Imagen dibujada %d\n", p_msg);
+          ^
+src/sdcard.c:212:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c: In function 'TaskSaveImg':
+src/sdcard.c:224:34: warning: passing argument 3 of 'OSMboxPend' from incompatible pointer type [-Wincompatible-pointer-types]
+   p_msg = OSMboxPend(saveimg, 0, &err);
+                                  ^
+In file included from c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\includes.h:23:0,
+                 from src/../inc/task_config.h:1,
+                 from src/sdcard.c:4:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\ucosii\inc\ucos_ii.h:901:15: note: expected 'INT8U * {aka unsigned char *}' but argument is of type 'INT16U * {aka short unsigned int *}'
+ void         *OSMboxPend              (OS_EVENT        *pevent,
+               ^
+src/sdcard.c:231:17: warning: passing argument 1 of 'setFileheader' from incompatible pointer type [-Wincompatible-pointer-types]
+   setFileheader(&img_handle, &header);
+                 ^
+src/sdcard.c:75:6: note: expected 'short int *' but argument is of type 'int *'
+ bool setFileheader(short int *handle, struct bmpFileHeader* header_st){
+      ^
+src/sdcard.c:232:17: warning: passing argument 1 of 'setInfoheader' from incompatible pointer type [-Wincompatible-pointer-types]
+   setInfoheader(&img_handle, &info_st);
+                 ^
+src/sdcard.c:98:6: note: expected 'short int *' but argument is of type 'int *'
+ bool setInfoheader(short int *handle, struct bmpInfoHeader* info_st){
+      ^
+src/sdcard.c:239:11: error: invalid type argument of unary '*' (have 'int')
+     aux = *(0x09100000 + offset);
+           ^
+src/sdcard.c:219:8: warning: variable 'p_msg' set but not used [-Wunused-but-set-variable]
+  void *p_msg;
+        ^
+make: *** [obj/default/src/sdcard.o] Error 1
+20:27:00 **** Incremental Build of configuration Nios II for project nios_software_bsp ****
+make all 
+[BSP build complete]
+20:28:06 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+Info: Compiling src/sdcard.c to obj/default/src/sdcard.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/sdcard.o src/sdcard.c
+src/sdcard.c: In function 'TaskSdcard':
+src/sdcard.c:178:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Me despierto %d\n", p_msg);
+          ^
+src/sdcard.c:178:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c:212:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   printf("SdCard: Imagen dibujada %d\n", p_msg);
+          ^
+src/sdcard.c:212:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+src/sdcard.c: In function 'TaskSaveImg':
+src/sdcard.c:224:34: warning: passing argument 3 of 'OSMboxPend' from incompatible pointer type [-Wincompatible-pointer-types]
+   p_msg = OSMboxPend(saveimg, 0, &err);
+                                  ^
+In file included from c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\hal\inc\includes.h:23:0,
+                 from src/../inc/task_config.h:1,
+                 from src/sdcard.c:4:
+c:\users\dagarbl2\documents\github\proyecto_chs\software\nios_software_bsp\ucosii\inc\ucos_ii.h:901:15: note: expected 'INT8U * {aka unsigned char *}' but argument is of type 'INT16U * {aka short unsigned int *}'
+ void         *OSMboxPend              (OS_EVENT        *pevent,
+               ^
+src/sdcard.c:231:17: warning: passing argument 1 of 'setFileheader' from incompatible pointer type [-Wincompatible-pointer-types]
+   setFileheader(&img_handle, &header);
+                 ^
+src/sdcard.c:75:6: note: expected 'short int *' but argument is of type 'int *'
+ bool setFileheader(short int *handle, struct bmpFileHeader* header_st){
+      ^
+src/sdcard.c:232:17: warning: passing argument 1 of 'setInfoheader' from incompatible pointer type [-Wincompatible-pointer-types]
+   setInfoheader(&img_handle, &info_st);
+                 ^
+src/sdcard.c:98:6: note: expected 'short int *' but argument is of type 'int *'
+ bool setInfoheader(short int *handle, struct bmpInfoHeader* info_st){
+      ^
+src/sdcard.c:239:9: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     aux = (int*)(0x09100000 + offset);
+         ^
+src/sdcard.c:219:8: warning: variable 'p_msg' set but not used [-Wunused-but-set-variable]
+  void *p_msg;
+        ^
+Info: Compiling src/task_config.c to obj/default/src/task_config.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/task_config.o src/task_config.c
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//linker.x' -msys-crt0='C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -LC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o nios_software.elf obj/default/main.o obj/default/src/alt_ucosii_simple_error_check.o obj/default/src/app_config.o obj/default/src/isr.o obj/default/src/sdcard.o obj/default/src/task_config.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model ucosii --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x10001040 --timestamp 1675965263 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_system --quartus_project_dir "c:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/main_project" --jdi C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/main_project//output_files/DE2_115_MEDIA_COMPUTER.jdi --sopcinfo C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/main_project/nios_system.sopcinfo
+Info: (nios_software.elf) 198 KBytes program size (code + initialized data).
+Info:                     130865 KBytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
+20:28:09 **** Incremental Build of configuration Nios II for project nios_software_bsp ****
+make all 
+[BSP build complete]
+20:28:24 **** Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
+20:28:27 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
+20:28:55 **** Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
+20:28:57 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
