@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2023.02.08.18:53:56</td>
+    <td class="l">2023.02.09.11:54:41</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -112,6 +112,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <a href="#module_SD_Card"><b>SD_Card</b>
      </a> Altera_UP_SD_Card_Avalon_Interface 17.1
      <br/>&#160;&#160;
+     <a href="#module_UI_dma_controller"><b>UI_dma_controller</b>
+     </a> altera_up_avalon_video_dma_controller 17.1
+     <br/>&#160;&#160;
      <a href="#module_audio"><b>audio</b>
      </a> altera_up_avalon_audio 17.1
      <br/>&#160;&#160;
@@ -135,9 +138,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <br/>&#160;&#160;
      <a href="#module_jtag_uart"><b>jtag_uart</b>
      </a> altera_avalon_jtag_uart 17.1
-     <br/>&#160;&#160;
-     <a href="#module_mtl_char_buffer"><b>mtl_char_buffer</b>
-     </a> altera_up_avalon_video_character_buffer_with_dma 17.1
      <br/>&#160;&#160;
      <a href="#module_mtl_pixel_buffer_dma"><b>mtl_pixel_buffer_dma</b>
      </a> altera_up_avalon_video_pixel_buffer_dma 17.1
@@ -194,6 +194,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <tr>
     <td class="empty" rowspan="2"></td>
     <td class="mastermodule" colspan="1">
+     <a href="#module_UI_dma_controller"><b>UI_dma_controller</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
      <a href="#module_camera_video_dma_controller"><b>camera_video_dma_controller</b>
      </a>
     </td>
@@ -216,6 +220,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="masterlr">&#160;avalon_dma_master</td>
+    <td class="masterlr">&#160;avalon_dma_master</td>
     <td class="masterl">&#160;data_master</td>
     <td class="masterr">&#160;instruction_master</td>
     <td class="masterlr">&#160;avalon_pixel_dma_master</td>
@@ -233,9 +238,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_parallel_port_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000020</td>
     <td class="empty"></td>
@@ -254,9 +261,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_parallel_port_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000030</td>
     <td class="empty"></td>
@@ -275,11 +284,36 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_sdcard_slave&#160;</td>
     <td class="empty"></td>
+    <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000400</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_UI_dma_controller"><b>UI_dma_controller</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_dma_control_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10001110</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -296,9 +330,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_audio_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000110</td>
     <td class="empty"></td>
@@ -317,9 +353,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_av_config_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000100</td>
     <td class="empty"></td>
@@ -338,9 +376,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_dma_control_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000120</td>
     <td class="empty"></td>
@@ -359,9 +399,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_lcd_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000090</td>
     <td class="empty"></td>
@@ -380,9 +422,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">debug_mem_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>08900000</td>
     <td class="addr"><span style="color:#989898">0x</span>08900000</td>
@@ -401,9 +445,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">uas&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>08000000</td>
     <td class="addr"><span style="color:#989898">0x</span>08000000</td>
@@ -422,9 +468,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_parallel_port_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000010</td>
     <td class="empty"></td>
@@ -443,41 +491,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_jtag_slave&#160;</td>
     <td class="empty"></td>
+    <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10001000</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-   </tr>
-   <tr>
-    <td class="slavemodule">&#160;
-     <a href="#module_mtl_char_buffer"><b>mtl_char_buffer</b>
-     </a>
-    </td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-   </tr>
-   <tr>
-    <td class="slavem">avalon_char_control_slave&#160;</td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>10001200</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-   </tr>
-   <tr>
-    <td class="slavem">avalon_char_buffer_slave&#160;</td>
-    <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>10001800</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -494,9 +514,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_control_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10001100</td>
     <td class="empty"></td>
@@ -515,9 +537,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>08800000</td>
     <td class="addr"><span style="color:#989898">0x</span>08800000</td>
@@ -536,9 +560,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">control_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10001080</td>
     <td class="empty"></td>
@@ -557,9 +583,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_ps2_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000060</td>
     <td class="empty"></td>
@@ -578,9 +606,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_ps2_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000070</td>
     <td class="empty"></td>
@@ -599,9 +629,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_parallel_port_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000050</td>
     <td class="empty"></td>
@@ -620,9 +652,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_parallel_port_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000000</td>
     <td class="empty"></td>
@@ -641,9 +675,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>00000000</td>
     <td class="addr"><span style="color:#989898">0x</span>00000000</td>
@@ -662,9 +698,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_rs232_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000080</td>
     <td class="empty"></td>
@@ -683,9 +721,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_sram_slave&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>09000000</td>
     <td class="addr"><span style="color:#989898">0x</span>09000000</td>
     <td class="addr"><span style="color:#989898">0x</span>09000000</td>
     <td class="empty"></td>
@@ -704,9 +744,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_parallel_port_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000040</td>
     <td class="empty"></td>
@@ -725,9 +767,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">control_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10001040</td>
     <td class="empty"></td>
@@ -746,9 +790,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10001020</td>
     <td class="empty"></td>
@@ -767,9 +813,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_dma_control_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000130</td>
     <td class="empty"></td>
@@ -788,9 +836,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_dma_control_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000160</td>
     <td class="empty"></td>
@@ -809,9 +859,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">avalon_slave&#160;</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>10000140</td>
     <td class="empty"></td>
@@ -1163,6 +1215,254 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_UI_dma_controller"> </a>
+  <div>
+   <hr/>
+   <h2>UI_dma_controller</h2>altera_up_avalon_video_dma_controller v17.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu">cpu</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="12">UI_dma_controller</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_dma_control_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_sys_sdram_pll">sys_sdram_pll</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">reset_source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_dma_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_sram">sram</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_sram_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_pixel_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_UI_rgb_resampler">UI_rgb_resampler</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_rgb_sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">mode</td>
+        <td class="parametervalue">From Memory to Stream</td>
+       </tr>
+       <tr>
+        <td class="parametername">addr_mode</td>
+        <td class="parametervalue">X-Y</td>
+       </tr>
+       <tr>
+        <td class="parametername">start_address</td>
+        <td class="parametervalue">151117824</td>
+       </tr>
+       <tr>
+        <td class="parametername">back_start_address</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">width</td>
+        <td class="parametervalue">400</td>
+       </tr>
+       <tr>
+        <td class="parametername">height</td>
+        <td class="parametervalue">240</td>
+       </tr>
+       <tr>
+        <td class="parametername">color_bits</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">color_planes</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">dma_enabled</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">CYCLONEIVE</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLK_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone IV E</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_UI_rgb_resampler"> </a>
+  <div>
+   <hr/>
+   <h2>UI_rgb_resampler</h2>altera_up_avalon_video_rgb_resampler v17.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_UI_dma_controller">UI_dma_controller</a>
+      </td>
+      <td class="from">avalon_pixel_source&#160;&#160;</td>
+      <td class="main" rowspan="9">UI_rgb_resampler</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_rgb_sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_sys_sdram_pll">sys_sdram_pll</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">reset_source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_rgb_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_alpha_blending">alpha_blending</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_foreground_sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">input_type</td>
+        <td class="parametervalue">32-bit RGBA</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_type</td>
+        <td class="parametervalue">40-bit RGBA</td>
+       </tr>
+       <tr>
+        <td class="parametername">alpha</td>
+        <td class="parametervalue">1023</td>
+       </tr>
+       <tr>
+        <td class="parametername">input_bits</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">input_planes</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_bits</td>
+        <td class="parametervalue">10</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_planes</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">CYCLONEIVE</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLK_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone IV E</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
   <a name="module_alpha_blending"> </a>
   <div>
    <hr/>
@@ -1172,9 +1472,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mtl_char_buffer">mtl_char_buffer</a>
+       <a href="#module_UI_rgb_resampler">UI_rgb_resampler</a>
       </td>
-      <td class="from">avalon_char_source&#160;&#160;</td>
+      <td class="from">avalon_rgb_source&#160;&#160;</td>
       <td class="main" rowspan="15">alpha_blending</td>
      </tr>
      <tr>
@@ -2817,7 +3117,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_sys_sdram_pll">sys_sdram_pll</a>
       </td>
       <td class="from">sys_clk&#160;&#160;</td>
-      <td class="main" rowspan="172">cpu</td>
+      <td class="main" rowspan="168">cpu</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -2876,42 +3176,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;avalon_av_config_slave</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">debug_reset_request&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;reset</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_mtl_char_buffer">mtl_char_buffer</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;avalon_char_buffer_slave</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;avalon_char_control_slave</td>
      </tr>
      <tr>
       <td></td>
@@ -2990,6 +3254,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">data_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_video_dma_controller_ip_output">video_dma_controller_ip_output</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_dma_control_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_UI_dma_controller">UI_dma_controller</a>
       </td>
      </tr>
      <tr>
@@ -4402,7 +4682,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='flash_controller.uas' start='0x8000000' end='0x8800000' type='altera_generic_tristate_controller.uas' /&gt;&lt;slave name='onchip_memory.s1' start='0x8800000' end='0x8808000' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='cpu.debug_mem_slave' start='0x8900000' end='0x8900800' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='sram.avalon_sram_slave' start='0x9000000' end='0x9200000' type='altera_up_avalon_sram.avalon_sram_slave' /&gt;&lt;slave name='red_leds.avalon_parallel_port_slave' start='0x10000000' end='0x10000010' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='green_leds.avalon_parallel_port_slave' start='0x10000010' end='0x10000020' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='HEX3_HEX0.avalon_parallel_port_slave' start='0x10000020' end='0x10000030' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='HEX7_HEX4.avalon_parallel_port_slave' start='0x10000030' end='0x10000040' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='switches.avalon_parallel_port_slave' start='0x10000040' end='0x10000050' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='pushbuttons.avalon_parallel_port_slave' start='0x10000050' end='0x10000060' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='ps2_key.avalon_ps2_slave' start='0x10000060' end='0x10000068' type='altera_up_avalon_ps2.avalon_ps2_slave' /&gt;&lt;slave name='ps2_mouse.avalon_ps2_slave' start='0x10000070' end='0x10000078' type='altera_up_avalon_ps2.avalon_ps2_slave' /&gt;&lt;slave name='serial_port.avalon_rs232_slave' start='0x10000080' end='0x10000088' type='altera_up_avalon_rs232.avalon_rs232_slave' /&gt;&lt;slave name='char_lcd.avalon_lcd_slave' start='0x10000090' end='0x10000092' type='altera_up_avalon_character_lcd.avalon_lcd_slave' /&gt;&lt;slave name='audio_config.avalon_av_config_slave' start='0x10000100' end='0x10000110' type='altera_up_avalon_audio_and_video_config.avalon_av_config_slave' /&gt;&lt;slave name='audio.avalon_audio_slave' start='0x10000110' end='0x10000120' type='altera_up_avalon_audio.avalon_audio_slave' /&gt;&lt;slave name='camera_video_dma_controller.avalon_dma_control_slave' start='0x10000120' end='0x10000130' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /&gt;&lt;slave name='video_dma_controller_ip_input.avalon_dma_control_slave' start='0x10000130' end='0x10000140' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /&gt;&lt;slave name='video_effects.avalon_slave' start='0x10000140' end='0x10000160' type='video_effects.avalon_slave' /&gt;&lt;slave name='video_dma_controller_ip_output.avalon_dma_control_slave' start='0x10000160' end='0x10000170' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /&gt;&lt;slave name='SD_Card.avalon_sdcard_slave' start='0x10000400' end='0x10000800' type='Altera_UP_SD_Card_Avalon_Interface.avalon_sdcard_slave' /&gt;&lt;slave name='jtag_uart.avalon_jtag_slave' start='0x10001000' end='0x10001008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;slave name='timer.s1' start='0x10001020' end='0x10001040' type='altera_avalon_timer.s1' /&gt;&lt;slave name='sysid.control_slave' start='0x10001040' end='0x10001048' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='performance_counter.control_slave' start='0x10001080' end='0x100010C0' type='altera_avalon_performance_counter.control_slave' /&gt;&lt;slave name='mtl_pixel_buffer_dma.avalon_control_slave' start='0x10001100' end='0x10001110' type='altera_up_avalon_video_pixel_buffer_dma.avalon_control_slave' /&gt;&lt;slave name='mtl_char_buffer.avalon_char_control_slave' start='0x10001200' end='0x10001208' type='altera_up_avalon_video_character_buffer_with_dma.avalon_char_control_slave' /&gt;&lt;slave name='mtl_char_buffer.avalon_char_buffer_slave' start='0x10001800' end='0x10002000' type='altera_up_avalon_video_character_buffer_with_dma.avalon_char_buffer_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='flash_controller.uas' start='0x8000000' end='0x8800000' type='altera_generic_tristate_controller.uas' /&gt;&lt;slave name='onchip_memory.s1' start='0x8800000' end='0x8808000' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='cpu.debug_mem_slave' start='0x8900000' end='0x8900800' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='sram.avalon_sram_slave' start='0x9000000' end='0x9200000' type='altera_up_avalon_sram.avalon_sram_slave' /&gt;&lt;slave name='red_leds.avalon_parallel_port_slave' start='0x10000000' end='0x10000010' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='green_leds.avalon_parallel_port_slave' start='0x10000010' end='0x10000020' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='HEX3_HEX0.avalon_parallel_port_slave' start='0x10000020' end='0x10000030' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='HEX7_HEX4.avalon_parallel_port_slave' start='0x10000030' end='0x10000040' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='switches.avalon_parallel_port_slave' start='0x10000040' end='0x10000050' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='pushbuttons.avalon_parallel_port_slave' start='0x10000050' end='0x10000060' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /&gt;&lt;slave name='ps2_key.avalon_ps2_slave' start='0x10000060' end='0x10000068' type='altera_up_avalon_ps2.avalon_ps2_slave' /&gt;&lt;slave name='ps2_mouse.avalon_ps2_slave' start='0x10000070' end='0x10000078' type='altera_up_avalon_ps2.avalon_ps2_slave' /&gt;&lt;slave name='serial_port.avalon_rs232_slave' start='0x10000080' end='0x10000088' type='altera_up_avalon_rs232.avalon_rs232_slave' /&gt;&lt;slave name='char_lcd.avalon_lcd_slave' start='0x10000090' end='0x10000092' type='altera_up_avalon_character_lcd.avalon_lcd_slave' /&gt;&lt;slave name='audio_config.avalon_av_config_slave' start='0x10000100' end='0x10000110' type='altera_up_avalon_audio_and_video_config.avalon_av_config_slave' /&gt;&lt;slave name='audio.avalon_audio_slave' start='0x10000110' end='0x10000120' type='altera_up_avalon_audio.avalon_audio_slave' /&gt;&lt;slave name='camera_video_dma_controller.avalon_dma_control_slave' start='0x10000120' end='0x10000130' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /&gt;&lt;slave name='video_dma_controller_ip_input.avalon_dma_control_slave' start='0x10000130' end='0x10000140' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /&gt;&lt;slave name='video_effects.avalon_slave' start='0x10000140' end='0x10000160' type='video_effects.avalon_slave' /&gt;&lt;slave name='video_dma_controller_ip_output.avalon_dma_control_slave' start='0x10000160' end='0x10000170' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /&gt;&lt;slave name='SD_Card.avalon_sdcard_slave' start='0x10000400' end='0x10000800' type='Altera_UP_SD_Card_Avalon_Interface.avalon_sdcard_slave' /&gt;&lt;slave name='jtag_uart.avalon_jtag_slave' start='0x10001000' end='0x10001008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;slave name='timer.s1' start='0x10001020' end='0x10001040' type='altera_avalon_timer.s1' /&gt;&lt;slave name='sysid.control_slave' start='0x10001040' end='0x10001048' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='performance_counter.control_slave' start='0x10001080' end='0x100010C0' type='altera_avalon_performance_counter.control_slave' /&gt;&lt;slave name='mtl_pixel_buffer_dma.avalon_control_slave' start='0x10001100' end='0x10001110' type='altera_up_avalon_video_pixel_buffer_dma.avalon_control_slave' /&gt;&lt;slave name='UI_dma_controller.avalon_dma_control_slave' start='0x10001110' end='0x10001120' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -5336,118 +5616,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
       </table>
      </td>
-    </tr>
-   </table>
-  </div>
-  <a name="module_mtl_char_buffer"> </a>
-  <div>
-   <hr/>
-   <h2>mtl_char_buffer</h2>altera_up_avalon_video_character_buffer_with_dma v17.1
-   <br/>
-   <div class="greydiv">
-    <table class="connectionboxes">
-     <tr>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_cpu">cpu</a>
-      </td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="13">mtl_char_buffer</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;avalon_char_buffer_slave</td>
-     </tr>
-     <tr>
-      <td class="from">data_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;avalon_char_control_slave</td>
-     </tr>
-     <tr>
-      <td class="from">debug_reset_request&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;reset</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_sys_sdram_pll">sys_sdram_pll</a>
-      </td>
-      <td class="from">sys_clk&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;clk</td>
-     </tr>
-     <tr>
-      <td class="from">reset_source&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;reset</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">avalon_char_source&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_alpha_blending">alpha_blending</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;avalon_foreground_sink</td>
-     </tr>
-    </table>
-   </div>
-   <br/>
-   <br/>
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Parameters</h2>
-      <table>
-       <tr>
-        <td class="parametername">vga_device</td>
-        <td class="parametervalue">LCD with touchscreen (TRDB_LTM)</td>
-       </tr>
-       <tr>
-        <td class="parametername">enable_transparency</td>
-        <td class="parametervalue">true</td>
-       </tr>
-       <tr>
-        <td class="parametername">color_bits</td>
-        <td class="parametervalue">1-bit</td>
-       </tr>
-       <tr>
-        <td class="parametername">resolution</td>
-        <td class="parametervalue">80 x 60</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_DEVICE_FAMILY</td>
-        <td class="parametervalue">CYCLONEIVE</td>
-       </tr>
-       <tr>
-        <td class="parametername">AUTO_CLK_CLOCK_RATE</td>
-        <td class="parametervalue">50000000</td>
-       </tr>
-       <tr>
-        <td class="parametername">deviceFamily</td>
-        <td class="parametervalue">Cyclone IV E</td>
-       </tr>
-       <tr>
-        <td class="parametername">generateLegacySim</td>
-        <td class="parametervalue">false</td>
-       </tr>
-      </table>
-     </td>
-    </tr>
-   </table>&#160;&#160;
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Software Assignments</h2>(none)</td>
     </tr>
    </table>
   </div>
@@ -7308,7 +7476,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_camera_video_dma_controller">camera_video_dma_controller</a>
       </td>
       <td class="from">avalon_dma_master&#160;&#160;</td>
-      <td class="main" rowspan="21">sram</td>
+      <td class="main" rowspan="24">sram</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avalon_sram_slave</td>
@@ -7331,6 +7499,18 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <tr>
       <td class="neighbor" rowspan="2">
        <a href="#module_video_dma_controller_ip_output">video_dma_controller_ip_output</a>
+      </td>
+      <td class="from">avalon_dma_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_sram_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_UI_dma_controller">UI_dma_controller</a>
       </td>
       <td class="from">avalon_dma_master&#160;&#160;</td>
      </tr>
@@ -7637,7 +7817,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clk_50">clk_50</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="204">sys_sdram_pll</td>
+      <td class="main" rowspan="209">sys_sdram_pll</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;ref_clk</td>
@@ -8293,32 +8473,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">sys_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_mtl_char_buffer">mtl_char_buffer</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;clk</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">reset_source&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;reset</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">sys_clk&#160;&#160;</td>
-      <td class="neighbor" rowspan="4">
        <a href="#module_alpha_blending">alpha_blending</a>
       </td>
      </tr>
@@ -8605,6 +8759,58 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">sys_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
+       <a href="#module_UI_dma_controller">UI_dma_controller</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">reset_source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_UI_rgb_resampler">UI_rgb_resampler</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">reset_source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
        <a href="#module_onchip_memory">onchip_memory</a>
       </td>
      </tr>
@@ -8827,7 +9033,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">timestamp</td>
-        <td class="parametervalue">1675878835</td>
+        <td class="parametervalue">1675940081</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -8852,7 +9058,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TIMESTAMP</td>
-        <td class="parametervalue">1675878835</td>
+        <td class="parametervalue">1675940081</td>
        </tr>
       </table>
      </td>
@@ -9785,7 +9991,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0,01 seconds</td>
-    <td class="r">rendering took 0,13 seconds</td>
+    <td class="r">rendering took 0,12 seconds</td>
    </tr>
   </table>
  </body>

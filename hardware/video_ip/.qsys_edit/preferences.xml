@@ -3,12 +3,11 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="95" />
+   <connections preferredWidth="47" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/Basic Functions/Simulation; Debug and Verification,Library,Library/Basic Functions,Library/Basic Functions/Simulation; Debug and Verification/Simulation,Project" />
+ <library expandedCategories="Project,Library" />
  <window width="1556" height="820" x="186" y="112" />
  <generation simulation="VERILOG" path="_PROJECT_NAME_" />
 </preferences>

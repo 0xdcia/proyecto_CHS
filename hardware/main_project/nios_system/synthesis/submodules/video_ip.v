@@ -56,17 +56,34 @@ module video_ip (
 // Esto se debe a que debemos igualar la latencia de las señales de control con la de datos
 
 wire [31:0] reg3, reg2, reg1, reg0;
-wire [15:0] data_in_reg, data_out_reg;
 
+//Sink 1 <- Camera
+wire [15:0] data_in_reg;
 wire ready_reg;  // Esta asignación es inmediata, no se registra
-
 wire valid_in_reg;
-reg valid_out_reg;
-
 wire startofpacket_in_reg;
-reg startofpacket_out_reg;
-
 wire endofpacket_in_reg;
+
+/*
+//Sink 2 <- SD Card
+wire [15:0] data_in_reg;
+wire ready_reg;  // Esta asignación es inmediata, no se registra
+wire valid_in_reg;
+wire startofpacket_in_reg;
+wire endofpacket_in_reg;
+
+//Sink 2 <- SD Card
+wire [15:0] data_in_reg;
+wire ready_reg;  // Esta asignación es inmediata, no se registra
+wire valid_in_reg;
+wire startofpacket_in_reg;
+wire endofpacket_in_reg;
+*/
+
+//Source -> Pantalla
+wire [15:0] data_out_reg;
+reg valid_out_reg;
+reg startofpacket_out_reg;
 reg endofpacket_out_reg;
 
 
@@ -74,7 +91,7 @@ reg endofpacket_out_reg;
 // ///////////////////////////////////////////////////////////////////////////////
 // INSTANCIACIÓN DEL AVALON_STREAMING_SINK INTERFACE
 
-avalon_st_sink_interface U2_AVALON_ST_SINK_1 (
+avalon_st_sink_interface U2_AVALON_ST_SINK_CAMERA (
     .reset(reset),  // reset
     .clk(clk),  // reloj
     
@@ -94,6 +111,27 @@ avalon_st_sink_interface U2_AVALON_ST_SINK_1 (
     .endofpacket_reg(endofpacket_in_reg)  // indicador fin frame, registro en la IP
 );
 
+/*
+avalon_st_sink_interface U2_AVALON_ST_SINK_SDCARD (
+    .reset(reset),  // reset
+    .clk(clk),  // reloj
+    
+    .valid_in(valid_in),  // valid in
+    .valid_reg(valid_in_reg),  // valid reg
+    
+    .ready_reg(ready_reg),
+    .ready_out(ready_out),  // ready, señal del sink al source. Indica si la IP está lista para recibir datos al source anterior.
+    
+    .data_in(data_in),  // datos, colores RGB de 16 bits, serie.
+    .data_reg(data_in_reg), // datos de entrada, registro en la IP
+    
+    .startofpacket_in(startofpacket_in),  // indicador inicio frame
+    .startofpacket_reg(startofpacket_in_reg),  // indicador inicio frame, registro en la IP
+    
+    .endofpacket_in(endofpacket_in),  // indicador fin frame
+    .endofpacket_reg(endofpacket_in_reg)  // indicador fin frame, registro en la IP
+);
+*/
 
 
 // ///////////////////////////////////////////////////////////////////////////////

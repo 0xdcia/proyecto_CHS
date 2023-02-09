@@ -182,7 +182,7 @@ CRT0 :=
 SYS_LIB :=
 
 # Define path to the root of the BSP.
-BSP_ROOT_DIR := C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+BSP_ROOT_DIR := C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
 
 # List of application specific include directories, library directories and library names
 APP_INCLUDE_DIRS :=
@@ -193,7 +193,7 @@ APP_LIBRARY_NAMES :=
 BUILD_PRE_PROCESS :=
 BUILD_POST_PROCESS :=
 
-QUARTUS_PROJECT_DIR := C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/main_project/
+QUARTUS_PROJECT_DIR := C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/
 
 
 #END GENERATED
