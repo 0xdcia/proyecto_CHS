@@ -136,87 +136,91 @@
 					"strict" : false
 				},
 				{
-					"name" : "ready_out",
+					"name" : "camera_ready_out",
 					"strict" : false
 				},
 				{
-					"name" : "valid_out",
+					"name" : "sdcard_ready_out",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[0]",
+					"name" : "source_valid_out",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[1]",
+					"name" : "source_data_out[0]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[2]",
+					"name" : "source_data_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[3]",
+					"name" : "source_data_out[2]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[4]",
+					"name" : "source_data_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[5]",
+					"name" : "source_data_out[4]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[6]",
+					"name" : "source_data_out[5]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[7]",
+					"name" : "source_data_out[6]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[8]",
+					"name" : "source_data_out[7]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[9]",
+					"name" : "source_data_out[8]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[10]",
+					"name" : "source_data_out[9]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[11]",
+					"name" : "source_data_out[10]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[12]",
+					"name" : "source_data_out[11]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[13]",
+					"name" : "source_data_out[12]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[14]",
+					"name" : "source_data_out[13]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[15]",
+					"name" : "source_data_out[14]",
 					"strict" : false
 				},
 				{
-					"name" : "startofpacket_out",
+					"name" : "source_data_out[15]",
 					"strict" : false
 				},
 				{
-					"name" : "endofpacket_out",
+					"name" : "source_startofpacket_out",
 					"strict" : false
 				},
 				{
-					"name" : "ready_in",
+					"name" : "source_endofpacket_out",
+					"strict" : false
+				},
+				{
+					"name" : "source_ready_in",
 					"strict" : false
 				},
 				{
@@ -380,79 +384,155 @@
 					"strict" : false
 				},
 				{
-					"name" : "valid_in",
+					"name" : "sdcard_valid_in",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[10]",
+					"name" : "camera_valid_in",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[3]",
+					"name" : "sdcard_data_in[10]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[4]",
+					"name" : "camera_data_in[10]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[0]",
+					"name" : "sdcard_data_in[9]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[1]",
+					"name" : "camera_data_in[9]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[2]",
+					"name" : "sdcard_data_in[8]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[9]",
+					"name" : "camera_data_in[8]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[8]",
+					"name" : "sdcard_data_in[7]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[7]",
+					"name" : "camera_data_in[7]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[6]",
+					"name" : "sdcard_data_in[6]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[5]",
+					"name" : "camera_data_in[6]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[14]",
+					"name" : "sdcard_data_in[5]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[15]",
+					"name" : "camera_data_in[5]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[11]",
+					"name" : "sdcard_data_in[15]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[12]",
+					"name" : "camera_data_in[15]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[13]",
+					"name" : "sdcard_data_in[14]",
 					"strict" : false
 				},
 				{
-					"name" : "startofpacket_in",
+					"name" : "camera_data_in[14]",
 					"strict" : false
 				},
 				{
-					"name" : "endofpacket_in",
+					"name" : "sdcard_data_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "camera_data_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sdcard_data_in[12]",
+					"strict" : false
+				},
+				{
+					"name" : "camera_data_in[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sdcard_data_in[13]",
+					"strict" : false
+				},
+				{
+					"name" : "camera_data_in[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sdcard_data_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "camera_data_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sdcard_data_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "camera_data_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdcard_data_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "camera_data_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdcard_data_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "camera_data_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdcard_data_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "camera_data_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdcard_startofpacket_in",
+					"strict" : false
+				},
+				{
+					"name" : "camera_startofpacket_in",
+					"strict" : false
+				},
+				{
+					"name" : "sdcard_endofpacket_in",
+					"strict" : false
+				},
+				{
+					"name" : "camera_endofpacket_in",
 					"strict" : false
 				}
 			]
