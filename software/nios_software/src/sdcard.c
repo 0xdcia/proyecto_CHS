@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-#include <Altera_UP_SD_Card_Avalon_Interface.h>
+#include <Ricardo_SD_Card_Avalon_Interface.h>
 #include "../inc/task_config.h"
 #include "../inc/sdcard.h"
+#include "../inc/app_config.h"
 #include "../inc/alt_ucosii_simple_error_check.h"
 #include <io.h>
 
@@ -13,6 +14,18 @@ unsigned int getWord(short int *handle){
 	aux |= alt_up_sd_card_read(*handle) << 16;
 	aux |= alt_up_sd_card_read(*handle) << 24;
 	return aux;
+}
+
+void writeWord(short int *handle, unsigned int value){
+	alt_up_sd_card_write(*handle, value);
+	alt_up_sd_card_write(*handle, value << 8);
+	alt_up_sd_card_write(*handle, value << 16);
+	alt_up_sd_card_write(*handle, value << 24);
+}
+
+void writeShort(short int *handle, unsigned short value){
+	alt_up_sd_card_write(*handle, value);
+	alt_up_sd_card_write(*handle, value << 8);
 }
 
 unsigned short getShort(short int *handle){
@@ -59,6 +72,14 @@ bool getFileheader(short int *handle, struct bmpFileHeader* header_st){
 	return true;
 }
 
+bool setFileheader(short int *handle, struct bmpFileHeader* header_st){
+	writeShort(handle, header_st->signature);
+	writeWord(handle, header_st->fileSize);
+	writeWord(handle, 0);
+	writeWord(handle, header_st->offsetBMPdata);
+	return true;
+}
+
 bool getInfoheader(short int *handle, struct bmpInfoHeader* info_st){
 	info_st->headerSize = getWord(handle);
 	info_st->width = getWord(handle);
@@ -73,6 +94,22 @@ bool getInfoheader(short int *handle, struct bmpInfoHeader* info_st){
 	info_st->importantColors = getWord(handle);
 	return true;
 }
+
+bool setInfoheader(short int *handle, struct bmpInfoHeader* info_st){
+	writeWord(handle, info_st->headerSize);
+	writeWord(handle, info_st->width);
+	writeWord(handle, info_st->heigth);
+	writeShort(handle, info_st->planes);
+	writeShort(handle, info_st->bits_per_pixel);
+	writeWord(handle, info_st->compression);
+	writeWord(handle, info_st->imageSize);
+	writeWord(handle, info_st->XpixelsM);
+	writeWord(handle, info_st->YpixelsM);
+	writeWord(handle, info_st->colorsUsed);
+	writeWord(handle, info_st->importantColors);
+	return true;
+}
+
 char archivos[512][13];
 int num_imgs = 0;
 int loadFiles(){
@@ -123,7 +160,8 @@ int loadFiles(){
 //Si la imagen cambia mientras se dibuja, se reinicia el dibujado
 
 int image = 0;
-
+struct bmpFileHeader header;
+struct bmpInfoHeader info_st;
 void TaskSdcard(void *pdata){
 	/* Cambiar de donde lee la DMA de la pantalla */
 	int SRAM_BASE_SIN_CACHE = (SRAM_BASE + 0x080000000);
@@ -142,8 +180,6 @@ void TaskSdcard(void *pdata){
 
 		short aux[3];
 		int old_img = -1;
-		struct bmpFileHeader header;
-		struct bmpInfoHeader info_st;
 		short int handle = -1;
 
 		while((image%num_imgs)!= old_img){
@@ -174,6 +210,44 @@ void TaskSdcard(void *pdata){
 			alt_up_sd_card_fclose(handle);
 		}
 		printf("SdCard: Imagen dibujada %d\n", p_msg);
+	}
+
+}
+
+
+void TaskSaveImg(void *pdata){
+	void *p_msg;
+	int img_handle = -1;
+
+	while(1){
+		int offset;
+		p_msg = OSMboxPend(saveimg, 0, &err);
+		//Leer imagen de 0x09100000 y guardar en sd
+		char nombre[13];
+		sprintf(nombre, "cap%d", num_imgs);
+		img_handle = alt_up_sd_card_fopen(nombre, true);
+
+		//Crear cabecera
+		setFileheader(&img_handle, &header);
+		setInfoheader(&img_handle, &info_st);
+
+		//Pixeles
+		int aux;
+		for(int i = 240-1; i >= 0; i--){
+			for(int j = 0; j < 400; j++){
+				offset = (i << 9) + j;
+				aux = (int*)(0x09100000 + offset);
+				alt_up_sd_card_write(img_handle, aux);
+				alt_up_sd_card_write(img_handle, aux>>8);
+				alt_up_sd_card_write(img_handle, aux>>16);
+			}
+		}
+
+		alt_up_sd_card_fclose(img_handle);
+		//Reiniciar la toma de video
+		*(EFFECT_ptr + 0) = 0x00000000;
+		//Actualizar imagenes
+		loadFiles();
 	}
 
 }
