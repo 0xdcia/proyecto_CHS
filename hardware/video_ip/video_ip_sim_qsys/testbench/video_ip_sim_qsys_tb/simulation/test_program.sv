@@ -54,6 +54,15 @@ begin
 
     repeat (20) @(posedge `CLK);
 
+    
+    avalon_write (3'h0,32'h00000003);  // Solicitud de pausa e interrupcion
+
+    repeat (30) @(posedge `CLK);
+
+    avalon_write (3'h0,32'h00000001);  // Solicitud de pausa
+
+    repeat (20) @(posedge `CLK);
+
     // avalon_write (3'h1,32'h00005678);
 
     // $display("Operacion Escritura acabada");

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for video_ip
-Wed Feb 08 18:52:08 2023
+Thu Feb 09 18:49:41 2023
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -45,16 +45,16 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                  ;
 +------------------------------------+----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb 08 18:52:08 2023                    ;
+; Analysis & Synthesis Status        ; Successful - Thu Feb 09 18:49:41 2023                    ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
 ; Revision Name                      ; video_ip                                                 ;
 ; Top-level Entity Name              ; video_ip                                                 ;
 ; Family                             ; Cyclone IV E                                             ;
-; Total logic elements               ; 427                                                      ;
-;     Total combinational functions  ; 322                                                      ;
-;     Dedicated logic registers      ; 217                                                      ;
-; Total registers                    ; 217                                                      ;
-; Total pins                         ; 112                                                      ;
+; Total logic elements               ; 429                                                      ;
+;     Total combinational functions  ; 325                                                      ;
+;     Dedicated logic registers      ; 219                                                      ;
+; Total registers                    ; 219                                                      ;
+; Total pins                         ; 113                                                      ;
 ; Total virtual pins                 ; 0                                                        ;
 ; Total memory bits                  ; 0                                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                                        ;
@@ -183,30 +183,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 427       ;
+; Estimated Total logic elements              ; 429       ;
 ;                                             ;           ;
-; Total combinational functions               ; 322       ;
+; Total combinational functions               ; 325       ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 136       ;
-;     -- 3 input functions                    ; 108       ;
-;     -- <=2 input functions                  ; 78        ;
+;     -- 3 input functions                    ; 110       ;
+;     -- <=2 input functions                  ; 79        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 278       ;
+;     -- normal mode                          ; 281       ;
 ;     -- arithmetic mode                      ; 44        ;
 ;                                             ;           ;
-; Total registers                             ; 217       ;
-;     -- Dedicated logic registers            ; 217       ;
+; Total registers                             ; 219       ;
+;     -- Dedicated logic registers            ; 219       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 112       ;
+; I/O pins                                    ; 113       ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 217       ;
-; Total fan-out                               ; 1820      ;
-; Average fan-out                             ; 2.39      ;
+; Maximum fan-out                             ; 219       ;
+; Total fan-out                               ; 1833      ;
+; Average fan-out                             ; 2.38      ;
 +---------------------------------------------+-----------+
 
 
@@ -215,11 +215,11 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------+----------------------------+--------------+
 ; Compilation Hierarchy Node                            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                        ; Entity Name                ; Library Name ;
 +-------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------+----------------------------+--------------+
-; |video_ip                                             ; 322 (0)             ; 217 (3)                   ; 0           ; 0            ; 0       ; 0         ; 112  ; 0            ; |video_ip                                                  ; video_ip                   ; work         ;
+; |video_ip                                             ; 325 (4)             ; 219 (5)                   ; 0           ; 0            ; 0       ; 0         ; 113  ; 0            ; |video_ip                                                  ; video_ip                   ; work         ;
 ;    |avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|   ; 135 (135)           ; 160 (160)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1   ; avalon_mm_slave_interface  ; work         ;
-;    |avalon_st_sink_interface:U2_AVALON_ST_SINK_1|     ; 17 (17)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |video_ip|avalon_st_sink_interface:U2_AVALON_ST_SINK_1     ; avalon_st_sink_interface   ; work         ;
-;    |avalon_st_source_interface:U3_AVALON_ST_SOURCE_1| ; 17 (17)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |video_ip|avalon_st_source_interface:U3_AVALON_ST_SOURCE_1 ; avalon_st_source_interface ; work         ;
-;    |video_effects:U4_VIDEO_EFFECTS_1|                 ; 153 (153)           ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1                 ; video_effects              ; work         ;
+;    |avalon_st_sink_interface:U2_AVALON_ST_SINK_1|     ; 16 (16)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |video_ip|avalon_st_sink_interface:U2_AVALON_ST_SINK_1     ; avalon_st_sink_interface   ; work         ;
+;    |avalon_st_source_interface:U3_AVALON_ST_SOURCE_1| ; 18 (18)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |video_ip|avalon_st_source_interface:U3_AVALON_ST_SOURCE_1 ; avalon_st_source_interface ; work         ;
+;    |video_effects:U4_VIDEO_EFFECTS_1|                 ; 152 (152)           ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1                 ; video_effects              ; work         ;
 +-------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -229,34 +229,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 217   ;
+; Total registers                              ; 219   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 201   ;
+; Number of registers using Clock Enable       ; 200   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |video_ip|avalon_st_sink_interface:U2_AVALON_ST_SINK_1|data_reg[2]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|reg0[31]     ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|reg1[31]     ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|reg2[1]      ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|reg3[9]      ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_out[10]         ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_out[8]          ;
-; 10:1               ; 32 bits   ; 192 LEs       ; 96 LEs               ; 96 LEs                 ; Yes        ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|readdata[28] ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_out[1]          ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_proc            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_proc            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_proc            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |video_ip|avalon_st_source_interface:U3_AVALON_ST_SOURCE_1|data_out[0] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|reg0[3]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|reg1[5]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|reg2[24]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|reg3[2]       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_out[4]           ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_out[8]           ;
+; 10:1               ; 32 bits   ; 192 LEs       ; 96 LEs               ; 96 LEs                 ; Yes        ; |video_ip|avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1|readdata[22]  ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_out[1]           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_proc             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_proc             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |video_ip|video_effects:U4_VIDEO_EFFECTS_1|video_data_proc             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -268,7 +268,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; reg1[31..18] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; reg1[15..10] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; reg1[7..5]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; reg0         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; reg0[31..2]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -277,23 +277,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 112                         ;
-; cycloneiii_ff         ; 217                         ;
-;     ENA               ; 201                         ;
-;     plain             ; 16                          ;
-; cycloneiii_lcell_comb ; 322                         ;
+; boundary_port         ; 113                         ;
+; cycloneiii_ff         ; 219                         ;
+;     ENA               ; 200                         ;
+;     plain             ; 19                          ;
+; cycloneiii_lcell_comb ; 325                         ;
 ;     arith             ; 44                          ;
 ;         2 data inputs ; 1                           ;
 ;         3 data inputs ; 43                          ;
-;     normal            ; 278                         ;
+;     normal            ; 281                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 75                          ;
-;         3 data inputs ; 65                          ;
+;         2 data inputs ; 76                          ;
+;         3 data inputs ; 67                          ;
 ;         4 data inputs ; 136                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.70                       ;
-; Average LUT depth     ; 5.15                        ;
+; Average LUT depth     ; 5.09                        ;
 +-----------------------+-----------------------------+
 
 
@@ -312,7 +312,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
-    Info: Processing started: Wed Feb 08 18:51:56 2023
+    Info: Processing started: Thu Feb 09 18:49:28 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off video_ip -c video_ip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -327,23 +327,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file verilog
 Info (12021): Found 1 design units, including 1 entities, in source file verilog/video_effects.v
     Info (12023): Found entity 1: video_effects File: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_effects.v Line: 6
 Info (12127): Elaborating entity "video_ip" for the top level hierarchy
-Info (12128): Elaborating entity "avalon_st_sink_interface" for hierarchy "avalon_st_sink_interface:U2_AVALON_ST_SINK_1" File: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v Line: 95
-Info (12128): Elaborating entity "avalon_st_source_interface" for hierarchy "avalon_st_source_interface:U3_AVALON_ST_SOURCE_1" File: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v Line: 120
-Info (12128): Elaborating entity "avalon_mm_slave_interface" for hierarchy "avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1" File: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v Line: 144
-Info (12128): Elaborating entity "video_effects" for hierarchy "video_effects:U4_VIDEO_EFFECTS_1" File: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v Line: 214
+Info (12128): Elaborating entity "avalon_st_sink_interface" for hierarchy "avalon_st_sink_interface:U2_AVALON_ST_SINK_1" File: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v Line: 99
+Info (12128): Elaborating entity "avalon_st_source_interface" for hierarchy "avalon_st_source_interface:U3_AVALON_ST_SOURCE_1" File: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v Line: 124
+Info (12128): Elaborating entity "avalon_mm_slave_interface" for hierarchy "avalon_mm_slave_interface:U1_AVALON_MM_SLAVE_1" File: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v Line: 148
+Info (12128): Elaborating entity "video_effects" for hierarchy "video_effects:U4_VIDEO_EFFECTS_1" File: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v Line: 236
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/output_files/video_ip.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 571 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 574 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 60 input pins
-    Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 459 logic cells
+    Info (21059): Implemented 53 output pins
+    Info (21061): Implemented 461 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4769 megabytes
-    Info: Processing ended: Wed Feb 08 18:52:08 2023
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 4771 megabytes
+    Info: Processing ended: Thu Feb 09 18:49:41 2023
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:25
 
 
 +------------------------------------------+

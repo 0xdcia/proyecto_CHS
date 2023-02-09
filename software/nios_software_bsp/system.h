@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/main_project/nios_system.sopcinfo
  *
- * Generated: Wed Feb 08 19:00:28 CET 2023
+ * Generated: Thu Feb 09 19:00:35 CET 2023
  */
 
 /*
@@ -600,7 +600,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1675878835
+#define SYSID_TIMESTAMP 1675965263
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -743,8 +743,8 @@
 
 #define ALT_MODULE_CLASS_video_effects video_effects
 #define VIDEO_EFFECTS_BASE 0x10000140
-#define VIDEO_EFFECTS_IRQ -1
-#define VIDEO_EFFECTS_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define VIDEO_EFFECTS_IRQ 3
+#define VIDEO_EFFECTS_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define VIDEO_EFFECTS_NAME "/dev/video_effects"
 #define VIDEO_EFFECTS_SPAN 32
 #define VIDEO_EFFECTS_TYPE "video_effects"

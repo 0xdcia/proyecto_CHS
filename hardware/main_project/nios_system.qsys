@@ -401,6 +401,14 @@
          type = "String";
       }
    }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
    element onchip_memory
    {
       datum _sortIndex
@@ -1132,7 +1140,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="132551" />
+  <parameter name="internalIrqMaskSystemInfo" value="132559" />
   <parameter name="io_regionbase" value="268435456" />
   <parameter name="io_regionsize" value="16384" />
   <parameter name="master_addr_map" value="false" />
@@ -2386,6 +2394,13 @@
  </connection>
  <connection kind="interrupt" version="17.1" start="cpu.irq" end="timer.irq">
   <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="17.1"
+   start="cpu.irq"
+   end="video_effects.irq_sender">
+  <parameter name="irqNumber" value="3" />
  </connection>
  <connection
    kind="reset"

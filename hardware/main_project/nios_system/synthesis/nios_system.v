@@ -400,6 +400,7 @@ module nios_system (
 	wire         irq_mapper_receiver5_irq;                                                             // audio:irq -> irq_mapper:receiver5_irq
 	wire         irq_mapper_receiver6_irq;                                                             // jtag_uart:av_irq -> irq_mapper:receiver6_irq
 	wire         irq_mapper_receiver7_irq;                                                             // timer:irq -> irq_mapper:receiver7_irq
+	wire         irq_mapper_receiver8_irq;                                                             // video_effects:irq_sender -> irq_mapper:receiver8_irq
 	wire  [31:0] cpu_irq_irq;                                                                          // irq_mapper:sender_irq -> cpu:irq
 	wire         video_scaler_0_avalon_scaler_source_valid;                                            // video_scaler_0:stream_out_valid -> avalon_st_adapter:in_0_valid
 	wire  [29:0] video_scaler_0_avalon_scaler_source_data;                                             // video_scaler_0:stream_out_data -> avalon_st_adapter:in_0_data
@@ -1133,7 +1134,8 @@ module nios_system (
 		.readdata          (mm_interconnect_0_video_effects_avalon_slave_readdata),           //                        .readdata
 		.write             (mm_interconnect_0_video_effects_avalon_slave_write),              //                        .write
 		.writedata         (mm_interconnect_0_video_effects_avalon_slave_writedata),          //                        .writedata
-		.chipselect        (mm_interconnect_0_video_effects_avalon_slave_chipselect)          //                        .chipselect
+		.chipselect        (mm_interconnect_0_video_effects_avalon_slave_chipselect),         //                        .chipselect
+		.irq_sender        (irq_mapper_receiver8_irq)                                         //              irq_sender.irq
 	);
 
 	nios_system_video_pll video_pll (
@@ -1410,6 +1412,7 @@ module nios_system (
 		.receiver5_irq (irq_mapper_receiver5_irq),       // receiver5.irq
 		.receiver6_irq (irq_mapper_receiver6_irq),       // receiver6.irq
 		.receiver7_irq (irq_mapper_receiver7_irq),       // receiver7.irq
+		.receiver8_irq (irq_mapper_receiver8_irq),       // receiver8.irq
 		.sender_irq    (cpu_irq_irq)                     //    sender.irq
 	);
 

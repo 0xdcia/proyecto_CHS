@@ -10,6 +10,10 @@ module video_ip (
     input wire reset,  // reset
     input wire clk,  // reloj
     
+    // ///////////////////////////////////////////////////////////////
+    // INTERRUPCIONES
+    
+    output wire irq_sender,
     
     // ///////////////////////////////////////////////////////////////
     // AVALON-MM-SLAVE INTERFACE
@@ -163,8 +167,26 @@ Leyenda:
 - nombre[A:B] = valor, bits útiles leídos desde el X al Y.
 - [A:B] = región vacía (no se lee)
 */
+reg pause;
+wire pause_req;
+assign pause_req = reg0[0];
 
+reg interrupt;
+wire interrupt_req;
+assign interrupt_req = reg0[1];
+assign irq_sender = interrupt;
 
+always @(posedge clk)
+begin
+    if(pause_req & endofpacket_out_reg)
+    begin
+        pause <= 1'b1;
+    end
+    if(~pause_req)
+    begin
+        pause <= 1'b0;
+    end
+end
 
 // ///////////////////////////////////////////////////////////////////////////////
 // INSTANCIACIÓN DEL MÓDULO DE EFECTOS DE VÍDEO
@@ -224,7 +246,7 @@ always @(posedge clk)
 begin
     
     // Si no está ready, congelamos las transferencias
-    if (ready_reg)
+    if (ready_reg & ~pause)
     begin
         
         valid_out_reg <= valid_in_reg;
@@ -232,7 +254,18 @@ begin
         endofpacket_out_reg <= endofpacket_in_reg;
         
     end
-    
+    if (pause)
+    begin
+        valid_out_reg <= 1'b0;
+        if (interrupt_req)
+        begin
+            interrupt = 1'b1;
+        end
+        else
+        begin
+            interrupt = 1'b0;
+        end
+    end
 end
 
 

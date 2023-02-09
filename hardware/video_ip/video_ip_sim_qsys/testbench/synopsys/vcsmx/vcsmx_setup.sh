@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.1 593 win32 2023.02.07.17:44:42
+# ACDS 17.1 593 win32 2023.02.09.17:49:23
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.1 593 win32 2023.02.07.17:44:42
+# ACDS 17.1 593 win32 2023.02.09.17:49:23
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="video_ip_sim_qsys_tb"
@@ -151,11 +151,13 @@ mkdir -p ./libraries/altera_common_sv_packages/
 mkdir -p ./libraries/video_effects_0_avalon_slave_translator/
 mkdir -p ./libraries/mm_master_bfm_0_m0_translator/
 mkdir -p ./libraries/rst_controller/
+mkdir -p ./libraries/irq_mapper/
 mkdir -p ./libraries/mm_interconnect_0/
 mkdir -p ./libraries/video_effects_0/
 mkdir -p ./libraries/st_source_bfm_0/
 mkdir -p ./libraries/st_sink_bfm_0/
 mkdir -p ./libraries/mm_master_bfm_0/
+mkdir -p ./libraries/interrupt_sink_0/
 mkdir -p ./libraries/video_ip_sim_qsys_inst_reset_bfm/
 mkdir -p ./libraries/video_ip_sim_qsys_inst_clk_bfm/
 mkdir -p ./libraries/video_ip_sim_qsys_inst/
@@ -190,6 +192,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_merlin_master_translator.sv"    -work mm_master_bfm_0_m0_translator          
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_reset_controller.v"             -work rst_controller                         
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_reset_synchronizer.v"           -work rst_controller                         
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys_irq_mapper.sv"       -work irq_mapper                             
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys_mm_interconnect_0.v" -work mm_interconnect_0                      
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip.v"                            -work video_effects_0                        
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/avalon_mm_slave_interface.v"           -work video_effects_0                        
@@ -199,6 +202,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_st_source_bfm.sv"        -work st_source_bfm_0                        
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_st_sink_bfm.sv"          -work st_sink_bfm_0                          
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_mm_master_bfm.sv"        -work mm_master_bfm_0                        
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_interrupt_sink.sv"       -work interrupt_sink_0                       
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_reset_source.sv"         -work video_ip_sim_qsys_inst_reset_bfm       
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_clock_source.sv"         -work video_ip_sim_qsys_inst_clk_bfm         
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys.v"                   -work video_ip_sim_qsys_inst                 

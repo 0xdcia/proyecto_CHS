@@ -13,12 +13,22 @@ int effect = 0;
 /**
  * Subrutina de manejo de interrupcion por pulsador incrustada en uCOS
  */
+void capture_isr(){
+	OSIntEnter();
+	*(EFFECT_ptr + 0) = 0x00000001;
+	printf("Hemos recibido una foto\n");
+	*(EFFECT_ptr + 0) = 0x00000000;
+	OSIntExit();
+}
+
+
 void pushbutton_isr() {
-OSIntEnter();
+
+	OSIntEnter();
 	KEY_value = *(KEY_ptr + 3);
 
-	*(KEY_ptr + 3) = 0;//Borrar interrupcion
-	if (KEY_value & 0x2)//Derecha
+	*(KEY_ptr + 3) = 0;  //Borrar interrupcion
+	if (KEY_value & 0x2)  //Derecha
 	{
 		image++;
 		printf("Despertando a Tarea sdcard %d, %d\n", KEY_value, SW_value);
@@ -48,7 +58,7 @@ OSIntEnter();
 				break;
 			case 1:
 				printf("Eliminar R\n");
-				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 0) = 0x00000003;  // no usado
 				*(EFFECT_ptr + 1) = 0x00000102;  // Efecto: Eliminación de colores RGB. delete_rgb=1; elimina R
 				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
 				*(EFFECT_ptr + 3) = 0x00000000;  // no usado

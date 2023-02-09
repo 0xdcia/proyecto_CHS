@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.02.07.17:41:47"
- outputDirectory="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/">
+ date="2023.02.09.17:45:22"
+ outputDirectory="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -65,13 +65,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="video_ip_sim_qsys:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1675788105,AUTO_UNIQUE_ID=(clock_source:17.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(altera_avalon_mm_master_bfm:17.1:ADDRESS_UNITS=WORDS,ASSERT_HIGH_ARBITERLOCK=1,ASSERT_HIGH_BYTEENABLE=1,ASSERT_HIGH_LOCK=1,ASSERT_HIGH_READ=1,ASSERT_HIGH_READDATAVALID=1,ASSERT_HIGH_RESET=1,ASSERT_HIGH_WAITREQUEST=1,ASSERT_HIGH_WRITE=1,AV_ADDRESS_W=3,AV_ALWAYS_BURST_MAX_BURST=0,AV_BURSTCOUNT_W=1,AV_BURST_BNDR_ONLY=0,AV_BURST_LINEWRAP=0,AV_CONSTANT_BURST_BEHAVIOR=0,AV_FIX_READ_LATENCY=0,AV_MAX_PENDING_READS=0,AV_MAX_PENDING_WRITES=0,AV_NUMSYMBOLS=4,AV_READRESPONSE_W=8,AV_READ_WAIT_TIME=1,AV_REGISTERINCOMINGSIGNALS=0,AV_SYMBOL_W=8,AV_WRITERESPONSE_W=8,AV_WRITE_WAIT_TIME=0,REGISTER_WAITREQUEST=0,USE_ADDRESS=1,USE_ARBITERLOCK=0,USE_BEGIN_BURST_TRANSFER=0,USE_BEGIN_TRANSFER=0,USE_BURSTCOUNT=0,USE_BYTE_ENABLE=0,USE_CLKEN=0,USE_DEBUGACCESS=0,USE_LOCK=0,USE_READ=1,USE_READRESPONSE=0,USE_READ_DATA=1,USE_READ_DATA_VALID=0,USE_TRANSACTIONID=0,USE_WAIT_REQUEST=1,USE_WRITE=1,USE_WRITERESPONSE=0,USE_WRITE_DATA=1,VHDL_ID=0)(altera_avalon_st_sink_bfm:17.1:ST_BEATSPERCYCLE=1,ST_CHANNEL_W=1,ST_EMPTY_W=1,ST_ERROR_DESCRIPTOR=,ST_ERROR_W=1,ST_MAX_CHANNELS=0,ST_NUMSYMBOLS=1,ST_READY_LATENCY=0,ST_SYMBOL_W=16,USE_CHANNEL=0,USE_EMPTY=0,USE_ERROR=0,USE_PACKET=1,USE_READY=1,USE_VALID=1,VHDL_ID=0)(altera_avalon_st_source_bfm:17.1:ST_BEATSPERCYCLE=1,ST_CHANNEL_W=1,ST_EMPTY_W=1,ST_ERROR_DESCRIPTOR=,ST_ERROR_W=1,ST_MAX_CHANNELS=0,ST_NUMSYMBOLS=1,ST_READY_LATENCY=0,ST_SYMBOL_W=16,USE_CHANNEL=0,USE_EMPTY=0,USE_ERROR=0,USE_PACKET=1,USE_READY=1,USE_VALID=1,VHDL_ID=0)(video_effects:0:)(avalon:17.1:arbitrationPriority=1,baseAddress=0x0000,defaultConnection=false)(avalon_streaming:17.1:)(avalon_streaming:17.1:)(clock:17.1:)(clock:17.1:)(clock:17.1:)(clock:17.1:)(reset:17.1:)(reset:17.1:)(reset:17.1:)(reset:17.1:)"
+   parameterizationKey="video_ip_sim_qsys:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1675961121,AUTO_UNIQUE_ID=(clock_source:17.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(altera_avalon_interrupt_sink:17.1:ASSERT_HIGH_IRQ=1,ASYNCHRONOUS_INTERRUPT=0,AV_IRQ_W=1,VHDL_ID=0)(altera_avalon_mm_master_bfm:17.1:ADDRESS_UNITS=WORDS,ASSERT_HIGH_ARBITERLOCK=1,ASSERT_HIGH_BYTEENABLE=1,ASSERT_HIGH_LOCK=1,ASSERT_HIGH_READ=1,ASSERT_HIGH_READDATAVALID=1,ASSERT_HIGH_RESET=1,ASSERT_HIGH_WAITREQUEST=1,ASSERT_HIGH_WRITE=1,AV_ADDRESS_W=3,AV_ALWAYS_BURST_MAX_BURST=0,AV_BURSTCOUNT_W=1,AV_BURST_BNDR_ONLY=0,AV_BURST_LINEWRAP=0,AV_CONSTANT_BURST_BEHAVIOR=0,AV_FIX_READ_LATENCY=0,AV_MAX_PENDING_READS=0,AV_MAX_PENDING_WRITES=0,AV_NUMSYMBOLS=4,AV_READRESPONSE_W=8,AV_READ_WAIT_TIME=1,AV_REGISTERINCOMINGSIGNALS=0,AV_SYMBOL_W=8,AV_WRITERESPONSE_W=8,AV_WRITE_WAIT_TIME=0,REGISTER_WAITREQUEST=0,USE_ADDRESS=1,USE_ARBITERLOCK=0,USE_BEGIN_BURST_TRANSFER=0,USE_BEGIN_TRANSFER=0,USE_BURSTCOUNT=0,USE_BYTE_ENABLE=0,USE_CLKEN=0,USE_DEBUGACCESS=0,USE_LOCK=0,USE_READ=1,USE_READRESPONSE=0,USE_READ_DATA=1,USE_READ_DATA_VALID=0,USE_TRANSACTIONID=0,USE_WAIT_REQUEST=1,USE_WRITE=1,USE_WRITERESPONSE=0,USE_WRITE_DATA=1,VHDL_ID=0)(altera_avalon_st_sink_bfm:17.1:ST_BEATSPERCYCLE=1,ST_CHANNEL_W=1,ST_EMPTY_W=1,ST_ERROR_DESCRIPTOR=,ST_ERROR_W=1,ST_MAX_CHANNELS=0,ST_NUMSYMBOLS=1,ST_READY_LATENCY=0,ST_SYMBOL_W=16,USE_CHANNEL=0,USE_EMPTY=0,USE_ERROR=0,USE_PACKET=1,USE_READY=1,USE_VALID=1,VHDL_ID=0)(altera_avalon_st_source_bfm:17.1:ST_BEATSPERCYCLE=1,ST_CHANNEL_W=1,ST_EMPTY_W=1,ST_ERROR_DESCRIPTOR=,ST_ERROR_W=1,ST_MAX_CHANNELS=0,ST_NUMSYMBOLS=1,ST_READY_LATENCY=0,ST_SYMBOL_W=16,USE_CHANNEL=0,USE_EMPTY=0,USE_ERROR=0,USE_PACKET=1,USE_READY=1,USE_VALID=1,VHDL_ID=0)(video_effects:0:)(avalon:17.1:arbitrationPriority=1,baseAddress=0x0000,defaultConnection=false)(avalon_streaming:17.1:)(avalon_streaming:17.1:)(clock:17.1:)(clock:17.1:)(clock:17.1:)(clock:17.1:)(clock:17.1:)(interrupt:17.1:irqNumber=0)(reset:17.1:)(reset:17.1:)(reset:17.1:)(reset:17.1:)(reset:17.1:)"
    instancePathKey="video_ip_sim_qsys"
    kind="video_ip_sim_qsys"
    version="1.0"
    name="video_ip_sim_qsys">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1675788105" />
+  <parameter name="AUTO_GENERATION_ID" value="1675961121" />
   <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -80,99 +80,113 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <generatedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/video_ip_sim_qsys.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/video_ip_sim_qsys.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_mm_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_interrupt_sink.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_mm_master_bfm.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_mm_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_mm_master_bfm.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_st_sink_bfm.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_st_sink_bfm.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_st_source_bfm.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_ip.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_st_source_bfm.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_ip.v"
        type="VERILOG"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_mm_slave_interface.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_mm_slave_interface.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_st_sink_interface.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_st_sink_interface.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_st_source_interface.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_st_source_interface.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_effects.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_effects.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_ip_sim_qsys_mm_interconnect_0.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_ip_sim_qsys_mm_interconnect_0.v"
        type="VERILOG" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_master_translator.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_master_translator.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_slave_translator.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_slave_translator.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_controller.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_ip_sim_qsys_irq_mapper.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_controller.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_synchronizer.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_synchronizer.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_controller.sdc"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_controller.sdc"
        type="SDC"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys.qsys" />
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys.qsys" />
   </sourceFiles>
   <childSourceFiles>
+   <file
+       path="C:/intelfpga/17.1/ip/altera/sopc_builder_ip/verification/altera_avalon_interrupt_sink/altera_avalon_interrupt_sink_hw.tcl" />
    <file
        path="C:/intelfpga/17.1/ip/altera/sopc_builder_ip/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm_hw.tcl" />
    <file
@@ -180,13 +194,15 @@
    <file
        path="C:/intelfpga/17.1/ip/altera/sopc_builder_ip/verification/altera_avalon_st_source_bfm/altera_avalon_st_source_bfm_hw.tcl" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_effects_hw.tcl" />
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_effects_hw.tcl" />
    <file
        path="C:/intelfpga/17.1/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
    <file
        path="C:/intelfpga/17.1/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
    <file
        path="C:/intelfpga/17.1/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+   <file
+       path="C:/intelfpga/17.1/ip/altera/merlin/altera_irq_mapper/altera_irq_mapper_hw.tcl" />
    <file
        path="C:/intelfpga/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
   </childSourceFiles>
@@ -197,7 +213,7 @@
    <message level="Progress" culprit="current"></message>
    <message level="Debug">Transform: CustomInstructionTransform</message>
    <message level="Debug">No custom instruction connections, skipping transform </message>
-   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>5</b> modules, <b>11</b> connections]]></message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>6</b> modules, <b>14</b> connections]]></message>
    <message level="Debug">Transform: MMTransform</message>
    <message level="Debug">Transform: InitialInterconnectTransform</message>
    <message level="Info">Interconnect is inserted between master mm_master_bfm_0.m0 and slave video_effects_0.avalon_slave because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.</message>
@@ -243,9 +259,12 @@
    <message level="Progress" culprit="min"></message>
    <message level="Progress" culprit="max"></message>
    <message level="Progress" culprit="current"></message>
-   <message level="Debug" culprit="merlin_hierarchy_transform"><![CDATA[After transform: <b>6</b> modules, <b>14</b> connections]]></message>
-   <message level="Debug" culprit="merlin_mm_transform"><![CDATA[After transform: <b>6</b> modules, <b>14</b> connections]]></message>
+   <message level="Debug" culprit="merlin_mm_transform"><![CDATA[After transform: <b>7</b> modules, <b>17</b> connections]]></message>
    <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug" culprit="merlin_interrupt_mapper_transform"><![CDATA[After transform: <b>8</b> modules, <b>20</b> connections]]></message>
    <message level="Debug">Transform: InterruptSyncTransform</message>
    <message level="Debug">Transform: InterruptFanoutTransform</message>
    <message level="Debug">Transform: AvalonStreamingTransform</message>
@@ -253,26 +272,31 @@
    <message level="Progress" culprit="min"></message>
    <message level="Progress" culprit="max"></message>
    <message level="Progress" culprit="current"></message>
-   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>7</b> modules, <b>16</b> connections]]></message>
+   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>9</b> modules, <b>22</b> connections]]></message>
+   <message level="Debug" culprit="video_ip_sim_qsys"><![CDATA["<b>video_ip_sim_qsys</b>" reuses <b>altera_avalon_interrupt_sink</b> "<b>submodules/altera_avalon_interrupt_sink</b>"]]></message>
    <message level="Debug" culprit="video_ip_sim_qsys"><![CDATA["<b>video_ip_sim_qsys</b>" reuses <b>altera_avalon_mm_master_bfm</b> "<b>submodules/altera_avalon_mm_master_bfm</b>"]]></message>
    <message level="Debug" culprit="video_ip_sim_qsys"><![CDATA["<b>video_ip_sim_qsys</b>" reuses <b>altera_avalon_st_sink_bfm</b> "<b>submodules/altera_avalon_st_sink_bfm</b>"]]></message>
    <message level="Debug" culprit="video_ip_sim_qsys"><![CDATA["<b>video_ip_sim_qsys</b>" reuses <b>altera_avalon_st_source_bfm</b> "<b>submodules/altera_avalon_st_source_bfm</b>"]]></message>
    <message level="Debug" culprit="video_ip_sim_qsys"><![CDATA["<b>video_ip_sim_qsys</b>" reuses <b>video_effects</b> "<b>submodules/video_ip</b>"]]></message>
    <message level="Debug" culprit="video_ip_sim_qsys"><![CDATA["<b>video_ip_sim_qsys</b>" reuses <b>altera_mm_interconnect</b> "<b>submodules/video_ip_sim_qsys_mm_interconnect_0</b>"]]></message>
+   <message level="Debug" culprit="video_ip_sim_qsys"><![CDATA["<b>video_ip_sim_qsys</b>" reuses <b>altera_irq_mapper</b> "<b>submodules/video_ip_sim_qsys_irq_mapper</b>"]]></message>
    <message level="Debug" culprit="video_ip_sim_qsys"><![CDATA["<b>video_ip_sim_qsys</b>" reuses <b>altera_reset_controller</b> "<b>submodules/altera_reset_controller</b>"]]></message>
-   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 5 starting:altera_avalon_mm_master_bfm "submodules/altera_avalon_mm_master_bfm"</message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 7 starting:altera_avalon_interrupt_sink "submodules/altera_avalon_interrupt_sink"</message>
+   <message level="Info" culprit="interrupt_sink_0"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_avalon_interrupt_sink</b> "<b>interrupt_sink_0</b>"]]></message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 6 starting:altera_avalon_mm_master_bfm "submodules/altera_avalon_mm_master_bfm"</message>
    <message level="Info" culprit="mm_master_bfm_0"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_avalon_mm_master_bfm</b> "<b>mm_master_bfm_0</b>"]]></message>
-   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 4 starting:altera_avalon_st_sink_bfm "submodules/altera_avalon_st_sink_bfm"</message>
+   <message level="Info"><![CDATA[Reusing file <b>C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv</b>]]></message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 5 starting:altera_avalon_st_sink_bfm "submodules/altera_avalon_st_sink_bfm"</message>
    <message level="Info" culprit="st_sink_bfm_0"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_avalon_st_sink_bfm</b> "<b>st_sink_bfm_0</b>"]]></message>
-   <message level="Info"><![CDATA[Reusing file <b>C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv</b>]]></message>
-   <message level="Info"><![CDATA[Reusing file <b>C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv</b>]]></message>
-   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 3 starting:altera_avalon_st_source_bfm "submodules/altera_avalon_st_source_bfm"</message>
+   <message level="Info"><![CDATA[Reusing file <b>C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv</b>]]></message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 4 starting:altera_avalon_st_source_bfm "submodules/altera_avalon_st_source_bfm"</message>
    <message level="Info" culprit="st_source_bfm_0"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_avalon_st_source_bfm</b> "<b>st_source_bfm_0</b>"]]></message>
-   <message level="Info"><![CDATA[Reusing file <b>C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv</b>]]></message>
-   <message level="Info"><![CDATA[Reusing file <b>C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv</b>]]></message>
-   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 2 starting:video_effects "submodules/video_ip"</message>
+   <message level="Info"><![CDATA[Reusing file <b>C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv</b>]]></message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 3 starting:video_effects "submodules/video_ip"</message>
    <message level="Info" culprit="video_effects_0"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>video_effects</b> "<b>video_effects_0</b>"]]></message>
-   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 1 starting:altera_mm_interconnect "submodules/video_ip_sim_qsys_mm_interconnect_0"</message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 2 starting:altera_mm_interconnect "submodules/video_ip_sim_qsys_mm_interconnect_0"</message>
    <message level="Progress" culprit="min"></message>
    <message level="Progress" culprit="max"></message>
    <message level="Progress" culprit="current"></message>
@@ -317,8 +341,39 @@
    <message level="Info" culprit="mm_master_bfm_0_m0_translator"><![CDATA["<b>mm_interconnect_0</b>" instantiated <b>altera_merlin_master_translator</b> "<b>mm_master_bfm_0_m0_translator</b>"]]></message>
    <message level="Debug" culprit="video_ip_sim_qsys">queue size: 0 starting:altera_merlin_slave_translator "submodules/altera_merlin_slave_translator"</message>
    <message level="Info" culprit="video_effects_0_avalon_slave_translator"><![CDATA["<b>mm_interconnect_0</b>" instantiated <b>altera_merlin_slave_translator</b> "<b>video_effects_0_avalon_slave_translator</b>"]]></message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 3 starting:altera_irq_mapper "submodules/video_ip_sim_qsys_irq_mapper"</message>
+   <message level="Info" culprit="irq_mapper"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_irq_mapper</b> "<b>irq_mapper</b>"]]></message>
    <message level="Debug" culprit="video_ip_sim_qsys">queue size: 2 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
    <message level="Info" culprit="rst_controller"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_avalon_interrupt_sink:17.1:ASSERT_HIGH_IRQ=1,ASYNCHRONOUS_INTERRUPT=0,AV_IRQ_W=1,VHDL_ID=0"
+   instancePathKey="video_ip_sim_qsys:.:interrupt_sink_0"
+   kind="altera_avalon_interrupt_sink"
+   version="17.1"
+   name="altera_avalon_interrupt_sink">
+  <generatedFiles>
+   <file
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_interrupt_sink.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga/17.1/ip/altera/sopc_builder_ip/verification/altera_avalon_interrupt_sink/altera_avalon_interrupt_sink_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="video_ip_sim_qsys" as="interrupt_sink_0" />
+  <messages>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 7 starting:altera_avalon_interrupt_sink "submodules/altera_avalon_interrupt_sink"</message>
+   <message level="Info" culprit="interrupt_sink_0"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_avalon_interrupt_sink</b> "<b>interrupt_sink_0</b>"]]></message>
   </messages>
  </entity>
  <entity
@@ -330,19 +385,19 @@
    name="altera_avalon_mm_master_bfm">
   <generatedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_mm_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_mm_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_mm_master_bfm.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_mm_master_bfm.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
   </generatedFiles>
@@ -354,8 +409,9 @@
   <childSourceFiles/>
   <instantiator instantiator="video_ip_sim_qsys" as="mm_master_bfm_0" />
   <messages>
-   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 5 starting:altera_avalon_mm_master_bfm "submodules/altera_avalon_mm_master_bfm"</message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 6 starting:altera_avalon_mm_master_bfm "submodules/altera_avalon_mm_master_bfm"</message>
    <message level="Info" culprit="mm_master_bfm_0"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_avalon_mm_master_bfm</b> "<b>mm_master_bfm_0</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv</b>]]></message>
   </messages>
  </entity>
  <entity
@@ -367,15 +423,15 @@
    name="altera_avalon_st_sink_bfm">
   <generatedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_st_sink_bfm.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_st_sink_bfm.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
   </generatedFiles>
@@ -387,10 +443,10 @@
   <childSourceFiles/>
   <instantiator instantiator="video_ip_sim_qsys" as="st_sink_bfm_0" />
   <messages>
-   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 4 starting:altera_avalon_st_sink_bfm "submodules/altera_avalon_st_sink_bfm"</message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 5 starting:altera_avalon_st_sink_bfm "submodules/altera_avalon_st_sink_bfm"</message>
    <message level="Info" culprit="st_sink_bfm_0"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_avalon_st_sink_bfm</b> "<b>st_sink_bfm_0</b>"]]></message>
-   <message level="Info"><![CDATA[Reusing file <b>C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv</b>]]></message>
-   <message level="Info"><![CDATA[Reusing file <b>C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv</b>]]></message>
   </messages>
  </entity>
  <entity
@@ -402,15 +458,15 @@
    name="altera_avalon_st_source_bfm">
   <generatedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_st_source_bfm.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_avalon_st_source_bfm.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
   </generatedFiles>
@@ -422,10 +478,10 @@
   <childSourceFiles/>
   <instantiator instantiator="video_ip_sim_qsys" as="st_source_bfm_0" />
   <messages>
-   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 3 starting:altera_avalon_st_source_bfm "submodules/altera_avalon_st_source_bfm"</message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 4 starting:altera_avalon_st_source_bfm "submodules/altera_avalon_st_source_bfm"</message>
    <message level="Info" culprit="st_source_bfm_0"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_avalon_st_source_bfm</b> "<b>st_source_bfm_0</b>"]]></message>
-   <message level="Info"><![CDATA[Reusing file <b>C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv</b>]]></message>
-   <message level="Info"><![CDATA[Reusing file <b>C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/verbosity_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_utilities_pkg.sv</b>]]></message>
   </messages>
  </entity>
  <entity
@@ -437,35 +493,35 @@
    name="video_ip">
   <generatedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_ip.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_ip.v"
        type="VERILOG"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_mm_slave_interface.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_mm_slave_interface.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_st_sink_interface.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_st_sink_interface.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_st_source_interface.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/avalon_st_source_interface.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_effects.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_effects.v"
        type="VERILOG"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles/>
   <sourceFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_effects_hw.tcl" />
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_effects_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="video_ip_sim_qsys" as="video_effects_0" />
   <messages>
-   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 2 starting:video_effects "submodules/video_ip"</message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 3 starting:video_effects "submodules/video_ip"</message>
    <message level="Info" culprit="video_effects_0"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>video_effects</b> "<b>video_effects_0</b>"]]></message>
   </messages>
  </entity>
@@ -484,16 +540,16 @@
      value="add_instance {mm_master_bfm_0_m0_translator} {altera_merlin_master_translator};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_ADDRESS_W} {3};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_DATA_W} {32};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_BURSTCOUNT_W} {1};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_BYTEENABLE_W} {4};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {UAV_ADDRESS_W} {5};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {UAV_BURSTCOUNT_W} {3};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_READLATENCY} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_READ_WAIT} {1};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_READDATA} {1};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_READ} {1};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_WRITE} {1};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_BYTEENABLE} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_ADDRESS} {1};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_BURSTCOUNT} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_DEBUGACCESS} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_CLKEN} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_READDATAVALID} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_LOCK} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_SYMBOLS_PER_WORD} {4};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_ADDRESS_SYMBOLS} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {mm_master_bfm_0_m0_translator} {SYNC_RESET} {0};add_instance {video_effects_0_avalon_slave_translator} {altera_merlin_slave_translator};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_ADDRESS_W} {3};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_DATA_W} {32};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {UAV_DATA_W} {32};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_BURSTCOUNT_W} {1};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_BYTEENABLE_W} {4};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {UAV_BYTEENABLE_W} {4};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {UAV_ADDRESS_W} {5};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {UAV_BURSTCOUNT_W} {3};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_READLATENCY} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_READ_WAIT} {1};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_TIMING_UNITS} {1};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_READDATA} {1};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_READ} {1};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_WRITE} {1};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_BYTEENABLE} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_CHIPSELECT} {1};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_ADDRESS} {1};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_BURSTCOUNT} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_READDATAVALID} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_WAITREQUEST} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_WRITEBYTEENABLE} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_LOCK} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_AV_CLKEN} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_UAV_CLKEN} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_OUTPUTENABLE} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_DEBUGACCESS} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_SYMBOLS_PER_WORD} {4};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_ADDRESS_SYMBOLS} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_REQUIRE_UNALIGNED_ADDRESSES} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {1};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_MAX_PENDING_WRITE_TRANSACTIONS} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {video_effects_0_avalon_slave_translator} {CHIPSELECT_THROUGH_READLATENCY} {0};add_instance {mm_master_bfm_0_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {mm_master_bfm_0_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {mm_master_bfm_0_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {mm_master_bfm_0_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {mm_master_bfm_0_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};add_instance {clk_0_clk_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {clk_0_clk_clock_bridge} {EXPLICIT_CLOCK_RATE} {50000000};set_instance_parameter_value {clk_0_clk_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {mm_master_bfm_0_m0_translator.avalon_universal_master_0} {video_effects_0_avalon_slave_translator.avalon_universal_slave_0} {avalon};set_connection_parameter_value {mm_master_bfm_0_m0_translator.avalon_universal_master_0/video_effects_0_avalon_slave_translator.avalon_universal_slave_0} {arbitrationPriority} {1};set_connection_parameter_value {mm_master_bfm_0_m0_translator.avalon_universal_master_0/video_effects_0_avalon_slave_translator.avalon_universal_slave_0} {baseAddress} {0x0000};set_connection_parameter_value {mm_master_bfm_0_m0_translator.avalon_universal_master_0/video_effects_0_avalon_slave_translator.avalon_universal_slave_0} {defaultConnection} {false};add_connection {mm_master_bfm_0_clk_reset_reset_bridge.out_reset} {mm_master_bfm_0_m0_translator.reset} {reset};add_connection {mm_master_bfm_0_clk_reset_reset_bridge.out_reset} {video_effects_0_avalon_slave_translator.reset} {reset};add_connection {clk_0_clk_clock_bridge.out_clk} {mm_master_bfm_0_m0_translator.clk} {clock};add_connection {clk_0_clk_clock_bridge.out_clk} {video_effects_0_avalon_slave_translator.clk} {clock};add_connection {clk_0_clk_clock_bridge.out_clk} {mm_master_bfm_0_clk_reset_reset_bridge.clk} {clock};add_interface {clk_0_clk} {clock} {slave};set_interface_property {clk_0_clk} {EXPORT_OF} {clk_0_clk_clock_bridge.in_clk};add_interface {mm_master_bfm_0_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {mm_master_bfm_0_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {mm_master_bfm_0_clk_reset_reset_bridge.in_reset};add_interface {mm_master_bfm_0_m0} {avalon} {slave};set_interface_property {mm_master_bfm_0_m0} {EXPORT_OF} {mm_master_bfm_0_m0_translator.avalon_anti_master_0};add_interface {video_effects_0_avalon_slave} {avalon} {master};set_interface_property {video_effects_0_avalon_slave} {EXPORT_OF} {video_effects_0_avalon_slave_translator.avalon_anti_slave_0};set_module_assignment {interconnect_id.mm_master_bfm_0.m0} {0};set_module_assignment {interconnect_id.video_effects_0.avalon_slave} {0};" />
   <generatedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_ip_sim_qsys_mm_interconnect_0.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_ip_sim_qsys_mm_interconnect_0.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_master_translator.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_master_translator.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_slave_translator.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_slave_translator.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
   </childGeneratedFiles>
@@ -509,7 +565,7 @@
   </childSourceFiles>
   <instantiator instantiator="video_ip_sim_qsys" as="mm_interconnect_0" />
   <messages>
-   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 1 starting:altera_mm_interconnect "submodules/video_ip_sim_qsys_mm_interconnect_0"</message>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 2 starting:altera_mm_interconnect "submodules/video_ip_sim_qsys_mm_interconnect_0"</message>
    <message level="Progress" culprit="min"></message>
    <message level="Progress" culprit="max"></message>
    <message level="Progress" culprit="current"></message>
@@ -558,6 +614,35 @@
  </entity>
  <entity
    path="submodules/"
+   parameterizationKey="altera_irq_mapper:17.1:AUTO_DEVICE_FAMILY=Cyclone IV E,IRQ_MAP=0:0,NUM_RCVRS=1,SENDER_IRQ_WIDTH=1"
+   instancePathKey="video_ip_sim_qsys:.:irq_mapper"
+   kind="altera_irq_mapper"
+   version="17.1"
+   name="video_ip_sim_qsys_irq_mapper">
+  <parameter name="NUM_RCVRS" value="1" />
+  <parameter name="IRQ_MAP" value="0:0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="SENDER_IRQ_WIDTH" value="1" />
+  <generatedFiles>
+   <file
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/video_ip_sim_qsys_irq_mapper.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga/17.1/ip/altera/merlin/altera_irq_mapper/altera_irq_mapper_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="video_ip_sim_qsys" as="irq_mapper" />
+  <messages>
+   <message level="Debug" culprit="video_ip_sim_qsys">queue size: 3 starting:altera_irq_mapper "submodules/video_ip_sim_qsys_irq_mapper"</message>
+   <message level="Info" culprit="irq_mapper"><![CDATA["<b>video_ip_sim_qsys</b>" instantiated <b>altera_irq_mapper</b> "<b>irq_mapper</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
    parameterizationKey="altera_reset_controller:17.1:ADAPT_RESET_REQUEST=0,MIN_RST_ASSERTION_TIME=3,NUM_RESET_INPUTS=1,OUTPUT_RESET_SYNC_EDGES=deassert,RESET_REQUEST_PRESENT=0,RESET_REQ_EARLY_DSRT_TIME=1,RESET_REQ_WAIT_TIME=1,SYNC_DEPTH=2,USE_RESET_REQUEST_IN0=0,USE_RESET_REQUEST_IN1=0,USE_RESET_REQUEST_IN10=0,USE_RESET_REQUEST_IN11=0,USE_RESET_REQUEST_IN12=0,USE_RESET_REQUEST_IN13=0,USE_RESET_REQUEST_IN14=0,USE_RESET_REQUEST_IN15=0,USE_RESET_REQUEST_IN2=0,USE_RESET_REQUEST_IN3=0,USE_RESET_REQUEST_IN4=0,USE_RESET_REQUEST_IN5=0,USE_RESET_REQUEST_IN6=0,USE_RESET_REQUEST_IN7=0,USE_RESET_REQUEST_IN8=0,USE_RESET_REQUEST_IN9=0,USE_RESET_REQUEST_INPUT=0"
    instancePathKey="video_ip_sim_qsys:.:rst_controller"
    kind="altera_reset_controller"
@@ -565,15 +650,15 @@
    name="altera_reset_controller">
   <generatedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_controller.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_controller.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_synchronizer.v"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_synchronizer.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_controller.sdc"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_reset_controller.sdc"
        type="SDC"
        attributes="" />
   </generatedFiles>
@@ -599,7 +684,7 @@
   <parameter name="SYNC_RESET" value="0" />
   <generatedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_master_translator.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_master_translator.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
   </generatedFiles>
@@ -626,7 +711,7 @@
    name="altera_merlin_slave_translator">
   <generatedFiles>
    <file
-       path="C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_slave_translator.sv"
+       path="C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/synthesis/submodules/altera_merlin_slave_translator.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
   </generatedFiles>

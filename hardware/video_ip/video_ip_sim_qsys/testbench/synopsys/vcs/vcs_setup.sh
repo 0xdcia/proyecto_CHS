@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.1 593 win32 2023.02.07.17:44:42
+# ACDS 17.1 593 win32 2023.02.09.17:49:23
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.1 593 win32 2023.02.07.17:44:42
+# ACDS 17.1 593 win32 2023.02.09.17:49:23
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="video_ip_sim_qsys_tb"
@@ -144,6 +144,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_merlin_master_translator.sv \
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_reset_controller.v \
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_reset_synchronizer.v \
+  $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys_irq_mapper.sv \
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys_mm_interconnect_0.v \
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip.v \
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/avalon_mm_slave_interface.v \
@@ -153,6 +154,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_st_source_bfm.sv \
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_st_sink_bfm.sv \
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_mm_master_bfm.sv \
+  $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_interrupt_sink.sv \
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_reset_source.sv \
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_clock_source.sv \
   $QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys.v \

@@ -36,6 +36,10 @@
    type="SDC"
    library="rst_controller" />
  <file
+   path="simulation/submodules/video_ip_sim_qsys_irq_mapper.sv"
+   type="SYSTEM_VERILOG"
+   library="irq_mapper" />
+ <file
    path="simulation/submodules/video_ip_sim_qsys_mm_interconnect_0.v"
    type="VERILOG"
    library="mm_interconnect_0" />
@@ -71,6 +75,10 @@
    path="simulation/submodules/altera_avalon_mm_master_bfm.sv"
    type="SYSTEM_VERILOG"
    library="mm_master_bfm_0" />
+ <file
+   path="simulation/submodules/altera_avalon_interrupt_sink.sv"
+   type="SYSTEM_VERILOG"
+   library="interrupt_sink_0" />
  <file path="simulation/video_ip_sim_qsys.v" type="VERILOG" />
  <topLevel name="video_ip_sim_qsys" />
  <deviceFamily name="cycloneive" />

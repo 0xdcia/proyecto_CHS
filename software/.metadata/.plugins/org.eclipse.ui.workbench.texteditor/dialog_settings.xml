@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="RGB" key="selection"/>
+		<item value="video_effe" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="VIDEO_EFFE"/>
+			<item value="VIDEO"/>
+			<item value="IRQ"/>
 			<item value="RGB"/>
 			<item value="SRAM_BASE"/>
 			<item value="pixel_buffer"/>
 			<item value="dma"/>
 			<item value="DMA"/>
-			<item value="MTL"/>
-			<item value="0x908"/>
-			<item value="alt_ucosii_simple_error_handler"/>
 		</list>
 		<list key="replacehistory">
 		</list>

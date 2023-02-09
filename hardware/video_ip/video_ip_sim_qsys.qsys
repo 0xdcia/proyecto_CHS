@@ -17,6 +17,14 @@
          type = "int";
       }
    }
+   element interrupt_sink_0
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
    element mm_master_bfm_0
    {
       datum _sortIndex
@@ -49,6 +57,14 @@
          type = "int";
       }
    }
+   element video_ip_sim_qsys
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -77,6 +93,16 @@
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module
+   name="interrupt_sink_0"
+   kind="altera_avalon_interrupt_sink"
+   version="17.1"
+   enabled="1">
+  <parameter name="ASSERT_HIGH_IRQ" value="1" />
+  <parameter name="ASYNCHRONOUS_INTERRUPT" value="0" />
+  <parameter name="AV_IRQ_W" value="1" />
+  <parameter name="VHDL_ID" value="0" />
  </module>
  <module
    name="mm_master_bfm_0"
@@ -208,6 +234,18 @@
    start="clk_0.clk"
    end="video_effects_0.clock" />
  <connection
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="interrupt_sink_0.clock_reset" />
+ <connection
+   kind="interrupt"
+   version="17.1"
+   start="interrupt_sink_0.irq"
+   end="video_effects_0.irq_sender">
+  <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
    kind="reset"
    version="17.1"
    start="clk_0.clk_reset"
@@ -222,6 +260,11 @@
    version="17.1"
    start="clk_0.clk_reset"
    end="st_source_bfm_0.clk_reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="interrupt_sink_0.clock_reset_reset" />
  <connection
    kind="reset"
    version="17.1"

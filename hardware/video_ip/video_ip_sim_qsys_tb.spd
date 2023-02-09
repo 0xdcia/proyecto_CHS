@@ -36,6 +36,10 @@
    type="SDC"
    library="rst_controller" />
  <file
+   path="video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys_irq_mapper.sv"
+   type="SYSTEM_VERILOG"
+   library="irq_mapper" />
+ <file
    path="video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys_mm_interconnect_0.v"
    type="VERILOG"
    library="mm_interconnect_0" />
@@ -71,6 +75,10 @@
    path="video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_mm_master_bfm.sv"
    type="SYSTEM_VERILOG"
    library="mm_master_bfm_0" />
+ <file
+   path="video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_interrupt_sink.sv"
+   type="SYSTEM_VERILOG"
+   library="interrupt_sink_0" />
  <file
    path="video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_reset_source.sv"
    type="SYSTEM_VERILOG"

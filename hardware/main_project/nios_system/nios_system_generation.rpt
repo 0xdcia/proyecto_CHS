@@ -169,7 +169,7 @@ Info: flash_controller: "nios_system" instantiated altera_generic_tristate_contr
 Info: green_leds: Starting Generation of Parallel Port
 Info: green_leds: "nios_system" instantiated altera_up_avalon_parallel_port "green_leds"
 Info: jtag_uart: Starting RTL generation for module 'nios_system_jtag_uart'
-Info: jtag_uart:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag_uart --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0021_jtag_uart_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0021_jtag_uart_gen//nios_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag_uart --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0021_jtag_uart_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0021_jtag_uart_gen//nios_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'nios_system_jtag_uart'
 Info: jtag_uart: "nios_system" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: mtl_char_buffer: Starting Generation of Character Buffer
@@ -183,11 +183,11 @@ Info: mtl_pixel_buffer_dma: "nios_system" instantiated altera_up_avalon_video_pi
 Info: mtl_rgb_resampler: Starting Generation of Video RGB Resampler
 Info: mtl_rgb_resampler: "nios_system" instantiated altera_up_avalon_video_rgb_resampler "mtl_rgb_resampler"
 Info: onchip_memory: Starting RTL generation for module 'nios_system_onchip_memory'
-Info: onchip_memory:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=nios_system_onchip_memory --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0027_onchip_memory_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0027_onchip_memory_gen//nios_system_onchip_memory_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=nios_system_onchip_memory --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0027_onchip_memory_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0027_onchip_memory_gen//nios_system_onchip_memory_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory: Done RTL generation for module 'nios_system_onchip_memory'
 Info: onchip_memory: "nios_system" instantiated altera_avalon_onchip_memory2 "onchip_memory"
 Info: performance_counter: Starting RTL generation for module 'nios_system_performance_counter'
-Info: performance_counter:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter/generate_rtl.pl --name=nios_system_performance_counter --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0028_performance_counter_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0028_performance_counter_gen//nios_system_performance_counter_component_configuration.pl  --do_build_sim=0  ]
+Info: performance_counter:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter/generate_rtl.pl --name=nios_system_performance_counter --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0028_performance_counter_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0028_performance_counter_gen//nios_system_performance_counter_component_configuration.pl  --do_build_sim=0  ]
 Info: performance_counter: Done RTL generation for module 'nios_system_performance_counter'
 Info: performance_counter: "nios_system" instantiated altera_avalon_performance_counter "performance_counter"
 Info: ps2_key: Starting Generation of PS2 Controller
@@ -197,7 +197,7 @@ Info: pushbuttons: "nios_system" instantiated altera_up_avalon_parallel_port "pu
 Info: red_leds: Starting Generation of Parallel Port
 Info: red_leds: "nios_system" instantiated altera_up_avalon_parallel_port "red_leds"
 Info: sdram: Starting RTL generation for module 'nios_system_sdram'
-Info: sdram:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_sdram --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0032_sdram_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0032_sdram_gen//nios_system_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_sdram --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0032_sdram_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0032_sdram_gen//nios_system_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'nios_system_sdram'
 Info: sdram: "nios_system" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: serial_port: Starting Generation of RS232 UART
@@ -210,7 +210,7 @@ Info: switches: "nios_system" instantiated altera_up_avalon_parallel_port "switc
 Info: sys_sdram_pll: "nios_system" instantiated altera_up_avalon_sys_sdram_pll "sys_sdram_pll"
 Info: sysid: "nios_system" instantiated altera_avalon_sysid_qsys "sysid"
 Info: timer: Starting RTL generation for module 'nios_system_timer'
-Info: timer:   Generation command is [exec C:/intelFPGA/17.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA/17.1/quartus/bin64//perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=nios_system_timer --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0037_timer_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0037_timer_gen//nios_system_timer_component_configuration.pl  --do_build_sim=0  ]
+Info: timer:   Generation command is [exec C:/intelFPGA/17.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA/17.1/quartus/bin64//perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=nios_system_timer --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0037_timer_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0037_timer_gen//nios_system_timer_component_configuration.pl  --do_build_sim=0  ]
 Info: timer: Done RTL generation for module 'nios_system_timer'
 Info: timer: "nios_system" instantiated altera_avalon_timer "timer"
 Info: video_dma_controller_ip_input: Starting Generation of Video DMA Controller
@@ -266,29 +266,29 @@ Info: rst_controller: "nios_system" instantiated altera_reset_controller "rst_co
 Info: audio_pll: "audio_pll" instantiated altera_up_altpll "audio_pll"
 Info: reset_from_locked: "audio_pll" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
 Info: cpu: Starting RTL generation for module 'nios_system_cpu_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA/17.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA/17.1/quartus/bin64//perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=nios_system_cpu_cpu --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0046_cpu_gen/ --quartus_bindir=C:/intelFPGA/17.1/quartus/bin64/ --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9396_8398534709617142890.dir/0046_cpu_gen//nios_system_cpu_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2023.02.08 18:54:35 (*) Starting Nios II generation
-Info: cpu: # 2023.02.08 18:54:35 (*)   Checking for plaintext license.
-Info: cpu: # 2023.02.08 18:54:35 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA/17.1/quartus/bin64/
-Info: cpu: # 2023.02.08 18:54:35 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2023.02.08 18:54:35 (*)   Plaintext license not found.
-Info: cpu: # 2023.02.08 18:54:35 (*)   Checking for encrypted license (non-evaluation).
-Info: cpu: # 2023.02.08 18:54:36 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA/17.1/quartus/bin64/
-Info: cpu: # 2023.02.08 18:54:36 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2023.02.08 18:54:36 (*)   Encrypted license found.  SOF will not be time-limited.
-Info: cpu: # 2023.02.08 18:54:36 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2023.02.08 18:54:36 (*)   Creating all objects for CPU
-Info: cpu: # 2023.02.08 18:54:36 (*)     Testbench
-Info: cpu: # 2023.02.08 18:54:36 (*)     Instruction decoding
-Info: cpu: # 2023.02.08 18:54:36 (*)       Instruction fields
-Info: cpu: # 2023.02.08 18:54:36 (*)       Instruction decodes
-Info: cpu: # 2023.02.08 18:54:37 (*)       Signals for RTL simulation waveforms
-Info: cpu: # 2023.02.08 18:54:37 (*)       Instruction controls
-Info: cpu: # 2023.02.08 18:54:37 (*)     Pipeline frontend
-Info: cpu: # 2023.02.08 18:54:37 (*)     Pipeline backend
-Info: cpu: # 2023.02.08 18:54:39 (*)   Generating RTL from CPU objects
-Info: cpu: # 2023.02.08 18:54:41 (*)   Creating encrypted RTL
-Info: cpu: # 2023.02.08 18:54:42 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA/17.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA/17.1/quartus/bin64//perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=nios_system_cpu_cpu --dir=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0046_cpu_gen/ --quartus_bindir=C:/intelFPGA/17.1/quartus/bin64/ --verilog --config=C:/Users/dagarbl2/AppData/Local/Temp/alt9397_4042501806665339343.dir/0046_cpu_gen//nios_system_cpu_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2023.02.09 18:55:04 (*) Starting Nios II generation
+Info: cpu: # 2023.02.09 18:55:04 (*)   Checking for plaintext license.
+Info: cpu: # 2023.02.09 18:55:05 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA/17.1/quartus/bin64/
+Info: cpu: # 2023.02.09 18:55:05 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2023.02.09 18:55:05 (*)   Plaintext license not found.
+Info: cpu: # 2023.02.09 18:55:05 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2023.02.09 18:55:06 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA/17.1/quartus/bin64/
+Info: cpu: # 2023.02.09 18:55:06 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2023.02.09 18:55:06 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2023.02.09 18:55:06 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2023.02.09 18:55:06 (*)   Creating all objects for CPU
+Info: cpu: # 2023.02.09 18:55:06 (*)     Testbench
+Info: cpu: # 2023.02.09 18:55:06 (*)     Instruction decoding
+Info: cpu: # 2023.02.09 18:55:06 (*)       Instruction fields
+Info: cpu: # 2023.02.09 18:55:06 (*)       Instruction decodes
+Info: cpu: # 2023.02.09 18:55:06 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2023.02.09 18:55:06 (*)       Instruction controls
+Info: cpu: # 2023.02.09 18:55:06 (*)     Pipeline frontend
+Info: cpu: # 2023.02.09 18:55:07 (*)     Pipeline backend
+Info: cpu: # 2023.02.09 18:55:09 (*)   Generating RTL from CPU objects
+Info: cpu: # 2023.02.09 18:55:10 (*)   Creating encrypted RTL
+Info: cpu: # 2023.02.09 18:55:11 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'nios_system_cpu_cpu'
 Info: cpu: "cpu" instantiated altera_nios2_gen2_unit "cpu"
 Info: tdt: "flash_controller" instantiated altera_tristate_controller_translator "tdt"

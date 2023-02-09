@@ -7,15 +7,15 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation
+Z0 dC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation
 vavalon_mm_slave_interface
-Z1 !s110 1675796594
+Z1 !s110 1675964693
 !i10b 1
 !s100 BPDECQn=cl0VzH_2MG<Al0
 I2EiBYbh`F_oU2HjUUSamS1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1675788280
+Z3 w1675961361
 8../../video_ip_sim_qsys_tb/simulation/submodules/avalon_mm_slave_interface.v
 F../../video_ip_sim_qsys_tb/simulation/submodules/avalon_mm_slave_interface.v
 L0 10
@@ -23,7 +23,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1675796594.000000
+Z5 !s108 1675964693.000000
 !s107 ../../video_ip_sim_qsys_tb/simulation/submodules/avalon_mm_slave_interface.v|
 !s90 -reportprogress|300|../../video_ip_sim_qsys_tb/simulation/submodules/avalon_mm_slave_interface.v|-work|video_effects_0|
 !i113 1
@@ -53,8 +53,8 @@ R7
 vavalon_st_source_interface
 R1
 !i10b 1
-!s100 FeckLD@<^4G51@hkOoZYf1
-IOjo>;4DJ7i=Qg<EE?onb]0
+!s100 ^Q=ACJ8_b4bhVzAO``GH>2
+Iez>DT8Pbz]^U>5bc8d2`71
 R2
 R0
 R3
@@ -74,8 +74,8 @@ R7
 vvideo_effects
 R1
 !i10b 1
-!s100 43aH`NEDOjXNFaTA2BG6=1
-IMK];P?CFi?djjVkaOVIb52
+!s100 l=2X`D4aOWjX4alWb@iL^3
+I6V3[]3^6_;BE:Z^1AM:kb2
 R2
 R0
 R3
@@ -95,11 +95,11 @@ R7
 vvideo_ip
 R1
 !i10b 1
-!s100 64M7?Y93e71aG>?:U?1]c3
-I9o5CK7@>C@Gb2h8_]5b>@1
+!s100 _cmZZR4dB`2WBj>`V@aoD2
+Ibo91<[3gXB?BiZI=ZV;]<1
 R2
 R0
-w1675796567
+w1675964681
 8../../video_ip_sim_qsys_tb/simulation/submodules/video_ip.v
 F../../video_ip_sim_qsys_tb/simulation/submodules/video_ip.v
 L0 8

@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.1 593 win32 2023.02.07.17:44:42
+# ACDS 17.1 593 win32 2023.02.09.17:49:23
 
 # ----------------------------------------
 # Initialize variables
@@ -172,6 +172,8 @@ ensure_lib                                         ./libraries/mm_master_bfm_0_m
 vmap       mm_master_bfm_0_m0_translator           ./libraries/mm_master_bfm_0_m0_translator/          
 ensure_lib                                         ./libraries/rst_controller/                         
 vmap       rst_controller                          ./libraries/rst_controller/                         
+ensure_lib                                         ./libraries/irq_mapper/                             
+vmap       irq_mapper                              ./libraries/irq_mapper/                             
 ensure_lib                                         ./libraries/mm_interconnect_0/                      
 vmap       mm_interconnect_0                       ./libraries/mm_interconnect_0/                      
 ensure_lib                                         ./libraries/video_effects_0/                        
@@ -182,6 +184,8 @@ ensure_lib                                         ./libraries/st_sink_bfm_0/
 vmap       st_sink_bfm_0                           ./libraries/st_sink_bfm_0/                          
 ensure_lib                                         ./libraries/mm_master_bfm_0/                        
 vmap       mm_master_bfm_0                         ./libraries/mm_master_bfm_0/                        
+ensure_lib                                         ./libraries/interrupt_sink_0/                       
+vmap       interrupt_sink_0                        ./libraries/interrupt_sink_0/                       
 ensure_lib                                         ./libraries/video_ip_sim_qsys_inst_reset_bfm/       
 vmap       video_ip_sim_qsys_inst_reset_bfm        ./libraries/video_ip_sim_qsys_inst_reset_bfm/       
 ensure_lib                                         ./libraries/video_ip_sim_qsys_inst_clk_bfm/         
@@ -214,6 +218,7 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_merlin_master_translator.sv"    -L altera_common_sv_packages -work mm_master_bfm_0_m0_translator          
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_reset_controller.v"                                          -work rst_controller                         
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                         
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys_irq_mapper.sv"       -L altera_common_sv_packages -work irq_mapper                             
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys_mm_interconnect_0.v"                              -work mm_interconnect_0                      
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip.v"                                                         -work video_effects_0                        
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/avalon_mm_slave_interface.v"                                        -work video_effects_0                        
@@ -223,6 +228,7 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_st_source_bfm.sv"        -L altera_common_sv_packages -work st_source_bfm_0                        
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_st_sink_bfm.sv"          -L altera_common_sv_packages -work st_sink_bfm_0                          
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_mm_master_bfm.sv"        -L altera_common_sv_packages -work mm_master_bfm_0                        
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_interrupt_sink.sv"       -L altera_common_sv_packages -work interrupt_sink_0                       
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_reset_source.sv"         -L altera_common_sv_packages -work video_ip_sim_qsys_inst_reset_bfm       
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/altera_avalon_clock_source.sv"         -L altera_common_sv_packages -work video_ip_sim_qsys_inst_clk_bfm         
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/video_ip_sim_qsys_tb/simulation/submodules/video_ip_sim_qsys.v"                                                -work video_ip_sim_qsys_inst                 
@@ -233,14 +239,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L video_effects_0_avalon_slave_translator -L mm_master_bfm_0_m0_translator -L rst_controller -L mm_interconnect_0 -L video_effects_0 -L st_source_bfm_0 -L st_sink_bfm_0 -L mm_master_bfm_0 -L video_ip_sim_qsys_inst_reset_bfm -L video_ip_sim_qsys_inst_clk_bfm -L video_ip_sim_qsys_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L video_effects_0_avalon_slave_translator -L mm_master_bfm_0_m0_translator -L rst_controller -L irq_mapper -L mm_interconnect_0 -L video_effects_0 -L st_source_bfm_0 -L st_sink_bfm_0 -L mm_master_bfm_0 -L interrupt_sink_0 -L video_ip_sim_qsys_inst_reset_bfm -L video_ip_sim_qsys_inst_clk_bfm -L video_ip_sim_qsys_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L video_effects_0_avalon_slave_translator -L mm_master_bfm_0_m0_translator -L rst_controller -L mm_interconnect_0 -L video_effects_0 -L st_source_bfm_0 -L st_sink_bfm_0 -L mm_master_bfm_0 -L video_ip_sim_qsys_inst_reset_bfm -L video_ip_sim_qsys_inst_clk_bfm -L video_ip_sim_qsys_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
+  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L video_effects_0_avalon_slave_translator -L mm_master_bfm_0_m0_translator -L rst_controller -L irq_mapper -L mm_interconnect_0 -L video_effects_0 -L st_source_bfm_0 -L st_sink_bfm_0 -L mm_master_bfm_0 -L interrupt_sink_0 -L video_ip_sim_qsys_inst_reset_bfm -L video_ip_sim_qsys_inst_clk_bfm -L video_ip_sim_qsys_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

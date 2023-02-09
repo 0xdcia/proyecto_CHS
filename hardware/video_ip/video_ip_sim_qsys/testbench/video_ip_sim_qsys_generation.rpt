@@ -1,10 +1,12 @@
 Info: Starting: Create testbench Platform Designer system
-Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys.ipx
-Info: qsys-generate C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --testbench=STANDARD --output-directory=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys.ipx
+Info: qsys-generate C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --testbench=STANDARD --output-directory=C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\hardware\video_ip --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading video_ip/video_ip_sim_qsys.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 17.1]
 Progress: Parameterizing module clk_0
+Progress: Adding interrupt_sink_0 [altera_avalon_interrupt_sink 17.1]
+Progress: Parameterizing module interrupt_sink_0
 Progress: Adding mm_master_bfm_0 [altera_avalon_mm_master_bfm 17.1]
 Progress: Parameterizing module mm_master_bfm_0
 Progress: Adding st_sink_bfm_0 [altera_avalon_st_sink_bfm 17.1]
@@ -34,29 +36,30 @@ Info: C:\intelfpga\17.1\quartus\sopc_builder\bin\root_components.ipx: Loading no
 Info: Reading index C:\intelfpga\17.1\quartus\sopc_builder\bin\ip_component_categories.ipx
 Info: C:\intelfpga\17.1\quartus\sopc_builder\bin\ip_component_categories.ipx described 0 plugins, 0 paths, in 0,00 seconds
 Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0,00 seconds
-Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ip/**/* matched 0 files in 0,00 seconds
-Info: Reading index C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\testbench\video_ip_sim_qsys.ipx
+Info: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ip/**/* matched 0 files in 0,00 seconds
+Info: Reading index C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\testbench\video_ip_sim_qsys.ipx
 Progress: Loading video_ip/video_effects_hw.tcl
 Progress: Loading video_ip/video_ip_sim_qsys.qsys
-Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/* matched 15 files in 0,03 seconds
-Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/ip/**/* matched 0 files in 0,00 seconds
-Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/*/* matched 115 files in 0,01 seconds
-Info: C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\testbench\video_ip_sim_qsys.ipx described 0 plugins, 3 paths, in 0,04 seconds
-Progress: Loading testbench/video_ip_sim_qsys_tb.qsys
-Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/* matched 12 files in 0,04 seconds
-Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/*/* matched 9 files in 0,00 seconds
+Info: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/* matched 17 files in 0,03 seconds
+Info: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/ip/**/* matched 0 files in 0,00 seconds
+Info: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/*/* matched 108 files in 0,01 seconds
+Info: C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\testbench\video_ip_sim_qsys.ipx described 0 plugins, 3 paths, in 0,04 seconds
+Info: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/* matched 4 files in 0,04 seconds
+Info: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/*/* matched 0 files in 0,00 seconds
 Info: Reading index W:\.altera.quartus\ip\17.1\ip_search_path\user_components.ipx
+Info: C:/Users/dagarbl2/Documents/probar_fpga.prj/components/**/* matched 0 files in 0,00 seconds
+Info: C:/Users/dagarbl2/Documents/Practica3/HLS/probar_fpga.prj/components/**/* matched 0 files in 0,00 seconds
 Progress: Loading video_ip/video_effects_hw.tcl
 Progress: Loading video_ip/video_ip_sim_qsys.qsys
-Info: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/**/* matched 15 files in 0,03 seconds
-Info: W:\.altera.quartus\ip\17.1\ip_search_path\user_components.ipx described 0 plugins, 1 paths, in 0,03 seconds
-Info: W:/.altera.quartus/ip/17.1/**/* matched 2 files in 0,04 seconds
+Info: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/**/* matched 17 files in 0,05 seconds
+Info: W:\.altera.quartus\ip\17.1\ip_search_path\user_components.ipx described 0 plugins, 3 paths, in 0,06 seconds
+Info: W:/.altera.quartus/ip/17.1/**/* matched 2 files in 0,07 seconds
 Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0,00 seconds
 Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0,00 seconds
 Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0,00 seconds
 Info: Reading index C:\intelfpga\17.1\ip\altera\altera_components.ipx
-Info: C:\intelfpga\17.1\ip\altera\altera_components.ipx described 2006 plugins, 0 paths, in 0,11 seconds
-Info: C:/intelfpga/17.1/ip/**/* matched 138 files in 0,12 seconds
+Info: C:\intelfpga\17.1\ip\altera\altera_components.ipx described 2006 plugins, 0 paths, in 0,08 seconds
+Info: C:/intelfpga/17.1/ip/**/* matched 138 files in 0,09 seconds
 Info: C:/intelfpga/ip/**/* matched 0 files in 0,00 seconds
 Info: Reading index C:\intelfpga\17.1\quartus\sopc_builder\builtin.ipx
 Info: C:\intelfpga\17.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0,00 seconds
@@ -65,8 +68,8 @@ Info: Reading index C:\intelfpga\17.1\quartus\common\librarian\factories\index.i
 Info: C:\intelfpga\17.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0,01 seconds
 Info: C:/intelfpga/17.1/quartus/common/librarian/factories/**/* matched 4 files in 0,01 seconds
 Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0,00 seconds
-Info: C:\intelfpga\17.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,21 seconds
-Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,21 seconds
+Info: C:\intelfpga\17.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,22 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,22 seconds
 Progress: 
 Progress: 
 Progress: 
@@ -138,9 +141,9 @@ Info: TB_Gen: Saving testbench system: video_ip_sim_qsys_tb.qsys
 Info: save_system video_ip_sim_qsys_tb.qsys
 Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
 Info: TB_Gen: TBGEN SUCCESSFUL
-Info: Testbench system: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb.qsys
+Info: Testbench system: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb.qsys
 Info: Done
-Info: qsys-generate C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\testbench\video_ip_sim_qsys_tb\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys\testbench\video_ip_sim_qsys_tb\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading testbench/video_ip_sim_qsys_tb.qsys
 Progress: Reading input file
 Progress: Adding video_ip_sim_qsys_inst [video_ip_sim_qsys 1.0]
@@ -171,38 +174,41 @@ Info: Interconnect is inserted between master mm_master_bfm_0.m0 and slave video
 Info: video_ip_sim_qsys_inst: "video_ip_sim_qsys_tb" instantiated video_ip_sim_qsys "video_ip_sim_qsys_inst"
 Info: video_ip_sim_qsys_inst_clk_bfm: "video_ip_sim_qsys_tb" instantiated altera_avalon_clock_source "video_ip_sim_qsys_inst_clk_bfm"
 Info: video_ip_sim_qsys_inst_reset_bfm: "video_ip_sim_qsys_tb" instantiated altera_avalon_reset_source "video_ip_sim_qsys_inst_reset_bfm"
-Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
+Info: interrupt_sink_0: "video_ip_sim_qsys_inst" instantiated altera_avalon_interrupt_sink "interrupt_sink_0"
+Info: Reusing file C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
 Info: mm_master_bfm_0: "video_ip_sim_qsys_inst" instantiated altera_avalon_mm_master_bfm "mm_master_bfm_0"
-Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
 Info: st_sink_bfm_0: "video_ip_sim_qsys_inst" instantiated altera_avalon_st_sink_bfm "st_sink_bfm_0"
-Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
-Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/avalon_utilities_pkg.sv
+Info: Reusing file C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/avalon_utilities_pkg.sv
 Info: st_source_bfm_0: "video_ip_sim_qsys_inst" instantiated altera_avalon_st_source_bfm "st_source_bfm_0"
-Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
-Info: Reusing file C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/avalon_utilities_pkg.sv
+Info: Reusing file C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/video_ip_sim_qsys_tb/simulation/submodules/avalon_utilities_pkg.sv
 Info: video_effects_0: "video_ip_sim_qsys_inst" instantiated video_effects "video_effects_0"
 Info: mm_interconnect_0: "video_ip_sim_qsys_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "video_ip_sim_qsys_inst" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "video_ip_sim_qsys_inst" instantiated altera_reset_controller "rst_controller"
 Info: mm_master_bfm_0_m0_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "mm_master_bfm_0_m0_translator"
 Info: video_effects_0_avalon_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "video_effects_0_avalon_slave_translator"
-Info: video_ip_sim_qsys_tb: Done "video_ip_sim_qsys_tb" with 12 modules, 21 files
+Info: video_ip_sim_qsys_tb: Done "video_ip_sim_qsys_tb" with 14 modules, 23 files
 Info: qsys-generate succeeded.
-Info: sim-script-gen --spd=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys_tb.spd --output-directory=C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ --use-relative-paths=true
-Info: Doing: ip-make-simscript --spd=C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys_tb.spd --output-directory=C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ --use-relative-paths=true
-Info: Generating the following file(s) for MODELSIM simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
+Info: sim-script-gen --spd=C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys_tb.spd --output-directory=C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\hardware\video_ip\video_ip_sim_qsys_tb.spd --output-directory=C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
 Info: 	mentor/msim_setup.tcl
-Info: Generating the following file(s) for VCS simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
+Info: Generating the following file(s) for VCS simulator in C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
 Info: 	synopsys/vcs/vcs_setup.sh
-Info: Generating the following file(s) for VCSMX simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
 Info: 	synopsys/vcsmx/synopsys_sim.setup
 Info: 	synopsys/vcsmx/vcsmx_setup.sh
-Info: Generating the following file(s) for NCSIM simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
-Info: 	12 .cds.lib files in cadence/cds_libs/ directory
-Info: Generating the following file(s) for RIVIERA simulator in C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
+Info: 	14 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/ directory:
 Info: 	aldec/rivierapro_setup.tcl
-Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/.
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/video_ip/video_ip_sim_qsys/testbench/.
 Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
 Info: Finished: Create testbench Platform Designer system

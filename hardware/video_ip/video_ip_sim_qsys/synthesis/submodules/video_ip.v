@@ -10,6 +10,10 @@ module video_ip (
     input wire reset,  // reset
     input wire clk,  // reloj
     
+    // ///////////////////////////////////////////////////////////////
+    // INTERRUPCIONES
+    
+    output wire irq_sender,
     
     // ///////////////////////////////////////////////////////////////
     // AVALON-MM-SLAVE INTERFACE
@@ -163,8 +167,22 @@ Leyenda:
 - nombre[A:B] = valor, bits útiles leídos desde el X al Y.
 - [A:B] = región vacía (no se lee)
 */
+reg pause;
+wire pause_req;
+assign pause_req = reg0[0];
 
+reg interrupt;
+wire interrupt_req;
+assign interrupt_req = reg0[1];
+assign irq_sender = interrupt;
 
+always @(posedge clk)
+begin
+    if(pause_req & endofpacket_out_reg)
+        pause <= 1'b1;
+    if(~pause_req)
+        pause <= 1'b0;
+end
 
 // ///////////////////////////////////////////////////////////////////////////////
 // INSTANCIACIÓN DEL MÓDULO DE EFECTOS DE VÍDEO
@@ -206,7 +224,7 @@ video_effects U4_VIDEO_EFFECTS_1 (
     // effect_quantif_level = 11 : Se eliminan los tres últimos bits
     
     .effect_color_key(reg2[31:16]),  // indica el valor RGB a eliminar para los efectos que lo necesiten
-    .effect_color_key_mask(reg2[15:0]),  // indica la máscara de colores (rango) de colores a eliminar 
+    .effect_color_key_threshold(reg2[15:0]),  // indica la tolerancia de colores (+-rango por componente)
     .effect_color_substitute(reg3[15:0]),  // indica el valor RGB por el que sustituir el color eliminado
     
     .video_data_in(data_in_reg),  // entrada de datos de vídeo, del avalon sink
@@ -224,13 +242,22 @@ always @(posedge clk)
 begin
     
     // Si no está ready, congelamos las transferencias
-    if (ready_reg)
+    if (ready_reg & ~pause)
     begin
         
         valid_out_reg <= valid_in_reg;
         startofpacket_out_reg <= startofpacket_in_reg;
         endofpacket_out_reg <= endofpacket_in_reg;
         
+    end
+    if (pause)
+    begin
+        valid_out_reg <= 1'b0;
+        if (interrupt_req)
+            if(~interrupt) 
+                interrupt = 1'b1;
+        else
+            interrupt = 1'b0;
     end
     
 end

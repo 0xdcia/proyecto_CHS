@@ -26,6 +26,8 @@ void Init_App(void){
 	*(KEY_ptr + 3) = 0;
 	alt_irq_register(PUSHBUTTONS_IRQ, NULL, pushbutton_isr);
 
+	alt_irq_register(VIDEO_EFFECTS_IRQ, NULL, capture_isr);
+
 	//Inicializar mailbox
 	getimg = OSMboxCreate((void *)1);
 }

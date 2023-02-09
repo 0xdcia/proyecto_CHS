@@ -43,6 +43,7 @@ module avalon_st_source_interface (
 // listo para recibir datos inmediatamente cuando el bloque inferior lo esté
 assign ready_reg = ready_in;
 
+// PUESH ESTO PUEDE SER COMBINACIONAL 8=)
 
 always @(posedge clk)
 begin

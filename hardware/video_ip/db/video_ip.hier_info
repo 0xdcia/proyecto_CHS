@@ -1,6 +1,7 @@
 |video_ip
 reset => reset.IN4
 clk => clk.IN4
+irq_sender <= interrupt.DB_MAX_OUTPUT_PORT_TYPE
 chipselect => chipselect.IN1
 address[0] => address[0].IN1
 address[1] => address[1].IN1

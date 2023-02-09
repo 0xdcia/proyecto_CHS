@@ -30,7 +30,20 @@ module video_ip_sim_qsys (
 	wire         mm_interconnect_0_video_effects_0_avalon_slave_read;       // mm_interconnect_0:video_effects_0_avalon_slave_read -> video_effects_0:read
 	wire         mm_interconnect_0_video_effects_0_avalon_slave_write;      // mm_interconnect_0:video_effects_0_avalon_slave_write -> video_effects_0:write
 	wire  [31:0] mm_interconnect_0_video_effects_0_avalon_slave_writedata;  // mm_interconnect_0:video_effects_0_avalon_slave_writedata -> video_effects_0:writedata
-	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [mm_interconnect_0:mm_master_bfm_0_clk_reset_reset_bridge_in_reset_reset, mm_master_bfm_0:reset, st_sink_bfm_0:reset, st_source_bfm_0:reset, video_effects_0:reset]
+	wire         irq_mapper_receiver0_irq;                                  // video_effects_0:irq_sender -> irq_mapper:receiver0_irq
+	wire   [0:0] interrupt_sink_0_irq_irq;                                  // irq_mapper:sender_irq -> interrupt_sink_0:irq
+	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [interrupt_sink_0:reset, irq_mapper:reset, mm_interconnect_0:mm_master_bfm_0_clk_reset_reset_bridge_in_reset_reset, mm_master_bfm_0:reset, st_sink_bfm_0:reset, st_source_bfm_0:reset, video_effects_0:reset]
+
+	altera_avalon_interrupt_sink #(
+		.ASSERT_HIGH_IRQ        (1),
+		.AV_IRQ_W               (1),
+		.ASYNCHRONOUS_INTERRUPT (0),
+		.VHDL_ID                (0)
+	) interrupt_sink_0 (
+		.clk   (clk_clk),                        //       clock_reset.clk
+		.reset (rst_controller_reset_out_reset), // clock_reset_reset.reset
+		.irq   (interrupt_sink_0_irq_irq)        //               irq.irq
+	);
 
 	altera_avalon_mm_master_bfm #(
 		.AV_ADDRESS_W               (3),
@@ -168,7 +181,8 @@ module video_ip_sim_qsys (
 		.readdata          (mm_interconnect_0_video_effects_0_avalon_slave_readdata),   //                        .readdata
 		.write             (mm_interconnect_0_video_effects_0_avalon_slave_write),      //                        .write
 		.writedata         (mm_interconnect_0_video_effects_0_avalon_slave_writedata),  //                        .writedata
-		.chipselect        (mm_interconnect_0_video_effects_0_avalon_slave_chipselect)  //                        .chipselect
+		.chipselect        (mm_interconnect_0_video_effects_0_avalon_slave_chipselect), //                        .chipselect
+		.irq_sender        (irq_mapper_receiver0_irq)                                   //              irq_sender.irq
 	);
 
 	video_ip_sim_qsys_mm_interconnect_0 mm_interconnect_0 (
@@ -186,6 +200,13 @@ module video_ip_sim_qsys (
 		.video_effects_0_avalon_slave_readdata                 (mm_interconnect_0_video_effects_0_avalon_slave_readdata),   //                                                .readdata
 		.video_effects_0_avalon_slave_writedata                (mm_interconnect_0_video_effects_0_avalon_slave_writedata),  //                                                .writedata
 		.video_effects_0_avalon_slave_chipselect               (mm_interconnect_0_video_effects_0_avalon_slave_chipselect)  //                                                .chipselect
+	);
+
+	video_ip_sim_qsys_irq_mapper irq_mapper (
+		.clk           (clk_clk),                        //       clk.clk
+		.reset         (rst_controller_reset_out_reset), // clk_reset.reset
+		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
+		.sender_irq    (interrupt_sink_0_irq_irq)        //    sender.irq
 	);
 
 	altera_reset_controller #(

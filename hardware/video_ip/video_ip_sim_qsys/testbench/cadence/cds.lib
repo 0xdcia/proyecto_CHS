@@ -13,11 +13,13 @@ DEFINE altera_common_sv_packages               ./libraries/altera_common_sv_pack
 DEFINE video_effects_0_avalon_slave_translator ./libraries/video_effects_0_avalon_slave_translator/
 DEFINE mm_master_bfm_0_m0_translator           ./libraries/mm_master_bfm_0_m0_translator/          
 DEFINE rst_controller                          ./libraries/rst_controller/                         
+DEFINE irq_mapper                              ./libraries/irq_mapper/                             
 DEFINE mm_interconnect_0                       ./libraries/mm_interconnect_0/                      
 DEFINE video_effects_0                         ./libraries/video_effects_0/                        
 DEFINE st_source_bfm_0                         ./libraries/st_source_bfm_0/                        
 DEFINE st_sink_bfm_0                           ./libraries/st_sink_bfm_0/                          
 DEFINE mm_master_bfm_0                         ./libraries/mm_master_bfm_0/                        
+DEFINE interrupt_sink_0                        ./libraries/interrupt_sink_0/                       
 DEFINE video_ip_sim_qsys_inst_reset_bfm        ./libraries/video_ip_sim_qsys_inst_reset_bfm/       
 DEFINE video_ip_sim_qsys_inst_clk_bfm          ./libraries/video_ip_sim_qsys_inst_clk_bfm/         
 DEFINE video_ip_sim_qsys_inst                  ./libraries/video_ip_sim_qsys_inst/                 
