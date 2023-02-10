@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>09-feb-2023 19:00:33</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1675965633883</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>10-feb-2023 20:35:46</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1676057746552</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\software\nios_software_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\hardware\main_project\nios_system.sopcinfo</SopcDesignFile>
@@ -1841,7 +1841,7 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>video_dma_controller_ip_input</slaveDescriptor>
+                <slaveDescriptor>video_dma_controller_ip_camera_input</slaveDescriptor>
                 <addressRange>0x10000130 - 0x1000013F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>

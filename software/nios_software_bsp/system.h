@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/main_project/nios_system.sopcinfo
  *
- * Generated: Thu Feb 09 19:00:35 CET 2023
+ * Generated: Fri Feb 10 20:35:47 CET 2023
  */
 
 /*
@@ -600,7 +600,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1675965263
+#define SYSID_TIMESTAMP 1676051244
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -709,17 +709,17 @@
 
 
 /*
- * video_dma_controller_ip_input configuration
+ * video_dma_controller_ip_camera_input configuration
  *
  */
 
-#define ALT_MODULE_CLASS_video_dma_controller_ip_input altera_up_avalon_video_dma_controller
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_BASE 0x10000130
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_IRQ -1
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_NAME "/dev/video_dma_controller_ip_input"
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_SPAN 16
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_TYPE "altera_up_avalon_video_dma_controller"
+#define ALT_MODULE_CLASS_video_dma_controller_ip_camera_input altera_up_avalon_video_dma_controller
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_BASE 0x10000130
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_IRQ -1
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_NAME "/dev/video_dma_controller_ip_camera_input"
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_SPAN 16
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_TYPE "altera_up_avalon_video_dma_controller"
 
 
 /*

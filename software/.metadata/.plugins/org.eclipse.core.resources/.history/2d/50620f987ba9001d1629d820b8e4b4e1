@@ -231,7 +231,7 @@ void TaskSdcard(void *pdata){
 					aux[0] = alt_up_sd_card_read(handle);
 					aux[1] = alt_up_sd_card_read(handle);
 					aux[2] = alt_up_sd_card_read(handle);
-					//*(pixel_buffer + offset) = CONVERT_888RGB_TO_565BGR(aux[2], aux[1], aux[0]);
+					*(pixel_buffer + offset) = CONVERT_888RGB_TO_565BGR(aux[2], aux[1], aux[0]);
 
 				}
 			}

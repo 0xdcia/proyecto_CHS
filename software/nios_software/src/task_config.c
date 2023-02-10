@@ -41,8 +41,6 @@ void TaskInit(void* pdata)
 }
 
 int initCreateTasks(){
-	/* Comunicacion de tareas */
-		getimg = OSMboxCreate((void*)0);
 
 	/* Crear tareas*/
 		INT8U return_code = OS_NO_ERR;
@@ -52,6 +50,18 @@ int initCreateTasks(){
 							  IMAGE_TASK_PRIORITY,
 							  IMAGE_TASK_PRIORITY,
 							  image_task_stk,
+			                  TASK_STACKSIZE,
+			                  NULL,
+			                  0);
+
+		alt_ucosii_check_return_code(return_code);
+
+		return_code= OSTaskCreateExt(TaskSaveImg,
+			                  NULL,
+			                  (void *)&save_task_stk[TASK_STACKSIZE-1],
+							  SAVE_TASK_PRIORITY,
+							  SAVE_TASK_PRIORITY,
+							  save_task_stk,
 			                  TASK_STACKSIZE,
 			                  NULL,
 			                  0);

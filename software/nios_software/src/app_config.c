@@ -29,6 +29,6 @@ void Init_App(void){
 	alt_irq_register(VIDEO_EFFECTS_IRQ, NULL, capture_isr);
 
 	//Inicializar mailbox
-	getimg = OSMboxCreate((void *)1);
-	saveimg = OSMboxCreate((void *)1);
+	getimg = OSMboxCreate((void *)0);
+	saveimg = OSMboxCreate((void *)0);
 }

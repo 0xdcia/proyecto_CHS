@@ -17,6 +17,7 @@ void capture_isr(){
 	OSIntEnter();
 	*(EFFECT_ptr + 0) = 0x00000001;
 	printf("Hemos recibido una foto\n");
+	OSMboxPost(saveimg, (void *)1);
 	OSIntExit();
 }
 

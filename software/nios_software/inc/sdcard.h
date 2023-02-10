@@ -46,3 +46,9 @@ bool getFileheader(short int *handle, struct bmpFileHeader* header_st);
 bool getInfoheader(short int *handle, struct bmpInfoHeader* info_st);
 
 void TaskSdcard(void *pdata);
+
+void TaskSaveImg(void *pdata);
+
+void printHeader(struct bmpFileHeader* header);
+
+void printInfo(struct bmpInfoHeader* info);
