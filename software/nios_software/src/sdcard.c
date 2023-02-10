@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <Ricardo_SD_Card_Avalon_Interface.h>
+#include <Altera_UP_SD_Card_Avalon_Interface.h>
 #include "../inc/task_config.h"
 #include "../inc/sdcard.h"
 #include "../inc/app_config.h"
@@ -231,7 +231,7 @@ void TaskSdcard(void *pdata){
 					aux[0] = alt_up_sd_card_read(handle);
 					aux[1] = alt_up_sd_card_read(handle);
 					aux[2] = alt_up_sd_card_read(handle);
-					//*(pixel_buffer + offset) = CONVERT_888RGB_TO_565BGR(aux[2], aux[1], aux[0]);
+					*(pixel_buffer + offset) = CONVERT_888RGB_TO_565BGR(aux[2], aux[1], aux[0]);
 
 				}
 			}
@@ -242,7 +242,7 @@ void TaskSdcard(void *pdata){
 
 }
 
-int img = 11;
+int img = 12;
 void TaskSaveImg(void *pdata){
 	void *p_msg;
 	short int img_handle = -1;
@@ -294,10 +294,13 @@ void TaskSaveImg(void *pdata){
 		for(int i = 240-1; i >= 0; i--){
 			for(int j = 0; j < 400; j++){
 				offset = (i << 9) + j;
-				aux = *(memoria_mtl + offset);
-				alt_up_sd_card_write(img_handle, aux>>12);
-				alt_up_sd_card_write(img_handle, aux>>5);
-				alt_up_sd_card_write(img_handle, aux);
+				//aux = *(memoria_mtl + offset);
+				//alt_up_sd_card_write(img_handle, aux>>12);
+				//alt_up_sd_card_write(img_handle, aux>>5);
+				//alt_up_sd_card_write(img_handle, aux);
+				altera_up_sd_card_write(img_handle, 0xFF);
+				altera_up_sd_card_write(img_handle, 0x00);
+				altera_up_sd_card_write(img_handle, 0xFF);
 			}
 		}
 
