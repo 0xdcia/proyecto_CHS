@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/main_project/output_files/") File("DE2_115_MEDIA_COMPUTER.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/main_project/output_files/") File("DE2_115_MEDIA_COMPUTER.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

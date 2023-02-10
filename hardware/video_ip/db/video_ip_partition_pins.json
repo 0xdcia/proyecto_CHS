@@ -140,10 +140,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sdcard_ready_out",
-					"strict" : false
-				},
-				{
 					"name" : "source_valid_out",
 					"strict" : false
 				},
@@ -249,142 +245,6 @@
 				},
 				{
 					"name" : "read",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[1]",
-					"strict" : false
-				},
-				{
-					"name" : "write",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[0]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[2]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[3]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[4]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[5]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[6]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[7]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[8]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[9]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[10]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[11]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[12]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[13]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[14]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[15]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[16]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[17]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[18]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[19]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[20]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[21]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[22]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[23]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[24]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[25]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[26]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[27]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[28]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[29]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[30]",
-					"strict" : false
-				},
-				{
-					"name" : "writedata[31]",
-					"strict" : false
-				},
-				{
-					"name" : "sdcard_valid_in",
 					"strict" : false
 				},
 				{
@@ -520,19 +380,143 @@
 					"strict" : false
 				},
 				{
-					"name" : "sdcard_startofpacket_in",
-					"strict" : false
-				},
-				{
 					"name" : "camera_startofpacket_in",
 					"strict" : false
 				},
 				{
-					"name" : "sdcard_endofpacket_in",
+					"name" : "camera_endofpacket_in",
 					"strict" : false
 				},
 				{
-					"name" : "camera_endofpacket_in",
+					"name" : "writedata[1]",
+					"strict" : false
+				},
+				{
+					"name" : "write",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[0]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[2]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[3]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[4]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[5]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[6]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[7]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[8]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[9]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[10]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[11]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[12]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[13]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[14]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[15]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[16]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[17]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[18]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[19]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[20]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[21]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[22]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[23]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[24]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[25]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[26]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[27]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[28]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[29]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[30]",
+					"strict" : false
+				},
+				{
+					"name" : "writedata[31]",
 					"strict" : false
 				}
 			]

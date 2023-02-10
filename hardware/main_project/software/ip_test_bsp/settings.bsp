@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>08-feb-2023 13:27:00</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1675859220487</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>10-feb-2023 13:18:17</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1676031497574</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\jdelpin\Documents\GitHub\proyecto_CHS\hardware\main_project\software\ip_test_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios_system.sopcinfo</SopcDesignFile>
@@ -1001,7 +1001,7 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>video_dma_controller_ip_input</slaveDescriptor>
+                <slaveDescriptor>video_dma_controller_ip_camera_input</slaveDescriptor>
                 <addressRange>0x10000130 - 0x1000013F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
@@ -1051,6 +1051,12 @@
         <MemoryMap>
                 <slaveDescriptor>mtl_pixel_buffer_dma</slaveDescriptor>
                 <addressRange>0x10001100 - 0x1000110F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>video_dma_controller_ip_sdcard_input</slaveDescriptor>
+                <addressRange>0x10001110 - 0x1000111F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>

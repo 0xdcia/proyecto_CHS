@@ -27,24 +27,32 @@ module avalon_st_source_interface (
     output wire ready_reg,
     
     input wire valid_reg,  // salida de datos válidos
-    output reg valid_out,  // salida de datos válidos
+    output wire valid_out,  // salida de datos válidos
     
     input wire [15:0] data_reg,  // datos, registro de la IP
-    output reg [15:0] data_out, // datos, salida
+    output wire [15:0] data_out, // datos, salida
     
     input wire startofpacket_reg,  // indicador inicio frame, de la IP
     input wire endofpacket_reg,  // indicador fin frame, de la IP
     
-    output reg startofpacket_out,  // indicador inicio frame, salida
-    output reg endofpacket_out  // indicador fin frame, salida
+    output wire startofpacket_out,  // indicador inicio frame, salida
+    output wire endofpacket_out  // indicador fin frame, salida
 );
 
 
 // listo para recibir datos inmediatamente cuando el bloque inferior lo esté
 assign ready_reg = ready_in;
 
-// PUESH ESTO PUEDE SER COMBINACIONAL 8=)
+// pasamos el válido con misma latencia que los datos
+assign valid_out = valid_reg;
 
+// transferencias para que sea accesible por la IP
+assign data_out = data_reg;
+assign startofpacket_out = startofpacket_reg;
+assign endofpacket_out = endofpacket_reg;
+
+
+/*
 always @(posedge clk)
 begin
     
@@ -67,5 +75,9 @@ begin
         end
     end
 end
+*/
+
 
 endmodule
+
+

@@ -641,7 +641,7 @@
          type = "int";
       }
    }
-   element video_dma_controller_ip_input
+   element video_dma_controller_ip_camera_input
    {
       datum _sortIndex
       {
@@ -649,7 +649,7 @@
          type = "int";
       }
    }
-   element video_dma_controller_ip_input.avalon_dma_control_slave
+   element video_dma_controller_ip_camera_input.avalon_dma_control_slave
    {
       datum baseAddress
       {
@@ -661,7 +661,7 @@
    {
       datum _sortIndex
       {
-         value = "51";
+         value = "52";
          type = "int";
       }
    }
@@ -673,11 +673,19 @@
          type = "String";
       }
    }
-   element video_effects
+   element video_dma_controller_ip_sdcard_input
    {
       datum _sortIndex
       {
          value = "50";
+         type = "int";
+      }
+   }
+   element video_effects
+   {
+      datum _sortIndex
+      {
+         value = "51";
          type = "int";
       }
    }
@@ -1094,7 +1102,7 @@
   <parameter name="dataAddrWidth" value="29" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='flash_controller.uas' start='0x8000000' end='0x8800000' type='altera_generic_tristate_controller.uas' /><slave name='onchip_memory.s1' start='0x8800000' end='0x8808000' type='altera_avalon_onchip_memory2.s1' /><slave name='cpu.debug_mem_slave' start='0x8900000' end='0x8900800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sram.avalon_sram_slave' start='0x9000000' end='0x9200000' type='altera_up_avalon_sram.avalon_sram_slave' /><slave name='red_leds.avalon_parallel_port_slave' start='0x10000000' end='0x10000010' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='green_leds.avalon_parallel_port_slave' start='0x10000010' end='0x10000020' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='HEX3_HEX0.avalon_parallel_port_slave' start='0x10000020' end='0x10000030' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='HEX7_HEX4.avalon_parallel_port_slave' start='0x10000030' end='0x10000040' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='switches.avalon_parallel_port_slave' start='0x10000040' end='0x10000050' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='pushbuttons.avalon_parallel_port_slave' start='0x10000050' end='0x10000060' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='ps2_key.avalon_ps2_slave' start='0x10000060' end='0x10000068' type='altera_up_avalon_ps2.avalon_ps2_slave' /><slave name='ps2_mouse.avalon_ps2_slave' start='0x10000070' end='0x10000078' type='altera_up_avalon_ps2.avalon_ps2_slave' /><slave name='serial_port.avalon_rs232_slave' start='0x10000080' end='0x10000088' type='altera_up_avalon_rs232.avalon_rs232_slave' /><slave name='char_lcd.avalon_lcd_slave' start='0x10000090' end='0x10000092' type='altera_up_avalon_character_lcd.avalon_lcd_slave' /><slave name='audio_config.avalon_av_config_slave' start='0x10000100' end='0x10000110' type='altera_up_avalon_audio_and_video_config.avalon_av_config_slave' /><slave name='audio.avalon_audio_slave' start='0x10000110' end='0x10000120' type='altera_up_avalon_audio.avalon_audio_slave' /><slave name='camera_video_dma_controller.avalon_dma_control_slave' start='0x10000120' end='0x10000130' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='video_dma_controller_ip_input.avalon_dma_control_slave' start='0x10000130' end='0x10000140' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='video_effects.avalon_slave' start='0x10000140' end='0x10000160' type='video_effects.avalon_slave' /><slave name='video_dma_controller_ip_output.avalon_dma_control_slave' start='0x10000160' end='0x10000170' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='SD_Card.avalon_sdcard_slave' start='0x10000400' end='0x10000800' type='Altera_UP_SD_Card_Avalon_Interface.avalon_sdcard_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x10001000' end='0x10001008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='timer.s1' start='0x10001020' end='0x10001040' type='altera_avalon_timer.s1' /><slave name='sysid.control_slave' start='0x10001040' end='0x10001048' type='altera_avalon_sysid_qsys.control_slave' /><slave name='performance_counter.control_slave' start='0x10001080' end='0x100010C0' type='altera_avalon_performance_counter.control_slave' /><slave name='mtl_pixel_buffer_dma.avalon_control_slave' start='0x10001100' end='0x10001110' type='altera_up_avalon_video_pixel_buffer_dma.avalon_control_slave' /><slave name='mtl_char_buffer.avalon_char_control_slave' start='0x10001200' end='0x10001208' type='altera_up_avalon_video_character_buffer_with_dma.avalon_char_control_slave' /><slave name='mtl_char_buffer.avalon_char_buffer_slave' start='0x10001800' end='0x10002000' type='altera_up_avalon_video_character_buffer_with_dma.avalon_char_buffer_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='flash_controller.uas' start='0x8000000' end='0x8800000' type='altera_generic_tristate_controller.uas' /><slave name='onchip_memory.s1' start='0x8800000' end='0x8808000' type='altera_avalon_onchip_memory2.s1' /><slave name='cpu.debug_mem_slave' start='0x8900000' end='0x8900800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sram.avalon_sram_slave' start='0x9000000' end='0x9200000' type='altera_up_avalon_sram.avalon_sram_slave' /><slave name='red_leds.avalon_parallel_port_slave' start='0x10000000' end='0x10000010' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='green_leds.avalon_parallel_port_slave' start='0x10000010' end='0x10000020' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='HEX3_HEX0.avalon_parallel_port_slave' start='0x10000020' end='0x10000030' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='HEX7_HEX4.avalon_parallel_port_slave' start='0x10000030' end='0x10000040' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='switches.avalon_parallel_port_slave' start='0x10000040' end='0x10000050' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='pushbuttons.avalon_parallel_port_slave' start='0x10000050' end='0x10000060' type='altera_up_avalon_parallel_port.avalon_parallel_port_slave' /><slave name='ps2_key.avalon_ps2_slave' start='0x10000060' end='0x10000068' type='altera_up_avalon_ps2.avalon_ps2_slave' /><slave name='ps2_mouse.avalon_ps2_slave' start='0x10000070' end='0x10000078' type='altera_up_avalon_ps2.avalon_ps2_slave' /><slave name='serial_port.avalon_rs232_slave' start='0x10000080' end='0x10000088' type='altera_up_avalon_rs232.avalon_rs232_slave' /><slave name='char_lcd.avalon_lcd_slave' start='0x10000090' end='0x10000092' type='altera_up_avalon_character_lcd.avalon_lcd_slave' /><slave name='audio_config.avalon_av_config_slave' start='0x10000100' end='0x10000110' type='altera_up_avalon_audio_and_video_config.avalon_av_config_slave' /><slave name='audio.avalon_audio_slave' start='0x10000110' end='0x10000120' type='altera_up_avalon_audio.avalon_audio_slave' /><slave name='camera_video_dma_controller.avalon_dma_control_slave' start='0x10000120' end='0x10000130' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='video_dma_controller_ip_camera_input.avalon_dma_control_slave' start='0x10000130' end='0x10000140' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='video_effects.avalon_slave' start='0x10000140' end='0x10000160' type='video_effects.avalon_slave' /><slave name='video_dma_controller_ip_output.avalon_dma_control_slave' start='0x10000160' end='0x10000170' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='SD_Card.avalon_sdcard_slave' start='0x10000400' end='0x10000800' type='Altera_UP_SD_Card_Avalon_Interface.avalon_sdcard_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x10001000' end='0x10001008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='timer.s1' start='0x10001020' end='0x10001040' type='altera_avalon_timer.s1' /><slave name='sysid.control_slave' start='0x10001040' end='0x10001048' type='altera_avalon_sysid_qsys.control_slave' /><slave name='performance_counter.control_slave' start='0x10001080' end='0x100010C0' type='altera_avalon_performance_counter.control_slave' /><slave name='mtl_pixel_buffer_dma.avalon_control_slave' start='0x10001100' end='0x10001110' type='altera_up_avalon_video_pixel_buffer_dma.avalon_control_slave' /><slave name='video_dma_controller_ip_sdcard_input.avalon_dma_control_slave' start='0x10001110' end='0x10001120' type='altera_up_avalon_video_dma_controller.avalon_dma_control_slave' /><slave name='mtl_char_buffer.avalon_char_control_slave' start='0x10001200' end='0x10001208' type='altera_up_avalon_video_character_buffer_with_dma.avalon_char_control_slave' /><slave name='mtl_char_buffer.avalon_char_buffer_slave' start='0x10001800' end='0x10002000' type='altera_up_avalon_video_character_buffer_with_dma.avalon_char_buffer_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -1646,7 +1654,7 @@
   <parameter name="NUM_CLOCK_OUTPUTS" value="1" />
  </module>
  <module
-   name="video_dma_controller_ip_input"
+   name="video_dma_controller_ip_camera_input"
    kind="altera_up_avalon_video_dma_controller"
    version="17.1"
    enabled="1">
@@ -1677,6 +1685,23 @@
   <parameter name="height" value="240" />
   <parameter name="mode">From Stream to Memory</parameter>
   <parameter name="start_address" value="152043520" />
+  <parameter name="width" value="400" />
+ </module>
+ <module
+   name="video_dma_controller_ip_sdcard_input"
+   kind="altera_up_avalon_video_dma_controller"
+   version="17.1"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="addr_mode" value="X-Y" />
+  <parameter name="back_start_address" value="0" />
+  <parameter name="color_bits" value="16" />
+  <parameter name="color_planes" value="1" />
+  <parameter name="dma_enabled" value="true" />
+  <parameter name="height" value="240" />
+  <parameter name="mode">From Memory to Stream</parameter>
+  <parameter name="start_address" value="150994944" />
   <parameter name="width" value="400" />
  </module>
  <module name="video_effects" kind="video_effects" version="0" enabled="1" />
@@ -1723,7 +1748,7 @@
  <connection
    kind="avalon"
    version="17.1"
-   start="video_dma_controller_ip_input.avalon_dma_master"
+   start="video_dma_controller_ip_camera_input.avalon_dma_master"
    end="sram.avalon_sram_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x09000000" />
@@ -1733,6 +1758,15 @@
    kind="avalon"
    version="17.1"
    start="video_dma_controller_ip_output.avalon_dma_master"
+   end="sram.avalon_sram_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x09000000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="video_dma_controller_ip_sdcard_input.avalon_dma_master"
    end="sram.avalon_sram_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x09000000" />
@@ -1805,7 +1839,7 @@
    kind="avalon"
    version="17.1"
    start="cpu.data_master"
-   end="video_dma_controller_ip_input.avalon_dma_control_slave">
+   end="video_dma_controller_ip_camera_input.avalon_dma_control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x10000130" />
   <parameter name="defaultConnection" value="false" />
@@ -1817,6 +1851,15 @@
    end="video_dma_controller_ip_output.avalon_dma_control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x10000160" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="cpu.data_master"
+   end="video_dma_controller_ip_sdcard_input.avalon_dma_control_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x10001110" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2079,8 +2122,13 @@
  <connection
    kind="avalon_streaming"
    version="17.1"
-   start="video_dma_controller_ip_input.avalon_pixel_source"
-   end="video_effects.avalon_streaming_sink" />
+   start="video_dma_controller_ip_camera_input.avalon_pixel_source"
+   end="video_effects.avalon_streaming_sink_camera" />
+ <connection
+   kind="avalon_streaming"
+   version="17.1"
+   start="video_dma_controller_ip_sdcard_input.avalon_pixel_source"
+   end="video_effects.avalon_streaming_sink_sdcard" />
  <connection
    kind="avalon_streaming"
    version="17.1"
@@ -2315,7 +2363,7 @@
    kind="clock"
    version="17.1"
    start="sys_sdram_pll.sys_clk"
-   end="video_dma_controller_ip_input.clk" />
+   end="video_dma_controller_ip_camera_input.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -2326,6 +2374,11 @@
    version="17.1"
    start="sys_sdram_pll.sys_clk"
    end="camera_video_scaler.clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="sys_sdram_pll.sys_clk"
+   end="video_dma_controller_ip_sdcard_input.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -2756,7 +2809,7 @@
    kind="reset"
    version="17.1"
    start="sys_sdram_pll.reset_source"
-   end="video_dma_controller_ip_input.reset" />
+   end="video_dma_controller_ip_camera_input.reset" />
  <connection
    kind="reset"
    version="17.1"
@@ -2772,6 +2825,11 @@
    version="17.1"
    start="sys_sdram_pll.reset_source"
    end="camera_video_scaler.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="sys_sdram_pll.reset_source"
+   end="video_dma_controller_ip_sdcard_input.reset" />
  <connection
    kind="reset"
    version="17.1"

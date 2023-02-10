@@ -42,8 +42,8 @@ module video_effects (
     input wire [15:0] effect_color_key_threshold,  // indica la tolerancia de colores (+-rango por componente)
     input wire [15:0] effect_color_substitute,  // indica el valor RGB por el que sustituir el color eliminado
     
-    input wire [15:0] video_data_in_foreground,  // entrada de datos de vídeo (camara de vídeo)
-    input wire [15:0] video_data_in_background,  // entrada de datos de vídeo (imagen de la SD)
+    input wire [15:0] video_data_in_camera,  // entrada de datos de camara de vídeo
+    input wire [15:0] video_data_in_sdcard,  // entrada de datos de imagen de la SD
     output reg [15:0] video_data_out  // salida de datos de vídeo, procesados, al avalon source
     
 );
@@ -64,14 +64,15 @@ begin
     // Por eso se usa esta estructura de ifs encadenados y asignaciones combinacionales.
     
     
-    // 0. Seleccionar entre vídeo de la cámara (fore) o de la SD (back)
+    // 0. Seleccionar entre vídeo de la cámara o de la SD
     if (effect[0] == 1'b1)
     begin
-        video_data_proc = video_data_in_background;
+        video_data_proc = video_data_in_sdcard;
     end
+        
     else
     begin
-        video_data_proc = video_data_in_foreground;
+        video_data_proc = video_data_in_camera;
     end
     
     
@@ -80,10 +81,20 @@ begin
     begin
         // Si (pixel & mask) menos (key & mask) es cero => está en rango => sustituirlo
         // (video_data_proc[15:11] >> 2) + (video_data_proc[10:6] >> 1) + (video_data_proc[4:0] >> 2);
-        if ((video_data_proc[15:11] < (effect_color_key[15:11] + effect_color_key_threshold[15:11])) | ((video_data_proc[15:11] > (effect_color_key[15:11] - effect_color_key_threshold[15:11]))))
-            if ((video_data_proc[10:5] < (effect_color_key[10:5] + effect_color_key_threshold[10:5])) | ((video_data_proc[10:5] > (effect_color_key[10:5] - effect_color_key_threshold[10:5]))))
-                if ((video_data_proc[4:0] < (effect_color_key[4:0] + effect_color_key_threshold[4:0])) | ((video_data_proc[4:0] > (effect_color_key[4:0] - effect_color_key_threshold[4:0]))))
-                    video_data_proc = effect_color_substitute;
+        
+        if ( 
+            ((video_data_proc[15:11] < (effect_color_key[15:11] + effect_color_key_threshold[15:11])) | 
+            ((video_data_proc[15:11] > (effect_color_key[15:11] - effect_color_key_threshold[15:11]))))
+            &
+            ((video_data_proc[10:5] < (effect_color_key[10:5] + effect_color_key_threshold[10:5])) | 
+            ((video_data_proc[10:5] > (effect_color_key[10:5] - effect_color_key_threshold[10:5]))))
+            &
+            ((video_data_proc[4:0] < (effect_color_key[4:0] + effect_color_key_threshold[4:0])) | 
+            ((video_data_proc[4:0] > (effect_color_key[4:0] - effect_color_key_threshold[4:0]))))
+            )
+        begin
+            video_data_proc = effect_color_substitute;
+        end
     end
     
     
@@ -114,9 +125,18 @@ begin
     if (effect[4] == 1'b1)
     begin
         case (effect_quantif_level) 
-            2'b01: video_data_proc = {video_data_proc[15:12],    video_data_proc[12],   video_data_proc[10:7], {2{video_data_proc[7]}}, video_data_proc[4:1],    video_data_proc[1]};
-            2'b10: video_data_proc = {video_data_proc[15:13], {2{video_data_proc[13]}}, video_data_proc[10:8], {3{video_data_proc[8]}}, video_data_proc[4:2], {2{video_data_proc[2]}}};
-            2'b11: video_data_proc = {video_data_proc[15:14], {3{video_data_proc[14]}}, video_data_proc[10:9], {4{video_data_proc[9]}}, video_data_proc[4:3], {3{video_data_proc[3]}}};
+            2'b01: video_data_proc = {video_data_proc[15:12], video_data_proc[12],
+                                      video_data_proc[10:7], {2{video_data_proc[7]}},
+                                      video_data_proc[4:1], video_data_proc[1]};
+            
+            2'b10: video_data_proc = {video_data_proc[15:13], {2{video_data_proc[13]}},
+                                      video_data_proc[10:8], {3{video_data_proc[8]}},
+                                      video_data_proc[4:2], {2{video_data_proc[2]}}};
+            
+            2'b11: video_data_proc = {video_data_proc[15:14], {3{video_data_proc[14]}},
+                                      video_data_proc[10:9], {4{video_data_proc[9]}},
+                                      video_data_proc[4:3], {3{video_data_proc[3]}}};
+            
         endcase
     end
     
@@ -129,7 +149,7 @@ begin
     
     
     // Si no entra en ningún caso, simplemente se asigna a la salida.
-    video_data_proc = video_data_proc;
+    // video_data_proc = video_data_proc;
     video_data_out <= video_data_proc;
     
 end

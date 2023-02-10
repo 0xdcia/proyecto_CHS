@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Wed Feb 08 13:27:01 CET 2023
+ * Generated: Fri Feb 10 13:18:18 CET 2023
  */
 
 /*
@@ -600,7 +600,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1675858799
+#define SYSID_TIMESTAMP 1676030327
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -631,17 +631,17 @@
 
 
 /*
- * video_dma_controller_ip_input configuration
+ * video_dma_controller_ip_camera_input configuration
  *
  */
 
-#define ALT_MODULE_CLASS_video_dma_controller_ip_input altera_up_avalon_video_dma_controller
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_BASE 0x10000130
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_IRQ -1
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_NAME "/dev/video_dma_controller_ip_input"
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_SPAN 16
-#define VIDEO_DMA_CONTROLLER_IP_INPUT_TYPE "altera_up_avalon_video_dma_controller"
+#define ALT_MODULE_CLASS_video_dma_controller_ip_camera_input altera_up_avalon_video_dma_controller
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_BASE 0x10000130
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_IRQ -1
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_NAME "/dev/video_dma_controller_ip_camera_input"
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_SPAN 16
+#define VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_TYPE "altera_up_avalon_video_dma_controller"
 
 
 /*
@@ -659,14 +659,28 @@
 
 
 /*
+ * video_dma_controller_ip_sdcard_input configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_video_dma_controller_ip_sdcard_input altera_up_avalon_video_dma_controller
+#define VIDEO_DMA_CONTROLLER_IP_SDCARD_INPUT_BASE 0x10001110
+#define VIDEO_DMA_CONTROLLER_IP_SDCARD_INPUT_IRQ -1
+#define VIDEO_DMA_CONTROLLER_IP_SDCARD_INPUT_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define VIDEO_DMA_CONTROLLER_IP_SDCARD_INPUT_NAME "/dev/video_dma_controller_ip_sdcard_input"
+#define VIDEO_DMA_CONTROLLER_IP_SDCARD_INPUT_SPAN 16
+#define VIDEO_DMA_CONTROLLER_IP_SDCARD_INPUT_TYPE "altera_up_avalon_video_dma_controller"
+
+
+/*
  * video_effects configuration
  *
  */
 
 #define ALT_MODULE_CLASS_video_effects video_effects
 #define VIDEO_EFFECTS_BASE 0x10000140
-#define VIDEO_EFFECTS_IRQ -1
-#define VIDEO_EFFECTS_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define VIDEO_EFFECTS_IRQ 3
+#define VIDEO_EFFECTS_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define VIDEO_EFFECTS_NAME "/dev/video_effects"
 #define VIDEO_EFFECTS_SPAN 32
 #define VIDEO_EFFECTS_TYPE "video_effects"

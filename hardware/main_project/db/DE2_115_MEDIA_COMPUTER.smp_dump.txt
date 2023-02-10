@@ -5,7 +5,14 @@ s_multiply_height.STATE_0_GET_CURRENT_LINE 0 0 0
 s_multiply_height.STATE_1_LOOP_FIFO 1 0 1 
 s_multiply_height.STATE_2_OUTPUT_LAST_LINE 1 1 0 
 
-State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_video_dma_controller_ip_input:video_dma_controller_ip_input|altera_up_video_dma_to_stream:From_Memory_to_Stream|s_dma_to_stream
+State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_video_dma_controller_ip_sdcard_input:video_dma_controller_ip_sdcard_input|altera_up_video_dma_to_stream:From_Memory_to_Stream|s_dma_to_stream
+Name s_dma_to_stream.STATE_3_MAX_PENDING_READS_STALL s_dma_to_stream.STATE_2_READ_BUFFER s_dma_to_stream.STATE_1_WAIT_FOR_LAST_PIXEL s_dma_to_stream.STATE_0_IDLE 
+s_dma_to_stream.STATE_0_IDLE 0 0 0 0 
+s_dma_to_stream.STATE_1_WAIT_FOR_LAST_PIXEL 0 0 1 1 
+s_dma_to_stream.STATE_2_READ_BUFFER 0 1 0 1 
+s_dma_to_stream.STATE_3_MAX_PENDING_READS_STALL 1 0 0 1 
+
+State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_video_dma_controller_ip_camera_input:video_dma_controller_ip_camera_input|altera_up_video_dma_to_stream:From_Memory_to_Stream|s_dma_to_stream
 Name s_dma_to_stream.STATE_3_MAX_PENDING_READS_STALL s_dma_to_stream.STATE_2_READ_BUFFER s_dma_to_stream.STATE_1_WAIT_FOR_LAST_PIXEL s_dma_to_stream.STATE_0_IDLE 
 s_dma_to_stream.STATE_0_IDLE 0 0 0 0 
 s_dma_to_stream.STATE_1_WAIT_FOR_LAST_PIXEL 0 0 1 1 

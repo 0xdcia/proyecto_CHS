@@ -197,15 +197,15 @@ avalon_mm_slave_interface U4_AVALON_MM_SLAVE (
 // MAPA DE REGISTROS DE AVALON-MM
 
 /*
-+------+-------------------------------------------------------+---------------+--------------+
-| reg0 | [31:2]                                                | irq_enable[1] | pause_req[0] |
-+------+---------+----------------------+---------+------------+----+-------+--+--------------+
-| reg1 | [31:18] | quantif_level[17:16] | [15:10] | delete_rgb[9:8] | [7:5] | effect_sel[4:0] |
-+------+---------+----------------------+---------+-----------------+-------+-----------------+
-| reg2 | color_key[31:16]               | color_mask[15:0]                                    |
-+------+--------------------------------+-----------------------------------------------------+
-| reg3 | [31:16]                        | color_substitute[15:0]                              |
-+------+--------------------------------+-----------------------------------------------------+
++------+-----------------------------------------------+---------------+--------------+
+| reg0 | [31:2]                                        | irq_enable[1] | pause_req[0] |
++------+---------+----------------------+---------+----+------------+--+--------------+
+| reg1 | [31:18] | quantif_level[17:16] | [15:10] | delete_rgb[9:8] | effect_sel[7:0] |
++------+---------+----------------------+---------+-----------------+-----------------+
+| reg2 | color_key[31:16]               | color_mask[15:0]                            |
++------+--------------------------------+---------------------------------------------+
+| reg3 | [31:16]                        | color_substitute[15:0]                      |
++------+--------------------------------+---------------------------------------------+
 
 Leyenda:
 - nombre[A:B] = valor, bits útiles leídos desde el X al Y.
@@ -257,8 +257,8 @@ video_effects U5_VIDEO_EFFECTS (
     .effect_color_key_threshold(reg2[15:0]),  // indica la tolerancia de colores (+-rango por componente)
     .effect_color_substitute(reg3[15:0]),  // indica el valor RGB por el que sustituir el color eliminado
     
-    .video_data_in_foreground(camera_data_in_reg),  // entrada de datos de vídeo de la cámara
-    .video_data_in_background(sdcard_data_in_reg),  // entrada de datos de vídeo de la SD Card
+    .video_data_in_camera(camera_data_in_reg),  // entrada de datos de vídeo de la cámara
+    .video_data_in_sdcard(sdcard_data_in_reg),  // entrada de datos de vídeo de la SD Card
     
     .video_data_out(source_data_out_reg)  // salida de datos de vídeo, procesados, al avalon source
 );
@@ -296,11 +296,42 @@ end
 
 
 // Si el efecto seleccionado es cambiar a la SD card hay que redirigir señales de control.
-wire change_to_sdcard = reg1[0];
+//wire change_to_sdcard = reg1[0];
 
-assign sdcard_ready_reg = source_ready_reg;
+/* if (change_to_sdcard)
+begin
+    sdcard_ready_reg = source_ready_reg;
+    camera_ready_reg = 1'b0;
+end
+    
+else
+begin
+    camera_ready_reg = source_ready_reg;
+    sdcard_ready_reg = 1'b0;
+end */
+
+
 assign camera_ready_reg = source_ready_reg;
 
+/*
+assign sdcard_ready_reg = (source_ready_in & source_valid_out_reg) | sdcard_sync;
+assign camera_ready_reg = (source_ready_in & source_valid_out_reg) | camera_sync;
+
+assign output_startofpacket = foreground_startofpacket;
+assign output_endofpacket = foreground_endofpacket;
+assign output_valid = valid;
+
+wire camera_sync, sdcard_sync;
+
+
+assign camera_sync = (camera_valid_in_reg & sdcard_valid_in_reg &
+              ((sdcard_startofpacket_in_reg & ~camera_startofpacket_in_reg) |
+               (sdcard_endofpacket_in_reg & ~camera_endofpacket_in_reg)));
+                    
+assign sdcard_sync = (camera_valid_in_reg & sdcard_valid_in_reg &
+              ((camera_startofpacket_in_reg & ~sdcard_startofpacket_in_reg) |
+               (camera_endofpacket_in_reg & ~sdcard_endofpacket_in_reg)));
+*/
 
 always @(posedge clk)
 begin
@@ -310,10 +341,18 @@ begin
     // Ciclo adicional para igualar la latencia de las señales de control con la de datos
     // Si no está ready, congelamos las transferencias
     
-    if (source_ready_reg & ~pause)
+
+    //source_valid_out_reg <= camera_valid_in_reg & sdcard_valid_in_reg & ~camera_sync & ~sdcard_sync;
+
+
+    if (camera_valid_in_reg & ~pause)
     begin
     
-        if (change_to_sdcard)
+        source_valid_out_reg <= camera_valid_in_reg;
+        source_startofpacket_out_reg <= camera_startofpacket_in_reg;
+        source_endofpacket_out_reg <= camera_endofpacket_in_reg;
+
+        /*if (change_to_sdcard)
         begin
             source_valid_out_reg <= sdcard_valid_in_reg;
             source_startofpacket_out_reg <= sdcard_startofpacket_in_reg;
@@ -325,7 +364,7 @@ begin
             source_valid_out_reg <= camera_valid_in_reg;
             source_startofpacket_out_reg <= camera_startofpacket_in_reg;
             source_endofpacket_out_reg <= camera_endofpacket_in_reg;
-        end
+        end*/
         
     end
     

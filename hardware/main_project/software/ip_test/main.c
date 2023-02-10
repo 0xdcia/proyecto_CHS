@@ -28,19 +28,112 @@ volatile int * KEY_ptr = (int *) PUSHBUTTONS_BASE;  // addr pulsadores KEY
 volatile int * EFFECT_ptr = (int * ) VIDEO_EFFECTS_BASE;  // addr EFFECTS
 
 
+int effect_counter = 0;
+
 /* Rutina de interrupción de los pulsadores.
  */
-void pushbutton_isr( )
+
+
+void capture_isr(){
+	*(EFFECT_ptr + 0) = 0x00000001;
+	printf("Interrupción recibida y deshabilitada.\n");
+}
+
+
+
+void pushbutton_isr()
 {
-	int press;
-	int reg_value;
 
-	alt_printf("Efectivamente me he interrumpido\n");
+	int KEY_value = *(KEY_ptr + 3);
 
-	press = *(KEY_ptr + 3);  // Lee el registro de los pulsadores
-	*(KEY_ptr + 3) = 0x0;  // Elimina la interrupción
+	*(KEY_ptr + 3) = 0;  //Borrar interrupcion
 
-	if (press & 0x1) {  // Se ha pulsado el KEY0 (0001)
+	alt_printf("Interrumpido: ");
+	effect_counter++;
+
+	if (KEY_value & 0x8)  //Izquierda
+	{
+		alt_printf("Izquierda\n");
+		switch(effect_counter % 9)
+		{
+			case 0:
+				alt_printf("SDCard\n");
+				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 1) = 0x00000001;  // Efecto: Cambiar a SDCard
+				*(EFFECT_ptr + 2) = 0x00000000;  // Chroma Key: H: color_key; L: color_mask
+				*(EFFECT_ptr + 3) = 0x00000000;  // Chroma Key: L: color_substitute
+				break;
+
+			case 1:
+				alt_printf("Chroma\n");
+				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 1) = 0x00000002;  // Efecto: Chroma Key
+				*(EFFECT_ptr + 2) = 0xFFFF003F;  // Chroma Key: H: color_key=white; L: color_threshold=3F
+				*(EFFECT_ptr + 3) = 0x00000000;  // Chroma Key: L: color_substitute
+				break;
+
+			case 2:
+				alt_printf("Escala de grises\n");
+				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 1) = 0x00000004;  // Efecto: Escala de grises
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+				break;
+
+			case 3:
+				alt_printf("Cuantificación, level=1\n");
+				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 1) = 0x00010008;  // Efecto: Cuantif, level=1 : 4 bits por color
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+				break;
+
+			case 4:
+				alt_printf("Cuantificación, level=2\n");
+				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 1) = 0x00020008;  // Efecto: Cuantif, level=2 : 3 bits por color
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+				break;
+
+			case 5:
+				alt_printf("Cuantificación, level=3\n");
+				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 1) = 0x00030008;  // Efecto: Cuantif, level=3 : 2 bits por color
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+				break;
+
+			case 6:
+				alt_printf("Negativo\n");
+				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 1) = 0x00000010;  // Efecto: Negativo
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+				break;
+
+			case 7:
+				alt_printf("Efectos simultáneos\n");
+				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 1) = 0x0002001C;  // Efectos simultáneos: Blanco y negro, cuantif. level=2, negativo
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+				break;
+
+			default:
+				alt_printf("Pausa de captura.\n");
+				*(EFFECT_ptr + 0) = 0x00000003;  // Pause request e interrupt
+				*(EFFECT_ptr + 1) = 0x00000000;  // Efecto: Ninguno
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+		}
+	}
+}
+
+
+
+
+/*	if (press & 0x1) {  // Se ha pulsado el KEY0 (0001)
 		alt_printf("Chroma key\n");
 
 		*(EFFECT_ptr + 0) = 0x00000000;  // no usado
@@ -90,15 +183,7 @@ void pushbutton_isr( )
 		*(EFFECT_ptr + 1) = 0x00030008;  // Efecto: Cuantificación. cuantif_level=3; (max)
 		*(EFFECT_ptr + 2) = 0x00000000;  // no usado
 		*(EFFECT_ptr + 3) = 0x00000000;  // no usado
-
-		IOWR_32DIRECT(EFFECT_ptr, 0, 0x00000000);
-		IOWR_32DIRECT(EFFECT_ptr, 1, 0x00030008);
-		IOWR_32DIRECT(EFFECT_ptr, 2, 0x00000000);
-		IOWR_32DIRECT(EFFECT_ptr, 3, 0x00000000);
-	}
-
-	return;
-}
+*/
 
 
 
@@ -112,7 +197,9 @@ int main(void)
 
 	alt_irq_register(PUSHBUTTONS_IRQ, NULL, pushbutton_isr);  // Habilitar int. pulsadores
 
-	*(EFFECT_ptr + 0) = 0x0;
+	alt_irq_register(VIDEO_EFFECTS_IRQ, NULL, capture_isr);  // Habilitar int. video_effects
+
+	*(EFFECT_ptr + 0) = 0x0;  // Reset de registros
 	*(EFFECT_ptr + 1) = 0x0;
 	*(EFFECT_ptr + 2) = 0x0;
 	*(EFFECT_ptr + 3) = 0x0;

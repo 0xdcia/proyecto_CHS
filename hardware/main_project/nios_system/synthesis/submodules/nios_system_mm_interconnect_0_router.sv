@@ -50,9 +50,9 @@ module nios_system_mm_interconnect_0_router_default_decode
                DEFAULT_DESTID = 22 
    )
   (output [80 - 76 : 0] default_destination_id,
-   output [29-1 : 0] default_wr_channel,
-   output [29-1 : 0] default_rd_channel,
-   output [29-1 : 0] default_src_channel
+   output [30-1 : 0] default_wr_channel,
+   output [30-1 : 0] default_rd_channel,
+   output [30-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
@@ -63,7 +63,7 @@ module nios_system_mm_interconnect_0_router_default_decode
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 29'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 30'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module nios_system_mm_interconnect_0_router_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 29'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 29'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 30'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 30'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -103,7 +103,7 @@ module nios_system_mm_interconnect_0_router
     // -------------------
     output                          src_valid,
     output reg [94-1    : 0] src_data,
-    output reg [29-1 : 0] src_channel,
+    output reg [30-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -119,7 +119,7 @@ module nios_system_mm_interconnect_0_router
     localparam PKT_PROTECTION_H = 84;
     localparam PKT_PROTECTION_L = 82;
     localparam ST_DATA_W = 94;
-    localparam ST_CHANNEL_W = 29;
+    localparam ST_CHANNEL_W = 30;
     localparam DECODER_TYPE = 0;
 
     localparam PKT_TRANS_WRITE = 52;
@@ -159,7 +159,7 @@ module nios_system_mm_interconnect_0_router
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
     wire [PKT_DEST_ID_W-1:0] default_destid;
-    wire [29-1 : 0] default_src_channel;
+    wire [30-1 : 0] default_src_channel;
 
 
 
@@ -185,7 +185,7 @@ module nios_system_mm_interconnect_0_router
            
          
           // ( 9000000 .. 9200000 )
-          src_channel = 29'b1;
+          src_channel = 30'b1;
           src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 22;
 	     
         
