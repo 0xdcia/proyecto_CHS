@@ -1,5 +1,5 @@
 Assembler report for DE2_115_MEDIA_COMPUTER
-Fri Feb 10 13:42:29 2023
+Fri Feb 10 18:51:54 2023
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Feb 10 13:42:29 2023 ;
+; Assembler Status      ; Successful - Fri Feb 10 18:51:54 2023 ;
 ; Revision Name         ; DE2_115_MEDIA_COMPUTER                ;
 ; Top-level Entity Name ; DE2_115_Media_Computer                ;
 ; Family                ; Cyclone IV E                          ;
@@ -78,8 +78,8 @@ refer to the applicable agreement for further details.
 +----------------+-----------------------------------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                                               ;
 +----------------+-----------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00DC121B                                                                                                            ;
-; Checksum       ; 0x00DC121B                                                                                                            ;
+; JTAG usercode  ; 0x00DBEB59                                                                                                            ;
+; Checksum       ; 0x00DBEB59                                                                                                            ;
 +----------------+-----------------------------------------------------------------------------------------------------------------------+
 
 
@@ -89,13 +89,13 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
-    Info: Processing started: Fri Feb 10 13:42:24 2023
+    Info: Processing started: Fri Feb 10 18:51:49 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DE2_115_MEDIA_COMPUTER -c DE2_115_MEDIA_COMPUTER
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4751 megabytes
-    Info: Processing ended: Fri Feb 10 13:42:29 2023
+    Info: Peak virtual memory: 4750 megabytes
+    Info: Processing ended: Fri Feb 10 18:51:54 2023
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 

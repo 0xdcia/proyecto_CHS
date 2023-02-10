@@ -16032,7 +16032,7 @@ unsigned int alt_busy_sleep (unsigned int us)
     9c58:	d9400015 	stw	r5,0(sp)
     9c5c:	d9800115 	stw	r6,4(sp)
     9c60:	d9c00215 	stw	r7,8(sp)
-    9c64:	00000000 	call	0 <__reset>
+    9c64:	00000000 	call	0 <__alt_mem_sdram>
     9c68:	d9400017 	ldw	r5,0(sp)
     9c6c:	d9800117 	ldw	r6,4(sp)
     9c70:	d9c00217 	ldw	r7,8(sp)
@@ -16116,7 +16116,7 @@ unsigned int alt_busy_sleep (unsigned int us)
     9da0:	10003226 	beq	r2,zero,9e6c <__call_exitprocs+0x178>
     9da4:	a009883a 	mov	r4,r20
     9da8:	98800015 	stw	r2,0(r19)
-    9dac:	00000000 	call	0 <__reset>
+    9dac:	00000000 	call	0 <__alt_mem_sdram>
     9db0:	9d000017 	ldw	r20,0(r19)
     9db4:	a03fe41e 	bne	r20,zero,9d48 <__alt_mem_onchip_memory+0xf7809d48>
     9db8:	dfc00a17 	ldw	ra,40(sp)

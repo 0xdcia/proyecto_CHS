@@ -44,14 +44,12 @@ module avalon_st_sink_interface (
 // listo para recibir datos inmediatamente cuando el bloque inferior lo esté
 assign ready_out = ready_reg;
 
-// pasamos el válido con misma latencia que los datos
 assign valid_reg = valid_in;
-
+            
 // transferencias para que sea accesible por la IP
 assign data_reg = data_in;
 assign startofpacket_reg = startofpacket_in;
 assign endofpacket_reg = endofpacket_in;
-
 
 /*
 always @(posedge clk)
@@ -75,9 +73,7 @@ begin
         end
         // si no está ready: no hacer nada (se mantiene el dato anterior)
     end
-end
-*/
-
+end*/
 
 endmodule
 

@@ -1,5 +1,5 @@
 Flow report for DE2_115_MEDIA_COMPUTER
-Fri Feb 10 13:42:56 2023
+Fri Feb 10 18:52:21 2023
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------+
 ; Flow Summary                                                                                  ;
 +------------------------------------+----------------------------------------------------------+
-; Flow Status                        ; Successful - Fri Feb 10 13:42:56 2023                    ;
+; Flow Status                        ; Successful - Fri Feb 10 18:52:21 2023                    ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
 ; Revision Name                      ; DE2_115_MEDIA_COMPUTER                                   ;
 ; Top-level Entity Name              ; DE2_115_Media_Computer                                   ;
 ; Family                             ; Cyclone IV E                                             ;
 ; Device                             ; EP4CE115F29C7                                            ;
 ; Timing Models                      ; Final                                                    ;
-; Total logic elements               ; 13,568 / 114,480 ( 12 % )                                ;
-;     Total combinational functions  ; 12,156 / 114,480 ( 11 % )                                ;
-;     Dedicated logic registers      ; 8,313 / 114,480 ( 7 % )                                  ;
-; Total registers                    ; 8432                                                     ;
+; Total logic elements               ; 13,154 / 114,480 ( 11 % )                                ;
+;     Total combinational functions  ; 11,797 / 114,480 ( 10 % )                                ;
+;     Dedicated logic registers      ; 8,164 / 114,480 ( 7 % )                                  ;
+; Total registers                    ; 8283                                                     ;
 ; Total pins                         ; 359 / 529 ( 68 % )                                       ;
 ; Total virtual pins                 ; 0                                                        ;
-; Total memory bits                  ; 402,560 / 3,981,312 ( 10 % )                             ;
+; Total memory bits                  ; 400,512 / 3,981,312 ( 10 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 16 / 532 ( 3 % )                                         ;
 ; Total PLLs                         ; 3 / 4 ( 75 % )                                           ;
 +------------------------------------+----------------------------------------------------------+
@@ -64,45 +64,39 @@ refer to the applicable agreement for further details.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 02/10/2023 13:38:26    ;
+; Start date & time ; 02/10/2023 18:48:34    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; DE2_115_MEDIA_COMPUTER ;
 +-------------------+------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                               ;
-+--------------------------------------+---------------------------------------------------------------+---------------+------------------------+----------------+
-; Assignment Name                      ; Value                                                         ; Default Value ; Entity Name            ; Section Id     ;
-+--------------------------------------+---------------------------------------------------------------+---------------+------------------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 242211430917474.167603270511628                               ; --            ; --                     ; --             ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                                   ; --            ; --                     ; eda_simulation ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)                                     ; <None>        ; --                     ; --             ;
-; EDA_TIME_SCALE                       ; 1 ps                                                          ; --            ; --                     ; eda_simulation ;
-; FITTER_EFFORT                        ; Standard Fit                                                  ; Auto Fit      ; --                     ; --             ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                                            ; --            ; --                     ; --             ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                                             ; --            ; --                     ; --             ;
-; MISC_FILE                            ; nios_system/synthesis/../nios_system.cmp                      ; --            ; --                     ; --             ;
-; MISC_FILE                            ; nios_system/synthesis/../../nios_system.qsys                  ; --            ; --                     ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                                          ; --            ; --                     ; --             ;
-; NUM_PARALLEL_PROCESSORS              ; 8                                                             ; --            ; --                     ; --             ;
-; OPTIMIZATION_MODE                    ; High Performance Effort                                       ; Balanced      ; --                     ; --             ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family)                        ; --            ; DE2_115_Media_Computer ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                        ; --            ; DE2_115_Media_Computer ; Top            ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                        ; --            ; DE2_115_Media_Computer ; Top            ;
-; PHYSICAL_SYNTHESIS_COMBO_LOGIC       ; On                                                            ; Off           ; --                     ; --             ;
-; PHYSICAL_SYNTHESIS_REGISTER_RETIMING ; On                                                            ; Off           ; --                     ; --             ;
-; PLACEMENT_EFFORT_MULTIPLIER          ; 4.0                                                           ; 1.0           ; --                     ; --             ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                           ; --            ; --                     ; --             ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                         ; --            ; --                     ; --             ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                                                  ; --            ; --                     ; --             ;
-; ROUTER_TIMING_OPTIMIZATION_LEVEL     ; MAXIMUM                                                       ; Normal        ; --                     ; --             ;
-; SLD_FILE                             ; nios_system/synthesis/nios_system.regmap                      ; --            ; --                     ; --             ;
-; SLD_FILE                             ; nios_system/synthesis/nios_system.debuginfo                   ; --            ; --                     ; --             ;
-; SLD_INFO                             ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1676032634 ; --            ; nios_system            ; --             ;
-; SOPCINFO_FILE                        ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --                     ; --             ;
-; SYNTHESIS_ONLY_QIP                   ; On                                                            ; --            ; --                     ; --             ;
-+--------------------------------------+---------------------------------------------------------------+---------------+------------------------+----------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                              ;
++-------------------------------------+---------------------------------------------------------------+---------------+------------------------+----------------+
+; Assignment Name                     ; Value                                                         ; Default Value ; Entity Name            ; Section Id     ;
++-------------------------------------+---------------------------------------------------------------+---------------+------------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 242211430917474.167605131406320                               ; --            ; --                     ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                   ; --            ; --                     ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                     ; <None>        ; --                     ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                                          ; --            ; --                     ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                            ; --            ; --                     ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                             ; --            ; --                     ; --             ;
+; MISC_FILE                           ; nios_system/synthesis/../nios_system.cmp                      ; --            ; --                     ; --             ;
+; MISC_FILE                           ; nios_system/synthesis/../../nios_system.qsys                  ; --            ; --                     ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                          ; --            ; --                     ; --             ;
+; NUM_PARALLEL_PROCESSORS             ; 4                                                             ; --            ; --                     ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                        ; --            ; DE2_115_Media_Computer ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                        ; --            ; DE2_115_Media_Computer ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                        ; --            ; DE2_115_Media_Computer ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                           ; --            ; --                     ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                         ; --            ; --                     ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                  ; --            ; --                     ; --             ;
+; SLD_FILE                            ; nios_system/synthesis/nios_system.regmap                      ; --            ; --                     ; --             ;
+; SLD_FILE                            ; nios_system/synthesis/nios_system.debuginfo                   ; --            ; --                     ; --             ;
+; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1676051244 ; --            ; nios_system            ; --             ;
+; SOPCINFO_FILE                       ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --                     ; --             ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                            ; --            ; --                     ; --             ;
++-------------------------------------+---------------------------------------------------------------+---------------+------------------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -110,12 +104,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:02:04     ; 1.0                     ; 5352 MB             ; 00:02:28                           ;
-; Fitter                    ; 00:01:39     ; 1.1                     ; 6393 MB             ; 00:03:55                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 4751 MB             ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 1.5                     ; 5043 MB             ; 00:00:11                           ;
-; EDA Netlist Writer        ; 00:00:15     ; 1.0                     ; 4838 MB             ; 00:00:15                           ;
-; Total                     ; 00:04:13     ; --                      ; --                  ; 00:06:54                           ;
+; Analysis & Synthesis      ; 00:02:06     ; 1.0                     ; 5239 MB             ; 00:02:22                           ;
+; Fitter                    ; 00:00:54     ; 1.1                     ; 6038 MB             ; 00:01:21                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 4750 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 1.3                     ; 4997 MB             ; 00:00:11                           ;
+; EDA Netlist Writer        ; 00:00:15     ; 1.0                     ; 4841 MB             ; 00:00:15                           ;
+; Total                     ; 00:03:30     ; --                      ; --                  ; 00:04:14                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

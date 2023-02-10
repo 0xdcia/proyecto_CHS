@@ -51,7 +51,6 @@ assign data_out = data_reg;
 assign startofpacket_out = startofpacket_reg;
 assign endofpacket_out = endofpacket_reg;
 
-
 /*
 always @(posedge clk)
 begin
@@ -74,10 +73,6 @@ begin
             endofpacket_out <= endofpacket_reg;
         end
     end
-end
-*/
-
+end*/
 
 endmodule
-
-

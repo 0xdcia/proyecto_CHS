@@ -125,16 +125,11 @@ module nios_system (
 	wire         mtl_pixel_buffer_dma_avalon_pixel_source_ready;                                             // mtl_rgb_resampler:stream_in_ready -> mtl_pixel_buffer_dma:stream_ready
 	wire         mtl_pixel_buffer_dma_avalon_pixel_source_startofpacket;                                     // mtl_pixel_buffer_dma:stream_startofpacket -> mtl_rgb_resampler:stream_in_startofpacket
 	wire         mtl_pixel_buffer_dma_avalon_pixel_source_endofpacket;                                       // mtl_pixel_buffer_dma:stream_endofpacket -> mtl_rgb_resampler:stream_in_endofpacket
-	wire         video_dma_controller_ip_camera_input_avalon_pixel_source_valid;                             // video_dma_controller_ip_camera_input:stream_valid -> video_effects:camera_valid_in
-	wire  [15:0] video_dma_controller_ip_camera_input_avalon_pixel_source_data;                              // video_dma_controller_ip_camera_input:stream_data -> video_effects:camera_data_in
-	wire         video_dma_controller_ip_camera_input_avalon_pixel_source_ready;                             // video_effects:camera_ready_out -> video_dma_controller_ip_camera_input:stream_ready
-	wire         video_dma_controller_ip_camera_input_avalon_pixel_source_startofpacket;                     // video_dma_controller_ip_camera_input:stream_startofpacket -> video_effects:camera_startofpacket_in
-	wire         video_dma_controller_ip_camera_input_avalon_pixel_source_endofpacket;                       // video_dma_controller_ip_camera_input:stream_endofpacket -> video_effects:camera_endofpacket_in
-	wire         video_dma_controller_ip_sdcard_input_avalon_pixel_source_valid;                             // video_dma_controller_ip_sdcard_input:stream_valid -> video_effects:sdcard_valid_in
-	wire  [15:0] video_dma_controller_ip_sdcard_input_avalon_pixel_source_data;                              // video_dma_controller_ip_sdcard_input:stream_data -> video_effects:sdcard_data_in
-	wire         video_dma_controller_ip_sdcard_input_avalon_pixel_source_ready;                             // video_effects:sdcard_ready_out -> video_dma_controller_ip_sdcard_input:stream_ready
-	wire         video_dma_controller_ip_sdcard_input_avalon_pixel_source_startofpacket;                     // video_dma_controller_ip_sdcard_input:stream_startofpacket -> video_effects:sdcard_startofpacket_in
-	wire         video_dma_controller_ip_sdcard_input_avalon_pixel_source_endofpacket;                       // video_dma_controller_ip_sdcard_input:stream_endofpacket -> video_effects:sdcard_endofpacket_in
+	wire         video_dma_controller_ip_camera_input_avalon_pixel_source_valid;                             // video_dma_controller_ip_camera_input:stream_valid -> video_effects:valid_in
+	wire  [15:0] video_dma_controller_ip_camera_input_avalon_pixel_source_data;                              // video_dma_controller_ip_camera_input:stream_data -> video_effects:data_in
+	wire         video_dma_controller_ip_camera_input_avalon_pixel_source_ready;                             // video_effects:ready_out -> video_dma_controller_ip_camera_input:stream_ready
+	wire         video_dma_controller_ip_camera_input_avalon_pixel_source_startofpacket;                     // video_dma_controller_ip_camera_input:stream_startofpacket -> video_effects:startofpacket_in
+	wire         video_dma_controller_ip_camera_input_avalon_pixel_source_endofpacket;                       // video_dma_controller_ip_camera_input:stream_endofpacket -> video_effects:endofpacket_in
 	wire         mtl_rgb_resampler_avalon_rgb_source_valid;                                                  // mtl_rgb_resampler:stream_out_valid -> video_scaler_0:stream_in_valid
 	wire  [29:0] mtl_rgb_resampler_avalon_rgb_source_data;                                                   // mtl_rgb_resampler:stream_out_data -> video_scaler_0:stream_in_data
 	wire         mtl_rgb_resampler_avalon_rgb_source_ready;                                                  // video_scaler_0:stream_in_ready -> mtl_rgb_resampler:stream_out_ready
@@ -150,11 +145,11 @@ module nios_system (
 	wire         camera_video_scaler_avalon_scaler_source_ready;                                             // camera_video_clipper:stream_in_ready -> camera_video_scaler:stream_out_ready
 	wire         camera_video_scaler_avalon_scaler_source_startofpacket;                                     // camera_video_scaler:stream_out_startofpacket -> camera_video_clipper:stream_in_startofpacket
 	wire         camera_video_scaler_avalon_scaler_source_endofpacket;                                       // camera_video_scaler:stream_out_endofpacket -> camera_video_clipper:stream_in_endofpacket
-	wire         video_effects_avalon_streaming_source_valid;                                                // video_effects:source_valid_out -> video_dma_controller_ip_output:stream_valid
-	wire  [15:0] video_effects_avalon_streaming_source_data;                                                 // video_effects:source_data_out -> video_dma_controller_ip_output:stream_data
-	wire         video_effects_avalon_streaming_source_ready;                                                // video_dma_controller_ip_output:stream_ready -> video_effects:source_ready_in
-	wire         video_effects_avalon_streaming_source_startofpacket;                                        // video_effects:source_startofpacket_out -> video_dma_controller_ip_output:stream_startofpacket
-	wire         video_effects_avalon_streaming_source_endofpacket;                                          // video_effects:source_endofpacket_out -> video_dma_controller_ip_output:stream_endofpacket
+	wire         video_effects_avalon_streaming_source_valid;                                                // video_effects:valid_out -> video_dma_controller_ip_output:stream_valid
+	wire  [15:0] video_effects_avalon_streaming_source_data;                                                 // video_effects:data_out -> video_dma_controller_ip_output:stream_data
+	wire         video_effects_avalon_streaming_source_ready;                                                // video_dma_controller_ip_output:stream_ready -> video_effects:ready_in
+	wire         video_effects_avalon_streaming_source_startofpacket;                                        // video_effects:startofpacket_out -> video_dma_controller_ip_output:stream_startofpacket
+	wire         video_effects_avalon_streaming_source_endofpacket;                                          // video_effects:endofpacket_out -> video_dma_controller_ip_output:stream_endofpacket
 	wire         flash_controller_tcm_data_outen;                                                            // flash_controller:tcm_data_outen -> flash_bridge:tcs_tcm_data_outen
 	wire         flash_controller_tcm_request;                                                               // flash_controller:tcm_request -> flash_bridge:request
 	wire         flash_controller_tcm_write_n_out;                                                           // flash_controller:tcm_write_n_out -> flash_bridge:tcs_tcm_write_n_out
@@ -178,12 +173,6 @@ module nios_system (
 	wire  [31:0] video_dma_controller_ip_output_avalon_dma_master_address;                                   // video_dma_controller_ip_output:master_address -> mm_interconnect_0:video_dma_controller_ip_output_avalon_dma_master_address
 	wire         video_dma_controller_ip_output_avalon_dma_master_write;                                     // video_dma_controller_ip_output:master_write -> mm_interconnect_0:video_dma_controller_ip_output_avalon_dma_master_write
 	wire  [15:0] video_dma_controller_ip_output_avalon_dma_master_writedata;                                 // video_dma_controller_ip_output:master_writedata -> mm_interconnect_0:video_dma_controller_ip_output_avalon_dma_master_writedata
-	wire         video_dma_controller_ip_sdcard_input_avalon_dma_master_waitrequest;                         // mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_master_waitrequest -> video_dma_controller_ip_sdcard_input:master_waitrequest
-	wire  [15:0] video_dma_controller_ip_sdcard_input_avalon_dma_master_readdata;                            // mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_master_readdata -> video_dma_controller_ip_sdcard_input:master_readdata
-	wire  [31:0] video_dma_controller_ip_sdcard_input_avalon_dma_master_address;                             // video_dma_controller_ip_sdcard_input:master_address -> mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_master_address
-	wire         video_dma_controller_ip_sdcard_input_avalon_dma_master_read;                                // video_dma_controller_ip_sdcard_input:master_read -> mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_master_read
-	wire         video_dma_controller_ip_sdcard_input_avalon_dma_master_readdatavalid;                       // mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_master_readdatavalid -> video_dma_controller_ip_sdcard_input:master_readdatavalid
-	wire         video_dma_controller_ip_sdcard_input_avalon_dma_master_lock;                                // video_dma_controller_ip_sdcard_input:master_arbiterlock -> mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_master_lock
 	wire         mtl_pixel_buffer_dma_avalon_pixel_dma_master_waitrequest;                                   // mm_interconnect_0:mtl_pixel_buffer_dma_avalon_pixel_dma_master_waitrequest -> mtl_pixel_buffer_dma:master_waitrequest
 	wire  [15:0] mtl_pixel_buffer_dma_avalon_pixel_dma_master_readdata;                                      // mm_interconnect_0:mtl_pixel_buffer_dma_avalon_pixel_dma_master_readdata -> mtl_pixel_buffer_dma:master_readdata
 	wire  [31:0] mtl_pixel_buffer_dma_avalon_pixel_dma_master_address;                                       // mtl_pixel_buffer_dma:master_address -> mm_interconnect_0:mtl_pixel_buffer_dma_avalon_pixel_dma_master_address
@@ -263,12 +252,6 @@ module nios_system (
 	wire   [3:0] mm_interconnect_0_video_dma_controller_ip_output_avalon_dma_control_slave_byteenable;       // mm_interconnect_0:video_dma_controller_ip_output_avalon_dma_control_slave_byteenable -> video_dma_controller_ip_output:slave_byteenable
 	wire         mm_interconnect_0_video_dma_controller_ip_output_avalon_dma_control_slave_write;            // mm_interconnect_0:video_dma_controller_ip_output_avalon_dma_control_slave_write -> video_dma_controller_ip_output:slave_write
 	wire  [31:0] mm_interconnect_0_video_dma_controller_ip_output_avalon_dma_control_slave_writedata;        // mm_interconnect_0:video_dma_controller_ip_output_avalon_dma_control_slave_writedata -> video_dma_controller_ip_output:slave_writedata
-	wire  [31:0] mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_readdata;   // video_dma_controller_ip_sdcard_input:slave_readdata -> mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_readdata
-	wire   [1:0] mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_address;    // mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_address -> video_dma_controller_ip_sdcard_input:slave_address
-	wire         mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_read;       // mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_read -> video_dma_controller_ip_sdcard_input:slave_read
-	wire   [3:0] mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_byteenable; // mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_byteenable -> video_dma_controller_ip_sdcard_input:slave_byteenable
-	wire         mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_write;      // mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_write -> video_dma_controller_ip_sdcard_input:slave_write
-	wire  [31:0] mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_writedata;  // mm_interconnect_0:video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_writedata -> video_dma_controller_ip_sdcard_input:slave_writedata
 	wire         mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect;                                   // mm_interconnect_0:jtag_uart_avalon_jtag_slave_chipselect -> jtag_uart:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_avalon_jtag_slave_readdata;                                     // jtag_uart:av_readdata -> mm_interconnect_0:jtag_uart_avalon_jtag_slave_readdata
 	wire         mm_interconnect_0_jtag_uart_avalon_jtag_slave_waitrequest;                                  // jtag_uart:av_waitrequest -> mm_interconnect_0:jtag_uart_avalon_jtag_slave_waitrequest
@@ -435,7 +418,7 @@ module nios_system (
 	wire         cpu_debug_reset_request_reset;                                                              // cpu:debug_reset_request -> [rst_controller:reset_in0, rst_controller_003:reset_in0]
 	wire         sys_sdram_pll_reset_source_reset;                                                           // sys_sdram_pll:reset_source_reset -> [rst_controller:reset_in1, rst_controller_002:reset_in0]
 	wire         rst_controller_001_reset_out_reset;                                                         // rst_controller_001:reset_out -> audio_pll:ref_reset_reset
-	wire         rst_controller_002_reset_out_reset;                                                         // rst_controller_002:reset_out -> [camera_chroma_resampler:reset, camera_color_space_conv:reset, camera_rgb_resampler:reset, camera_video_clipper:reset, camera_video_decoder:reset, camera_video_dma_controller:reset, camera_video_scaler:reset, mm_interconnect_0:camera_video_dma_controller_reset_reset_bridge_in_reset_reset, performance_counter:reset_n, video_dma_controller_ip_camera_input:reset, video_dma_controller_ip_output:reset, video_dma_controller_ip_sdcard_input:reset, video_effects:reset]
+	wire         rst_controller_002_reset_out_reset;                                                         // rst_controller_002:reset_out -> [camera_chroma_resampler:reset, camera_color_space_conv:reset, camera_rgb_resampler:reset, camera_video_clipper:reset, camera_video_decoder:reset, camera_video_dma_controller:reset, camera_video_scaler:reset, mm_interconnect_0:camera_video_dma_controller_reset_reset_bridge_in_reset_reset, performance_counter:reset_n, video_dma_controller_ip_camera_input:reset, video_dma_controller_ip_output:reset, video_effects:reset]
 	wire         rst_controller_003_reset_out_reset;                                                         // rst_controller_003:reset_out -> [mtl_controller:reset, mtl_dual_clock_buffer:reset_stream_out]
 	wire         video_pll_reset_source_reset;                                                               // video_pll:reset_source_reset -> rst_controller_003:reset_in1
 	wire         rst_controller_004_reset_out_reset;                                                         // rst_controller_004:reset_out -> sys_sdram_pll:ref_reset_reset
@@ -1133,53 +1116,26 @@ module nios_system (
 		.master_writedata     (video_dma_controller_ip_output_avalon_dma_master_writedata)                            //                         .writedata
 	);
 
-	nios_system_video_dma_controller_ip_sdcard_input video_dma_controller_ip_sdcard_input (
-		.clk                  (sys_clk_out_clk),                                                                            //                      clk.clk
-		.reset                (rst_controller_002_reset_out_reset),                                                         //                    reset.reset
-		.master_address       (video_dma_controller_ip_sdcard_input_avalon_dma_master_address),                             //        avalon_dma_master.address
-		.master_waitrequest   (video_dma_controller_ip_sdcard_input_avalon_dma_master_waitrequest),                         //                         .waitrequest
-		.master_arbiterlock   (video_dma_controller_ip_sdcard_input_avalon_dma_master_lock),                                //                         .lock
-		.master_read          (video_dma_controller_ip_sdcard_input_avalon_dma_master_read),                                //                         .read
-		.master_readdata      (video_dma_controller_ip_sdcard_input_avalon_dma_master_readdata),                            //                         .readdata
-		.master_readdatavalid (video_dma_controller_ip_sdcard_input_avalon_dma_master_readdatavalid),                       //                         .readdatavalid
-		.slave_address        (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_address),    // avalon_dma_control_slave.address
-		.slave_byteenable     (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_byteenable), //                         .byteenable
-		.slave_read           (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_read),       //                         .read
-		.slave_write          (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_write),      //                         .write
-		.slave_writedata      (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_writedata),  //                         .writedata
-		.slave_readdata       (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_readdata),   //                         .readdata
-		.stream_ready         (video_dma_controller_ip_sdcard_input_avalon_pixel_source_ready),                             //      avalon_pixel_source.ready
-		.stream_data          (video_dma_controller_ip_sdcard_input_avalon_pixel_source_data),                              //                         .data
-		.stream_startofpacket (video_dma_controller_ip_sdcard_input_avalon_pixel_source_startofpacket),                     //                         .startofpacket
-		.stream_endofpacket   (video_dma_controller_ip_sdcard_input_avalon_pixel_source_endofpacket),                       //                         .endofpacket
-		.stream_valid         (video_dma_controller_ip_sdcard_input_avalon_pixel_source_valid)                              //                         .valid
-	);
-
 	video_ip video_effects (
-		.source_data_out          (video_effects_avalon_streaming_source_data),                             //      avalon_streaming_source.data
-		.source_startofpacket_out (video_effects_avalon_streaming_source_startofpacket),                    //                             .startofpacket
-		.source_endofpacket_out   (video_effects_avalon_streaming_source_endofpacket),                      //                             .endofpacket
-		.source_ready_in          (video_effects_avalon_streaming_source_ready),                            //                             .ready
-		.source_valid_out         (video_effects_avalon_streaming_source_valid),                            //                             .valid
-		.clk                      (sys_clk_out_clk),                                                        //                        clock.clk
-		.reset                    (rst_controller_002_reset_out_reset),                                     //                        reset.reset
-		.address                  (mm_interconnect_0_video_effects_avalon_slave_address),                   //                 avalon_slave.address
-		.read                     (mm_interconnect_0_video_effects_avalon_slave_read),                      //                             .read
-		.readdata                 (mm_interconnect_0_video_effects_avalon_slave_readdata),                  //                             .readdata
-		.write                    (mm_interconnect_0_video_effects_avalon_slave_write),                     //                             .write
-		.writedata                (mm_interconnect_0_video_effects_avalon_slave_writedata),                 //                             .writedata
-		.chipselect               (mm_interconnect_0_video_effects_avalon_slave_chipselect),                //                             .chipselect
-		.irq_sender               (irq_mapper_receiver8_irq),                                               //                   irq_sender.irq
-		.camera_startofpacket_in  (video_dma_controller_ip_camera_input_avalon_pixel_source_startofpacket), // avalon_streaming_sink_camera.startofpacket
-		.camera_endofpacket_in    (video_dma_controller_ip_camera_input_avalon_pixel_source_endofpacket),   //                             .endofpacket
-		.camera_data_in           (video_dma_controller_ip_camera_input_avalon_pixel_source_data),          //                             .data
-		.camera_ready_out         (video_dma_controller_ip_camera_input_avalon_pixel_source_ready),         //                             .ready
-		.camera_valid_in          (video_dma_controller_ip_camera_input_avalon_pixel_source_valid),         //                             .valid
-		.sdcard_data_in           (video_dma_controller_ip_sdcard_input_avalon_pixel_source_data),          // avalon_streaming_sink_sdcard.data
-		.sdcard_valid_in          (video_dma_controller_ip_sdcard_input_avalon_pixel_source_valid),         //                             .valid
-		.sdcard_startofpacket_in  (video_dma_controller_ip_sdcard_input_avalon_pixel_source_startofpacket), //                             .startofpacket
-		.sdcard_endofpacket_in    (video_dma_controller_ip_sdcard_input_avalon_pixel_source_endofpacket),   //                             .endofpacket
-		.sdcard_ready_out         (video_dma_controller_ip_sdcard_input_avalon_pixel_source_ready)          //                             .ready
+		.data_out          (video_effects_avalon_streaming_source_data),                             // avalon_streaming_source.data
+		.startofpacket_out (video_effects_avalon_streaming_source_startofpacket),                    //                        .startofpacket
+		.endofpacket_out   (video_effects_avalon_streaming_source_endofpacket),                      //                        .endofpacket
+		.ready_in          (video_effects_avalon_streaming_source_ready),                            //                        .ready
+		.valid_out         (video_effects_avalon_streaming_source_valid),                            //                        .valid
+		.clk               (sys_clk_out_clk),                                                        //                   clock.clk
+		.reset             (rst_controller_002_reset_out_reset),                                     //                   reset.reset
+		.address           (mm_interconnect_0_video_effects_avalon_slave_address),                   //            avalon_slave.address
+		.read              (mm_interconnect_0_video_effects_avalon_slave_read),                      //                        .read
+		.readdata          (mm_interconnect_0_video_effects_avalon_slave_readdata),                  //                        .readdata
+		.write             (mm_interconnect_0_video_effects_avalon_slave_write),                     //                        .write
+		.writedata         (mm_interconnect_0_video_effects_avalon_slave_writedata),                 //                        .writedata
+		.chipselect        (mm_interconnect_0_video_effects_avalon_slave_chipselect),                //                        .chipselect
+		.irq_sender        (irq_mapper_receiver8_irq),                                               //              irq_sender.irq
+		.startofpacket_in  (video_dma_controller_ip_camera_input_avalon_pixel_source_startofpacket), //   avalon_streaming_sink.startofpacket
+		.endofpacket_in    (video_dma_controller_ip_camera_input_avalon_pixel_source_endofpacket),   //                        .endofpacket
+		.data_in           (video_dma_controller_ip_camera_input_avalon_pixel_source_data),          //                        .data
+		.ready_out         (video_dma_controller_ip_camera_input_avalon_pixel_source_ready),         //                        .ready
+		.valid_in          (video_dma_controller_ip_camera_input_avalon_pixel_source_valid)          //                        .valid
 	);
 
 	nios_system_video_pll video_pll (
@@ -1244,12 +1200,6 @@ module nios_system (
 		.video_dma_controller_ip_output_avalon_dma_master_waitrequest             (video_dma_controller_ip_output_avalon_dma_master_waitrequest),                               //                                                              .waitrequest
 		.video_dma_controller_ip_output_avalon_dma_master_write                   (video_dma_controller_ip_output_avalon_dma_master_write),                                     //                                                              .write
 		.video_dma_controller_ip_output_avalon_dma_master_writedata               (video_dma_controller_ip_output_avalon_dma_master_writedata),                                 //                                                              .writedata
-		.video_dma_controller_ip_sdcard_input_avalon_dma_master_address           (video_dma_controller_ip_sdcard_input_avalon_dma_master_address),                             //        video_dma_controller_ip_sdcard_input_avalon_dma_master.address
-		.video_dma_controller_ip_sdcard_input_avalon_dma_master_waitrequest       (video_dma_controller_ip_sdcard_input_avalon_dma_master_waitrequest),                         //                                                              .waitrequest
-		.video_dma_controller_ip_sdcard_input_avalon_dma_master_read              (video_dma_controller_ip_sdcard_input_avalon_dma_master_read),                                //                                                              .read
-		.video_dma_controller_ip_sdcard_input_avalon_dma_master_readdata          (video_dma_controller_ip_sdcard_input_avalon_dma_master_readdata),                            //                                                              .readdata
-		.video_dma_controller_ip_sdcard_input_avalon_dma_master_readdatavalid     (video_dma_controller_ip_sdcard_input_avalon_dma_master_readdatavalid),                       //                                                              .readdatavalid
-		.video_dma_controller_ip_sdcard_input_avalon_dma_master_lock              (video_dma_controller_ip_sdcard_input_avalon_dma_master_lock),                                //                                                              .lock
 		.audio_avalon_audio_slave_address                                         (mm_interconnect_0_audio_avalon_audio_slave_address),                                         //                                      audio_avalon_audio_slave.address
 		.audio_avalon_audio_slave_write                                           (mm_interconnect_0_audio_avalon_audio_slave_write),                                           //                                                              .write
 		.audio_avalon_audio_slave_read                                            (mm_interconnect_0_audio_avalon_audio_slave_read),                                            //                                                              .read
@@ -1443,12 +1393,6 @@ module nios_system (
 		.video_dma_controller_ip_output_avalon_dma_control_slave_readdata         (mm_interconnect_0_video_dma_controller_ip_output_avalon_dma_control_slave_readdata),         //                                                              .readdata
 		.video_dma_controller_ip_output_avalon_dma_control_slave_writedata        (mm_interconnect_0_video_dma_controller_ip_output_avalon_dma_control_slave_writedata),        //                                                              .writedata
 		.video_dma_controller_ip_output_avalon_dma_control_slave_byteenable       (mm_interconnect_0_video_dma_controller_ip_output_avalon_dma_control_slave_byteenable),       //                                                              .byteenable
-		.video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_address    (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_address),    // video_dma_controller_ip_sdcard_input_avalon_dma_control_slave.address
-		.video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_write      (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_write),      //                                                              .write
-		.video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_read       (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_read),       //                                                              .read
-		.video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_readdata   (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_readdata),   //                                                              .readdata
-		.video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_writedata  (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_writedata),  //                                                              .writedata
-		.video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_byteenable (mm_interconnect_0_video_dma_controller_ip_sdcard_input_avalon_dma_control_slave_byteenable), //                                                              .byteenable
 		.video_effects_avalon_slave_address                                       (mm_interconnect_0_video_effects_avalon_slave_address),                                       //                                    video_effects_avalon_slave.address
 		.video_effects_avalon_slave_write                                         (mm_interconnect_0_video_effects_avalon_slave_write),                                         //                                                              .write
 		.video_effects_avalon_slave_read                                          (mm_interconnect_0_video_effects_avalon_slave_read),                                          //                                                              .read

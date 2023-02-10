@@ -1,5 +1,5 @@
 Flow report for video_ip
-Fri Feb 10 13:35:30 2023
+Fri Feb 10 18:46:29 2023
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------+
 ; Flow Summary                                                                                  ;
 +------------------------------------+----------------------------------------------------------+
-; Flow Status                        ; Successful - Fri Feb 10 13:35:30 2023                    ;
+; Flow Status                        ; Successful - Fri Feb 10 18:46:29 2023                    ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
 ; Revision Name                      ; video_ip                                                 ;
 ; Top-level Entity Name              ; video_ip                                                 ;
 ; Family                             ; Cyclone IV E                                             ;
 ; Device                             ; EP4CE115F29C7                                            ;
 ; Timing Models                      ; Final                                                    ;
-; Total logic elements               ; 411                                                      ;
-;     Total combinational functions  ; 313                                                      ;
+; Total logic elements               ; 389                                                      ;
+;     Total combinational functions  ; 291                                                      ;
 ;     Dedicated logic registers      ; 181                                                      ;
 ; Total registers                    ; 181                                                      ;
-; Total pins                         ; 133                                                      ;
+; Total pins                         ; 113                                                      ;
 ; Total virtual pins                 ; 0                                                        ;
 ; Total memory bits                  ; 0                                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                                        ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/10/2023 13:35:19 ;
+; Start date & time ; 02/10/2023 18:46:17 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; video_ip            ;
 +-------------------+---------------------+
@@ -75,14 +75,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 242211430917474.167603251807788        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 242211430917474.167605117712996        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --             ;
-; NUM_PARALLEL_PROCESSORS             ; 8                                      ; --            ; --          ; --             ;
+; NUM_PARALLEL_PROCESSORS             ; 4                                      ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
@@ -97,8 +97,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4809 MB             ; 00:00:25                           ;
-; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:25                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4771 MB             ; 00:00:27                           ;
+; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:27                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

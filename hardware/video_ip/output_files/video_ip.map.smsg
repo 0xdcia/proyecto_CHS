@@ -1,2 +1,1 @@
-Warning (10268): Verilog HDL information at video_ip.v(336): always construct contains both blocking and non-blocking assignments File: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v Line: 336
-Warning (10268): Verilog HDL information at video_effects.v(58): always construct contains both blocking and non-blocking assignments File: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_effects.v Line: 58
+Warning (10268): Verilog HDL information at video_ip.v(245): always construct contains both blocking and non-blocking assignments File: C:/Users/jdelpin/Documents/GitHub/proyecto_CHS/hardware/video_ip/verilog/video_ip.v Line: 245

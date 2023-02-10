@@ -21,7 +21,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "5";
          type = "int";
       }
    }
@@ -29,7 +29,7 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "3";
          type = "int";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "4";
          type = "int";
       }
    }
@@ -49,19 +49,11 @@
          type = "int";
       }
    }
-   element st_source_bfm_1
-   {
-      datum _sortIndex
-      {
-         value = "2";
-         type = "int";
-      }
-   }
    element video_effects_0
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "2";
          type = "int";
       }
    }
@@ -213,27 +205,6 @@
   <parameter name="USE_VALID" value="1" />
   <parameter name="VHDL_ID" value="0" />
  </module>
- <module
-   name="st_source_bfm_1"
-   kind="altera_avalon_st_source_bfm"
-   version="17.1"
-   enabled="1">
-  <parameter name="ST_BEATSPERCYCLE" value="1" />
-  <parameter name="ST_CHANNEL_W" value="1" />
-  <parameter name="ST_ERROR_DESCRIPTOR" value="" />
-  <parameter name="ST_ERROR_W" value="1" />
-  <parameter name="ST_MAX_CHANNELS" value="0" />
-  <parameter name="ST_NUMSYMBOLS" value="1" />
-  <parameter name="ST_READY_LATENCY" value="0" />
-  <parameter name="ST_SYMBOL_W" value="16" />
-  <parameter name="USE_CHANNEL" value="0" />
-  <parameter name="USE_EMPTY" value="0" />
-  <parameter name="USE_ERROR" value="0" />
-  <parameter name="USE_PACKET" value="1" />
-  <parameter name="USE_READY" value="1" />
-  <parameter name="USE_VALID" value="1" />
-  <parameter name="VHDL_ID" value="0" />
- </module>
  <module name="video_effects_0" kind="video_effects" version="0" enabled="1" />
  <connection
    kind="avalon"
@@ -253,12 +224,7 @@
    kind="avalon_streaming"
    version="17.1"
    start="st_source_bfm_0.src"
-   end="video_effects_0.avalon_streaming_sink_camera" />
- <connection
-   kind="avalon_streaming"
-   version="17.1"
-   start="st_source_bfm_1.src"
-   end="video_effects_0.avalon_streaming_sink_sdcard" />
+   end="video_effects_0.avalon_streaming_sink" />
  <connection
    kind="clock"
    version="17.1"
@@ -270,11 +236,6 @@
    version="17.1"
    start="clk_0.clk"
    end="st_source_bfm_0.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
-   end="st_source_bfm_1.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -307,11 +268,6 @@
    version="17.1"
    start="clk_0.clk_reset"
    end="st_source_bfm_0.clk_reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="st_source_bfm_1.clk_reset" />
  <connection
    kind="reset"
    version="17.1"

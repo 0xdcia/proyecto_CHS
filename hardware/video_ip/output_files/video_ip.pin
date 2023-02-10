@@ -69,26 +69,26 @@ CHIP  "video_ip"  ASSIGNED TO AN: EP4CE115F29C7
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 VCCIO8                       : A2        : power  :                   : 2.5V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A3        :        :                   :         : 8         :                
-writedata[12]                : A4        : input  : 2.5 V             :         : 8         : N              
+source_data_out[9]           : A3        : output : 2.5 V             :         : 8         : N              
+source_data_out[3]           : A4        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : A5        : power  :                   : 2.5V    : 8         :                
-writedata[18]                : A6        : input  : 2.5 V             :         : 8         : N              
-readdata[28]                 : A7        : output : 2.5 V             :         : 8         : N              
-writedata[30]                : A8        : input  : 2.5 V             :         : 8         : N              
+writedata[3]                 : A6        : input  : 2.5 V             :         : 8         : N              
+sdcard_data_in[1]            : A7        : input  : 2.5 V             :         : 8         : N              
+readdata[8]                  : A8        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : A9        : power  :                   : 2.5V    : 8         :                
-source_data_out[7]           : A10       : output : 2.5 V             :         : 8         : N              
-sdcard_data_in[11]           : A11       : input  : 2.5 V             :         : 8         : N              
-writedata[10]                : A12       : input  : 2.5 V             :         : 8         : N              
+writedata[4]                 : A10       : input  : 2.5 V             :         : 8         : N              
+writedata[23]                : A11       : input  : 2.5 V             :         : 8         : N              
+readdata[16]                 : A12       : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : A13       : power  :                   : 2.5V    : 8         :                
 GND+                         : A14       :        :                   :         : 8         :                
 GND+                         : A15       :        :                   :         : 7         :                
 VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
-sdcard_data_in[8]            : A17       : input  : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A18       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A19       :        :                   :         : 7         :                
+writedata[22]                : A17       : input  : 2.5 V             :         : 7         : N              
+camera_data_in[10]           : A18       : input  : 2.5 V             :         : 7         : N              
+camera_data_in[13]           : A19       : input  : 2.5 V             :         : 7         : N              
 VCCIO7                       : A20       : power  :                   : 2.5V    : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A21       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A22       :        :                   :         : 7         :                
+readdata[21]                 : A21       : output : 2.5 V             :         : 7         : N              
+writedata[5]                 : A22       : input  : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A23       :        :                   :         : 7         :                
 VCCIO7                       : A24       : power  :                   : 2.5V    : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A25       :        :                   :         : 7         :                
@@ -105,8 +105,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AA8       :        :                   :      
 GNDA1                        : AA9       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA10      :        :                   :         : 3         :                
 VCCIO3                       : AA11      : power  :                   : 2.5V    : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA13      :        :                   :         : 3         :                
+camera_data_in[2]            : AA12      : input  : 2.5 V             :         : 3         : N              
+source_data_out[1]           : AA13      : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA14      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA15      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 4         :                
@@ -133,7 +133,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB8       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB9       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB10      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB11      :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB12      :        :                   :         : 3         :                
+sdcard_ready_out             : AB12      : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB13      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB14      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB15      :        :                   :         : 4         :                
@@ -148,7 +148,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB23      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB24      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB25      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB26      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB27      :        :                   :         : 5         :                
+source_ready_in              : AB27      : input  : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB28      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC1       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC2       :        :                   :         : 2         :                
@@ -160,7 +160,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AC7       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC8       :        :                   :         : 3         :                
 GND                          : AC9       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC10      :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC11      :        :                   :         : 3         :                
+source_data_out[14]          : AC11      : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC12      :        :                   :         : 3         :                
 GND                          : AC13      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC14      :        :                   :         : 3         :                
@@ -217,7 +217,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AE8       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE9       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE10      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE11      :        :                   :         : 3         :                
-writedata[27]                : AE12      : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE12      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE13      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE14      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE15      :        :                   :         : 4         :                
@@ -244,9 +244,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AF7       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF8       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF9       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF10      :        :                   :         : 3         :                
-sdcard_data_in[9]            : AF11      : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF11      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF12      :        :                   :         : 3         :                
-source_data_out[6]           : AF13      : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF13      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF14      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF15      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF16      :        :                   :         : 4         :                
@@ -272,7 +272,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG7       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG8       :        :                   :         : 3         :                
 GND                          : AG9       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG10      :        :                   :         : 3         :                
-writedata[15]                : AG11      : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG11      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG12      :        :                   :         : 3         :                
 GND                          : AG13      : gnd    :                   :         :           :                
 GND+                         : AG14      :        :                   :         : 3         :                
@@ -300,7 +300,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AH8       :        :                   :      
 VCCIO3                       : AH9       : power  :                   : 2.5V    : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH10      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH11      :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH12      :        :                   :         : 3         :                
+source_data_out[11]          : AH12      : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : AH13      : power  :                   : 2.5V    : 3         :                
 GND+                         : AH14      :        :                   :         : 3         :                
 GND+                         : AH15      :        :                   :         : 4         :                
@@ -319,25 +319,25 @@ VCCIO4                       : AH27      : power  :                   : 2.5V    
 VCCIO1                       : B1        : power  :                   : 2.5V    : 1         :                
 GND                          : B2        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :         : 8         :                
-writedata[20]                : B4        : input  : 2.5 V             :         : 8         : N              
+readdata[9]                  : B4        : output : 2.5 V             :         : 8         : N              
 GND                          : B5        : gnd    :                   :         :           :                
-camera_data_in[11]           : B6        : input  : 2.5 V             :         : 8         : N              
-readdata[12]                 : B7        : output : 2.5 V             :         : 8         : N              
-readdata[31]                 : B8        : output : 2.5 V             :         : 8         : N              
+readdata[26]                 : B6        : output : 2.5 V             :         : 8         : N              
+sdcard_data_in[6]            : B7        : input  : 2.5 V             :         : 8         : N              
+readdata[14]                 : B8        : output : 2.5 V             :         : 8         : N              
 GND                          : B9        : gnd    :                   :         :           :                
-source_data_out[9]           : B10       : output : 2.5 V             :         : 8         : N              
-camera_data_in[12]           : B11       : input  : 2.5 V             :         : 8         : N              
+readdata[13]                 : B10       : output : 2.5 V             :         : 8         : N              
+writedata[21]                : B11       : input  : 2.5 V             :         : 8         : N              
 GND                          : B12       : gnd    :                   :         :           :                
 GND                          : B13       : gnd    :                   :         :           :                
 GND+                         : B14       :        :                   :         : 8         :                
 GND+                         : B15       :        :                   :         : 7         :                
 GND                          : B16       : gnd    :                   :         :           :                
-camera_data_in[5]            : B17       : input  : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B18       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B19       :        :                   :         : 7         :                
+sdcard_data_in[14]           : B17       : input  : 2.5 V             :         : 7         : N              
+sdcard_data_in[7]            : B18       : input  : 2.5 V             :         : 7         : N              
+readdata[0]                  : B19       : output : 2.5 V             :         : 7         : N              
 GND                          : B20       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B21       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B22       :        :                   :         : 7         :                
+writedata[13]                : B21       : input  : 2.5 V             :         : 7         : N              
+source_data_out[8]           : B22       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B23       :        :                   :         : 7         :                
 GND                          : B24       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B25       :        :                   :         : 7         :                
@@ -345,26 +345,26 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : B26       :        :                   :      
 GND                          : B27       : gnd    :                   :         :           :                
 VCCIO6                       : B28       : power  :                   : 2.5V    : 6         :                
 GND                          : C1        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 1         :                
+writedata[7]                 : C2        : input  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C4        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C5        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
-sdcard_data_in[5]            : C7        : input  : 2.5 V             :         : 8         : N              
-write                        : C8        : input  : 2.5 V             :         : 8         : N              
-readdata[25]                 : C9        : output : 2.5 V             :         : 8         : N              
-writedata[17]                : C10       : input  : 2.5 V             :         : 8         : N              
-readdata[6]                  : C11       : output : 2.5 V             :         : 8         : N              
-readdata[23]                 : C12       : output : 2.5 V             :         : 8         : N              
-writedata[7]                 : C13       : input  : 2.5 V             :         : 8         : N              
-writedata[1]                 : C14       : input  : 2.5 V             :         : 8         : N              
-source_data_out[13]          : C15       : output : 2.5 V             :         : 7         : N              
-writedata[13]                : C16       : input  : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C17       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C18       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C19       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C20       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C21       :        :                   :         : 7         :                
+write                        : C7        : input  : 2.5 V             :         : 8         : N              
+readdata[4]                  : C8        : output : 2.5 V             :         : 8         : N              
+camera_data_in[7]            : C9        : input  : 2.5 V             :         : 8         : N              
+writedata[19]                : C10       : input  : 2.5 V             :         : 8         : N              
+source_data_out[4]           : C11       : output : 2.5 V             :         : 8         : N              
+camera_data_in[12]           : C12       : input  : 2.5 V             :         : 8         : N              
+writedata[11]                : C13       : input  : 2.5 V             :         : 8         : N              
+camera_data_in[15]           : C14       : input  : 2.5 V             :         : 8         : N              
+writedata[14]                : C15       : input  : 2.5 V             :         : 7         : N              
+readdata[29]                 : C16       : output : 2.5 V             :         : 7         : N              
+sdcard_data_in[13]           : C17       : input  : 2.5 V             :         : 7         : N              
+source_data_out[12]          : C18       : output : 2.5 V             :         : 7         : N              
+writedata[8]                 : C19       : input  : 2.5 V             :         : 7         : N              
+readdata[17]                 : C20       : output : 2.5 V             :         : 7         : N              
+source_data_out[10]          : C21       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C22       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C23       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C24       :        :                   :         : 7         :                
@@ -377,21 +377,21 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :      
 GND                          : D3        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D4        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D5        :        :                   :         : 8         :                
-sdcard_data_in[15]           : D6        : input  : 2.5 V             :         : 8         : N              
-sdcard_data_in[13]           : D7        : input  : 2.5 V             :         : 8         : N              
-sdcard_data_in[10]           : D8        : input  : 2.5 V             :         : 8         : N              
-writedata[28]                : D9        : input  : 2.5 V             :         : 8         : N              
-writedata[21]                : D10       : input  : 2.5 V             :         : 8         : N              
-readdata[16]                 : D11       : output : 2.5 V             :         : 8         : N              
-source_data_out[12]          : D12       : output : 2.5 V             :         : 8         : N              
-writedata[2]                 : D13       : input  : 2.5 V             :         : 8         : N              
-writedata[25]                : D14       : input  : 2.5 V             :         : 8         : N              
-source_data_out[4]           : D15       : output : 2.5 V             :         : 7         : N              
-camera_data_in[3]            : D16       : input  : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D17       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D18       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D20       :        :                   :         : 7         :                
+writedata[1]                 : D6        : input  : 2.5 V             :         : 8         : N              
+source_valid_out             : D7        : output : 2.5 V             :         : 8         : N              
+writedata[2]                 : D8        : input  : 2.5 V             :         : 8         : N              
+writedata[27]                : D9        : input  : 2.5 V             :         : 8         : N              
+chipselect                   : D10       : input  : 2.5 V             :         : 8         : N              
+source_data_out[2]           : D11       : output : 2.5 V             :         : 8         : N              
+sdcard_data_in[12]           : D12       : input  : 2.5 V             :         : 8         : N              
+address[0]                   : D13       : input  : 2.5 V             :         : 8         : N              
+camera_data_in[14]           : D14       : input  : 2.5 V             :         : 8         : N              
+reset                        : D15       : input  : 2.5 V             :         : 7         : N              
+readdata[24]                 : D16       : output : 2.5 V             :         : 7         : N              
+camera_data_in[3]            : D17       : input  : 2.5 V             :         : 7         : N              
+writedata[0]                 : D18       : input  : 2.5 V             :         : 7         : N              
+readdata[18]                 : D19       : output : 2.5 V             :         : 7         : N              
+readdata[3]                  : D20       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D23       :        :                   :         : 7         :                
@@ -400,52 +400,52 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : D26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D28       :        :                   :         : 6         :                
-writedata[24]                : E1        : input  : 2.5 V             :         : 1         : N              
+writedata[25]                : E1        : input  : 2.5 V             :         : 1         : N              
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : E2        : input  : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :         : 1         :                
+sdcard_data_in[3]            : E3        : input  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E5        :        :                   :         : 8         :                
 VCCIO8                       : E6        : power  :                   : 2.5V    : 8         :                
-sdcard_data_in[7]            : E7        : input  : 2.5 V             :         : 8         : N              
-readdata[26]                 : E8        : output : 2.5 V             :         : 8         : N              
+irq_sender                   : E7        : output : 2.5 V             :         : 8         : N              
+source_startofpacket_out     : E8        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : E9        : power  :                   : 2.5V    : 8         :                
-writedata[31]                : E10       : input  : 2.5 V             :         : 8         : N              
-readdata[27]                 : E11       : output : 2.5 V             :         : 8         : N              
-readdata[1]                  : E12       : output : 2.5 V             :         : 8         : N              
+read                         : E10       : input  : 2.5 V             :         : 8         : N              
+sdcard_data_in[15]           : E11       : input  : 2.5 V             :         : 8         : N              
+readdata[20]                 : E12       : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : E13       : power  :                   : 2.5V    : 8         :                
-writedata[0]                 : E14       : input  : 2.5 V             :         : 8         : N              
-writedata[3]                 : E15       : input  : 2.5 V             :         : 7         : N              
+sdcard_data_in[11]           : E14       : input  : 2.5 V             :         : 8         : N              
+readdata[23]                 : E15       : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : E16       : power  :                   : 2.5V    : 7         :                
-writedata[9]                 : E17       : input  : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E18       :        :                   :         : 7         :                
+readdata[27]                 : E17       : output : 2.5 V             :         : 7         : N              
+readdata[30]                 : E18       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E19       :        :                   :         : 7         :                
 VCCIO7                       : E20       : power  :                   : 2.5V    : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E21       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E22       :        :                   :         : 7         :                
 VCCIO7                       : E23       : power  :                   : 2.5V    : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E24       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E25       :        :                   :         : 7         :                
+source_data_out[5]           : E24       : output : 2.5 V             :         : 7         : N              
+writedata[17]                : E25       : input  : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E28       :        :                   :         : 6         :                
-readdata[14]                 : F1        : output : 2.5 V             :         : 1         : N              
-writedata[29]                : F2        : input  : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F1        :        :                   :         : 1         :                
+source_data_out[6]           : F2        : output : 2.5 V             :         : 1         : N              
+camera_data_in[4]            : F3        : input  : 2.5 V             :         : 1         : N              
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : F4        : input  : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 1         :                
+readdata[2]                  : F5        : output : 2.5 V             :         : 1         : N              
 GND                          : F6        : gnd    :                   :         :           :                
-writedata[14]                : F7        : input  : 2.5 V             :         : 8         : N              
-source_data_out[8]           : F8        : output : 2.5 V             :         : 8         : N              
+camera_startofpacket_in      : F7        : input  : 2.5 V             :         : 8         : N              
+readdata[6]                  : F8        : output : 2.5 V             :         : 8         : N              
 GND                          : F9        : gnd    :                   :         :           :                
-readdata[11]                 : F10       : output : 2.5 V             :         : 8         : N              
-readdata[22]                 : F11       : output : 2.5 V             :         : 8         : N              
-readdata[8]                  : F12       : output : 2.5 V             :         : 8         : N              
+readdata[10]                 : F10       : output : 2.5 V             :         : 8         : N              
+writedata[30]                : F11       : input  : 2.5 V             :         : 8         : N              
+readdata[11]                 : F12       : output : 2.5 V             :         : 8         : N              
 GND                          : F13       : gnd    :                   :         :           :                
-source_data_out[0]           : F14       : output : 2.5 V             :         : 8         : N              
-camera_data_in[15]           : F15       : input  : 2.5 V             :         : 7         : N              
+writedata[12]                : F14       : input  : 2.5 V             :         : 8         : N              
+address[2]                   : F15       : input  : 2.5 V             :         : 7         : N              
 GND                          : F16       : gnd    :                   :         :           :                
-writedata[6]                 : F17       : input  : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :         : 7         :                
+readdata[31]                 : F17       : output : 2.5 V             :         : 7         : N              
+source_data_out[13]          : F18       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 7         :                
 GND                          : F20       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F21       :        :                   :         : 7         :                
@@ -456,28 +456,28 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : F26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F28       :        :                   :         : 6         :                
-camera_data_in[7]            : G1        : input  : 2.5 V             :         : 1         : N              
-camera_data_in[1]            : G2        : input  : 2.5 V             :         : 1         : N              
-sdcard_data_in[14]           : G3        : input  : 2.5 V             :         : 1         : N              
-readdata[24]                 : G4        : output : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G2        :        :                   :         : 1         :                
+sdcard_data_in[8]            : G3        : input  : 2.5 V             :         : 1         : N              
+camera_valid_in              : G4        : input  : 2.5 V             :         : 1         : N              
+sdcard_data_in[0]            : G5        : input  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G6        :        :                   :         : 1         :                
-readdata[3]                  : G7        : output : 2.5 V             :         : 8         : N              
-read                         : G8        : input  : 2.5 V             :         : 8         : N              
-writedata[11]                : G9        : input  : 2.5 V             :         : 8         : N              
-readdata[10]                 : G10       : output : 2.5 V             :         : 8         : N              
-readdata[2]                  : G11       : output : 2.5 V             :         : 8         : N              
-camera_data_in[13]           : G12       : input  : 2.5 V             :         : 8         : N              
-camera_data_in[2]            : G13       : input  : 2.5 V             :         : 8         : N              
-writedata[8]                 : G14       : input  : 2.5 V             :         : 8         : N              
-sdcard_data_in[12]           : G15       : input  : 2.5 V             :         : 7         : N              
-camera_data_in[0]            : G16       : input  : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 7         :                
-sdcard_data_in[1]            : G18       : input  : 2.5 V             :         : 7         : N              
-readdata[17]                 : G19       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G20       :        :                   :         : 7         :                
-source_data_out[3]           : G21       : output : 2.5 V             :         : 7         : N              
-source_data_out[10]          : G22       : output : 2.5 V             :         : 7         : N              
+camera_endofpacket_in        : G7        : input  : 2.5 V             :         : 8         : N              
+camera_data_in[6]            : G8        : input  : 2.5 V             :         : 8         : N              
+writedata[9]                 : G9        : input  : 2.5 V             :         : 8         : N              
+readdata[15]                 : G10       : output : 2.5 V             :         : 8         : N              
+camera_data_in[8]            : G11       : input  : 2.5 V             :         : 8         : N              
+source_data_out[7]           : G12       : output : 2.5 V             :         : 8         : N              
+writedata[20]                : G13       : input  : 2.5 V             :         : 8         : N              
+writedata[31]                : G14       : input  : 2.5 V             :         : 8         : N              
+writedata[10]                : G15       : input  : 2.5 V             :         : 7         : N              
+writedata[28]                : G16       : input  : 2.5 V             :         : 7         : N              
+writedata[18]                : G17       : input  : 2.5 V             :         : 7         : N              
+readdata[19]                 : G18       : output : 2.5 V             :         : 7         : N              
+readdata[28]                 : G19       : output : 2.5 V             :         : 7         : N              
+readdata[5]                  : G20       : output : 2.5 V             :         : 7         : N              
+sdcard_data_in[10]           : G21       : input  : 2.5 V             :         : 7         : N              
+sdcard_data_in[4]            : G22       : input  : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G23       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G24       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G25       :        :                   :         : 6         :                
@@ -486,25 +486,25 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : G27       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : G28       :        :                   :         : 6         :                
 VCCIO1                       : H1        : power  :                   : 2.5V    : 1         :                
 GND                          : H2        : gnd    :                   :         :           :                
-writedata[22]                : H3        : input  : 2.5 V             :         : 1         : N              
-readdata[21]                 : H4        : output : 2.5 V             :         : 1         : N              
-writedata[19]                : H5        : input  : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : H6        :        :                   :         : 1         :                
+camera_data_in[9]            : H3        : input  : 2.5 V             :         : 1         : N              
+sdcard_data_in[9]            : H4        : input  : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H5        :        :                   :         : 1         :                
+source_data_out[15]          : H6        : output : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H7        :        :                   :         : 1         :                
-sdcard_data_in[3]            : H8        : input  : 2.5 V             :         : 8         : N              
+source_endofpacket_out       : H8        : output : 2.5 V             :         : 8         : N              
 GNDA3                        : H9        : gnd    :                   :         :           :                
-readdata[7]                  : H10       : output : 2.5 V             :         : 8         : N              
+writedata[15]                : H10       : input  : 2.5 V             :         : 8         : N              
 VCCIO8                       : H11       : power  :                   : 2.5V    : 8         :                
-writedata[26]                : H12       : input  : 2.5 V             :         : 8         : N              
-sdcard_data_in[2]            : H13       : input  : 2.5 V             :         : 8         : N              
-source_data_out[5]           : H14       : output : 2.5 V             :         : 8         : N              
-writedata[4]                 : H15       : input  : 2.5 V             :         : 7         : N              
-sdcard_data_in[0]            : H16       : input  : 2.5 V             :         : 7         : N              
-writedata[23]                : H17       : input  : 2.5 V             :         : 7         : N              
+sdcard_data_in[2]            : H12       : input  : 2.5 V             :         : 8         : N              
+writedata[6]                 : H13       : input  : 2.5 V             :         : 8         : N              
+writedata[24]                : H14       : input  : 2.5 V             :         : 8         : N              
+camera_data_in[11]           : H15       : input  : 2.5 V             :         : 7         : N              
+readdata[22]                 : H16       : output : 2.5 V             :         : 7         : N              
+writedata[29]                : H17       : input  : 2.5 V             :         : 7         : N              
 VCCIO7                       : H18       : power  :                   : 2.5V    : 7         :                
-source_data_out[2]           : H19       : output : 2.5 V             :         : 7         : N              
+camera_data_in[1]            : H19       : input  : 2.5 V             :         : 7         : N              
 GNDA2                        : H20       : gnd    :                   :         :           :                
-source_data_out[1]           : H21       : output : 2.5 V             :         : 7         : N              
+camera_data_in[0]            : H21       : input  : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H22       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H23       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H24       :        :                   :         : 6         :                
@@ -514,23 +514,23 @@ GND                          : H27       : gnd    :                   :         
 VCCIO6                       : H28       : power  :                   : 2.5V    : 6         :                
 clk                          : J1        : input  : 2.5 V             :         : 1         : N              
 GND                          : J2        : gnd    :                   :         :           :                
-readdata[19]                 : J3        : output : 2.5 V             :         : 1         : N              
-readdata[29]                 : J4        : output : 2.5 V             :         : 1         : N              
-reset                        : J5        : input  : 2.5 V             :         : 1         : N              
-source_data_out[15]          : J6        : output : 2.5 V             :         : 1         : N              
-camera_data_in[6]            : J7        : input  : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J4        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J5        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J6        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J7        :        :                   :         : 1         :                
 VCCA3                        : J8        : power  :                   : 2.5V    :           :                
 VCCD_PLL3                    : J9        : power  :                   : 1.2V    :           :                
-chipselect                   : J10       : input  : 2.5 V             :         : 8         : N              
+writedata[16]                : J10       : input  : 2.5 V             :         : 8         : N              
 GND                          : J11       : gnd    :                   :         :           :                
-camera_data_in[8]            : J12       : input  : 2.5 V             :         : 8         : N              
-address[2]                   : J13       : input  : 2.5 V             :         : 8         : N              
-source_data_out[11]          : J14       : output : 2.5 V             :         : 8         : N              
-readdata[20]                 : J15       : output : 2.5 V             :         : 7         : N              
-sdcard_data_in[4]            : J16       : input  : 2.5 V             :         : 7         : N              
-source_data_out[14]          : J17       : output : 2.5 V             :         : 7         : N              
+readdata[7]                  : J12       : output : 2.5 V             :         : 8         : N              
+readdata[12]                 : J13       : output : 2.5 V             :         : 8         : N              
+address[1]                   : J14       : input  : 2.5 V             :         : 8         : N              
+readdata[25]                 : J15       : output : 2.5 V             :         : 7         : N              
+readdata[1]                  : J16       : output : 2.5 V             :         : 7         : N              
+writedata[26]                : J17       : input  : 2.5 V             :         : 7         : N              
 GND                          : J18       : gnd    :                   :         :           :                
-writedata[5]                 : J19       : input  : 2.5 V             :         : 7         : N              
+camera_data_in[5]            : J19       : input  : 2.5 V             :         : 7         : N              
 VCCD_PLL2                    : J20       : power  :                   : 1.2V    :           :                
 VCCA2                        : J21       : power  :                   : 2.5V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J22       :        :                   :         : 6         :                
@@ -540,14 +540,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : J25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : J26       :        :                   :         : 6         :                
 GND+                         : J27       :        :                   :         : 6         :                
 GND+                         : J28       :        :                   :         : 6         :                
-readdata[18]                 : K1        : output : 2.5 V             :         : 1         : N              
-camera_data_in[10]           : K2        : input  : 2.5 V             :         : 1         : N              
-readdata[15]                 : K3        : output : 2.5 V             :         : 1         : N              
-readdata[30]                 : K4        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K4        :        :                   :         : 1         :                
 VCCIO1                       : K5        : power  :                   : 2.5V    : 1         :                
 GND                          : K6        : gnd    :                   :         :           :                
-sdcard_endofpacket_in        : K7        : input  : 2.5 V             :         : 1         : N              
-camera_data_in[9]            : K8        : input  : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K7        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 1         :                
 VCCINT                       : K9        : power  :                   : 1.2V    :           :                
 GND                          : K10       : gnd    :                   :         :           :                
 VCCINT                       : K11       : power  :                   : 1.2V    :           :                
@@ -568,14 +568,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : K25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : K26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K28       :        :                   :         : 6         :                
-sdcard_startofpacket_in      : L1        : input  : 2.5 V             :         : 1         : N              
-source_endofpacket_out       : L2        : output : 2.5 V             :         : 1         : N              
-camera_data_in[4]            : L3        : input  : 2.5 V             :         : 1         : N              
-camera_data_in[14]           : L4        : input  : 2.5 V             :         : 1         : N              
-readdata[4]                  : L5        : output : 2.5 V             :         : 1         : N              
-camera_startofpacket_in      : L6        : input  : 2.5 V             :         : 1         : N              
-camera_ready_out             : L7        : output : 2.5 V             :         : 1         : N              
-camera_valid_in              : L8        : input  : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L5        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L6        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 1         :                
 GND                          : L9        : gnd    :                   :         :           :                
 VCCINT                       : L10       : power  :                   : 1.2V    :           :                
 GND                          : L11       : gnd    :                   :         :           :                
@@ -596,14 +596,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : L25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : L26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L28       :        :                   :         : 6         :                
-sdcard_ready_out             : M1        : output : 2.5 V             :         : 1         : N              
-source_startofpacket_out     : M2        : output : 2.5 V             :         : 1         : N              
-address[0]                   : M3        : input  : 2.5 V             :         : 1         : N              
-sdcard_data_in[6]            : M4        : input  : 2.5 V             :         : 1         : N              
-writedata[16]                : M5        : input  : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M4        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M5        :        :                   :         : 1         :                
 nSTATUS                      : M6        :        :                   :         : 1         :                
-sdcard_valid_in              : M7        : input  : 2.5 V             :         : 1         : N              
-camera_endofpacket_in        : M8        : input  : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M8        :        :                   :         : 1         :                
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
 GND                          : M10       : gnd    :                   :         :           :                
 VCCINT                       : M11       : power  :                   : 1.2V    :           :                
@@ -626,12 +626,12 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : M27       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : M28       :        :                   :         : 6         :                
 VCCIO1                       : N1        : power  :                   : 2.5V    : 1         :                
 GND                          : N2        : gnd    :                   :         :           :                
-readdata[5]                  : N3        : output : 2.5 V             :         : 1         : N              
-readdata[13]                 : N4        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N4        :        :                   :         : 1         :                
 VCCIO1                       : N5        : power  :                   : 2.5V    : 1         :                
 GND                          : N6        : gnd    :                   :         :           :                
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : N7        : input  : 2.5 V             :         : 1         : N              
-source_valid_out             : N8        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N8        :        :                   :         : 1         :                
 GND                          : N9        : gnd    :                   :         :           :                
 VCCINT                       : N10       : power  :                   : 1.2V    :           :                
 GND                          : N11       : gnd    :                   :         :           :                
@@ -652,8 +652,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : N25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : N26       :        :                   :         : 6         :                
 GND                          : N27       : gnd    :                   :         :           :                
 VCCIO6                       : N28       : power  :                   : 2.5V    : 6         :                
-irq_sender                   : P1        : output : 2.5 V             :         : 1         : N              
-readdata[0]                  : P2        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P2        :        :                   :         : 1         :                
 ~ALTERA_DCLK~                : P3        : output : 2.5 V             :         : 1         : N              
 nCONFIG                      : P4        :        :                   :         : 1         :                
 TCK                          : P5        : input  :                   :         : 1         :                
@@ -672,7 +672,7 @@ VCCINT                       : P17       : power  :                   : 1.2V    
 GND                          : P18       : gnd    :                   :         :           :                
 VCCINT                       : P19       : power  :                   : 1.2V    :           :                
 GND                          : P20       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P21       :        :                   :         : 5         :                
+sdcard_endofpacket_in        : P21       : input  : 2.5 V             :         : 5         : N              
 MSEL3                        : P22       :        :                   :         : 6         :                
 MSEL1                        : P23       :        :                   :         : 6         :                
 CONF_DONE                    : P24       :        :                   :         : 6         :                
@@ -680,7 +680,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : P25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : P26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P27       :        :                   :         : 6         :                
 ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : P28       : output : 2.5 V             :         : 6         : N              
-readdata[9]                  : R1        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R4        :        :                   :         : 2         :                
@@ -820,8 +820,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : W25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : W26       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W27       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W28       :        :                   :         : 5         :                
-address[1]                   : Y1        : input  : 2.5 V             :         : 2         : N              
-source_ready_in              : Y2        : input  : 2.5 V             :         : 2         : N              
+sdcard_startofpacket_in      : Y1        : input  : 2.5 V             :         : 2         : N              
+sdcard_valid_in              : Y2        : input  : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y4        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y5        :        :                   :         : 2         :                
@@ -831,8 +831,8 @@ VCCA1                        : Y8        : power  :                   : 2.5V    
 VCCD_PLL1                    : Y9        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y10       :        :                   :         : 3         :                
 GND                          : Y11       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y12       :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y13       :        :                   :         : 3         :                
+source_data_out[0]           : Y12       : output : 2.5 V             :         : 3         : N              
+sdcard_data_in[5]            : Y13       : input  : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y14       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y15       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 4         :                
@@ -845,6 +845,6 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : Y22       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y23       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y24       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y25       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y26       :        :                   :         : 5         :                
+camera_ready_out             : Y26       : output : 2.5 V             :         : 5         : N              
 GND+                         : Y27       :        :                   :         : 5         :                
 GND+                         : Y28       :        :                   :         : 5         :                
