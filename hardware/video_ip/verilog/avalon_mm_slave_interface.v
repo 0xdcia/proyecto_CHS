@@ -15,7 +15,7 @@ module avalon_mm_slave_interface (
     input wire clk,  // reloj
     
     input wire chipselect,  // chip select
-    input wire [2:0] address,  // dirección de acceso a registros
+    input wire [6:0] address,  // dirección de acceso a registros
     
     input wire write,  // bit indicación de escritura
     input wire [31:0] writedata,  // datos de escritura: 32 bits
@@ -27,59 +27,56 @@ module avalon_mm_slave_interface (
     
     // interfaces con nuestra lógica
     
-    output reg [31:0] reg3, reg2, reg1, reg0  // registros de lectura y escritura, control, de 32 bits
+    output reg [31:0] registers [7:0]  // registros de lectura y escritura, control, de 32 bits
     // Por ahora todos los registros son de lectura y escritura.
 );
 
-
+integer ii = 0;
 
 // Inicializar registros
 initial
 begin
-    reg0 = 32'd0;
-    reg1 = 32'd0;
-    reg2 = 32'd0;
-    reg3 = 32'd0;
+
+    for (ii = 0; ii < 6; ii = ii+1)
+    begin
+        registers[ii] = 32'd0;
+    end
+
     readdata = 32'd0;
 end
 
 
+
 always @(posedge clk)
 begin
+
     if (reset)  // Si hay un reset: borrar todos los registros
     begin
-        reg0 <= 32'd0;
-        reg1 <= 32'd0;
-        reg2 <= 32'd0;
-        reg3 <= 32'd0;
+        
+        for (ii = 0; ii < 6; ii = ii+1)
+        begin
+            registers[ii] = 32'd0;
+        end
+        
         readdata <= 32'd0;
     end
     
     else
     begin
+        
         if (chipselect)  // Si se selecciona el periférico
         begin
             if (write)  // Si la señal del master es de escritura
             begin
-                case (address)  // En qué dirección escribir
-                    3'd0: reg0 <= writedata;
-                    3'd1: reg1 <= writedata;
-                    3'd2: reg2 <= writedata;
-                    3'd3: reg3 <= writedata;
-                endcase
+                registers[address] <= writedata;
             end
             
             if (read)  // Si la señal es de lectura
             begin
-                case (address)
-                    3'd0: readdata <= reg0;
-                    3'd1: readdata <= reg1;
-                    3'd2: readdata <= reg2;
-                    3'd3: readdata <= reg3;
-                    default: readdata <= 32'd0;
-                endcase
+                readdata <= registers[address];
             end
         end
+        
     end
 end
 

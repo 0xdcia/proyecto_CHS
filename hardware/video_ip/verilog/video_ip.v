@@ -19,7 +19,12 @@ module video_ip (
     // AVALON-MM-SLAVE INTERFACE
     
     input wire chipselect,  // chip select
-    input wire [2:0] address,  // dirección de acceso a registros
+    input wire [6:0] address,  // dirección de acceso a registros
+    
+    // 2^7 = 128 registros, usamos 100
+    // Los 4 primeros : Registros de configuración
+    // Los 96 siguientes : Para estadísticas del histograma
+    
     input wire write,  // bit indicación de escritura
     input wire [31:0] writedata,  // datos de escritura: 32 bits
     input wire read,  // bit indicación de lectura
@@ -59,7 +64,7 @@ module video_ip (
 
 // Esto se debe a que debemos igualar la latencia de las señales de control con la de datos
 
-wire [31:0] reg3, reg2, reg1, reg0;
+wire [31:0] registers [7:0];
 wire [15:0] data_in_reg, data_out_reg;
 
 wire ready_reg;  // Esta asignación es inmediata, no se registra
@@ -141,10 +146,7 @@ avalon_mm_slave_interface U1_AVALON_MM_SLAVE_1 (
     .read(read),  // indicador lectura 
     .readdata(readdata),  // datos lectura
     
-    .reg3(reg3),  // registro 3
-    .reg2(reg2),  // registro 2
-    .reg1(reg1),  // registro 1
-    .reg0(reg0)   // registro 0
+    .registers(registers)
 );
 
 
@@ -153,6 +155,10 @@ avalon_mm_slave_interface U1_AVALON_MM_SLAVE_1 (
 // MAPA DE REGISTROS DE AVALON-MM
 
 /*
+
+Registros de configuración:
+[03->00]
+
 +------+-------------------------------------------------------+---------------+--------------+
 | reg0 | [31:2]                                                | irq_enable[1] | pause_req[0] |
 +------+---------+----------------------+---------+------------+----+-------+--+--------------+
@@ -163,17 +169,25 @@ avalon_mm_slave_interface U1_AVALON_MM_SLAVE_1 (
 | reg3 | [31:16]                        | color_substitute[15:0]                              |
 +------+--------------------------------+-----------------------------------------------------+
 
+Registros de histograma:
+[99->04]
+
++------+--------------------------------+-----------------------------------------------------+
+| reg3 | [31:16]                        | color_substitute[15:0]                              |
++------+--------------------------------+-----------------------------------------------------+
+
 Leyenda:
 - nombre[A:B] = valor, bits útiles leídos desde el X al Y.
 - [A:B] = región vacía (no se lee)
 */
+
 reg pause;
 wire pause_req;
-assign pause_req = reg0[0];
+assign pause_req = registers[0][0];
 
 reg interrupt;
 wire interrupt_req;
-assign interrupt_req = reg0[1];
+assign interrupt_req = registers[0][1];
 assign irq_sender = interrupt;
 
 always @(posedge clk)
@@ -196,7 +210,7 @@ video_effects U4_VIDEO_EFFECTS_1 (
     .clk(clk),  // reloj
     .reset(reset),  // reset
     
-    .effect(reg1[4:0]),  // indica el efecto de vídeo a aplicar
+    .effect(registers[1][4:0]),  // indica el efecto de vídeo a aplicar
     
     // effect[0] : Sustitución de uno o varios colores por un valor constante (Chroma Key)
     //      Usar la variable effect_color_key para especificarlo
@@ -213,23 +227,23 @@ video_effects U4_VIDEO_EFFECTS_1 (
     
     // effect[4] : Negativo
     
-    .effect_delete_rgb(reg1[9:8]),  // indica el valor RGB a eliminar
+    .effect_delete_rgb(registers[0][9:8]),  // indica el valor RGB a eliminar
     
     // effect_delete_rgb = 00 : No se elimina nada
     // effect_delete_rgb = 01 : Eliminar R
     // effect_delete_rgb = 10 : Eliminar G
     // effect_delete_rgb = 11 : Eliminar B
     
-    .effect_quantif_level(reg1[17:16]),  // indica el número de componentes a borrar (cuantificar) de cada color
+    .effect_quantif_level(registers[1][17:16]),  // indica el número de componentes a borrar (cuantificar) de cada color
     
     // effect_quantif_level = 00 : No se elimina nada
     // effect_quantif_level = 01 : Se elimina el último bit (LSB)
     // effect_quantif_level = 10 : Se eliminan los dos últimos bits
     // effect_quantif_level = 11 : Se eliminan los tres últimos bits
     
-    .effect_color_key(reg2[31:16]),  // indica el valor RGB a eliminar para los efectos que lo necesiten
-    .effect_color_key_threshold(reg2[15:0]),  // indica la tolerancia de colores (+-rango por componente)
-    .effect_color_substitute(reg3[15:0]),  // indica el valor RGB por el que sustituir el color eliminado
+    .effect_color_key(registers[2][31:16]),  // indica el valor RGB a eliminar para los efectos que lo necesiten
+    .effect_color_key_threshold(registers[2][15:0]),  // indica la tolerancia de colores (+-rango por componente)
+    .effect_color_substitute(registers[3][15:0]),  // indica el valor RGB por el que sustituir el color eliminado
     
     .video_data_in(data_in_reg),  // entrada de datos de vídeo, del avalon sink
     .video_data_out(data_out_reg)  // salida de datos de vídeo, procesados, al avalon source
