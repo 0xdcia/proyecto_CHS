@@ -31,4 +31,5 @@ void Init_App(void){
 	//Inicializar mailbox
 	getimg = OSMboxCreate((void *)0);
 	saveimg = OSMboxCreate((void *)0);
+	drawHist = OSMboxCreate((void *)0);
 }

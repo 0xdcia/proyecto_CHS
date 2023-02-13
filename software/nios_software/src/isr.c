@@ -1,5 +1,4 @@
 #include "..\inc\isr.h"
-#include <includes.h>
 #include "../inc/app_config.h"
 #include "../inc/task_config.h"
 #include <stdio.h>
@@ -7,21 +6,35 @@
 #include "..\inc\sdcard.h"
 #include <io.h>
 
-int KEY_value, SW_value;
+int KEY_value;
 int toggle = 0;
 int effect = 0;
 /**
  * Subrutina de manejo de interrupcion por pulsador incrustada en uCOS
  */
-void capture_isr(){
+int hist = 0;
+int SW_value = 0;
+void capture_isr(){//Se ha dibujado un frame completo
 	OSIntEnter();
-	*(EFFECT_ptr + 0) = 0x00000001;
+	*(EFFECT_ptr + 0) = 0x00000001;//Desactivar interrupcion - mantener pausa
+	isSaving = true;
 	printf("Hemos recibido una foto\n");
-	OSMboxPost(saveimg, (void *)1);
+	if(hist == 0){//Se ha pedido una captura
+		OSMboxPost(saveimg, (void *)1);
+	}
+	else {//Se ha pedido una pausa
+		SW_value = *(SW_switch_ptr);
+		if(SW_value & 0x4000){
+			OSMboxPost(drawHist, (void *)1);
+		}//El histograma está activo - tarea de dibujar histograma en overlay
+	}
+	hist = 0;
 	OSIntExit();
 }
 
-
+unsigned int lastPressed = 0;
+unsigned int threshold = 1000;
+unsigned int aux;
 void pushbutton_isr() {
 
 	OSIntEnter();
@@ -31,92 +44,42 @@ void pushbutton_isr() {
 	if (KEY_value & 0x2)  //Derecha
 	{
 		image++;
-		printf("Despertando a Tarea sdcard %d, %d\n", KEY_value, SW_value);
+		printf("Despertando a Tarea sdcard %d\n", KEY_value);
 		//Indicaremos a la funcion de sd que cargue una imagen posteando en su mailbox
 		OSMboxPost(getimg, (void *)1);
 	}
-	else if (KEY_value & 0x4){
-		if(toggle){
-			IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 0, (SRAM_BASE + 0x080000000));
-			IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 4, (SRAM_BASE + 0x080000000));
+	else if (KEY_value & 0x4){//Centro
+		aux = OSTimeGet();
+		if(lastPressed + threshold > aux){//Hacer una captura
+			*(EFFECT_ptr + 0) = 0x00000003;//Pausar video y capturar
 		}
-		else{
-			IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 0, (0x09100000));
-			IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 4, (0x09100000));
+		else{//Pausa / reanudar video
+			/*To-do: Proteger con Mutex, hasta que no acabe una captura no se puede quitar pausa
+			 * No sera bloqueante, ignorar si se está capturando
+			 * */
+			if(!isSaving){
+				if(toggle){//Pausar (y calcular histograma?)
+					hist = 1;
+					*(EFFECT_ptr + 0) = 0x00000003;
+				}
+				else{//Reanudar
+					*(EFFECT_ptr + 0) = 0x00000000;
+				}
+				toggle = !toggle;
+			}
 		}
-		toggle = !toggle;
+		lastPressed = aux;
 	}
 	else//Izquierda
 	{
-		switch (effect%9){
-			case 0:
-				printf("Chroma\n");
-				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 1) = 0x00000001;  // Efecto: Chroma Key
-				*(EFFECT_ptr + 2) = 0x780038E7;  // Chroma Key: H: color_key; L: color_mask
-				*(EFFECT_ptr + 3) = 0x00000000;  // Chroma Key: L: color_substitute
-				break;
-			case 1:
-				printf("Eliminar R\n");
-				*(EFFECT_ptr + 0) = 0x00000003;  // no usado
-				*(EFFECT_ptr + 1) = 0x00000102;  // Efecto: Eliminación de colores RGB. delete_rgb=1; elimina R
-				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
-				break;
-			case 2:
-				printf("Eliminar G\n");
-				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 1) = 0x00000202;  // Efecto: Eliminación de colores RGB. delete_rgb=1; elimina R
-				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
-				break;
-			case 3:
-				printf("Eliminar B\n");
-				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 1) = 0x00000302;  // Efecto: Eliminación de colores RGB. delete_rgb=1; elimina R
-				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
-				break;
-			case 4:
-				printf("Blanco y negro\n");
-				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 1) = 0x00000004;  // Efecto: Escala de grises
-				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
-				break;
-			case 5:
-				printf("Cuantificacion 1\n");
-				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 1) = 0x00010008;  // Efecto: Cuantificación. cuantif_level=1;
-				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
-				break;
-			case 6:
-				printf("Cuantificacion 2\n");
-				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 1) = 0x00020008;  // Efecto: Cuantificación. cuantif_level=2;
-				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
-				break;
-			case 7:
-				printf("Cuantificacion 3\n");
-				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 1) = 0x00030008;  // Efecto: Cuantificación. cuantif_level=3; (max)
-				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
-				break;
-			default:
-				printf("Invertir\n");
-				*(EFFECT_ptr + 0) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 1) = 0x00000010;  // Efecto: Cuantificaci�n. cuantif_level=3; (max)
-				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
-				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+		if(image > 0){
+			image--;
 		}
-		effect++;
+		else{
+			image = num_imgs - 1;
+			OSMboxPost(getimg, (void *)1);
+		}
 	}
-
-	SW_value = *(SW_switch_ptr);	// Leemos registro de Switches
-	SW_value = SW_value & 1;
 
 OSIntExit();
 }

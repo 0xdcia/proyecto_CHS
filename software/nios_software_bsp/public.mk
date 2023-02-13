@@ -86,7 +86,7 @@ ACDS_VERSION := 17.1
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/main_project/nios_system.sopcinfo
+SOPCINFO_FILE := $(ABS_BSP_ROOT_DIR)/../../hardware/main_project/nios_system.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false

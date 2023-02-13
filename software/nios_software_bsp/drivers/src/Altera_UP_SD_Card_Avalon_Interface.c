@@ -33,7 +33,7 @@
 #include <io.h>
 #include <stdio.h>
 #include <string.h>
-#include <Altera_UP_SD_Card_Avalon_Interface.h>
+#include "Altera_UP_SD_Card_Avalon_Interface.h"
 
 ///////////////////////////////////////////////////////////////////////////
 // Local Define Statements
@@ -1067,7 +1067,7 @@ int find_first_empty_record_in_a_subdirectory(int start_cluster_index)
                 // The directory needs to be expanded to store more files.
 				if ((new_cluster & 0x0000fff8) == 0x0000fff8)
 				{
-					int new_dir_cluster;
+					unsigned int new_dir_cluster; 
 					if (find_first_empty_cluster(&new_dir_cluster))
 					{
 						// Add the new cluster to the linked list of the given directory.
@@ -1197,14 +1197,14 @@ bool create_file(char *name, t_file_record *file_record, t_file_record *home_dir
                 location = get_dir_divider_location( &(name[last_dir_separator]) );
             }
             
-            convert_filename_to_name_extension(&(name[last_dir_separator]), file_record->name, file_record->extension);
+            convert_filename_to_name_extension(&(name[last_dir_separator]), (char *)file_record->name, (char *)file_record->extension);
                          
-            file_record->attributes = 0x20; //Modificación Ricardo valor anterior 0
+            file_record->attributes = 0;
             file_record->create_time = 0;
-            file_record->create_date = (30 << 9) + (1 << 5) + 1; //Modificación Ricardo valor anterior 0
-            file_record->last_access_date = (30 << 9) + (1 << 5) + 1; //Modificación Ricardo valor anterior 0
+            file_record->create_date = 0;
+            file_record->last_access_date = 0;
             file_record->last_modified_time = 0;
-            file_record->last_modified_date = (30 << 9) + (1 << 5) + 1; //Modificación Ricardo valor anterior 0
+            file_record->last_modified_date = 0;
             file_record->start_cluster_index = cluster_number;
             file_record->file_size_in_bytes = 0;
             file_record->current_cluster_index = cluster_number;
@@ -1506,7 +1506,7 @@ short int alt_up_sd_card_find_next(char *file_name)
 					// that holds data for the current directory.
 					if (sector_index >= boot_sector_data.sectors_per_cluster)
 					{
-						short int new_cluster;
+						unsigned short int new_cluster;
 
 						if (get_cluster_flag(cluster, &new_cluster))
 						{
@@ -1567,7 +1567,7 @@ short int alt_up_sd_card_fopen(char *name, bool create)
 			int index;
 
             /* Get home directory cluster location for the specified file. 0 means root directory. */
-            if (!get_home_directory_cluster_for_file(name, &home_directory_cluster, &home_dir))
+            if (!get_home_directory_cluster_for_file(name, (int *) &home_directory_cluster, &home_dir))
             {
                 return file_record_index;
             }
@@ -1740,7 +1740,7 @@ short int alt_up_sd_card_read(short int file_handle)
 }
 
 
-bool altera_up_sd_card_write(short int file_handle, char byte_of_data)
+bool alt_up_sd_card_write(short int file_handle, char byte_of_data)
 /* Write a single character to a given file. Return true if successful, and false otherwise. */
 {
     bool result = false;
@@ -1813,8 +1813,7 @@ bool altera_up_sd_card_write(short int file_handle, char byte_of_data)
 					else
 					{
 						/* Read the next sector in the cluster and modify it. We only need to change the data_sector value. The actual read happens a few lines below. */
-						//active_files[file_handle].current_sector_in_cluster = active_files[file_handle].current_byte_position / boot_sector_data.sector_size_in_bytes; //Comentado por Ricardo
-						active_files[file_handle].current_sector_in_cluster += 1; //Añadido por Ricardo para solucionar problema del tamaño
+						active_files[file_handle].current_sector_in_cluster = active_files[file_handle].current_byte_position / boot_sector_data.sector_size_in_bytes;
 					}
 					data_sector = boot_sector_data.data_sector_offset + (active_files[file_handle].current_cluster_index - 2)*boot_sector_data.sectors_per_cluster +
                           active_files[file_handle].current_sector_in_cluster;
@@ -1824,7 +1823,6 @@ bool altera_up_sd_card_write(short int file_handle, char byte_of_data)
 			// a new sector is read from the SD Card.
             if (current_sector_index != data_sector + fat_partition_offset_in_512_byte_sectors)
             {
-            	//result = Save_Modified_Sector(); //Añadido por Ricardo prescindible
                 if (!Read_Sector_Data(data_sector, fat_partition_offset_in_512_byte_sectors))
                 {
 					return false;

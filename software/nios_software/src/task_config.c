@@ -3,6 +3,8 @@
 #include "../inc/alt_ucosii_simple_error_check.h"
 #include "ucos_ii.h"
 #include "../inc/sdcard.h"
+#include "../inc/effects.h"
+#include "../inc/histogram.h"
 
 
 void CreateTasks (void){
@@ -67,5 +69,31 @@ int initCreateTasks(){
 			                  0);
 
 		alt_ucosii_check_return_code(return_code);
+
+		//Tarea monitorizacion polling de los interruptores
+		return_code= OSTaskCreateExt(TaskPoll,
+			                  NULL,
+			                  (void *)&poll_task_stk[TASK_STACKSIZE-1],
+							  POLL_TASK_PRIORITY,
+							  POLL_TASK_PRIORITY,
+							  poll_task_stk,
+			                  TASK_STACKSIZE,
+			                  NULL,
+			                  0);
+
+		alt_ucosii_check_return_code(return_code);
+
+		//Tarea de dibujado de histograma
+		return_code= OSTaskCreateExt(TaskHistogram,
+			                  NULL,
+			                  (void *)&hist_task_stk[TASK_STACKSIZE-1],
+							  HIST_TASK_PRIORITY,
+							  HIST_TASK_PRIORITY,
+							  hist_task_stk,
+			                  TASK_STACKSIZE,
+			                  NULL,
+			                  0);
+		alt_ucosii_check_return_code(return_code);
+
   return 0;
 }

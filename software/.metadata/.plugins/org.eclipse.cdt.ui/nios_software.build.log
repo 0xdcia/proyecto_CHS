@@ -1,43 +1,86 @@
-21:13:06 **** Incremental Build of configuration Nios II for project nios_software ****
+01:19:44 **** Build of configuration Nios II for project nios_software ****
 make all 
-Info: Building C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
-C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+/usr/bin/sh: line 0: cd: C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/hardware/main_project/: No such file or directory
+Info: Building C:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/
 [BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Compiling src/Ricardo_SD_Card_Avalon_Interface.c to obj/default/src/Ricardo_SD_Card_Avalon_Interface.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/Ricardo_SD_Card_Avalon_Interface.o src/Ricardo_SD_Card_Avalon_Interface.c
+src/Ricardo_SD_Card_Avalon_Interface.c: In function 'find_first_empty_record_in_a_subdirectory':
+src/Ricardo_SD_Card_Avalon_Interface.c:1071:35: warning: pointer targets in passing argument 1 of 'find_first_empty_cluster' differ in signedness [-Wpointer-sign]
+      if (find_first_empty_cluster(&new_dir_cluster))
+                                   ^
+src/Ricardo_SD_Card_Avalon_Interface.c:974:6: note: expected 'unsigned int *' but argument is of type 'int *'
+ bool find_first_empty_cluster(unsigned int *cluster_number)
+      ^
+src/Ricardo_SD_Card_Avalon_Interface.c: In function 'create_file':
+src/Ricardo_SD_Card_Avalon_Interface.c:1200:77: warning: pointer targets in passing argument 2 of 'convert_filename_to_name_extension' differ in signedness [-Wpointer-sign]
+             convert_filename_to_name_extension(&(name[last_dir_separator]), file_record->name, file_record->extension);
+                                                                             ^
+src/Ricardo_SD_Card_Avalon_Interface.c:1133:6: note: expected 'char *' but argument is of type 'unsigned char *'
+ void convert_filename_to_name_extension(char *filename, char *name, char *extension)
+      ^
+src/Ricardo_SD_Card_Avalon_Interface.c:1200:96: warning: pointer targets in passing argument 3 of 'convert_filename_to_name_extension' differ in signedness [-Wpointer-sign]
+             convert_filename_to_name_extension(&(name[last_dir_separator]), file_record->name, file_record->extension);
+                                                                                                ^
+src/Ricardo_SD_Card_Avalon_Interface.c:1133:6: note: expected 'char *' but argument is of type 'unsigned char *'
+ void convert_filename_to_name_extension(char *filename, char *name, char *extension)
+      ^
+src/Ricardo_SD_Card_Avalon_Interface.c: In function 'alt_up_sd_card_find_next':
+src/Ricardo_SD_Card_Avalon_Interface.c:1511:37: warning: pointer targets in passing argument 2 of 'get_cluster_flag' differ in signedness [-Wpointer-sign]
+       if (get_cluster_flag(cluster, &new_cluster))
+                                     ^
+src/Ricardo_SD_Card_Avalon_Interface.c:250:6: note: expected 'short unsigned int *' but argument is of type 'short int *'
+ bool get_cluster_flag(unsigned int cluster_index, unsigned short int *flag)
+      ^
+src/Ricardo_SD_Card_Avalon_Interface.c: In function 'alt_up_sd_card_fopen':
+src/Ricardo_SD_Card_Avalon_Interface.c:1570:60: warning: pointer targets in passing argument 2 of 'get_home_directory_cluster_for_file' differ in signedness [-Wpointer-sign]
+             if (!get_home_directory_cluster_for_file(name, &home_directory_cluster, &home_dir))
+                                                            ^
+src/Ricardo_SD_Card_Avalon_Interface.c:658:6: note: expected 'int *' but argument is of type 'unsigned int *'
+ bool get_home_directory_cluster_for_file(char *file_name, int *home_directory_cluster, t_file_record *file_record)
+      ^
+Info: Compiling src/alt_ucosii_simple_error_check.c to obj/default/src/alt_ucosii_simple_error_check.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/alt_ucosii_simple_error_check.o src/alt_ucosii_simple_error_check.c
+Info: Compiling src/app_config.c to obj/default/src/app_config.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/app_config.o src/app_config.c
+Info: Compiling src/effects.c to obj/default/src/effects.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/effects.o src/effects.c
+Info: Compiling src/histogram.c to obj/default/src/histogram.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/histogram.o src/histogram.c
+Info: Compiling src/isr.c to obj/default/src/isr.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/isr.o src/isr.c
 Info: Compiling src/sdcard.c to obj/default/src/sdcard.o
-nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/sdcard.o src/sdcard.c
-src/sdcard.c: In function 'writeWord':
-src/sdcard.c:21:9: warning: implicit declaration of function 'alt_up_sd_card_write' [-Wimplicit-function-declaration]
-  aux &= alt_up_sd_card_write(*handle, value);
-         ^
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/sdcard.o src/sdcard.c
 src/sdcard.c: In function 'TaskSdcard':
-src/sdcard.c:196:8: warning: variable 'p_msg' set but not used [-Wunused-but-set-variable]
+src/sdcard.c:199:8: warning: variable 'p_msg' set but not used [-Wunused-but-set-variable]
   void *p_msg;
         ^
 src/sdcard.c: In function 'TaskSaveImg':
-src/sdcard.c:293:7: warning: unused variable 'aux' [-Wunused-variable]
+src/sdcard.c:296:7: warning: unused variable 'aux' [-Wunused-variable]
    int aux;
        ^
-src/sdcard.c:253:7: warning: variable 'offset' set but not used [-Wunused-but-set-variable]
+src/sdcard.c:256:7: warning: variable 'offset' set but not used [-Wunused-but-set-variable]
    int offset;
        ^
-src/sdcard.c:250:17: warning: unused variable 'memoria_mtl' [-Wunused-variable]
+src/sdcard.c:253:17: warning: unused variable 'memoria_mtl' [-Wunused-variable]
   volatile int * memoria_mtl = (int *) 0x09100000;
                  ^
-src/sdcard.c:247:8: warning: variable 'p_msg' set but not used [-Wunused-but-set-variable]
+src/sdcard.c:250:8: warning: variable 'p_msg' set but not used [-Wunused-but-set-variable]
   void *p_msg;
         ^
+Info: Compiling src/task_config.c to obj/default/src/task_config.o
+nios2-elf-gcc -xc -MP -MMD -c -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//UCOSII/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//HAL/inc -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/ -IC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/task_config.o src/task_config.c
 Info: Linking nios_software.elf
-nios2-elf-g++  -T'C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//linker.x' -msys-crt0='C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -LC:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o nios_software.elf obj/default/main.o obj/default/src/alt_ucosii_simple_error_check.o obj/default/src/app_config.o obj/default/src/isr.o obj/default/src/sdcard.o obj/default/src/task_config.o -lm -msys-lib=m
-obj/default/src/sdcard.o: In function `writeWord':
-C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\software\nios_software/src/sdcard.c:21: undefined reference to `alt_up_sd_card_write'
-C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\software\nios_software/src/sdcard.c:22: undefined reference to `alt_up_sd_card_write'
-C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\software\nios_software/src/sdcard.c:23: undefined reference to `alt_up_sd_card_write'
-C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\software\nios_software/src/sdcard.c:24: undefined reference to `alt_up_sd_card_write'
-obj/default/src/sdcard.o: In function `writeShort':
-C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\software\nios_software/src/sdcard.c:30: undefined reference to `alt_up_sd_card_write'
-obj/default/src/sdcard.o:C:\Users\dagarbl2\Documents\GitHub\proyecto_CHS\software\nios_software/src/sdcard.c:31: more undefined references to `alt_up_sd_card_write' follow
-collect2.exe: error: ld returned 1 exit status
-make: *** [nios_software.elf] Error 1
+nios2-elf-g++  -T'C:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//linker.x' -msys-crt0='C:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -LC:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o nios_software.elf obj/default/main.o obj/default/src/Ricardo_SD_Card_Avalon_Interface.o obj/default/src/alt_ucosii_simple_error_check.o obj/default/src/app_config.o obj/default/src/effects.o obj/default/src/histogram.o obj/default/src/isr.o obj/default/src/sdcard.o obj/default/src/task_config.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model ucosii --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x10001040 --timestamp 1676051244 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_system --quartus_project_dir "C:/Users/DAGARBL2/Downloads/proyecto_CHS/software/nios_software" --sopcinfo c:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/../../hardware/main_project/nios_system.sopcinfo
+Info: (nios_software.elf) 238 KBytes program size (code + initialized data).
+Info:                     130822 KBytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
 
-21:13:07 Build Finished (took 1s.626ms)
+01:19:47 Build Finished (took 3s.537ms)
 

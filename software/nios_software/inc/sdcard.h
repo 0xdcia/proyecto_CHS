@@ -3,6 +3,7 @@
 
 extern int image;
 extern int num_imgs;
+extern bool isSaving;
 
 struct bmpFileHeader{
 	unsigned short signature; /* Identificador mágico 'BM' */

@@ -1,0 +1,10 @@
+#include <ucos_ii.h>
+#include "../inc/app_config.h"
+
+void TaskPoll(void *pdata){
+ 	volatile int * SW_switch_ptr = (int *) SWITCHES_BASE;
+	while(1){
+		SW_value = *(SW_switch_ptr);
+		OSTaskSuspend(OS_PRIO_SELF);
+	}
+}

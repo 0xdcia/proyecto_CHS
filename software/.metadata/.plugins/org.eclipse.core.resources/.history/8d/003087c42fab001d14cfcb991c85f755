@@ -1,0 +1,52 @@
+#include "../inc/task_config.h"
+#include "../inc/sdcard.h"
+
+void MTL_box(int x1, int y1, int x2, int y2, short pixel_color)
+{
+	int offset, row, col;
+	int SRAM_BASE_SIN_CACHE = (SRAM_BASE + 0x080000000);  //Activando el bit m�s significativo se elude la cache de datos
+  	volatile short * pixel_buffer = (short *) SRAM_BASE_SIN_CACHE;	// MTL pixel buffer
+
+  	// se asume que las coordenadas del rectangulo son correctas
+	for (row = y1; row <= y2; row++)
+	{
+		col = x1;
+		while (col <= x2)
+		{
+			offset = (row << 9) + col;
+			*(pixel_buffer + offset) = pixel_color;	//procesa mitad direcciones
+			++col;
+		}
+	}
+}
+void MTL_box2(int x1, int y1, int x2, int y2, short pixel_color)
+{
+	int offset, row, col;
+	int SRAM_BASE_SIN_CACHE = (SRAM_BASE + 0x080000000);  //Activando el bit m�s significativo se elude la cache de datos
+  	volatile short * pixel_buffer = (short *) SRAM_BASE_SIN_CACHE;	// MTL pixel buffer
+
+  	// se asume que las coordenadas del rectangulo son correctas
+	for (row = y1; row <= y2; row++)
+	{
+		col = x1;
+		while (col <= x2)
+		{
+			offset = (row << 9) + col;
+			*(pixel_buffer + offset) |= pixel_color;	//procesa mitad direcciones
+			++col;
+		}
+	}
+}
+
+void TaskHistogram(void *pdata){//Leer que hay ahora en pantalla, dibujar un histograma y reanudar
+	INT8U err;
+	while(1){
+		OSMboxPend(drawHist, 0, &err);
+		//Leer contenidos de la pantalla
+
+		//Escribir en pantalla - Directamente
+
+		//Fin
+		isSaving = false;//Deberia usar su propia variable
+	}
+}

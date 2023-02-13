@@ -1,0 +1,8 @@
+#include "../inc/task_config.h"
+
+void TaskHistogram(void *pdata){//Leer que hay ahora en pantalla, dibujar un histograma y reanudar
+	INT8U err;
+	while(1){
+		OSMboxPend(drawHist, 0, &err);
+	}
+}

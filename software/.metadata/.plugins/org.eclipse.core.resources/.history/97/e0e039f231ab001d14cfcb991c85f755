@@ -1,0 +1,75 @@
+#include <ucos_ii.h>
+#include "../inc/app_config.h"
+#include <io.h>
+
+int SW_value;
+int old_sw = 0;
+void TaskPoll(void *pdata){
+	while(1){
+		SW_value = *(SW_switch_ptr);
+		*(red_LED_ptr) = (!0xC6EF)&SW_value;
+		if(old_sw != SW_value){
+			old_sw = SW_value;
+			/*Activar efectos segun cada pulsador*/
+			if(SW_value & 0x0001){
+				*(EFFECT_ptr + 1) = 0x00000004;  // Efecto: Escala de grises
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+			}
+			if(SW_value & 0x0002){
+				*(EFFECT_ptr + 1) = 0x00000302;  // Efecto: Eliminación de colores RGB. delete_rgb=1; elimina B
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+			}
+			if(SW_value & 0x0004){
+				*(EFFECT_ptr + 1) = 0x00000202;  // Efecto: Eliminación de colores RGB. delete_rgb=1; elimina G
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+			}
+			if(SW_value & 0x0008){
+				*(EFFECT_ptr + 1) = 0x00000102;  // Efecto: Eliminación de colores RGB. delete_rgb=1; elimina R
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+			}
+			//Cuantificacion --Tecnicamente solo se aplicará el mas restrictivo
+			if(SW_value & 0x0020){// 2 bits/color
+				*(EFFECT_ptr + 1) = 0x00030008;  // Efecto: Cuantificación. cuantif_level=3; (max)
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+			}
+			if(SW_value & 0x0040){// 3 bits/color
+				*(EFFECT_ptr + 1) = 0x00020008;  // Efecto: Cuantificación. cuantif_level=2;
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+			}
+			if(SW_value & 0x0080){// 4 bits/color
+				*(EFFECT_ptr + 1) = 0x00010008;  // Efecto: Cuantificación. cuantif_level=1;
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+			}
+
+			if(SW_value & 0x0200){// Chroma
+				*(EFFECT_ptr + 1) = 0x00000001;  // Efecto: Chroma Key
+				*(EFFECT_ptr + 2) = 0x780038E7;  // Chroma Key: H: color_key; L: color_mask
+				*(EFFECT_ptr + 3) = 0x00000000;  // Chroma Key: L: color_substitute
+			}
+
+			if(SW_value & 0x0400){ //Invertir
+				*(EFFECT_ptr + 1) = 0x00000010;  // Efecto: Inversion
+				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
+				*(EFFECT_ptr + 3) = 0x00000000;  // no usado
+			}
+
+
+			if(SW_value & 0x8000){ //Cambiar entre imagen SD y video
+				IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 0, (0x09100000));
+				IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 4, (0x09100000));
+			}
+			else{
+				IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 0, (SRAM_BASE + 0x080000000));
+				IOWR_32DIRECT(MTL_PIXEL_BUFFER_DMA_BASE, 4, (SRAM_BASE + 0x080000000));
+			}
+	}
+		OSTaskSuspend(OS_PRIO_SELF);
+	}
+}

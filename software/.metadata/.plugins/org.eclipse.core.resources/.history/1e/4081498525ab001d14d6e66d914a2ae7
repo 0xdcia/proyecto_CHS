@@ -1,0 +1,55 @@
+#include "..\inc\isr.h"
+#include <includes.h>
+#include "../inc/app_config.h"
+#include "../inc/task_config.h"
+#include <stdio.h>
+#include "sys/alt_irq.h"
+#include "..\inc\sdcard.h"
+#include <io.h>
+
+int KEY_value;
+int toggle = 0;
+int effect = 0;
+/**
+ * Subrutina de manejo de interrupcion por pulsador incrustada en uCOS
+ */
+void capture_isr(){
+	OSIntEnter();
+	*(EFFECT_ptr + 0) = 0x00000001;
+	printf("Hemos recibido una foto\n");
+	OSMboxPost(saveimg, (void *)1);
+	OSIntExit();
+}
+
+
+void pushbutton_isr() {
+
+	OSIntEnter();
+	KEY_value = *(KEY_ptr + 3);
+
+	*(KEY_ptr + 3) = 0;  //Borrar interrupcion
+	if (KEY_value & 0x2)  //Derecha
+	{
+		image++;
+		printf("Despertando a Tarea sdcard %d\n", KEY_value);
+		//Indicaremos a la funcion de sd que cargue una imagen posteando en su mailbox
+		OSMboxPost(getimg, (void *)1);
+	}
+	else if (KEY_value & 0x4){//Centro
+
+	}
+	else//Izquierda
+	{
+		if(image > 0){
+			image--;
+		}
+		else{
+			image = num_imgs-1;
+		}
+	}
+
+OSIntExit();
+}
+
+
+

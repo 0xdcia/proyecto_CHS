@@ -1,0 +1,11 @@
+#include <ucos_ii.h>
+#include "../inc/app_config.h"
+
+void TaskPoll(void *pdata){
+	while(1){
+		SW_value = *(SW_switch_ptr);
+		SW_value = *(SW_switch_ptr);	// Leemos registro de Switches
+		SW_value = SW_value & 1;
+		OSTaskSuspend(OS_PRIO_SELF);
+	}
+}

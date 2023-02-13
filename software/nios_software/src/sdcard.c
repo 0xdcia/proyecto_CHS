@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <string.h>
-#include <Altera_UP_SD_Card_Avalon_Interface.h>
+//#include <Altera_UP_SD_Card_Avalon_Interface.h>
+#include "../inc/Ricardo_SD_Card_Avalon_interface.h"
 #include "../inc/task_config.h"
 #include "../inc/sdcard.h"
 #include "../inc/app_config.h"
 #include "../inc/alt_ucosii_simple_error_check.h"
 #include <io.h>
+
+bool isSaving = false;
 
 unsigned int getWord(short int *handle){
 	unsigned int aux = 0;
@@ -242,7 +245,7 @@ void TaskSdcard(void *pdata){
 
 }
 
-int img = 12;
+int img = 13;
 void TaskSaveImg(void *pdata){
 	void *p_msg;
 	short int img_handle = -1;
@@ -290,7 +293,6 @@ void TaskSaveImg(void *pdata){
 		printf("He podido escribir? %d\n", test);
 
 		//Pixeles
-		int aux;
 		for(int i = 240-1; i >= 0; i--){
 			for(int j = 0; j < 400; j++){
 				offset = (i << 9) + j;
@@ -298,20 +300,20 @@ void TaskSaveImg(void *pdata){
 				//alt_up_sd_card_write(img_handle, aux>>12);
 				//alt_up_sd_card_write(img_handle, aux>>5);
 				//alt_up_sd_card_write(img_handle, aux);
-				altera_up_sd_card_write(img_handle, 0xFF);
-				altera_up_sd_card_write(img_handle, 0x00);
-				altera_up_sd_card_write(img_handle, 0xFF);
+				alt_up_sd_card_write(img_handle, 0xFF);
+				alt_up_sd_card_write(img_handle, 0x00);
+				alt_up_sd_card_write(img_handle, 0xFF);
 			}
 		}
 
 		alt_up_sd_card_fclose(img_handle);
 		printf("SdCard: Imagen guardada \n");
 		//Reiniciar la toma de video
+		isSaving = false;
 		*(EFFECT_ptr + 0) = 0x00000000;
 		//Actualizar imagenes
 		printf("SdCard: Recargar archivos\n");
-		//loadFiles();
-		printf("SdCard: %d imagenes\n", loadFiles());
+		num_imgs=loadFiles();
 	}
 
 }

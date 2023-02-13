@@ -1,5 +1,5 @@
-#ifndef __RICARDO_SD_CARD_AVALON_INTERFACE_H__
-#define __RICARDO_SD_CARD_AVALON_INTERFACE_H__
+#ifndef __ALTERA_UP_SD_CARD_AVALON_INTERFACE_H__
+#define __ALTERA_UP_SD_CARD_AVALON_INTERFACE_H__
 
 #include <stddef.h>
 #include <alt_types.h>
@@ -108,7 +108,7 @@ short int alt_up_sd_card_read(short int file_handle);
  * means that the file could not be read. A number between 0 and 255 is an ASCII character read from the SD Card. */
 
 
-bool altera_up_sd_card_write(short int file_handle, char byte_of_data);
+bool alt_up_sd_card_write(short int file_handle, char byte_of_data);
 /* Write a single character to a given file. Return true if successful, and false otherwise. */
 
 
@@ -154,6 +154,6 @@ bool alt_up_sd_card_fclose(short int file_handle);
 }
 #endif /* __cplusplus */
 
-#endif /* __RICARDO_SD_CARD_AVALON_INTERFACE_H__ */
+#endif /* __ALTERA_UP_SD_CARD_AVALON_INTERFACE_H__ */
 
 

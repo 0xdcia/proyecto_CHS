@@ -148,6 +148,9 @@ C_SRCS += src/app_config.c
 C_SRCS += src/task_config.c
 C_SRCS += src/isr.c
 C_SRCS += src/sdcard.c
+C_SRCS += src/Ricardo_SD_Card_Avalon_Interface.c
+C_SRCS += src/effects.c
+C_SRCS += src/histogram.c
 CXX_SRCS :=
 ASM_SRCS :=
 
@@ -182,7 +185,8 @@ CRT0 :=
 SYS_LIB :=
 
 # Define path to the root of the BSP.
-BSP_ROOT_DIR := C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+#BSP_ROOT_DIR := C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
+BSP_ROOT_DIR := C:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/
 
 # List of application specific include directories, library directories and library names
 APP_INCLUDE_DIRS :=

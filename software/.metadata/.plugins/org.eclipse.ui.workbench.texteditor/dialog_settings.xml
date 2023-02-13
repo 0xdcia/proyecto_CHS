@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="sd_card_write" key="selection"/>
+		<item value="memoria_mtl" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="memoria_mtl"/>
+			<item value="VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT_BASE"/>
+			<item value="VIDEO_DMA_CONTROLLER"/>
+			<item value="BSP_ROOT_DIR"/>
 			<item value="sd_card_write"/>
 			<item value="ricard"/>
 			<item value="ricardo"/>
 			<item value="Avalon_Interface"/>
-			<item value="alt_up_sd_card_write"/>
-			<item value="write"/>
-			<item value="VIDEO_EFFE"/>
-			<item value="VIDEO"/>
 		</list>
 		<list key="replacehistory">
 		</list>

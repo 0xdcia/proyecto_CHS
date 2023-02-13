@@ -1,0 +1,5 @@
+#include "../inc/task_config.h"
+
+void TaskHistogram(void *pdata){//Leer que hay ahora en pantalla, dibujar un histograma y reanudar
+
+}

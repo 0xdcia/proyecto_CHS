@@ -1,0 +1,11 @@
+#include <ucos_ii.h>
+#include "../inc/app_config.h"
+
+int SW_value;
+void TaskPoll(void *pdata){
+	while(1){
+		SW_value = *(SW_switch_ptr);
+		*(red_LED_ptr) = SW_value;
+		OSTaskSuspend(OS_PRIO_SELF);
+	}
+}
