@@ -1,6 +1,0 @@
-void TaskPoll(void *pdata){
-
-	while(1){
-
-	}
-}

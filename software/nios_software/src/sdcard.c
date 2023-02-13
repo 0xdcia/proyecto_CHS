@@ -245,9 +245,11 @@ void TaskSdcard(void *pdata){
 
 }
 
-int img = 13;
+int img = 20;
 void TaskSaveImg(void *pdata){
 	void *p_msg;
+	int aux = 0;
+	int cmp = 0;
 	short int img_handle = -1;
 	INT8U err;
 	volatile int * memoria_mtl = (int *) 0x09100000;
@@ -258,13 +260,20 @@ void TaskSaveImg(void *pdata){
 		//Leer imagen de 0x09100000 y guardar en sd
 		char nombre[13];
 
-		sprintf(nombre, "test%d.bmp", img);
-		while(alt_up_sd_card_find_next(nombre)== 0){
+		sprintf(nombre, "cap%d.BMP", img);
+		//Buscamos la imagen en la lista
+		while(cmp == 0){
 			img++;
-			sprintf(nombre, "test%d.BMP", img);
-			printf("Nombre de imagen: %s\n", nombre);
+			sprintf(nombre, "cap%d.BMP", img);
+			for(int i = 0;i < num_imgs; i++){
+				cmp = strcmp(archivos[i], nombre);
+			}
 		}
+
 		img_handle = alt_up_sd_card_fopen(nombre, true);
+		img++;
+		printf("%s no existe\n", nombre);
+		//img_handle = alt_up_sd_card_fopen(nombre, true);
 
 		//Crear cabecera
 		bool test = true;
@@ -296,13 +305,14 @@ void TaskSaveImg(void *pdata){
 		for(int i = 240-1; i >= 0; i--){
 			for(int j = 0; j < 400; j++){
 				offset = (i << 9) + j;
-				//aux = *(memoria_mtl + offset);
-				//alt_up_sd_card_write(img_handle, aux>>12);
-				//alt_up_sd_card_write(img_handle, aux>>5);
-				//alt_up_sd_card_write(img_handle, aux);
-				alt_up_sd_card_write(img_handle, 0xFF);
-				alt_up_sd_card_write(img_handle, 0x00);
-				alt_up_sd_card_write(img_handle, 0xFF);
+				aux = *(memoria_mtl + offset);
+
+				alt_up_sd_card_write(img_handle, 0x1F&(aux));  // B
+				alt_up_sd_card_write(img_handle, 0x3F&(aux>>5));  // G
+				alt_up_sd_card_write(img_handle, 0x1F&(aux>>11));  // R
+				//alt_up_sd_card_write(img_handle, 0xFF);
+				//alt_up_sd_card_write(img_handle, 0x00);
+				//alt_up_sd_card_write(img_handle, 0xFF);
 			}
 		}
 
@@ -313,6 +323,7 @@ void TaskSaveImg(void *pdata){
 		*(EFFECT_ptr + 0) = 0x00000000;
 		//Actualizar imagenes
 		printf("SdCard: Recargar archivos\n");
+		alt_up_sd_card_open_dev
 		num_imgs=loadFiles();
 	}
 

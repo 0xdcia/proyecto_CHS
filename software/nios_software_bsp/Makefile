@@ -320,13 +320,6 @@ altera_up_avalon_video_character_buffer_with_dma_driver_SRCS_ROOT := drivers
 altera_up_avalon_video_character_buffer_with_dma_driver_C_LIB_SRCS := \
 	$(altera_up_avalon_video_character_buffer_with_dma_driver_SRCS_ROOT)/src/altera_up_avalon_video_character_buffer_with_dma.c
 
-# altera_up_avalon_video_dma_controller_driver sources root 
-altera_up_avalon_video_dma_controller_driver_SRCS_ROOT := drivers
-
-# altera_up_avalon_video_dma_controller_driver sources 
-altera_up_avalon_video_dma_controller_driver_C_LIB_SRCS := \
-	$(altera_up_avalon_video_dma_controller_driver_SRCS_ROOT)/src/altera_up_avalon_video_dma_controller.c
-
 # avalon_character_lcd_driver sources root 
 avalon_character_lcd_driver_SRCS_ROOT := drivers
 
@@ -453,7 +446,6 @@ COMPONENT_C_LIB_SRCS += \
 	$(altera_avalon_timer_driver_C_LIB_SRCS) \
 	$(altera_nios2_gen2_ucosii_driver_C_LIB_SRCS) \
 	$(altera_up_avalon_video_character_buffer_with_dma_driver_C_LIB_SRCS) \
-	$(altera_up_avalon_video_dma_controller_driver_C_LIB_SRCS) \
 	$(avalon_character_lcd_driver_C_LIB_SRCS) \
 	$(avalon_parallel_port_driver_C_LIB_SRCS) \
 	$(avalon_video_pixel_buffer_dma_driver_C_LIB_SRCS) \

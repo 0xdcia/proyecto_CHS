@@ -186,7 +186,7 @@ SYS_LIB :=
 
 # Define path to the root of the BSP.
 #BSP_ROOT_DIR := C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
-BSP_ROOT_DIR := C:/Users/dagarbl2/Downloads/proyecto_CHS/software/nios_software_bsp/
+BSP_ROOT_DIR := C:/Users/dagarbl2/Documents/GitHub/proyecto_CHS/software/nios_software_bsp/
 
 # List of application specific include directories, library directories and library names
 APP_INCLUDE_DIRS :=

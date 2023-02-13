@@ -2,17 +2,22 @@
 #include "../inc/app_config.h"
 #include <io.h>
 #include <system.h>
+#include <stdio.h>
 
 
 int SW_value;
 int old_sw = 0;
 void TaskPoll(void *pdata){
+	printf("Listo para hacer polling de los switches\n");
 	while(1){
 		SW_value = *(SW_switch_ptr);
-		*(red_LED_ptr) = (!0xC6EF)&SW_value;
+		*(red_LED_ptr) = 0xC6EF;
+		//*(red_LED_ptr) = 0xFFFF;
 		if(old_sw != SW_value){
+			printf("Switches cambiaron\n");
 			old_sw = SW_value;
 			/*Activar efectos segun cada pulsador*/
+			*(EFFECT_ptr + 1) = 0x00000000;
 			if(SW_value & 0x0001){
 				*(EFFECT_ptr + 1) = 0x00000004;  // Efecto: Escala de grises
 				*(EFFECT_ptr + 2) = 0x00000000;  // no usado
@@ -74,6 +79,6 @@ void TaskPoll(void *pdata){
 				IOWR_32DIRECT(0x10000130, 4, (0x09080000));
 			}
 	}
-		OSTaskSuspend(OS_PRIO_SELF);
+		OSTimeDly(1);
 	}
 }

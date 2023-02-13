@@ -50,7 +50,7 @@ void pushbutton_isr() {
 	}
 	else if (KEY_value & 0x4){//Centro
 		aux = OSTimeGet();
-		if(lastPressed + threshold > aux){//Hacer una captura
+		if(lastPressed + threshold > aux){//Hacer una captura - doblo click
 			*(EFFECT_ptr + 0) = 0x00000003;//Pausar video y capturar
 		}
 		else{//Pausa / reanudar video
@@ -77,8 +77,8 @@ void pushbutton_isr() {
 		}
 		else{
 			image = num_imgs - 1;
-			OSMboxPost(getimg, (void *)1);
 		}
+		OSMboxPost(getimg, (void *)1);
 	}
 
 OSIntExit();

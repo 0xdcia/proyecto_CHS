@@ -23,7 +23,6 @@ obj/alt_sys_init.o: alt_sys_init.c system.h linker.h \
  drivers/inc/altera_up_avalon_parallel_port_regs.h \
  drivers/inc/altera_up_avalon_ps2.h drivers/inc/altera_up_avalon_rs232.h \
  drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h \
- drivers/inc/altera_up_avalon_video_dma_controller.h \
  drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h
 
 system.h:
@@ -117,7 +116,5 @@ drivers/inc/altera_up_avalon_ps2.h:
 drivers/inc/altera_up_avalon_rs232.h:
 
 drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h:
-
-drivers/inc/altera_up_avalon_video_dma_controller.h:
 
 drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h:

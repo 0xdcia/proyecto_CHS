@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../hardware/main_project/nios_system.sopcinfo
  *
- * Generated: Sun Feb 12 20:18:36 CET 2023
+ * Generated: Mon Feb 13 08:57:36 CET 2023
  */
 
 /*
@@ -72,7 +72,6 @@
 #include "altera_up_avalon_ps2.h"
 #include "altera_up_avalon_rs232.h"
 #include "altera_up_avalon_video_character_buffer_with_dma.h"
-#include "altera_up_avalon_video_dma_controller.h"
 #include "altera_up_avalon_video_pixel_buffer_dma.h"
 
 /*
@@ -98,9 +97,6 @@ ALTERA_UP_AVALON_PS2_INSTANCE ( PS2_KEY, ps2_key);
 ALTERA_UP_AVALON_PS2_INSTANCE ( PS2_MOUSE, ps2_mouse);
 ALTERA_UP_AVALON_RS232_INSTANCE ( SERIAL_PORT, serial_port);
 ALTERA_UP_AVALON_VIDEO_CHARACTER_BUFFER_WITH_DMA_INSTANCE ( MTL_CHAR_BUFFER, mtl_char_buffer);
-ALTERA_UP_AVALON_VIDEO_DMA_CONTROLLER_INSTANCE ( CAMERA_VIDEO_DMA_CONTROLLER, camera_video_dma_controller);
-ALTERA_UP_AVALON_VIDEO_DMA_CONTROLLER_INSTANCE ( VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT, video_dma_controller_ip_camera_input);
-ALTERA_UP_AVALON_VIDEO_DMA_CONTROLLER_INSTANCE ( VIDEO_DMA_CONTROLLER_IP_OUTPUT, video_dma_controller_ip_output);
 ALTERA_UP_AVALON_VIDEO_PIXEL_BUFFER_DMA_INSTANCE ( MTL_PIXEL_BUFFER_DMA, mtl_pixel_buffer_dma);
 ALTERA_UP_SD_CARD_AVALON_INTERFACE_INSTANCE ( SD_CARD, SD_Card);
 
@@ -143,9 +139,6 @@ void alt_sys_init( void )
     ALTERA_UP_AVALON_PS2_INIT ( PS2_MOUSE, ps2_mouse);
     ALTERA_UP_AVALON_RS232_INIT ( SERIAL_PORT, serial_port);
     ALTERA_UP_AVALON_VIDEO_CHARACTER_BUFFER_WITH_DMA_INIT ( MTL_CHAR_BUFFER, mtl_char_buffer);
-    ALTERA_UP_AVALON_VIDEO_DMA_CONTROLLER_INIT ( CAMERA_VIDEO_DMA_CONTROLLER, camera_video_dma_controller);
-    ALTERA_UP_AVALON_VIDEO_DMA_CONTROLLER_INIT ( VIDEO_DMA_CONTROLLER_IP_CAMERA_INPUT, video_dma_controller_ip_camera_input);
-    ALTERA_UP_AVALON_VIDEO_DMA_CONTROLLER_INIT ( VIDEO_DMA_CONTROLLER_IP_OUTPUT, video_dma_controller_ip_output);
     ALTERA_UP_AVALON_VIDEO_PIXEL_BUFFER_DMA_INIT ( MTL_PIXEL_BUFFER_DMA, mtl_pixel_buffer_dma);
     ALTERA_UP_SD_CARD_AVALON_INTERFACE_INIT ( SD_CARD, SD_Card);
 }
